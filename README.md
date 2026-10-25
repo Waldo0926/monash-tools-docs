@@ -32,6 +32,8 @@ Pages live in `src/content/docs/` (Chinese under `zh-cn/`). The home page is `sr
 
 Every push to `main` builds the site, packages the Attendance Helper from [monash-attendance-reminder](https://github.com/Waldo0926/monash-attendance-reminder) into `/downloads/monash-attendance-helper.zip`, and publishes `dist/` to the `gh-pages` branch. It also runs once a day so the download stays current.
 
+The live site is served from my VPS so it loads reliably from China. The VPS pulls the `gh-pages` branch every 10 minutes (`deploy/vps/sync.sh`) and nginx serves it (`deploy/vps/docs.secureview.tech.conf`). No credentials are stored on either side.
+
 ## Not affiliated
 
 Not affiliated with Monash University, Ed or Anthropic. Icons by [Lucide](https://lucide.dev) (ISC).
@@ -46,6 +48,6 @@ Not affiliated with Monash University, Ed or Anthropic. Icons by [Lucide](https:
 
 本地运行需要 Node 22.23.4 以上：`npm ci` 后 `npm run dev`。文档在 `src/content/docs/`，中文在 `zh-cn/` 下；首页是 `src/components/Landing.astro`，文字在 `src/i18n/landing.ts`。
 
-推到 `main` 会自动构建，从 monash-attendance-reminder 打包签到助手 zip，发布到 `gh-pages` 分支；每天也会自动跑一次。
+推到 `main` 会自动构建，从 monash-attendance-reminder 打包签到助手 zip，发布到 `gh-pages` 分支；每天也会自动跑一次。线上站点放在我的 VPS 上（国内打开更稳），VPS 每 10 分钟拉一次 `gh-pages`，nginx 配置和拉取脚本在 `deploy/vps/`。
 
 本项目和 Monash University、Ed、Anthropic 没有关系。图标来自 Lucide（ISC）。
