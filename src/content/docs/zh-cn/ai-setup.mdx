@@ -1,0 +1,63 @@
+---
+title: 让 AI 帮你装
+description: 把一句话贴给 Claude Code、Codex 等能运行命令的 AI，它会帮你装好。你只做两步只有你能做的事。
+---
+
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+如果你用的 AI 能在你电脑上运行命令（Claude Code、Codex、Cursor 的 Agent、Gemini CLI 等），可以让它帮你装。粘贴下面任意一句：
+
+<p class="prompt-label">Study Kit（在 Claude 里查 Moodle 和 Ed）</p>
+
+```text
+阅读 https://docs.secureview.tech/agents/study-kit.md ，帮我在电脑上装好 Monash Study Kit。
+```
+
+<p class="prompt-label">签到助手（Chrome 扩展）</p>
+
+```text
+阅读 https://docs.secureview.tech/agents/attendance.md ，帮我把 Monash Attendance Helper 准备好，让我能在 Chrome 里加载。
+```
+
+这两个页面是写给 AI 看的操作说明：什么系统运行哪条命令、每一步怎么确认成功、哪些步骤要交还给你。你自己也可以打开看。
+
+## AI 做什么，你做什么
+
+<Steps>
+
+1. **AI 负责安装。** 它运行安装脚本（跳过需要交互的部分），确认 `monash --version` 能用。
+
+2. **你负责登录。** AI 会请你在自己的终端里运行 `monash setup`：粘贴 Ed 令牌、在登录窗口里通过 Monash 的 MFA、选课、接进 Claude。AI 看不到你的令牌和密码。
+
+3. **AI 负责检查。** 你说完成之后，它运行 `monash doctor` 和 `monash todo`，告诉你结果。
+
+</Steps>
+
+<Aside type="caution" title="不要把 Ed 令牌贴进聊天">
+Ed 令牌能做你 Ed 账号能做的一切，包括发帖和看私密帖子。它只应该出现在终端里。写给 AI 的说明里也要求它：你把令牌贴进聊天时，拒绝使用并提醒你去 Ed 删掉重建。
+</Aside>
+
+## 为什么登录要你自己来
+
+Moodle 和 Ed 都要 Okta 和 MFA，只有你能通过。登录留在你的终端里，令牌也就不会进入保存在别人服务器上的聊天记录。
+
+## AI 不能运行命令？
+
+自己运行一键安装，做的是同样的事：
+
+<Tabs syncKey="os">
+  <TabItem label="macOS" icon="apple">
+    ```bash
+    curl -LsSf https://docs.secureview.tech/study-kit/install.sh | sh
+    ```
+  </TabItem>
+  <TabItem label="Windows" icon="seti:windows">
+    ```powershell
+    powershell -ExecutionPolicy ByPass -c "irm https://docs.secureview.tech/study-kit/install.ps1 | iex"
+    ```
+  </TabItem>
+</Tabs>
+
+## 给会读整站的 AI
+
+[`/llms.txt`](/llms.txt) 按 [llms.txt](https://llmstxt.org/) 的约定列出了本站每一页和一句话简介。

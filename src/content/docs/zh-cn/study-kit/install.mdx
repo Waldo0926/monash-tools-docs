@@ -1,0 +1,91 @@
+---
+title: 安装 Study Kit
+description: 一条命令装好 uv 和 monash 命令并开始设置。不用装 Python，也不用重开终端。
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+## 一条命令
+
+<Tabs syncKey="os">
+  <TabItem label="macOS" icon="apple">
+    打开**终端**（按 Command 加空格，输入 Terminal），粘贴：
+
+    ```bash
+    curl -LsSf https://docs.secureview.tech/study-kit/install.sh | sh
+    ```
+  </TabItem>
+  <TabItem label="Windows" icon="seti:windows">
+    打开 **PowerShell**（开始菜单里搜 PowerShell），粘贴：
+
+    ```powershell
+    powershell -ExecutionPolicy ByPass -c "irm https://docs.secureview.tech/study-kit/install.ps1 | iex"
+    ```
+  </TabItem>
+</Tabs>
+
+这个脚本会：
+
+<Steps>
+
+1. 没有 [uv](https://docs.astral.sh/uv/) 的话先装上。uv 是 Python 工具管理器，自带 Python，你不用自己装。
+2. 用 uv 装好 `monash` 命令。先从 PyPI 装，装不上就从 GitHub 装最新代码。
+3. 把 uv 的工具目录加进 PATH，以后新开的终端都能直接用 `monash`。
+4. 在同一个窗口里开始 [`monash setup`](/zh-cn/study-kit/setup/)。
+
+</Steps>
+
+运行前可以先看看脚本内容：[install.sh](/study-kit/install.sh) 和 [install.ps1](/study-kit/install.ps1)。
+
+<Aside type="tip">
+只安装、不进入设置（比如让 AI 帮你装的时候）：macOS 上加 `--no-setup`，即 `curl -LsSf https://docs.secureview.tech/study-kit/install.sh | sh -s -- --no-setup`；Windows 上先运行 `$env:MONASH_NO_SETUP = "1"`。
+</Aside>
+
+## 或者一步一步来
+
+想看清每一步的话，下面做的是同样的事。
+
+<Tabs syncKey="os">
+  <TabItem label="macOS" icon="apple">
+    ```bash
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
+
+    关掉终端再重新打开，然后：
+
+    ```bash
+    uv tool install monash-study-kit
+    monash setup
+    ```
+  </TabItem>
+  <TabItem label="Windows" icon="seti:windows">
+    ```powershell
+    powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+    ```
+
+    关掉 PowerShell 再重新打开，然后：
+
+    ```powershell
+    uv tool install monash-study-kit
+    monash setup
+    ```
+  </TabItem>
+</Tabs>
+
+如果 `uv tool install monash-study-kit` 提示找不到这个包，改从 GitHub 装：
+
+```bash
+uv tool install https://github.com/Waldo0926/monash-study-kit/archive/refs/heads/main.zip
+```
+
+## 确认装好了
+
+```bash
+monash --version
+```
+
+会显示 `monash-study-kit` 和版本号。如果提示找不到 `monash`，新开一个终端窗口再试。
+
+## Linux
+
+同一个安装脚本也能用。Claude Desktop 没有 Linux 版，请用 [Claude Code](https://claude.com/claude-code) 或[其他 AI 软件](/zh-cn/study-kit/other-clients/)。

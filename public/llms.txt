@@ -1,0 +1,55 @@
+# Monash Student Tools
+
+> Guides for free tools for Monash University students, built by a Monash computer science student: Study Kit (Moodle and Ed in Claude or any MCP client), Monash Hub (units, degrees, WAM/GPA, official guides), Ed Web (read and search Ed in a browser), Attendance Helper (Chrome extension) and a WeChat Q&A bot. Chinese versions of every page are under /zh-cn/.
+
+If you are an AI agent asked to install something for a student, read the agent instructions first. Never ask for or accept the student's Ed token, Monash password or MFA code.
+
+## Agent instructions
+
+- [Set up Study Kit](https://docs.secureview.tech/agents/study-kit.md): install, hand over setup to the student, verify with monash doctor
+- [Prepare Attendance Helper](https://docs.secureview.tech/agents/attendance.md): download and unzip the extension, hand over the Chrome steps
+
+## Start here
+
+- [Which tool do I need?](https://docs.secureview.tech/choose/): compare tools by task, install and where data goes
+- [Let your AI set it up](https://docs.secureview.tech/ai-setup/): one line to paste into an AI that can run terminal commands
+
+## Study Kit
+
+- [Overview](https://docs.secureview.tech/study-kit/): connect Monash Moodle and Ed to Claude, everything stays on your computer
+- [Install](https://docs.secureview.tech/study-kit/install/): one command installs uv and the monash command
+- [First-time setup](https://docs.secureview.tech/study-kit/setup/): Ed token, Moodle login with MFA, units, connecting to Claude
+- [What to ask Claude](https://docs.secureview.tech/study-kit/ask-claude/): example questions
+- [Use it without AI](https://docs.secureview.tech/study-kit/cli/): the monash command in a terminal
+- [Other AI apps](https://docs.secureview.tech/study-kit/other-clients/): Codex, Cursor, VS Code, Gemini CLI
+- [Lecture recordings](https://docs.secureview.tech/study-kit/recordings/): timestamped transcripts Claude can search
+- [Privacy and security](https://docs.secureview.tech/study-kit/privacy/): where data and credentials are kept, how to remove everything
+- [Troubleshooting](https://docs.secureview.tech/study-kit/troubleshooting/): start with monash doctor
+- [Command reference](https://docs.secureview.tech/study-kit/commands/): every command, output formats, exit codes
+- [Update and uninstall](https://docs.secureview.tech/study-kit/update/)
+
+Install scripts: https://docs.secureview.tech/study-kit/install.sh (macOS, Linux) and https://docs.secureview.tech/study-kit/install.ps1 (Windows). Both accept a no-setup mode (`--no-setup` or `MONASH_NO_SETUP=1`).
+
+## Monash Hub
+
+- [Monash Hub](https://docs.secureview.tech/monash-hub/): units, degrees, course maps, WAM and GPA, official guides, in English, Chinese, Japanese and Korean
+- [Add to home screen](https://docs.secureview.tech/monash-hub/app/)
+
+## Ed Web
+
+- [Ed Web](https://docs.secureview.tech/ed-web/): read and search an Ed forum in the browser, download lesson files
+
+## Attendance Helper
+
+- [Overview](https://docs.secureview.tech/attendance/): finds attendance codes, submits only classes the student confirms
+- [Install](https://docs.secureview.tech/attendance/install/)
+- [Use](https://docs.secureview.tech/attendance/use/)
+
+## WeChat Q&A bot
+
+- [WeChat Q&A bot](https://docs.secureview.tech/wechat-bot/): answers from official pages with sources, says so when it does not know
+
+## Optional
+
+- [Private tools](https://docs.secureview.tech/private-tools/)
+- [About](https://docs.secureview.tech/about/)

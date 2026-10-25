@@ -1,0 +1,91 @@
+---
+title: Install Study Kit
+description: One command installs uv, the monash command and starts setup. No Python install, no terminal restart.
+---
+
+import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
+
+## One command
+
+<Tabs syncKey="os">
+  <TabItem label="macOS" icon="apple">
+    Open **Terminal** (press Command and Space, type "Terminal") and paste:
+
+    ```bash
+    curl -LsSf https://docs.secureview.tech/study-kit/install.sh | sh
+    ```
+  </TabItem>
+  <TabItem label="Windows" icon="seti:windows">
+    Open **PowerShell** (search "PowerShell" in the Start menu) and paste:
+
+    ```powershell
+    powershell -ExecutionPolicy ByPass -c "irm https://docs.secureview.tech/study-kit/install.ps1 | iex"
+    ```
+  </TabItem>
+</Tabs>
+
+The script:
+
+<Steps>
+
+1. Installs [uv](https://docs.astral.sh/uv/), a Python tool manager, if you do not have it. uv brings its own Python, so you do not install Python yourself.
+2. Installs the `monash` command with uv. It tries PyPI first and falls back to the latest code on GitHub.
+3. Adds uv's tool folder to your PATH, so `monash` works in any new terminal.
+4. Starts [`monash setup`](/study-kit/setup/) in the same window.
+
+</Steps>
+
+You can read the scripts before running them: [install.sh](/study-kit/install.sh) and [install.ps1](/study-kit/install.ps1).
+
+<Aside type="tip">
+To install without starting setup (for example when an AI runs it for you), add `--no-setup` on macOS: `curl -LsSf https://docs.secureview.tech/study-kit/install.sh | sh -s -- --no-setup`. On Windows, run `$env:MONASH_NO_SETUP = "1"` first.
+</Aside>
+
+## Or step by step
+
+If you prefer to see each step, these do the same thing.
+
+<Tabs syncKey="os">
+  <TabItem label="macOS" icon="apple">
+    ```bash
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
+
+    Close Terminal and open it again, then:
+
+    ```bash
+    uv tool install monash-study-kit
+    monash setup
+    ```
+  </TabItem>
+  <TabItem label="Windows" icon="seti:windows">
+    ```powershell
+    powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+    ```
+
+    Close PowerShell and open it again, then:
+
+    ```powershell
+    uv tool install monash-study-kit
+    monash setup
+    ```
+  </TabItem>
+</Tabs>
+
+If `uv tool install monash-study-kit` says the package is not found, install from GitHub instead:
+
+```bash
+uv tool install https://github.com/Waldo0926/monash-study-kit/archive/refs/heads/main.zip
+```
+
+## Check it worked
+
+```bash
+monash --version
+```
+
+It prints `monash-study-kit` and a version number. If the terminal says `monash` is not found, open a new terminal window and try again.
+
+## Linux
+
+The same install script works. Claude Desktop is not available on Linux, so use [Claude Code](https://claude.com/claude-code) or [another AI app](/study-kit/other-clients/).

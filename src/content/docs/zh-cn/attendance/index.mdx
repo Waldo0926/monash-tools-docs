@@ -1,0 +1,41 @@
+---
+title: 签到助手
+description: 一个 Chrome 扩展，从 Gmail、Ed、Moodle 里找本周的签到码，只提交你确认上过的课。
+sidebar:
+  label: 概览
+---
+
+import { LinkCard, Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import popup from '../../../../assets/attendance/popup.png';
+
+签到助手帮你省去到处找签到码的麻烦。它从 Monash Attendance 读出你的课，去找老师发过的签到码，然后全部放在一个页面上让你核对。扩展界面是英文的。
+
+<Image src={popup} alt="扩展弹窗，显示本周已找到 4/5 个签到码，以及 Find codes now、View confirm page 和 Settings 三个按钮" width={360} />
+
+## 它做什么
+
+- 从 **Monash Attendance** 读出你最近的课，包括已经显示完成的。
+- 依次在 **Gmail**、**Ed**、**Moodle**（每周的板块、签到活动、放签到码的 Word 文件）里找签到码。
+- 签到码是截图的话，用扩展自带的文字识别在你电脑上读出来。
+- 给每节课标状态：已完成、未开始、高可信、需核对、未找到，并注明是“本周”还是“上周”。
+- 在你设定的时间提醒你。
+- 怀疑之前漏签时，可以把整个学期的记录导出成表格。
+
+## 它不会做的事
+
+它**不是**自动签到机器人。你要逐节勾选真正上过的课、再勾选声明，才会提交。已完成的课和还没开始的课永远不能提交。拿不准的签到码会标成需核对，不会瞎猜。
+
+<Aside type="caution">
+只给真正上过的课签到，遵守 Monash 的考勤和学术诚信规定。签到码不能证明你上过课。
+</Aside>
+
+## 谁能用
+
+课程用 `attendance.monash.edu.my` 签到的同学，电脑上的 Chrome（Windows、macOS、Linux 都行）。它还没上架 Chrome 应用商店，需要手动加载，大约两分钟。
+
+<LinkCard title="安装" description="下载、解压、在 Chrome 里加载。" href="/zh-cn/attendance/install/" />
+
+## 隐私
+
+没有服务器、账号、统计或广告。扩展只用你已经登录的账号访问 Monash Attendance、Moodle、Ed、Gmail 和 Moodle 的文件服务器。设置、结果和日志都在 Chrome 本地的扩展存储里，删掉扩展就一起删除。详见[隐私政策](https://github.com/Waldo0926/monash-attendance-reminder/blob/main/PRIVACY.md)。

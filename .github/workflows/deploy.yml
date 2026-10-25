@@ -1,0 +1,49 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Daily, so the Attendance Helper download follows the extension repo.
+    - cron: '20 20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Package Attendance Helper
+        run: |
+          git clone --depth 1 https://github.com/Waldo0926/monash-attendance-reminder.git /tmp/attendance
+          mkdir -p /tmp/pkg dist/downloads
+          cp -r /tmp/attendance/extension /tmp/pkg/monash-attendance-helper
+          test -f /tmp/pkg/monash-attendance-helper/manifest.json
+          (cd /tmp/pkg && zip -qr "$GITHUB_WORKSPACE/dist/downloads/monash-attendance-helper.zip" monash-attendance-helper)
+          ls -l dist/downloads
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: docs.secureview.tech
+          force_orphan: true
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com

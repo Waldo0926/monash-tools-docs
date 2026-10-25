@@ -1,0 +1,421 @@
+---
+import '@fontsource-variable/inter';
+import '../styles/landing.css';
+import ArrowRight from '@lucide/astro/icons/arrow-right';
+import Copy from '@lucide/astro/icons/copy';
+import Check from '@lucide/astro/icons/check';
+import Sun from '@lucide/astro/icons/sun';
+import Moon from '@lucide/astro/icons/moon';
+import Lock from '@lucide/astro/icons/lock';
+import BookOpen from '@lucide/astro/icons/book-open';
+import Quote from '@lucide/astro/icons/quote';
+import Gift from '@lucide/astro/icons/gift';
+import Eye from '@lucide/astro/icons/eye';
+import HardDrive from '@lucide/astro/icons/hard-drive';
+import Search from '@lucide/astro/icons/search';
+import RefreshCw from '@lucide/astro/icons/refresh-cw';
+import { strings, type Lang } from '../i18n/landing';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = strings[lang];
+const zh = lang === 'zh';
+const link = (href: string) => (href.startsWith('http') || href.startsWith('/') ? href : `${t.prefix}/${href}`);
+const ruleIcons = [Eye, Lock, Quote, Gift];
+const stepIcons = [RefreshCw, HardDrive, Search];
+---
+
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.title}</title>
+    <meta name="description" content={t.description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" hreflang="en" href="https://docs.secureview.tech/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://docs.secureview.tech/zh-cn/" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+    <meta property="og:title" content={t.title} />
+    <meta property="og:description" content={t.description} />
+    <meta property="og:type" content="website" />
+    <script is:inline>
+      // Share the theme choice with the docs pages, which store it under the same key.
+      (() => {
+        let saved = '';
+        try { saved = localStorage.getItem('starlight-theme') || ''; } catch {}
+        const dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap nav-row">
+        <a class="brand" href={`${t.prefix}/`}>
+          <img src="/favicon.svg" alt="" width="26" height="26" />
+          <span>{t.title}</span>
+        </a>
+        <nav class="nav-links" aria-label="Main">
+          <a href={link('choose/')}>{t.nav.docs}</a>
+          <a href={link('study-kit/')}>{t.nav.kit}</a>
+          <a href={link('monash-hub/')}>{t.nav.hub}</a>
+          <a href="https://github.com/Waldo0926" class="icon-link" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
+          <a href={t.otherLang.href} lang={zh ? 'en' : 'zh-CN'}>{t.otherLang.label}</a>
+          <button class="icon-btn" type="button" data-theme-toggle aria-label={t.theme}>
+            <span class="sun"><Sun size={18} /></span><span class="moon"><Moon size={18} /></span>
+          </button>
+          <a class="pill" href={link('study-kit/install/')}>{t.nav.start}<ArrowRight size={16} /></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero wrap">
+        <div class="hero-copy">
+          <p class="eyebrow">{t.hero.eyebrow}</p>
+          <h1>
+            <span>{t.hero.h1a}</span>
+            <span>{t.hero.h1b}</span>
+            <span class="soft">{t.hero.h1c}</span>
+          </h1>
+          <p class="lead">{t.hero.lead}</p>
+
+          <div class="install" data-tabs>
+            <div class="install-tabs" role="tablist">
+              {t.hero.tabs.map((label, i) => (
+                <button type="button" role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-tab={i}>{label}</button>
+              ))}
+            </div>
+            {t.hero.cmds.map((cmd, i) => (
+              <div class="install-panel" data-panel={i} hidden={i !== 0}>
+                <div class="cmd">
+                  <code>{i < 2 && <span class="prompt">{i === 0 ? '$' : '>'}</span>}{cmd}</code>
+                  <button type="button" class="copy" data-copy={cmd} aria-label={t.copy}>
+                    <span class="i-copy"><Copy size={16} /></span><span class="i-done"><Check size={16} /></span>
+                  </button>
+                </div>
+                <p class="install-note">{t.hero.notes[i]}</p>
+              </div>
+            ))}
+          </div>
+
+          <ul class="meta">
+            {t.hero.meta.map((m) => <li>{m}</li>)}
+          </ul>
+          <a class="text-link" href={link('choose/')}>{t.hero.secondary} <ArrowRight size={16} /></a>
+        </div>
+
+        <!-- Chat demo -->
+        <div class="demo" data-demo>
+          <div class="window">
+            <div class="window-bar">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="window-title">{t.demo.window}</span>
+              <span class="connected"><i></i>{t.demo.connected}</span>
+            </div>
+            <div class="window-body">
+              {t.demo.items.map((d, i) => (
+                <div class="convo" data-convo={i} hidden={i !== 0}>
+                  <div class="bubble">{d.q}</div>
+                  <div class="toolcall"><span class="tc-dot"></span>monash<span class="tc-sep">·</span>{d.tool}</div>
+                  <div class="answer">
+                    <div class="answer-head">
+                      <strong>{d.head}</strong>
+                      <span>{d.sub}</span>
+                    </div>
+                    {d.rows.length > 0 && (
+                      <ul class="rows">
+                        {d.rows.map((r) => (
+                          <li class={r.tone ? `tone-${r.tone}` : ''}>
+                            <span class="tag">{r.tag}</span>
+                            <span class="row-title">{r.title}</span>
+                            <span class="row-meta">{r.meta}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {d.bars && (
+                      <ul class="bars">
+                        {d.bars.map((b) => (
+                          <li>
+                            <span class="bar-label">{b.label}</span>
+                            <span class="bar"><i style={`--w:${b.value}%`}></i></span>
+                            <span class="bar-text">{b.text}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  <p class="reply">{d.reply}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="questions" role="tablist" aria-label={zh ? '示例问题' : 'Example questions'}>
+            {t.demo.items.map((d, i) => (
+              <button type="button" role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-q={i}>
+                <span>{d.q}</span><i class="progress"></i>
+              </button>
+            ))}
+          </div>
+          <p class="sample">{t.demo.sample}</p>
+        </div>
+      </section>
+
+      <!-- Flow -->
+      <section class="flow">
+        <div class="wrap">
+          <p class="eyebrow">{t.flow.eyebrow}</p>
+          <h2><span>{t.flow.h2a}</span> <span class="soft">{t.flow.h2b}</span></h2>
+
+          <div class="diagram" data-reveal>
+            <div class="node-col">
+              {t.flow.sources.map((s, i) => (
+                <div class="node source">
+                  <strong>{s}</strong><span>{t.flow.sourceNotes[i]}</span>
+                </div>
+              ))}
+            </div>
+            <svg class="wires" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+              <path pathLength="1" class="wire w1" d="M0 50 C 160 50, 160 100, 400 100" />
+              <path pathLength="1" class="wire w2" d="M0 150 C 160 150, 160 100, 400 100" />
+              <path pathLength="1" class="pulse w1" d="M0 50 C 160 50, 160 100, 400 100" />
+              <path pathLength="1" class="pulse w2" d="M0 150 C 160 150, 160 100, 400 100" />
+            </svg>
+            <div class="node machine">
+              <div class="machine-head"><Lock size={16} /><strong>{t.flow.middle}</strong></div>
+              <ul>
+                {t.flow.middleNotes.map((n) => <li>{n}</li>)}
+              </ul>
+            </div>
+            <svg class="wires short" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
+              <path pathLength="1" class="wire w3" d="M0 100 L 200 100" />
+              <path pathLength="1" class="pulse w3" d="M0 100 L 200 100" />
+            </svg>
+            <div class="node ai">
+              <strong>{t.flow.ai}</strong><span>{t.flow.aiNote}</span>
+            </div>
+          </div>
+
+          <ol class="steps">
+            {t.flow.steps.map((s, i) => {
+              const Icon = stepIcons[i];
+              return (
+                <li>
+                  <span class="step-icon"><Icon size={18} /></span>
+                  <h3>{s.h}</h3>
+                  <p>{s.p}</p>
+                </li>
+              );
+            })}
+          </ol>
+
+          <dl class="stats">
+            {t.flow.stats.map((s) => (
+              <div><dt>{s.n}</dt><dd>{s.l}</dd></div>
+            ))}
+          </dl>
+          <a class="text-link" href={link('study-kit/privacy/')}>{t.flow.more} <ArrowRight size={16} /></a>
+        </div>
+      </section>
+
+      <!-- Tools -->
+      <section class="tools wrap" id="tools">
+        <p class="eyebrow">{t.tools.eyebrow}</p>
+        <h2><span>{t.tools.h2a}</span> <span class="soft">{t.tools.h2b}</span></h2>
+        <div class="tool-grid">
+          {t.tools.cards.map((c) => (
+            <a class={`tool tool-${c.key}`} href={link(c.href)}>
+              <div class="preview" aria-hidden="true">
+                {c.key === 'kit' && (
+                  <div class="mini-term">
+                    <p><b>$</b> monash todo</p>
+                    <p class="dim">{zh ? '本周 · 3 项截止' : 'This week · 3 due'}</p>
+                    <p><span class="warn">!</span> FIT2014 Lab 8 {zh ? '可能漏交' : 'may be missing'}</p>
+                    <p><span class="ok">·</span> FIT2102 A2 {zh ? '周五 23:55' : 'Fri 23:55'}</p>
+                    <p><b>$</b> monash grep "monad"<span class="caret"></span></p>
+                  </div>
+                )}
+                {c.key === 'hub' && (
+                  <div class="mini-hub">
+                    <div class="mh-search"><Search size={14} /><span>{zh ? 'WAM 怎么算' : 'how is WAM calculated'}</span></div>
+                    <div class="mh-result"><span class="lbl official">Official source</span><p>{zh ? 'WAM 和 GPA 的计算方法' : 'How WAM and GPA are calculated'}</p></div>
+                    <div class="mh-result"><span class="lbl hb">Official Handbook</span><p>{zh ? '各课程学分和级别' : 'Credit points and level of each unit'}</p></div>
+                    <div class="mh-result"><span class="lbl comm">Community</span><p>{zh ? '同学的经验帖' : 'What other students found'}</p></div>
+                  </div>
+                )}
+                {c.key === 'ed' && (
+                  <div class="mini-ed">
+                    <div class="me-post"><span class="me-badge">{zh ? '老师答' : 'Staff'}</span><p>{zh ? '可以晚交到周一，不扣分' : 'Monday is fine, no penalty'}</p></div>
+                    <div class="me-post"><span class="me-badge alt">{zh ? '48 小时内' : 'New'}</span><p>{zh ? 'Quiz 6 考哪几周？' : 'Which weeks does Quiz 6 cover?'}</p></div>
+                    <div class="me-zip">{zh ? '一键下载资料 · Week 1–9.zip' : 'Download all · Week 1–9.zip'}</div>
+                  </div>
+                )}
+                {c.key === 'att' && (
+                  <div class="mini-att">
+                    <label><i class="box on"></i><span>FIT2102 Workshop</span><code>K7Q2M</code></label>
+                    <label><i class="box on"></i><span>FIT2109 Lab</span><code>W47VD</code></label>
+                    <label><i class="box"></i><span>FIT2014 Tutorial</span><em>{zh ? '待确认' : 'review'}</em></label>
+                    <div class="att-btn">{zh ? '确认并提交' : 'Confirm and submit'}</div>
+                  </div>
+                )}
+                {c.key === 'bot' && (
+                  <div class="mini-chat">
+                    <p class="me" lang="zh-CN">怎么申请特殊考虑？</p>
+                    <p class="them" lang="zh-CN">在官网的 Special Consideration 表格提交，附上证明材料。<span class="src">monash.edu</span></p>
+                  </div>
+                )}
+              </div>
+              <div class="tool-body">
+                <h3>{c.name}</h3>
+                <p>{c.line}</p>
+                <dl class="tool-meta">
+                  <div><dt>{t.tools.installLabel}</dt><dd>{c.install}</dd></div>
+                  <div><dt>{t.tools.runsLabel}</dt><dd>{c.runs}</dd></div>
+                </dl>
+                <span class="tool-link">{t.tools.open}<ArrowRight size={16} /></span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Rules -->
+      <section class="rules wrap">
+        <p class="eyebrow">{t.rules.eyebrow}</p>
+        <ul>
+          {t.rules.items.map((r, i) => {
+            const Icon = ruleIcons[i];
+            return (
+              <li>
+                <Icon size={20} />
+                <h3>{r.h}</h3>
+                <p>{r.p}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <!-- Agent -->
+      <section class="agent">
+        <div class="wrap agent-grid">
+          <div>
+            <p class="eyebrow">{t.agent.eyebrow}</p>
+            <h2>{t.agent.h2}</h2>
+            <p class="agent-p">{t.agent.p}</p>
+            <a class="text-link light" href={link('ai-setup/')}>{t.agent.more} <ArrowRight size={16} /></a>
+          </div>
+          <div class="agent-card">
+            <div class="cmd dark">
+              <code>{t.agent.prompt}</code>
+              <button type="button" class="copy" data-copy={t.agent.prompt} aria-label={t.copy}>
+                <span class="i-copy"><Copy size={16} /></span><span class="i-done"><Check size={16} /></span>
+              </button>
+            </div>
+            <p class="you-label">{t.agent.youLabel}</p>
+            <ul class="you">
+              {t.agent.you.map((y) => <li><Lock size={14} />{y}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href={`${t.prefix}/`}><img src="/favicon.svg" alt="" width="22" height="22" /><span>{t.title}</span></a>
+          <p>{t.footer.blurb}</p>
+        </div>
+        {t.footer.cols.map((col) => (
+          <div>
+            <h4>{col.h}</h4>
+            <ul>{col.links.map(([label, href]) => <li><a href={link(href)}>{label}</a></li>)}</ul>
+          </div>
+        ))}
+      </div>
+      <div class="wrap footer-small">
+        <span>{t.footer.small}</span>
+        <span><BookOpen size={14} /> {t.footer.credit}</span>
+      </div>
+    </footer>
+
+    <script>
+      // Install tabs
+      for (const box of document.querySelectorAll<HTMLElement>('[data-tabs]')) {
+        const tabs = box.querySelectorAll<HTMLButtonElement>('[data-tab]');
+        const panels = box.querySelectorAll<HTMLElement>('[data-panel]');
+        const show = (i: number) => {
+          tabs.forEach((b, j) => b.setAttribute('aria-selected', String(i === j)));
+          panels.forEach((p, j) => (p.hidden = i !== j));
+        };
+        tabs.forEach((b, i) => b.addEventListener('click', () => show(i)));
+        // Windows visitors see the PowerShell line first.
+        if (/Windows/.test(navigator.userAgent)) show(1);
+      }
+
+      // Copy buttons
+      for (const btn of document.querySelectorAll<HTMLButtonElement>('[data-copy]')) {
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(btn.dataset.copy || '');
+            btn.classList.add('done');
+            setTimeout(() => btn.classList.remove('done'), 1600);
+          } catch {}
+        });
+      }
+
+      // Chat demo: cycles through the questions until the visitor picks one.
+      const demo = document.querySelector<HTMLElement>('[data-demo]');
+      if (demo) {
+        const qs = demo.querySelectorAll<HTMLButtonElement>('[data-q]');
+        const convos = demo.querySelectorAll<HTMLElement>('[data-convo]');
+        const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let current = 0;
+        let timer = 0;
+        const show = (i: number) => {
+          current = i;
+          qs.forEach((b, j) => b.setAttribute('aria-selected', String(i === j)));
+          convos.forEach((c, j) => {
+            c.hidden = i !== j;
+            if (i === j) {
+              c.classList.remove('play');
+              void c.offsetWidth;
+              c.classList.add('play');
+            }
+          });
+        };
+        const auto = () => {
+          if (still) return;
+          demo.classList.add('auto');
+          timer = window.setInterval(() => show((current + 1) % qs.length), 7000);
+        };
+        qs.forEach((b, i) =>
+          b.addEventListener('click', () => {
+            window.clearInterval(timer);
+            demo.classList.remove('auto');
+            show(i);
+          }),
+        );
+        show(0);
+        auto();
+      }
+
+      // Reveal the diagram when it scrolls into view.
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      }, { threshold: 0.35 });
+      document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+
+      // Theme toggle, stored where the docs pages read it.
+      document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        try { localStorage.setItem('starlight-theme', next); } catch {}
+      });
+    </script>
+  </body>
+</html>

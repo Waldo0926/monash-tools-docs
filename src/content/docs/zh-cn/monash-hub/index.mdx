@@ -1,0 +1,47 @@
+---
+title: Monash Hub
+description: 课程、学位、选课规划、WAM 和 GPA、官方指南都在一个网站里，支持中英日韩。不用安装。
+sidebar:
+  label: 概览
+---
+
+import { LinkCard, Aside } from '@astrojs/starlight/components';
+
+[Monash Hub](https://monashhub.secureview.tech) 把平时要在 Handbook 和学校各个页面里翻的东西放在一起。每个答案都附来源链接和最后核对日期。界面有英文、简体中文、日文和韩文。
+
+<LinkCard title="打开 Monash Hub" description="monashhub.secureview.tech" href="https://monashhub.secureview.tech" />
+
+## 能做什么
+
+| 想做 | 在哪 |
+| --- | --- |
+| 查一门课：校区、开课学期、考核、考试、先修、工作量 | 搜课号，或在**课程**页按条件筛选 |
+| 找官方信息：WAM、特殊考虑、census date、签证、交换 | 搜关键词或直接问问题 |
+| 看一个学位由哪些部分组成，哪些课你的校区其实不开 | **学位** |
+| 按学期排课，每门课自动核对开课情况和先修 | **选课规划** |
+| 往回看一门课需要先修什么，往后看它能解锁什么 | **先修图** |
+| 算 WAM 或 GPA（马来西亚校区还有 CGPA） | **WAM/GPA 计算**。输入课号，或粘贴、截图 WES 成绩 |
+| 快速问个问题 | **提问**按钮。答案来自 Handbook、官网和同学帖子，不用 AI |
+| 看和分享同学经验 | **社区**。用邮箱登录后可以发帖 |
+
+## 分清你看的是什么
+
+| 标签 | 意思 |
+| --- | --- |
+| `Official Handbook` | 来自 Monash Handbook 的结构化数据 |
+| `Official source` | 整理自 Monash 官网 |
+| `Community` | 同学的提问和经验，不是学校政策 |
+
+<Aside type="caution">
+Monash Hub 不是 Monash University 运营的。选课、签证、考核和学术政策，请以链接里的官方页面、Moodle 或 WES 为准。
+</Aside>
+
+## 你的数据
+
+- **选课规划**只存在你的浏览器里。核对时会把规划发到服务器和 Handbook 比对，不保存。换设备用**导出**。
+- **成绩**在你的浏览器里计算，只有课号会发到服务器，用来查学分和级别。
+- **课程评分**不用注册账号。
+
+## 当作 App 用
+
+<LinkCard title="把 Monash Hub 加到主屏幕" description="像 App 一样打开，看过的页面没网也能看。" href="/zh-cn/monash-hub/app/" />

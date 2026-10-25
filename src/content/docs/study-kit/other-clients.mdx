@@ -1,0 +1,87 @@
+---
+title: Other AI apps
+description: Use Study Kit with Codex, Cursor, VS Code or Gemini CLI. It is a standard local MCP server.
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+`monash mcp` is a standard local (stdio) MCP server, so any app that supports local MCP servers should work. `monash setup` only configures Claude Desktop and Claude Code for you. The apps below need one manual step.
+
+<Aside type="caution">
+Only **Claude Desktop** and **Claude Code** have been tested. The settings below follow each vendor's docs as of September 2026. If they differ, the vendor's docs win.
+</Aside>
+
+## 1. Find the full path of `monash`
+
+Many apps do not read your terminal's PATH, so use the full path.
+
+<Tabs syncKey="os">
+  <TabItem label="macOS" icon="apple">
+    ```bash
+    which monash
+    ```
+    Usually `/Users/<you>/.local/bin/monash`.
+  </TabItem>
+  <TabItem label="Windows" icon="seti:windows">
+    ```powershell
+    (Get-Command monash).Source
+    ```
+    Usually `C:\Users\<you>\.local\bin\monash.exe`. In JSON, double every backslash (`C:\\Users\\...`). In TOML, use single quotes (`'C:\Users\...'`).
+  </TabItem>
+</Tabs>
+
+## 2. Add it to your app
+
+Replace `/full/path/monash` with your path. If the file already lists other servers, add the `monash` entry instead of replacing the file. Restart the app afterwards.
+
+<Tabs>
+  <TabItem label="Codex">
+    Run `codex mcp add monash -- /full/path/monash mcp`, or edit `~/.codex/config.toml` (shared by Codex CLI, the ChatGPT desktop app's Codex and the IDE extension):
+
+    ```toml
+    [mcp_servers.monash]
+    command = "/full/path/monash"
+    args = ["mcp"]
+    ```
+  </TabItem>
+  <TabItem label="Cursor">
+    `~/.cursor/mcp.json`:
+
+    ```json
+    {
+      "mcpServers": {
+        "monash": { "command": "/full/path/monash", "args": ["mcp"] }
+      }
+    }
+    ```
+  </TabItem>
+  <TabItem label="VS Code">
+    Command Palette, then **MCP: Open User Configuration**. The outer key is `servers`, not `mcpServers`:
+
+    ```json
+    {
+      "servers": {
+        "monash": { "command": "/full/path/monash", "args": ["mcp"] }
+      }
+    }
+    ```
+  </TabItem>
+  <TabItem label="Gemini CLI">
+    `~/.gemini/settings.json`:
+
+    ```json
+    {
+      "mcpServers": {
+        "monash": { "command": "/full/path/monash", "args": ["mcp"] }
+      }
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+## Good to know
+
+- Sign in and pick units with `monash setup` as usual. Without Claude installed, the last step says it cannot find Claude Desktop. Ignore it.
+- Background sync and Moodle refresh only run while the app is open and the MCP server is running.
+- The tool descriptions are written with Claude in mind. Other models usually follow them, but that has not been checked.
+- **ChatGPT on the web or phone is not supported.** It can only reach remote servers, not a program on your computer.

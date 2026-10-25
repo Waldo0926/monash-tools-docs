@@ -1,0 +1,43 @@
+---
+title: Ed Web
+description: 在浏览器里看和搜 Ed 论坛，每帖一句话概括，一键打包下载整门课的课件。不用安装。
+sidebar:
+  label: 概览
+---
+
+import { Steps, Aside, LinkCard } from '@astrojs/starlight/components';
+
+Ed Web 是一个网页，把你的 Ed 论坛抓到你自己的浏览器里，可以搜索、看每个帖子的一句话概括，还能把整门课的课件打包成一个 zip 下载。没有后端，全部在标签页里运行。
+
+<LinkCard title="打开 Ed Web" description="monashed.secureview.tech/app" href="https://monashed.secureview.tech/app/" />
+
+## 怎么用
+
+<Steps>
+
+1. 打开 [monashed.secureview.tech/app](https://monashed.secureview.tech/app/)。
+2. 输入你的 Ed 令牌。页面上写了两种获取方法，任选一种。
+3. 选要抓的课，点**开始抓取**。
+4. 搜索、按分类浏览，看每个帖子下面的概括。
+5. 打开**课程内容**，按模块看每门课的 lesson、完成状态，以及每节附带的 PDF 和链接。可以筛选没开始、快到期、已过期或**有资料**的。
+6. 点**一键下载资料**，得到一个按周分好文件夹的 zip，里面是这门课的 PDF 和链接。zip 是在你浏览器里生成的。
+
+</Steps>
+
+## 概括是怎么来的
+
+不用 AI。有老师回复的，取第一条老师回复的前一两句，标上**老师答**；没有的话取帖子正文第一句。还会给截止或延期变更、时间地点变更、出分、考试安排打标签，并单独标出没人回答的帖子和 48 小时内的新帖。
+
+## 隐私
+
+- 令牌存在 `sessionStorage` 里，关掉标签页就没了。它只发给 Ed 自己的接口 `edstem.org`。
+- 抓下来的帖子存在你浏览器的 IndexedDB 里，不会上传。
+- [源代码公开](https://github.com/Waldo0926/ed-web)，可以自己核对它只访问 Ed 的接口和 Ed 的文件服务器。
+
+<Aside type="caution">
+Ed 令牌能做你账号能做的任何事，包括发帖。只粘贴到你信任的页面里，用完可以去 Ed 设置页删掉。
+</Aside>
+
+## Ed Web 还是 Study Kit？
+
+Ed Web 不用装，任何电脑浏览器都能用。[Study Kit](/zh-cn/study-kit/) 在你电脑上同步一份，还包括 Moodle，并且能让 Claude 根据它回答问题。

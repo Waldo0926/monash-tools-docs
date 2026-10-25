@@ -1,0 +1,47 @@
+---
+title: First-time setup
+description: monash setup walks you through four steps. Ed token, Moodle login with MFA, units, and connecting to Claude.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+The installer starts this for you. To run it again later:
+
+```bash
+monash setup
+```
+
+Follow the prompts. There are four steps.
+
+<Steps>
+
+1. **Ed.** It opens Ed's [API token page](https://edstem.org/au/settings/api-tokens). Click **Create Token**, name it anything, copy the token and paste it back into the terminal. Nothing shows while you paste; that is normal. The token does not expire. Delete it on the same page whenever you want to cut access.
+
+2. **Moodle.** It opens a **separate browser window**. Log in to Monash as usual with Okta and MFA. The window closes by itself once you are in. This window has its own profile and is isolated from your everyday browser. Study Kit only takes the Moodle session from it and never reads your normal browser.
+
+3. **Units.** It tracks this semester's units by default. You can pick your own instead.
+
+4. **Connect to Claude.** It adds `monash` to Claude Desktop and Claude Code.
+   - On macOS it quits Claude Desktop first (Claude overwrites config changes made while it runs), then opens it again.
+   - On Windows it asks you to **fully quit** Claude Desktop first: tray icon at the bottom right, right-click, **Quit**.
+
+</Steps>
+
+At the end you can sync straight away. The first sync downloads every course file and takes from a few minutes to about a quarter of an hour.
+
+## Check it in Claude
+
+Open Claude Desktop. In the chat box, under **+** then **Connectors**, you should see **monash**. Leave it on, then ask "What's due this week?".
+
+<Aside type="tip">
+Not showing up? See [Troubleshooting](/study-kit/troubleshooting/#monash-does-not-show-up-in-claude).
+</Aside>
+
+## Redo one step
+
+| To redo | Run |
+| --- | --- |
+| Moodle login | `monash login` |
+| Ed token | `monash login ed` |
+| Pick units again | `monash courses` |
+| Connect to Claude again | `monash setup claude` |

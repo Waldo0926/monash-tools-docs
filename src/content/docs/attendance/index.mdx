@@ -1,0 +1,41 @@
+---
+title: Attendance Helper
+description: A Chrome extension that finds this week's attendance codes in Gmail, Ed and Moodle, and submits only the classes you confirm you attended.
+sidebar:
+  label: Overview
+---
+
+import { LinkCard, Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import popup from '../../../assets/attendance/popup.png';
+
+Attendance Helper saves you hunting for each class's attendance code. It reads your classes from Monash Attendance, looks for the codes your teaching staff posted, and puts everything on one page for you to check.
+
+<Image src={popup} alt="The extension popup showing 4 of 5 codes found this week, with Find codes now, View confirm page and Settings buttons" width={360} />
+
+## What it does
+
+- Reads your recent classes from **Monash Attendance**, including ones already marked completed.
+- Looks for codes in **Gmail**, then **Ed**, then **Moodle** (week sections, attendance activities, and Word files with the codes).
+- Reads codes posted as screenshots with text recognition that runs inside the extension, on your computer.
+- Labels each class: completed, not started, high confidence, needs review, or not found, each marked "this week" or "last week".
+- Reminds you at the times you choose.
+- Exports your semester history as a spreadsheet if you think an earlier class was missed.
+
+## What it will not do
+
+It is **not** an auto-attendance bot. Nothing is submitted until you tick each class you actually attended and confirm a declaration. Completed classes and classes that have not started can never be submitted. Unclear codes are marked for review instead of guessed.
+
+<Aside type="caution">
+Only submit attendance for classes you attended, and follow Monash's attendance and academic integrity rules. An attendance code is not proof that you were there.
+</Aside>
+
+## Who can use it
+
+Students whose classes use Monash Attendance at `attendance.monash.edu.my`, on Chrome for Windows, macOS or Linux. It is not in the Chrome Web Store yet, so you load it by hand. That takes about two minutes.
+
+<LinkCard title="Install it" description="Download, unzip, load in Chrome." href="/attendance/install/" />
+
+## Privacy
+
+There is no server, account, analytics or ads. The extension only talks to Monash Attendance, Moodle, Ed, Gmail and Moodle's file host, using the sessions you are already signed in with. Settings, results and the log stay in Chrome's local extension storage, and removing the extension deletes them. Full details are in the [privacy policy](https://github.com/Waldo0926/monash-attendance-reminder/blob/main/PRIVACY.md).

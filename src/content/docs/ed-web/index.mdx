@@ -1,0 +1,45 @@
+---
+title: Ed Web
+description: Read and search an Ed Discussion forum in your browser, with one-line takeaways for each post and one-click download of a unit's lesson files. Nothing to install.
+sidebar:
+  label: Overview
+---
+
+import { Steps, Aside, LinkCard } from '@astrojs/starlight/components';
+
+Ed Web is a page that fetches your Ed forums into your own browser, so you can search them, skim a one-line takeaway for each post, and download a whole unit's lesson files as one zip. There is no backend: it runs entirely in the tab.
+
+<LinkCard title="Open Ed Web" description="monashed.secureview.tech/app" href="https://monashed.secureview.tech/app/" />
+
+The interface is in Chinese. Button names below are given as they appear.
+
+## Use it
+
+<Steps>
+
+1. Open [monashed.secureview.tech/app](https://monashed.secureview.tech/app/).
+2. Give it your Ed token. The page shows two ways to get one; follow either.
+3. Pick the units you want and click **开始抓取** (Start fetching).
+4. Search, browse by category, and read the takeaway under each post.
+5. Open **课程内容** (Lessons) to see each unit's lessons by module, with their status and the PDFs and links on each. Filters narrow it to not started, due soon, overdue, or **有资料** (has materials).
+6. Click **一键下载资料** (download all materials) for one zip of the unit's PDFs and links, sorted into week folders. The zip is built in your browser.
+
+</Steps>
+
+## How the takeaways work
+
+No AI. If staff replied, it shows the first sentence or two of the first staff reply, marked **老师答** (staff answered). Otherwise it shows the post's first sentence. It also tags deadline and extension changes, time and room changes, grade releases and exam news, and highlights unanswered posts and posts from the last 48 hours.
+
+## Privacy
+
+- Your token is kept in `sessionStorage`, so it is gone when you close the tab. It is only sent to Ed's own API at `edstem.org`.
+- Fetched posts are stored in your browser's IndexedDB and are never uploaded.
+- The [source is public](https://github.com/Waldo0926/ed-web), so you can check that the only places it talks to are Ed's API and Ed's file host.
+
+<Aside type="caution">
+An Ed token can do anything your account can, including posting. Only paste it into pages you trust, and delete it on Ed's settings page when you are done.
+</Aside>
+
+## Ed Web or Study Kit?
+
+Ed Web needs no install and works in any desktop browser. [Study Kit](/study-kit/) keeps a synced copy on your computer, covers Moodle too, and lets Claude answer questions from it.

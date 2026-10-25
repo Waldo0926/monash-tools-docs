@@ -1,0 +1,46 @@
+---
+title: Privacy and security
+description: Where Study Kit keeps your data, which credentials it stores, what Claude can see, and how to remove everything.
+---
+
+## Where data lives
+
+| System | Folder |
+| --- | --- |
+| macOS | `~/Library/Application Support/monash-study-kit` |
+| Windows | `%LOCALAPPDATA%\monash-study-kit` |
+
+Inside are your course files (`files`), the database (`data`), login credentials (`secrets`, readable only by your own user account) and the login window's profile (`browser-profile`). `monash open` opens the course-files folder.
+
+## Credentials it stores
+
+- the Moodle session cookie
+- the Ed API token
+- the Moodle calendar subscription link
+
+They stay on your computer and are only sent to Moodle or Ed. **Never send the `secrets` folder to anyone.**
+
+## What Claude sees
+
+Only what a tool returns when you ask something: a list of deadlines, the text of a post, the text of a course file. Tokens and cookies are never sent to Claude. Do not paste your Ed token into a chat either; enter it in the terminal only.
+
+## What it does to Moodle and Ed
+
+It only reads. Requests are spaced out, so it does not hammer university systems like a crawler.
+
+## Update checks
+
+Once a day at most it asks GitHub whether a new version exists, with no personal information. Turn it off with `monash config update_check false`.
+
+## Remove everything
+
+```bash
+monash uninstall
+uv tool uninstall monash-study-kit
+```
+
+`monash uninstall` removes it from Claude and asks whether to delete all data. Last, delete the token on Ed's [API token page](https://edstem.org/au/settings/api-tokens).
+
+## How it is checked
+
+The project's [security notes](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/security.md) describe what is protected and how it is tested. To report a problem privately, see [SECURITY.md](https://github.com/Waldo0926/monash-study-kit/blob/main/SECURITY.md).

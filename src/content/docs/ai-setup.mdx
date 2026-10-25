@@ -1,0 +1,63 @@
+---
+title: Let your AI set it up
+description: Paste one line into Claude Code, Codex or any AI that can run terminal commands, and it installs the tool for you. You only do the two steps that need you.
+---
+
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+If you use an AI that can run commands on your computer (Claude Code, Codex, Cursor's agent, Gemini CLI and similar), it can do the install for you. Paste one of these:
+
+<p class="prompt-label">Study Kit (Moodle and Ed in Claude)</p>
+
+```text
+Read https://docs.secureview.tech/agents/study-kit.md and set up Monash Study Kit on my computer.
+```
+
+<p class="prompt-label">Attendance Helper (Chrome extension)</p>
+
+```text
+Read https://docs.secureview.tech/agents/attendance.md and get the Monash Attendance Helper ready for me to load in Chrome.
+```
+
+Those pages are plain instructions written for an AI: which command to run on which system, how to check each step worked, and what to hand back to you. You can read them yourself too.
+
+## What the AI does, and what you do
+
+<Steps>
+
+1. **The AI installs.** It runs the installer without the interactive part and checks that `monash --version` works.
+
+2. **You sign in.** The AI asks you to run `monash setup` in your own terminal. You paste your Ed token there, pass Monash's MFA in a login window, pick your units, and let it connect to Claude. The AI never sees your token or password.
+
+3. **The AI checks.** When you say you are done, it runs `monash doctor` and `monash todo` and tells you what it found.
+
+</Steps>
+
+<Aside type="caution" title="Never paste your Ed token into a chat">
+An Ed token can do everything your Ed account can, including posting and reading private threads. It belongs in the terminal only. The agent guides tell the AI to refuse a token if you paste one.
+</Aside>
+
+## Why the sign-in stays with you
+
+Moodle and Ed sit behind Okta and MFA, so only you can pass that. Keeping it in your terminal also means your token never lands in a chat history that is stored on someone else's server.
+
+## No AI with a terminal?
+
+Use the one-line installer yourself. It does the same steps:
+
+<Tabs syncKey="os">
+  <TabItem label="macOS" icon="apple">
+    ```bash
+    curl -LsSf https://docs.secureview.tech/study-kit/install.sh | sh
+    ```
+  </TabItem>
+  <TabItem label="Windows" icon="seti:windows">
+    ```powershell
+    powershell -ExecutionPolicy ByPass -c "irm https://docs.secureview.tech/study-kit/install.ps1 | iex"
+    ```
+  </TabItem>
+</Tabs>
+
+## For AI tools that read whole sites
+
+[`/llms.txt`](/llms.txt) lists every page on this site with a one-line summary, following the [llms.txt](https://llmstxt.org/) convention.

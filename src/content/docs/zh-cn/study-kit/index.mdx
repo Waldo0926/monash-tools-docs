@@ -1,0 +1,47 @@
+---
+title: Study Kit
+description: 把 Monash 的 Moodle 和 Ed 接进 Claude。直接问这周要交什么、Ed 有什么新消息、知识点在哪一页。所有东西都在你电脑上。
+sidebar:
+  label: 概览
+---
+
+import { LinkCard, CardGrid, Aside } from '@astrojs/starlight/components';
+
+Study Kit 把 Monash 的 **Moodle** 和 **Ed** 接进 Claude。装好后直接问：
+
+- “这周我有什么要交的？”：Moodle 截止日期、可能漏交的作业、Ed 上没做完的 lesson、最新公告。
+- “Ed 上有什么新消息？我上次问的问题有人回了吗？”
+- “FIT2102 哪一周讲了 monad？在哪份讲义第几页？”
+- “A2 的 spec 要求什么？”“我 FIT2109 现在成绩多少？”
+
+答案来自你真实的 Moodle 和 Ed 数据，还会给出处，比如“Workshop 5 Slides 第 25 页”。Claude 自己找到那份文件、只读需要的几页，你不用下载 PDF 再上传。
+
+## 两个部分
+
+- **MCP 服务器给 Claude 用。** Moodle 和 Ed 都要 Okta 和 MFA，Claude 自己进不去。有了它，Claude 可以在聊天中途自己去查。
+- **`monash` 命令给你用。** 只有人该做的事（安装、过 MFA、粘贴 Ed 令牌）由它来做；Claude 额度用完时也能直接用，`monash todo` 大约一秒出结果。
+
+## 它不会做的事
+
+所有工具都是**只读**的。不会交作业、做测验或在 Ed 上发帖。课件、登录状态和数据库都在你电脑上，不经过任何第三方服务器。
+
+## 你需要
+
+- **Claude Desktop**（[下载](https://claude.ai/download)）或 **Claude Code**。其他 AI 软件也能接，见[其他 AI 软件](/zh-cn/study-kit/other-clients/)。
+- **Chrome、Edge 或 Brave** 其中一个，只用来打开 Moodle 登录窗口。Windows 自带的 Edge 就行。
+- Monash 账号。
+
+<Aside>
+时间默认按 UTC+8 处理。澳洲校区运行 `monash config tz_offset 10`（夏令时用 11）。
+</Aside>
+
+## 开始
+
+<CardGrid>
+  <LinkCard title="安装" description="macOS 或 Windows，一条命令。" href="/zh-cn/study-kit/install/" />
+  <LinkCard title="第一次设置" description="Ed 令牌、Moodle 登录、选课、接进 Claude，大约五分钟。" href="/zh-cn/study-kit/setup/" />
+  <LinkCard title="可以问 Claude 什么" description="每类事情的示例问法。" href="/zh-cn/study-kit/ask-claude/" />
+  <LinkCard title="不用 AI 也能查" description="在终端里看同样的结果，不耗额度。" href="/zh-cn/study-kit/cli/" />
+</CardGrid>
+
+源代码：[Waldo0926/monash-study-kit](https://github.com/Waldo0926/monash-study-kit)（MIT）。

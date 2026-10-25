@@ -1,0 +1,42 @@
+---
+title: Install Attendance Helper
+description: Download the extension, load it in Chrome, sign in to the four Monash services and run the first scan.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+<Steps>
+
+1. **Download** [monash-attendance-helper.zip](/downloads/monash-attendance-helper.zip). It contains only the extension, built from the latest version on GitHub.
+
+2. **Unzip it** somewhere you will keep, such as Documents. On Windows, right-click the file and choose **Extract All**. On macOS, double-click it. Chrome loads the extension from this folder, so do not delete it afterwards.
+
+3. In Chrome, go to `chrome://extensions` and turn on **Developer mode** (top right).
+
+4. Click **Load unpacked** and choose the unzipped `monash-attendance-helper` folder. You should see `manifest.json` directly inside the folder you pick.
+
+5. Click the puzzle icon next to the address bar and pin **Monash Attendance Helper**.
+
+6. In the same Chrome profile, sign in to **Monash Attendance**, **Gmail**, **Moodle**, and **Ed** if your units use it.
+
+7. Open the extension's **Settings** (click its icon, or right-click it and choose **Options**). Keep automatic discovery on, set this semester's **Week 1 Monday**, and pick your reminder times.
+
+8. Click **Save, then test now**. It scans in the background and tells you how many classes and codes it found. You can close the settings page while it runs.
+
+</Steps>
+
+<Aside type="tip">
+Chrome may show a banner about developer mode extensions when it starts. That is normal for extensions loaded by hand. Click away from it.
+</Aside>
+
+## Update
+
+Download the zip again, unzip it over the same folder, then click the reload arrow on the extension's card in `chrome://extensions`. The version shown there should match the [changelog](https://github.com/Waldo0926/monash-attendance-reminder/blob/main/CHANGELOG.md).
+
+## Already use git?
+
+Clone [the repository](https://github.com/Waldo0926/monash-attendance-reminder) and load its `extension` folder instead. After `git pull`, reload the extension in `chrome://extensions`.
+
+## Remove
+
+Click **Remove** on the extension's card in `chrome://extensions`. That deletes its settings, results and log. Then delete the folder.

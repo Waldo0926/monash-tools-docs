@@ -1,0 +1,42 @@
+---
+title: 安装签到助手
+description: 下载扩展、在 Chrome 里加载、登录四个 Monash 服务，然后跑第一次扫描。
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+<Steps>
+
+1. **下载** [monash-attendance-helper.zip](/downloads/monash-attendance-helper.zip)。里面只有扩展本身，用 GitHub 上的最新版打包。
+
+2. **解压**到一个会一直留着的地方，比如“文稿”。Windows 上右键选**全部解压缩**，macOS 上双击。Chrome 会从这个文件夹加载扩展，所以之后不要删掉它。
+
+3. 在 Chrome 地址栏输入 `chrome://extensions`，打开右上角的**开发者模式**。
+
+4. 点**加载已解压的扩展程序**，选解压出来的 `monash-attendance-helper` 文件夹。你选的文件夹里应该直接能看到 `manifest.json`。
+
+5. 点地址栏旁边的拼图图标，把 **Monash Attendance Helper** 固定到工具栏。
+
+6. 在同一个 Chrome 用户里登录 **Monash Attendance**、**Gmail**、**Moodle**，课程用 Ed 的话也登录 **Ed**。
+
+7. 打开扩展的 **Settings**（点图标，或右键选**选项**）。保持自动发现开启，填好本学期 **Week 1 的周一**，选好提醒时间。
+
+8. 点 **Save, then test now**。它会在后台扫描，告诉你找到几节课、几个签到码。扫描时可以关掉设置页。
+
+</Steps>
+
+<Aside type="tip">
+Chrome 启动时可能提示有开发者模式的扩展。手动加载的扩展都会这样，点掉就行。
+</Aside>
+
+## 更新
+
+重新下载 zip，解压覆盖原来的文件夹，然后在 `chrome://extensions` 里点扩展卡片上的刷新箭头。那里显示的版本应该和[更新日志](https://github.com/Waldo0926/monash-attendance-reminder/blob/main/CHANGELOG.zh-CN.md)对得上。
+
+## 会用 git？
+
+克隆[仓库](https://github.com/Waldo0926/monash-attendance-reminder)，加载里面的 `extension` 文件夹。`git pull` 之后在 `chrome://extensions` 里刷新扩展。
+
+## 删除
+
+在 `chrome://extensions` 里点扩展卡片上的**移除**，它的设置、结果和日志会一起删掉。然后删掉那个文件夹。

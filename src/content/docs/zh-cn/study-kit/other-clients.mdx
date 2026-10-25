@@ -1,0 +1,87 @@
+---
+title: 其他 AI 软件
+description: 在 Codex、Cursor、VS Code、Gemini CLI 里用 Study Kit。它是标准的本地 MCP 服务器。
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+`monash mcp` 是标准的本地（stdio）MCP 服务器，支持本地 MCP 的软件理论上都能接。`monash setup` 只会自动配置 Claude Desktop 和 Claude Code，下面这些要手动配一步。
+
+<Aside type="caution">
+实际测试过的只有 **Claude Desktop** 和 **Claude Code**。下面的配置照各家 2026 年 9 月的官方文档写，有出入时以官方文档为准。
+</Aside>
+
+## 1. 找到 `monash` 的完整路径
+
+很多软件读不到终端的 PATH，所以写完整路径最稳。
+
+<Tabs syncKey="os">
+  <TabItem label="macOS" icon="apple">
+    ```bash
+    which monash
+    ```
+    一般是 `/Users/你的用户名/.local/bin/monash`。
+  </TabItem>
+  <TabItem label="Windows" icon="seti:windows">
+    ```powershell
+    (Get-Command monash).Source
+    ```
+    一般是 `C:\Users\你的用户名\.local\bin\monash.exe`。写进 JSON 时反斜杠要写两遍（`C:\\Users\\...`），写进 TOML 时用单引号（`'C:\Users\...'`）。
+  </TabItem>
+</Tabs>
+
+## 2. 加到你的软件里
+
+把 `/full/path/monash` 换成你的路径。文件里已经有别的服务器的话，把 `monash` 这一项加进去，别覆盖整个文件。改完重启软件。
+
+<Tabs>
+  <TabItem label="Codex">
+    运行 `codex mcp add monash -- /full/path/monash mcp`，或者编辑 `~/.codex/config.toml`（Codex CLI、ChatGPT 桌面版里的 Codex 和 IDE 插件共用）：
+
+    ```toml
+    [mcp_servers.monash]
+    command = "/full/path/monash"
+    args = ["mcp"]
+    ```
+  </TabItem>
+  <TabItem label="Cursor">
+    `~/.cursor/mcp.json`：
+
+    ```json
+    {
+      "mcpServers": {
+        "monash": { "command": "/full/path/monash", "args": ["mcp"] }
+      }
+    }
+    ```
+  </TabItem>
+  <TabItem label="VS Code">
+    命令面板里选 **MCP: Open User Configuration**。注意外层是 `servers`，不是 `mcpServers`：
+
+    ```json
+    {
+      "servers": {
+        "monash": { "command": "/full/path/monash", "args": ["mcp"] }
+      }
+    }
+    ```
+  </TabItem>
+  <TabItem label="Gemini CLI">
+    `~/.gemini/settings.json`：
+
+    ```json
+    {
+      "mcpServers": {
+        "monash": { "command": "/full/path/monash", "args": ["mcp"] }
+      }
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+## 注意
+
+- 登录和选课还是用 `monash setup`。没装 Claude 的话，最后一步会提示找不到 Claude Desktop，忽略就行。
+- 后台同步和 Moodle 续期只在软件开着、MCP 在运行时进行。
+- 工具说明是按 Claude 写的，别的模型一般也能照着用，但没验证过。
+- **网页版和手机上的 ChatGPT 不支持。** 它们只能连网上的服务器，连不到你电脑上的程序。

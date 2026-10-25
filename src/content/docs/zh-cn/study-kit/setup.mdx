@@ -1,0 +1,47 @@
+---
+title: 第一次设置
+description: monash setup 带你走完四步：Ed 令牌、Moodle 登录（含 MFA）、选课、接进 Claude。
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+安装脚本会自动开始设置。以后想重新来一遍：
+
+```bash
+monash setup
+```
+
+跟着提示走，一共四步。
+
+<Steps>
+
+1. **Ed。** 会帮你打开 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)。点 **Create Token**，名字随便写，复制令牌，粘贴回终端。粘贴时不显示，这是正常的。令牌不会过期，不想用了在同一个页面删掉就作废。
+
+2. **Moodle。** 会打开一个**单独的浏览器窗口**，在里面照常用 Okta 和 MFA 登录 Monash，成功后窗口自动关闭。这个窗口有自己独立的配置，和你平时的浏览器互不影响。Study Kit 只从这个窗口里拿 Moodle 登录状态，不会读你平时浏览器里的任何东西。
+
+3. **选课。** 默认跟踪本学期的课，也可以自己挑。
+
+4. **接进 Claude。** 自动把 `monash` 加进 Claude Desktop 和 Claude Code。
+   - macOS 上会先帮你退出 Claude Desktop（开着时改配置会被它覆盖），改完再打开。
+   - Windows 上会请你先**完全退出** Claude Desktop：右下角托盘里的 Claude 图标，右键，**Quit**。
+
+</Steps>
+
+最后可以选择马上同步一次。第一次同步会下载所有课件，要几分钟到十几分钟。
+
+## 在 Claude 里确认
+
+打开 Claude Desktop，在聊天输入框的 **+** 里点 **Connectors**，能看到 **monash**。开着它，问一句“这周我有什么要交的？”。
+
+<Aside type="tip">
+没看到？见[常见问题](/zh-cn/study-kit/troubleshooting/#claude-里看不到-monash)。
+</Aside>
+
+## 只重做某一步
+
+| 想重做 | 运行 |
+| --- | --- |
+| Moodle 登录 | `monash login` |
+| Ed 令牌 | `monash login ed` |
+| 重新选课 | `monash courses` |
+| 重新接进 Claude | `monash setup claude` |

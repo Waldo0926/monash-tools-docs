@@ -1,0 +1,50 @@
+---
+title: 使用签到助手
+description: 看签到码、确认上过的课、提交，以及导出整学期记录。
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import confirm from '../../../../assets/attendance/confirm-page.png';
+import history from '../../../../assets/attendance/export-history.png';
+
+## 每周
+
+<Steps>
+
+1. 点扩展图标。弹窗显示本周已找到几个签到码，比如 4/5。
+2. 点 **Find codes now** 重新扫描。扫完会自动打开确认页。
+3. 每节课有一个勾选框、日期时间、状态，找到的话还有签到码。
+4. 勾选你**真正上过**的课，勾选底部的声明，点 **Confirm and submit selected records**。
+5. 它会逐节填码提交，再重新打开 Attendance 那一天确认确实显示完成。每节课单独一行结果，没成功的留给你手动输入。
+
+</Steps>
+
+<Image src={confirm} alt="确认页：列出每节课的签到码、状态和底部的签到声明勾选框" />
+
+到了你设定的提醒时间，会直接打开同一个确认页，不用自己记着。
+
+## 状态是什么意思
+
+| 状态 | 意思 |
+| --- | --- |
+| Completed（已完成） | Attendance 已经显示完成，不能再提交 |
+| Not started（未开始） | 还没到上课时间。提前找到的码只供参考 |
+| High confidence（高可信） | 很可能是对的，等你核对后提交 |
+| Needs review（需核对） | 候选码要你确认，会列出其他读法，比如 `W47VD / W4ZVD` |
+| Not found（未找到） | 本周的话，多半是老师还没发；上周的话，值得手动查一下 |
+
+## 补救学期早些时候漏签的课
+
+Attendance 一般只接受一周左右内补交。如果出勤率看起来偏低，打开 **Settings**，点 **Export semester history**。它会从第 1 周到今天重新扫一遍，下载成表格，可以自己留着或发给课程负责人。需要先填好 Week 1 的周一，可能要几分钟。
+
+<Image src={history} alt="设置页：Week 1 周一日期、Save and enable 按钮和 Export semester history 按钮" />
+
+## 限制
+
+- 每个 Chrome 用户要分别设置。
+- 登录过期了要在那个 Chrome 用户里重新登录。
+- 文字识别可能读错，标了需核对的一定要看。
+- 只读 Word（.docx）格式的签到文件，不读 PDF。
+- 只看到本周结束为止。
+- 用特别方式发签到码的课可能找不到。
