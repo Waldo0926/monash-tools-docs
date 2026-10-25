@@ -29,12 +29,12 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
       {
         id: 'study-kit',
         name: 'Study Kit',
-        h2: 'Moodle and Ed, inside Claude.',
-        desc: 'Syncs your own Moodle and Ed to your computer, read-only, and gives Claude 17 tools to search them. The same data works from the terminal with no AI at all.',
-        spec: [['Install', 'One command'], ['Version', '1.2.0'], ['Tested with', 'Claude Desktop, Claude Code'], ['Not tested yet', 'Codex, Cursor, VS Code, Windsurf, Gemini CLI'], ['Runs on', 'macOS, Windows, Linux'], ['Licence', 'MIT']],
+        h2: 'Moodle and Ed, inside your AI app.',
+        desc: 'Syncs your own Moodle and Ed to your computer, read-only, and gives your AI app 17 tools to search them. The same data works from the terminal with no AI at all.',
+        spec: [['Install', 'One command'], ['Version', '1.2.0'], ['Tested with', 'Claude Desktop, Claude Code'], ['Also connects to', 'Codex (also in the ChatGPT desktop app), Cursor, VS Code, Windsurf, Gemini CLI. Not tested yet'], ['Runs on', 'macOS, Windows, Linux. Not on phones'], ['Licence', 'MIT']],
         cmd: INSTALL_MAC,
         links: [['Guide', 'study-kit/'], ['GitHub', 'https://github.com/Waldo0926/monash-study-kit'], ['PyPI', 'https://pypi.org/project/monash-study-kit/']],
-        tabs: ['In the terminal', 'In Claude'],
+        tabs: ['In the terminal', 'In an AI app'],
         note: 'Real command output with sample course data. The terminal prints in Chinese.',
       },
       {
@@ -90,12 +90,12 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
       {
         id: 'study-kit',
         name: 'Study Kit',
-        h2: '把 Moodle 和 Ed 接进 Claude。',
-        desc: '把你自己的 Moodle 和 Ed 只读同步到电脑上，给 Claude 17 个工具去搜。同样的数据在终端里也能查，完全不用 AI。',
-        spec: [['安装', '一条命令'], ['版本', '1.2.0'], ['实测过', 'Claude Desktop、Claude Code'], ['能接但还没实测', 'Codex、Cursor、VS Code、Windsurf、Gemini CLI'], ['系统', 'macOS、Windows、Linux'], ['许可证', 'MIT']],
+        h2: '把 Moodle 和 Ed 接进你的 AI。',
+        desc: '把你自己的 Moodle 和 Ed 只读同步到电脑上，给 AI 17 个工具去搜。同样的数据在终端里也能查，完全不用 AI。',
+        spec: [['安装', '一条命令'], ['版本', '1.2.0'], ['实测过', 'Claude Desktop、Claude Code'], ['也能接（还没实测）', 'Codex（含 ChatGPT 桌面版里的）、Cursor、VS Code、Windsurf、Gemini CLI'], ['系统', 'macOS、Windows、Linux，手机不行'], ['许可证', 'MIT']],
         cmd: INSTALL_MAC,
         links: [['说明', 'study-kit/'], ['GitHub', 'https://github.com/Waldo0926/monash-study-kit'], ['PyPI', 'https://pypi.org/project/monash-study-kit/']],
-        tabs: ['在终端里', '在 Claude 里'],
+        tabs: ['在终端里', '在 AI 里'],
         note: '真实命令输出，课程数据是示例。',
       },
       {

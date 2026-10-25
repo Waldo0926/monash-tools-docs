@@ -1,24 +1,24 @@
 ---
 title: Study Kit
-description: Connect Monash Moodle and Ed to Claude. Ask what is due, what is new on Ed, and which slide covers a topic. Everything stays on your computer.
+description: Connect Monash Moodle and Ed to the AI app on your computer. Ask what is due, what is new on Ed, and which slide covers a topic. Everything stays on your computer.
 sidebar:
   label: Overview
 ---
 
 import { LinkCard, CardGrid, Aside } from '@astrojs/starlight/components';
 
-Study Kit connects Monash **Moodle** and **Ed** to Claude. After setup you just ask:
+Study Kit connects Monash **Moodle** and **Ed** to the AI app on your computer: Claude, Codex (also inside the ChatGPT desktop app), Cursor and others. After setup you just ask:
 
 - "What's due this week?" Moodle deadlines, work you may have missed, unfinished Ed lessons, the latest announcements.
 - "Anything new on Ed? Has anyone replied to my question?"
 - "Which week of FIT2102 covered monads? Which slide deck, which page?"
 - "What does the A2 spec ask for?" "What's my current grade in FIT2109?"
 
-Answers come from your real Moodle and Ed data, with sources like "Workshop 5 Slides, page 25". Claude finds the right file and reads only the pages it needs, so you do not download PDFs and upload them again.
+Answers come from your real Moodle and Ed data, with sources like "Workshop 5 Slides, page 25". The AI finds the right file and reads only the pages it needs, so you do not download PDFs and upload them again.
 
 ## Two parts
 
-- **The MCP server is for Claude.** Moodle and Ed are behind Okta and MFA, so Claude cannot get in by itself. The server lets Claude look things up in the middle of a conversation.
+- **The MCP server is for your AI app.** Moodle and Ed are behind Okta and MFA, so the AI cannot get in by itself. The server lets it look things up in the middle of a conversation.
 - **The `monash` command is for you.** It does what only a person should do (install, pass MFA, paste the Ed token) and works without any AI when you are out of usage. `monash todo` answers in about a second.
 
 ## What it never does
@@ -27,7 +27,8 @@ All tools are **read-only**. Study Kit never submits assignments, attempts quizz
 
 ## You need
 
-- **Claude Desktop** ([download](https://claude.ai/download)) or **Claude Code**. Other AI apps can work too, see [Other AI apps](/study-kit/other-clients/).
+- A computer (macOS, Windows or Linux). Phone apps cannot reach it: they only connect to MCP servers on the internet, and Study Kit runs on your computer so your login stays there.
+- An AI app that supports local MCP. Tested with **Claude Desktop** ([download](https://claude.ai/download)) and **Claude Code**. Codex, the ChatGPT desktop app, Cursor, VS Code, Windsurf and Gemini CLI can connect with one command but are not tested yet, see [Other AI apps](/study-kit/other-clients/).
 - **Chrome, Edge or Brave**, used only for the Moodle login window. The Edge that comes with Windows is fine.
 - A Monash account.
 
@@ -40,7 +41,7 @@ Times are handled as UTC+8 by default. On an Australian campus, run `monash conf
 <CardGrid>
   <LinkCard title="Install" description="One command on macOS or Windows." href="/study-kit/install/" />
   <LinkCard title="First-time setup" description="Ed token, Moodle login, units, Claude. About five minutes." href="/study-kit/setup/" />
-  <LinkCard title="What to ask Claude" description="Example questions for each kind of task." href="/study-kit/ask-claude/" />
+  <LinkCard title="What to ask your AI" description="Example questions for each kind of task." href="/study-kit/ask-claude/" />
   <LinkCard title="Use it without AI" description="The same answers in your terminal, no usage needed." href="/study-kit/cli/" />
 </CardGrid>
 

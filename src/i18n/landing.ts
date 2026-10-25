@@ -20,16 +20,16 @@ export const strings = {
     htmlLang: 'en',
     title: 'Monash Student Tools',
     description:
-      'Free tools for Monash students: ask Claude about your Moodle and Ed, look up units and plan a degree, read Ed faster, and find attendance codes.',
+      'Free tools for Monash students: ask your AI about your Moodle and Ed, look up units and plan a degree, read Ed faster, and find attendance codes.',
     prefix: '',
     otherLang: { label: '中文', href: '/zh-cn/' },
     nav: { how: 'How it works', tools: 'Tools', docs: 'Docs', github: 'GitHub', start: 'Get started' },
     copy: 'Copy',
     hero: {
       h1a: 'Your Moodle and Ed,',
-      h1b: 'answered in Claude.',
+      h1b: 'answered by your AI.',
       lead:
-        'Study Kit copies your own Moodle and Ed to your laptop and lets Claude search them. Ask what is due, what changed on Ed, or which slide covers a topic. Your login stays on your computer, and Claude only gets the pages it looks up.',
+        'Study Kit copies your own Moodle and Ed to your laptop and lets the AI app on your computer search them: Claude, Codex (also inside the ChatGPT desktop app), Cursor and others. Ask what is due, what changed on Ed, or which slide covers a topic. Your login stays on your computer, and the AI only gets the pages it looks up.',
       tabs: ['macOS', 'Windows', 'Ask your AI'],
       cmds: [
         INSTALL_MAC,
@@ -43,7 +43,7 @@ export const strings = {
       ],
       primary: 'Install guide',
       secondary: 'All tools',
-      meta: 'Read-only · MIT · Tested in Claude Desktop and Claude Code',
+      meta: 'Read-only · MIT · Computer only, not phones',
     },
     sheets: SHEETS_EN,
     story: {
@@ -57,10 +57,10 @@ export const strings = {
       laptop: 'Your computer',
       query: 'Where were monads covered?',
       steps: [
-        { h: 'Sync', p: 'Every hour while Claude is open, new files, Ed posts and replies are copied to your computer. It never submits or posts anything.' },
+        { h: 'Sync', p: 'Every hour while your AI app is open, new files, Ed posts and replies are copied to your computer. It never submits or posts anything.' },
         { h: 'Index', p: 'Slides, PDFs, notes and lecture transcripts go into a full-text index, in a folder only your user account can read.' },
         { h: 'Find', p: 'Your question is searched locally. The result is a file and a page number, like page 14 of the Week 8 slides.' },
-        { h: 'Answer', p: 'Claude reads that one page instead of the whole PDF. On a real course search that used about 10% of the tokens.' },
+        { h: 'Answer', p: 'The AI reads that one page instead of the whole PDF. On a real course search that used about 10% of the tokens.' },
       ],
       answer: {
         tool: 'search_content',
@@ -76,7 +76,7 @@ export const strings = {
       installLabel: 'Install',
       runsLabel: 'Runs on',
       rows: [
-        { name: 'Study Kit', line: 'Ask Claude about your own Moodle and Ed: deadlines, Ed updates, grades, which slide covers what.', install: 'One command', runs: 'Your computer', href: 'study-kit/' },
+        { name: 'Study Kit', line: 'Ask your AI about your own Moodle and Ed: deadlines, Ed updates, grades, which slide covers what.', install: 'One command', runs: 'Your computer', href: 'study-kit/' },
         { name: 'Monash Hub', line: 'Units, degrees, course maps, WAM and GPA, and official guides with source links.', install: 'None', runs: 'Any browser', href: 'monash-hub/' },
         { name: 'Ed Web', line: 'Fetch an Ed forum into your browser, skim one line per post, download a unit\'s lesson files as a zip.', install: 'None', runs: 'Browser tab', href: 'ed-web/' },
         { name: 'Attendance Helper', line: 'Finds attendance codes in Gmail, Ed and Moodle. Submits only the classes you tick as attended.', install: 'Load in Chrome', runs: 'Chrome', href: 'attendance/' },
@@ -92,7 +92,7 @@ export const strings = {
       more: 'How it works',
     },
     footer: {
-      blurb: 'Free tools for Monash students, built by one. Not affiliated with Monash University, Ed or Anthropic.',
+      blurb: 'Free tools for Monash students, built by one. Not affiliated with Monash University, Ed, Anthropic or OpenAI.',
       cols: [
         { h: 'Start', links: [['Which tool do I need?', 'choose/'], ['Let your AI set it up', 'ai-setup/'], ['Install Study Kit', 'study-kit/install/']] },
         { h: 'Tools', links: [['Study Kit', 'study-kit/'], ['Monash Hub', 'monash-hub/'], ['Ed Web', 'ed-web/'], ['Attendance Helper', 'attendance/'], ['WeChat Q&A', 'wechat-bot/']] },
@@ -104,16 +104,16 @@ export const strings = {
   zh: {
     htmlLang: 'zh-CN',
     title: 'Monash 学生工具',
-    description: '给 Monash 同学的免费工具：在 Claude 里查自己的 Moodle 和 Ed、查课和规划学位、更快地看 Ed、找签到码。',
+    description: '给 Monash 同学的免费工具：让 AI 查自己的 Moodle 和 Ed、查课和规划学位、更快地看 Ed、找签到码。',
     prefix: '/zh-cn',
     otherLang: { label: 'English', href: '/' },
     nav: { how: '怎么工作', tools: '工具', docs: '文档', github: 'GitHub', start: '开始使用' },
     copy: '复制',
     hero: {
       h1a: 'Moodle 和 Ed，',
-      h1b: '直接问 Claude。',
+      h1b: '直接问 AI。',
       lead:
-        'Study Kit 把你自己的 Moodle 和 Ed 复制到电脑上，让 Claude 来搜。可以问这周要交什么、Ed 上有什么新消息、某个知识点在哪份课件第几页。登录信息只留在你电脑上，Claude 只拿到它查的那几页。',
+        'Study Kit 把你自己的 Moodle 和 Ed 复制到电脑上，让电脑上的 AI 来搜：Claude、Codex（ChatGPT 桌面版里也有）、Cursor 等都能接。可以问这周要交什么、Ed 上有什么新消息、某个知识点在哪份课件第几页。登录信息只留在你电脑上，AI 只拿到它查的那几页。',
       tabs: ['macOS', 'Windows', '让 AI 装'],
       cmds: [
         INSTALL_MAC,
@@ -127,7 +127,7 @@ export const strings = {
       ],
       primary: '安装说明',
       secondary: '全部工具',
-      meta: '只读 · MIT 开源 · 在 Claude Desktop 和 Claude Code 实测过',
+      meta: '只读 · MIT 开源 · 只能在电脑上用，手机不行',
     },
     sheets: [
       { unit: 'FIT2102', name: '第 8 周课件', meta: 'PDF · 第 14 页' },
@@ -148,10 +148,10 @@ export const strings = {
       laptop: '你的电脑',
       query: 'monad 在哪份资料里讲过？',
       steps: [
-        { h: '同步', p: 'Claude 开着时每小时把新课件、Ed 帖子和回复复制到你电脑上。从不提交作业或发帖。' },
+        { h: '同步', p: 'AI 软件开着时每小时把新课件、Ed 帖子和回复复制到你电脑上。从不提交作业或发帖。' },
         { h: '索引', p: '课件、PDF、笔记和录播字幕建成全文索引，放在只有你自己账户能读的文件夹里。' },
         { h: '查找', p: '问题在你电脑上搜，结果是哪份文件第几页，比如第 8 周课件第 14 页。' },
-        { h: '回答', p: 'Claude 只读那一页，不读整份 PDF。在一次真实课程搜索里，用的 token 大约是直接贴文件的 10%。' },
+        { h: '回答', p: 'AI 只读那一页，不读整份 PDF。在一次真实课程搜索里，用的 token 大约是直接贴文件的 10%。' },
       ],
       answer: {
         tool: 'search_content',
@@ -166,7 +166,7 @@ export const strings = {
       installLabel: '安装',
       runsLabel: '运行在',
       rows: [
-        { name: 'Study Kit', line: '在 Claude 里问自己的 Moodle 和 Ed：截止日期、Ed 新消息、成绩、某个知识点在哪页。', install: '一条命令', runs: '你的电脑', href: 'study-kit/' },
+        { name: 'Study Kit', line: '让 AI 查自己的 Moodle 和 Ed：截止日期、Ed 新消息、成绩、某个知识点在哪页。', install: '一条命令', runs: '你的电脑', href: 'study-kit/' },
         { name: 'Monash Hub', line: '课程、学位、选课规划、WAM 和 GPA，还有带出处的官方指南。', install: '不用装', runs: '任何浏览器', href: 'monash-hub/' },
         { name: 'Ed Web', line: '把 Ed 论坛抓到浏览器里，每帖一句话概括，一键打包下载整门课的课件。', install: '不用装', runs: '浏览器标签页', href: 'ed-web/' },
         { name: '签到助手', line: '从 Gmail、Ed、Moodle 里找签到码。只提交你勾选确认上过的课。', install: '在 Chrome 里加载', runs: 'Chrome', href: 'attendance/' },

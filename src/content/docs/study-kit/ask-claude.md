@@ -1,9 +1,9 @@
 ---
-title: What to ask Claude
-description: Example questions for deadlines, course files, Ed, grades and upkeep. Use your own words; Claude picks the tool by meaning.
+title: What to ask your AI
+description: Example questions for deadlines, course files, Ed, grades and upkeep. Use your own words; the AI picks the tool by meaning.
 ---
 
-Ask in your own words. Claude picks tools by meaning, not keywords, so "anything due this week" and "did I forget to submit something" both reach the to-do list. These are only examples.
+Ask in your own words. The AI picks tools by meaning, not keywords, so "anything due this week" and "did I forget to submit something" both reach the to-do list. These are only examples.
 
 ## This week
 
