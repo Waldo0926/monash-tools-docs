@@ -1,0 +1,64 @@
+---
+import config from 'virtual:starlight/user-config';
+import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro';
+import Search from '@astrojs/starlight/components/Search.astro';
+import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
+import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro';
+import { tabs } from './tabs';
+
+const { sidebar, locale } = Astro.locals.starlightRoute;
+const zh = locale === 'zh-cn';
+const prefix = zh ? '/zh-cn' : '';
+const items = tabs(sidebar as any);
+const shouldRenderSearch = config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+---
+
+<div class="hdr">
+  <div class="hdr-top">
+    <div class="hdr-title"><SiteTitle /><span class="hdr-docs">{zh ? '文档' : 'docs'}</span></div>
+    <div class="hdr-search print:hidden">{shouldRenderSearch && <Search />}</div>
+    <div class="hdr-right sl-hidden md:sl-flex print:hidden">
+      <a href={`${prefix}/`}>{zh ? '首页' : 'Home'}</a>
+      <a href={`${prefix}/tools/`}>{zh ? '全部工具' : 'Tools'}</a>
+      <a href="https://github.com/Waldo0926">GitHub</a>
+      <a class="hdr-btn" href={`${prefix}/study-kit/install/`}>
+        {zh ? '安装 Study Kit' : 'Install Study Kit'}
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+      <ThemeSelect />
+      <LanguageSelect />
+    </div>
+  </div>
+  <nav class="hdr-tabs sl-hidden md:sl-flex print:hidden" aria-label={zh ? '工具' : 'Tools'}>
+    {items.map((t) => <a href={t.href} aria-current={t.current ? 'true' : undefined}>{t.label}</a>)}
+  </nav>
+</div>
+
+<style>
+  .hdr { height: 100%; display: flex; flex-direction: column; }
+  .hdr-top { display: flex; align-items: center; gap: 1rem; justify-content: space-between; height: var(--hdr-top, 100%); }
+  .hdr-title { display: flex; align-items: baseline; gap: 0.45rem; min-width: 0; overflow: clip; padding: 0.25rem; margin: -0.25rem; }
+  .hdr-docs { color: var(--sl-color-gray-3); font-weight: 500; font-size: 1.05rem; white-space: nowrap; }
+  .hdr-search { display: flex; flex: 1; justify-content: center; }
+  .hdr-right { align-items: center; gap: 1.4rem; font-size: 0.9rem; }
+  .hdr-right > a { color: var(--sl-color-gray-2); text-decoration: none; white-space: nowrap; }
+  .hdr-right > a:hover { color: var(--sl-color-white); }
+  .hdr-right > a.hdr-btn {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    background: var(--sl-color-white); color: var(--sl-color-black);
+    padding: 0.45rem 0.8rem 0.45rem 0.95rem; border-radius: 0.6rem; font-weight: 550;
+  }
+  .hdr-right > a.hdr-btn:hover { color: var(--sl-color-black); opacity: 0.88; }
+  .hdr-tabs { gap: 1.6rem; height: 3rem; align-items: stretch; margin-inline: -0.25rem; padding-inline: 0.25rem; overflow-x: auto; scrollbar-width: none; }
+  .hdr-tabs a {
+    display: flex; align-items: center; white-space: nowrap;
+    color: var(--sl-color-gray-3); text-decoration: none; font-size: 0.92rem;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+  }
+  .hdr-tabs a:hover { color: var(--sl-color-white); }
+  .hdr-tabs a[aria-current] { color: var(--sl-color-white); border-bottom-color: var(--sl-color-white); font-weight: 550; }
+  @media (min-width: 50rem) {
+    .hdr { --hdr-top: 4rem; }
+    .hdr-search :global(site-search) { width: min(100%, 32rem); }
+  }
+</style>

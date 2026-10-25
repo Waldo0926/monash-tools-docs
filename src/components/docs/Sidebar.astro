@@ -1,0 +1,29 @@
+---
+import MobileMenuFooter from '@astrojs/starlight/components/MobileMenuFooter.astro';
+import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
+import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
+import { tabs, currentGroup } from './tabs';
+
+const { sidebar, locale } = Astro.locals.starlightRoute;
+const zh = locale === 'zh-cn';
+const items = tabs(sidebar as any);
+---
+
+<nav class="side-tabs md:sl-hidden" aria-label={zh ? '工具' : 'Tools'}>
+  {items.map((t) => <a href={t.href} aria-current={t.current ? 'true' : undefined}>{t.label}</a>)}
+</nav>
+
+<SidebarPersister>
+  <SidebarSublist sublist={currentGroup(sidebar as any) as any} />
+</SidebarPersister>
+
+<div class="md:sl-hidden">
+  <MobileMenuFooter />
+</div>
+
+<style>
+  .side-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; padding-bottom: 1rem; border-bottom: 1px solid var(--sl-color-hairline); }
+  .side-tabs a { padding: 0.3rem 0.7rem; border-radius: 999px; border: 1px solid var(--sl-color-hairline-light); color: var(--sl-color-gray-2); text-decoration: none; font-size: 0.85rem; }
+  @media (min-width: 50rem) { .side-tabs { display: none; } }
+  .side-tabs a[aria-current] { background: var(--sl-color-white); color: var(--sl-color-black); border-color: var(--sl-color-white); }
+</style>

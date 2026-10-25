@@ -1,0 +1,171 @@
+---
+import Shell from './Shell.astro';
+import { Image } from 'astro:assets';
+import Copy from '@lucide/astro/icons/copy';
+import Check from '@lucide/astro/icons/check';
+import popup from '../assets/attendance/popup.png';
+import { strings, type Lang } from '../i18n/landing';
+import { toolsPage } from '../i18n/tools';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = strings[lang];
+const p = toolsPage[lang];
+const zh = lang === 'zh';
+const link = (href: string) => (href.startsWith('http') || href.startsWith('/') ? href : `${t.prefix}/${href}`);
+const [kit, hub, ed, att, bot] = p.tools;
+---
+
+<Shell lang={lang} title={p.title} description={p.description} path="tools/">
+  <section class="tp-head wrap">
+    <h1 data-rise><span>{p.h1a}</span> <span class="accent">{p.h1b}</span></h1>
+    <p data-rise>{p.lead}</p>
+    <nav class="tp-index" data-rise-group aria-label={p.title}>
+      {p.tools.map((tool) => <a href={`#${tool.id}`}>{tool.name}</a>)}
+    </nav>
+  </section>
+
+  {p.tools.map((tool, n) => (
+    <section class="tp" id={tool.id}>
+      <div class="wrap tp-grid">
+        <div data-rise>
+          <h2>{tool.h2}</h2>
+          <p class="tp-desc">{tool.desc}</p>
+          <dl class="spec">
+            {tool.spec.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+          </dl>
+          {tool.cmd && (
+            <div class="cmd">
+              <span class="prompt" aria-hidden="true">$</span>
+              <code>{tool.cmd}</code>
+              <button class="copy" type="button" data-copy={tool.cmd} aria-label={p.copy}>
+                <span class="i-copy"><Copy size={15} /></span><span class="i-done"><Check size={15} /></span>
+              </button>
+            </div>
+          )}
+          <div class="tp-links">
+            {tool.links.map(([label, href]) => <a href={link(href)}>{label}</a>)}
+          </div>
+        </div>
+
+        <figure class="demo" data-tabs data-rise style="margin:0">
+          <div class="demo-bar">
+            <span class="demo-title">{tool.name}</span>
+            <div class="seg" role="tablist">
+              {tool.tabs.map((label, i) => (
+                <button type="button" role="tab" data-tab aria-selected={i === 0 ? 'true' : 'false'}>{label}</button>
+              ))}
+            </div>
+          </div>
+
+          {n === 0 && (
+            <>
+              <div class="demo-body" data-panel>
+<pre class="term"><span class="c">$</span> <span class="b">monash grep "monad"</span>
+[FIT2102] Week 8 Lecture Slides  @ p.14
+    …a «monad» wraps a value and gives you bind…
+
+[FIT2102] Course notes: Monads  @ p.2
+    …the Maybe «monad» handles a missing value…
+
+[FIT2102] Week 8 Lecture  @ 41:20（视频 Week 8 Lecture.mp4）
+    …so this is why we call Maybe a «monad»…
+
+<span class="c">$</span> <span class="b">monash due</span>
+时间              剩余      课程      类型    内容
+10-27 Mon 23:55   <span class="w">2 天后</span>    FIT2102   截止    Assignment 2
+10-29 Wed 23:55   4 天后    FIT2109   截止    Quiz 6
+10-31 Fri 17:00   6 天后    FIT2014   截止    Lab 9 report</pre>
+              </div>
+              <div class="demo-body" data-panel hidden>
+                <div class="chat" style="font-size:13.5px">
+                  <div class="bubble me" style="background:#e8e6df">{zh ? 'monad 在哪份资料里讲过？' : 'Where were monads covered?'}</div>
+                  <div class="a-tool"><i></i>monash · search_content</div>
+                  <div class="ui-row"><span class="ui-tag">PDF</span><div class="ui-main"><strong>Week 8 Lecture Slides</strong><span>{zh ? '第 14 页' : 'Page 14'}</span></div></div>
+                  <div class="ui-row"><span class="ui-tag">{zh ? '录播' : 'Video'}</span><div class="ui-main"><strong>Week 8 Lecture</strong><span>41:20</span></div></div>
+                  <p class="a-reply" style="margin-top:6px">{zh ? '第 8 周课件第 14 页开始讲，录播 41:20 讲了 Maybe 的例子。要我读一下那几页，再给你讲一遍吗？' : 'Week 8 introduces it on page 14 of the slides, and the lecture explains the Maybe example at 41:20. Want me to read those pages and walk you through it?'}</p>
+                </div>
+              </div>
+            </>
+          )}
+
+          {n === 1 && (
+            <>
+              <div class="demo-body" data-panel>
+                <p class="ui-h">{zh ? 'WAM / GPA 计算' : 'WAM / GPA calculator'}</p>
+                <p class="ui-sub">{zh ? '在浏览器里算，只把课号发给服务器查学分和级别。' : 'Worked out in your browser. Only unit codes go to the server.'}</p>
+                <div class="ui-kv">
+                  <div><span>WAM</span><strong>75.00</strong></div>
+                  <div><span>GPA</span><strong>3.00</strong></div>
+                  <div><span>{zh ? '学分' : 'Credit points'}</span><strong>18</strong></div>
+                </div>
+                <div class="ui-row"><span class="ui-tag">FIT2102</span><div class="ui-main"><strong>82</strong><span>{zh ? '2 级 · 6 学分' : 'Level 2 · 6 cp'}</span></div><span class="ui-badge">HD</span></div>
+                <div class="ui-row"><span class="ui-tag">FIT2004</span><div class="ui-main"><strong>75</strong><span>{zh ? '2 级 · 6 学分' : 'Level 2 · 6 cp'}</span></div><span class="ui-badge mute">D</span></div>
+                <div class="ui-row"><span class="ui-tag">FIT2014</span><div class="ui-main"><strong>68</strong><span>{zh ? '2 级 · 6 学分' : 'Level 2 · 6 cp'}</span></div><span class="ui-badge mute">C</span></div>
+              </div>
+              <div class="demo-body" data-panel hidden>
+                <div class="ui-input"><span>⌕</span>census date</div>
+                <div class="ui-row"><div class="ui-main"><strong>{zh ? 'Census 日期和缴费截止' : 'Census dates and fee deadlines'}</strong><span>monash.edu</span></div><span class="ui-badge">Official source</span></div>
+                <div class="ui-row"><div class="ui-main"><strong>{zh ? '退课' : 'Withdraw from a unit'}</strong><span>monash.edu</span></div><span class="ui-badge">Official source</span></div>
+                <div class="ui-row"><div class="ui-main"><strong>{zh ? 'census 之后退课还退钱吗？' : 'Did anyone drop after census?'}</strong><span>{zh ? '同学经验，不是政策' : 'Student experience, not policy'}</span></div><span class="ui-badge mute">Community</span></div>
+              </div>
+            </>
+          )}
+
+          {n === 2 && (
+            <>
+              <div class="demo-body" data-panel>
+                <div class="ui-input"><span>⌕</span>FIT2102 · A2</div>
+                <div class="ui-row"><span class="ui-tag">#214</span><div class="ui-main"><strong>A2 Q2 input bounds</strong><span>老师答：Inputs are at most 10^5, the spec will be updated.</span></div><span class="ui-badge">老师答</span></div>
+                <div class="ui-row"><span class="ui-tag">#219</span><div class="ui-main"><strong>A2 extension?</strong><span>Can we get an extension for A2 because of the outage…</span></div><span class="ui-badge warn">截止变动</span></div>
+                <div class="ui-row"><span class="ui-tag">#223</span><div class="ui-main"><strong>Testing with Jest</strong><span>Is it fine to add our own test files under tests/?</span></div><span class="ui-badge mute">未回答</span></div>
+              </div>
+              <div class="demo-body" data-panel hidden>
+                <p class="ui-h">FIT2109 · 课程内容</p>
+                <p class="ui-sub">{zh ? '按模块列出每节 lesson 的状态和资料。' : 'Each lesson by module, with its status and files.'}</p>
+                <div class="ui-row"><div class="ui-main"><strong>Week 9 pre-class</strong><span>2 PDF · 1 link</span></div><span class="ui-badge warn">快到期</span></div>
+                <div class="ui-row"><div class="ui-main"><strong>Week 8 workshop</strong><span>1 PDF</span></div><span class="ui-badge">已完成</span></div>
+                <div class="ui-row"><div class="ui-main"><strong>Week 10 pre-class</strong><span>3 PDF</span></div><span class="ui-badge mute">未开始</span></div>
+                <div class="ui-row" style="justify-content:center;background:#141416;color:#fff;border-color:#141416"><strong style="font-weight:600;font-size:13.5px">一键下载资料 · zip</strong></div>
+              </div>
+            </>
+          )}
+
+          {n === 3 && (
+            <>
+              <div class="demo-body" data-panel>
+                <div class="ui-row"><span class="ui-check on"></span><div class="ui-main"><strong>FIT2102 · Workshop 03</strong><span>Tuesday 10:00 am · Gmail</span></div><span class="ui-badge">{zh ? '高可信' : 'High confidence'}</span><strong style="font:600 15px var(--mono)">K7QX2</strong></div>
+                <div class="ui-row"><span class="ui-check"></span><div class="ui-main"><strong>FIT2109 · Tutorial 05</strong><span>Friday 2:00 pm · {zh ? 'Moodle 截图识别' : 'Moodle screenshot'}</span></div><span class="ui-badge warn">{zh ? '需要核对' : 'Needs review'}</span><strong style="font:600 15px var(--mono)">PM?66</strong></div>
+                <div class="ui-row"><span class="ui-check" style="opacity:.35"></span><div class="ui-main"><strong>FIT3162 · Studio 01</strong><span>Thursday 5:00 pm</span></div><span class="ui-badge mute">{zh ? '已完成' : 'Completed'}</span></div>
+                <div class="ui-row" style="display:block;margin-top:14px">
+                  <strong style="font-weight:600;font-size:13.5px">我确认：我实际参加了上面勾选的课程，并授权现在向 Monash Attendance 提交这些记录。</strong>
+                </div>
+              </div>
+              <div class="demo-body" data-panel hidden style="display:grid;place-items:center">
+                <Image src={popup} alt={zh ? '扩展弹窗：本周找到 5 个里的 4 个签到码' : 'The extension popup showing 4 of 5 codes found this week'} width={422} style="border-radius:12px;max-width:100%;height:auto;box-shadow:0 8px 30px -10px rgba(0,0,0,.25)" />
+              </div>
+            </>
+          )}
+
+          {n === 4 && (
+            <>
+              <div class="demo-body" data-panel>
+                <div class="wx chat">
+                  <div class="bubble me">宿舍晚上几点门禁？</div>
+                  <div class="bubble bot">这个问题我没有找到可靠的官方资料，不想乱答。已经转给号主，号主回答后，你下次给公众号发消息时就能收到。</div>
+                </div>
+              </div>
+              <div class="demo-body" data-panel hidden>
+                <div class="wx chat">
+                  <div class="bubble me">好的谢谢</div>
+                  <div class="bubble bot">不客气</div>
+                </div>
+              </div>
+            </>
+          )}
+          <figcaption class="demo-note">{tool.note}</figcaption>
+        </figure>
+      </div>
+    </section>
+  ))}
+</Shell>

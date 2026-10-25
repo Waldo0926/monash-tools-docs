@@ -21,8 +21,11 @@ export default defineConfig({
         'zh-cn': { label: '简体中文', lang: 'zh-CN' },
       },
       logo: { src: './src/assets/logo.svg' },
+      components: {
+        Header: './src/components/docs/Header.astro',
+        Sidebar: './src/components/docs/Sidebar.astro',
+      },
       favicon: '/favicon.svg',
-      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Waldo0926' }],
       editLink: { baseUrl: 'https://github.com/Waldo0926/monash-tools-docs/edit/main/' },
       lastUpdated: true,
       customCss: ['@fontsource-variable/inter', './src/styles/custom.css'],
