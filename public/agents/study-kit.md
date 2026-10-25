@@ -80,7 +80,7 @@ Tell the student:
 
 ## If the student uses another MCP client
 
-`monash setup` only configures Claude Desktop and Claude Code. For Codex, Cursor, VS Code or Gemini CLI, the server command is `<full path to monash> mcp` over stdio. Client-specific config is at https://docs.secureview.tech/study-kit/other-clients/. Add the entry without overwriting other servers in the file.
+`monash setup` only configures Claude Desktop and Claude Code. After setup is done, run `monash connect <client>` with `codex`, `cursor`, `vscode`, `windsurf` or `gemini` (Study Kit 1.2.0 or later; run `monash update` first if the command is missing). It adds only the monash entry and backs up the file. If it prints an entry instead (the config file has comments), add that entry by hand without overwriting other servers. Details: https://docs.secureview.tech/study-kit/other-clients/
 
 ## Troubleshooting
 

@@ -1,15 +1,33 @@
 ---
 title: Other AI apps
-description: Use Study Kit with Codex, Cursor, VS Code or Gemini CLI. It is a standard local MCP server.
+description: Connect Study Kit to Codex, Cursor, VS Code, Windsurf or Gemini CLI with one command.
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-`monash mcp` is a standard local (stdio) MCP server, so any app that supports local MCP servers should work. `monash setup` only configures Claude Desktop and Claude Code for you. The apps below need one manual step.
+`monash mcp` is a standard local (stdio) MCP server, so any app that supports local MCP servers should work. Run `monash setup` first to sign in and pick units, then connect your app.
+
+## One command
+
+```bash
+monash connect cursor
+```
+
+Use `codex`, `cursor`, `vscode`, `windsurf` or `gemini`. It adds only the `monash` entry to that app's config file, with the full path to the program, keeps everything else and saves a backup first. For Codex it uses `codex mcp add` when the `codex` command is installed. Restart the app afterwards.
+
+```bash
+monash connect                 # list apps and which are connected
+monash connect vscode --print  # show the entry without changing anything
+monash connect cursor --remove # take it out again
+```
+
+`monash connect` needs Study Kit 1.2.0 or later. Run `monash update` if it says the command does not exist.
 
 <Aside type="caution">
-Only **Claude Desktop** and **Claude Code** have been tested. The settings below follow each vendor's docs as of September 2026. If they differ, the vendor's docs win.
+Only **Claude Desktop** and **Claude Code** have been tested with real use. `monash connect` writes the format from each vendor's docs as of October 2026. If they differ, the vendor's docs win.
 </Aside>
+
+If your config file has comments (VS Code allows them), `monash connect` leaves it alone and prints the entry for you to paste. To do it by hand, follow the two steps below.
 
 ## 1. Find the full path of `monash`
 
@@ -61,6 +79,17 @@ Replace `/full/path/monash` with your path. If the file already lists other serv
     ```json
     {
       "servers": {
+        "monash": { "type": "stdio", "command": "/full/path/monash", "args": ["mcp"] }
+      }
+    }
+    ```
+  </TabItem>
+  <TabItem label="Windsurf">
+    `~/.codeium/windsurf/mcp_config.json`:
+
+    ```json
+    {
+      "mcpServers": {
         "monash": { "command": "/full/path/monash", "args": ["mcp"] }
       }
     }

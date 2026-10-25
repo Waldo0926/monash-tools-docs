@@ -26,8 +26,9 @@ description: Every monash command, output formats and exit codes.
 | `monash ed read FIT2109 "W3 Pre-Class"` | A whole lesson as Markdown with its quiz questions |
 | `monash media` | Transcribe lecture recordings (needs the [media extra](/study-kit/recordings/)) |
 | `monash config [key] [value]` | View or change settings. Restart Claude Desktop afterwards |
+| `monash connect [app]` | Connect to Codex, Cursor, VS Code, Windsurf or Gemini CLI ([Other AI apps](/study-kit/other-clients/)) |
 | `monash update` | Update to the latest version |
-| `monash uninstall` | Remove it from Claude and optionally delete all data |
+| `monash uninstall` | Remove it from Claude and other AI apps, and optionally delete all data |
 
 Every command has `--help`.
 

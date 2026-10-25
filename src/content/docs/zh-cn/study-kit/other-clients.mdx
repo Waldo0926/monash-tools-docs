@@ -1,15 +1,33 @@
 ---
 title: 其他 AI 软件
-description: 在 Codex、Cursor、VS Code、Gemini CLI 里用 Study Kit。它是标准的本地 MCP 服务器。
+description: 一条命令把 Study Kit 接进 Codex、Cursor、VS Code、Windsurf 或 Gemini CLI。
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-`monash mcp` 是标准的本地（stdio）MCP 服务器，支持本地 MCP 的软件理论上都能接。`monash setup` 只会自动配置 Claude Desktop 和 Claude Code，下面这些要手动配一步。
+`monash mcp` 是标准的本地（stdio）MCP 服务器，支持本地 MCP 的软件理论上都能接。先运行 `monash setup` 登录、选课，再接进你用的软件。
+
+## 一条命令
+
+```bash
+monash connect cursor
+```
+
+可以写 `codex`、`cursor`、`vscode`、`windsurf` 或 `gemini`。它只在这个软件的配置文件里加 `monash` 这一项，写程序的完整路径，其他内容原样保留，改之前先备份。装了 `codex` 命令的话 Codex 用 `codex mcp add` 接。接好后重启软件。
+
+```bash
+monash connect                 # 列出所有软件和接入状态
+monash connect vscode --print  # 只打印要加的配置，不改文件
+monash connect cursor --remove # 移除
+```
+
+`monash connect` 要 Study Kit 1.2.0 以上。提示没有这个命令的话先运行 `monash update`。
 
 <Aside type="caution">
-实际测试过的只有 **Claude Desktop** 和 **Claude Code**。下面的配置照各家 2026 年 9 月的官方文档写，有出入时以官方文档为准。
+实际用过的只有 **Claude Desktop** 和 **Claude Code**。`monash connect` 写的格式照各家 2026 年 10 月的官方文档，有出入时以官方文档为准。
 </Aside>
+
+配置文件里有注释的话（VS Code 允许写注释），`monash connect` 不会动它，会把要加的那段打印出来让你自己贴。想手动配置就按下面两步。
 
 ## 1. 找到 `monash` 的完整路径
 
@@ -61,6 +79,17 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
     ```json
     {
       "servers": {
+        "monash": { "type": "stdio", "command": "/full/path/monash", "args": ["mcp"] }
+      }
+    }
+    ```
+  </TabItem>
+  <TabItem label="Windsurf">
+    `~/.codeium/windsurf/mcp_config.json`：
+
+    ```json
+    {
+      "mcpServers": {
         "monash": { "command": "/full/path/monash", "args": ["mcp"] }
       }
     }
