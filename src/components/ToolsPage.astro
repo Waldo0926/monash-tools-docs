@@ -20,18 +20,22 @@ const [kit, hub, ed, att, bot] = p.tools;
   <section class="tp-head wrap">
     <h1 data-rise><span>{p.h1a}</span> <span class="accent">{p.h1b}</span></h1>
     <p data-rise>{p.lead}</p>
-    <nav class="tp-index" data-rise-group aria-label={p.title}>
-      {p.tools.map((tool) => <a href={`#${tool.id}`}>{tool.name}</a>)}
-    </nav>
   </section>
 
+  <div class="wrap tp-layout">
+  <nav class="tp-side" aria-label={p.title} data-tp-side>
+    <ol>
+      {p.tools.map((tool, n) => <li><a href={`#${tool.id}`} data-tp-link={tool.id}><span>0{n + 1}</span>{tool.name}</a></li>)}
+    </ol>
+  </nav>
+  <div class="tp-main">
   {p.tools.map((tool, n) => (
-    <section class="tp" id={tool.id}>
-      <div class="wrap tp-grid">
+    <section class="tp" id={tool.id} data-tp={tool.id}>
         <div data-rise>
+          <p class="tp-kicker"><span>0{n + 1}</span>{tool.name}</p>
           <h2>{tool.h2}</h2>
           <p class="tp-desc">{tool.desc}</p>
-          <dl class="spec">
+          <dl class="facts">
             {tool.spec.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
           </dl>
           {tool.cmd && (
@@ -48,14 +52,11 @@ const [kit, hub, ed, att, bot] = p.tools;
           </div>
         </div>
 
-        <figure class="demo" data-tabs data-rise style="margin:0">
-          <div class="demo-bar">
-            <span class="demo-title">{tool.name}</span>
-            <div class="seg" role="tablist">
-              {tool.tabs.map((label, i) => (
-                <button type="button" role="tab" data-tab aria-selected={i === 0 ? 'true' : 'false'}>{label}</button>
-              ))}
-            </div>
+        <figure class="demo" data-tabs data-rise>
+          <div class="demo-tabs" role="tablist">
+            {tool.tabs.map((label, i) => (
+              <button type="button" role="tab" data-tab aria-selected={i === 0 ? 'true' : 'false'}>{label}</button>
+            ))}
           </div>
 
           {n === 0 && (
@@ -165,7 +166,21 @@ const [kit, hub, ed, att, bot] = p.tools;
           )}
           <figcaption class="demo-note">{tool.note}</figcaption>
         </figure>
-      </div>
     </section>
   ))}
+  </div>
+  </div>
 </Shell>
+
+<script>
+  // Highlight the tool you are reading in the side index.
+  const links = new Map([...document.querySelectorAll<HTMLElement>('[data-tp-link]')].map((a) => [a.dataset.tpLink, a]));
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      links.forEach((a) => a.removeAttribute('aria-current'));
+      links.get((e.target as HTMLElement).dataset.tp)?.setAttribute('aria-current', 'true');
+    }
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('[data-tp]').forEach((el) => io.observe(el));
+</script>

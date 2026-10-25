@@ -22,13 +22,13 @@ export default defineConfig({
       },
       logo: { src: './src/assets/logo.svg' },
       components: {
-        Header: './src/components/docs/Header.astro',
         Sidebar: './src/components/docs/Sidebar.astro',
       },
+      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Waldo0926' }],
       favicon: '/favicon.svg',
       editLink: { baseUrl: 'https://github.com/Waldo0926/monash-tools-docs/edit/main/' },
       lastUpdated: true,
-      customCss: ['@fontsource-variable/inter', './src/styles/custom.css'],
+      customCss: ['@fontsource-variable/inter', '@fontsource/instrument-serif/400.css', './src/styles/custom.css'],
       head: [
         { tag: 'link', attrs: { rel: 'alternate', type: 'text/plain', href: '/llms.txt', title: 'llms.txt' } },
       ],
