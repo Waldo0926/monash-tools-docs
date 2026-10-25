@@ -1,0 +1,84 @@
+---
+// Sidebar: a tool switcher at the top, then only the pages of the tool you are reading.
+import MobileMenuFooter from '@astrojs/starlight/components/MobileMenuFooter.astro';
+import SidebarPersister from '@astrojs/starlight/components/SidebarPersister.astro';
+import SidebarSublist from '@astrojs/starlight/components/SidebarSublist.astro';
+import Compass from '@lucide/astro/icons/compass';
+import BookOpen from '@lucide/astro/icons/book-open';
+import GraduationCap from '@lucide/astro/icons/graduation-cap';
+import MessagesSquare from '@lucide/astro/icons/messages-square';
+import TicketCheck from '@lucide/astro/icons/ticket-check';
+import MessageCircle from '@lucide/astro/icons/message-circle';
+import Ellipsis from '@lucide/astro/icons/ellipsis';
+import ChevronsUpDown from '@lucide/astro/icons/chevrons-up-down';
+import { tabs, currentGroup } from './tabs';
+
+const { sidebar, locale } = Astro.locals.starlightRoute;
+const zh = locale === 'zh-cn';
+const prefix = zh ? '/zh-cn' : '';
+// Same order as the sidebar groups in astro.config.mjs.
+const icons = [Compass, BookOpen, GraduationCap, MessagesSquare, TicketCheck, MessageCircle, Ellipsis];
+const items = tabs(sidebar as any).map((t, i) => ({ ...t, Icon: icons[i] ?? Ellipsis }));
+const current = items.find((t) => t.current);
+const Current = current?.Icon;
+---
+
+<details class="switch">
+  <summary>
+    {current && Current ? (
+      <><span class="ic"><Current size={16} /></span><span class="name">{current.label}</span></>
+    ) : (
+      <span class="name">{zh ? '选择工具' : 'Choose a tool'}</span>
+    )}
+    <span class="chev"><ChevronsUpDown size={15} /></span>
+  </summary>
+  <ul>
+    {items.map(({ label, href, current, Icon }) => (
+      <li><a href={href} aria-current={current ? 'true' : undefined}><span class="ic"><Icon size={16} /></span>{label}</a></li>
+    ))}
+    <li class="sep"><a href={`${prefix}/tools/`}>{zh ? '所有工具一览' : 'All tools at a glance'}</a></li>
+  </ul>
+</details>
+
+<SidebarPersister>
+  <SidebarSublist sublist={currentGroup(sidebar as any) as any} />
+</SidebarPersister>
+
+<div class="md:sl-hidden">
+  <MobileMenuFooter />
+</div>
+
+<style>
+  .switch { position: relative; }
+  .switch summary {
+    list-style: none; cursor: pointer;
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.55rem 0.7rem; border-radius: 0.75rem;
+    border: 1px solid var(--sl-color-hairline-light);
+    background: var(--sl-color-bg);
+    font-weight: 600; font-size: 0.95rem; color: var(--sl-color-white);
+  }
+  .switch summary::-webkit-details-marker { display: none; }
+  .switch summary:hover { border-color: var(--sl-color-gray-4); }
+  .name { flex: 1; }
+  .chev { color: var(--sl-color-gray-3); display: flex; }
+  .ic {
+    display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 0.5rem;
+    background: var(--tool-ic-bg); color: var(--sl-color-white); flex: none;
+  }
+  summary .ic { background: var(--pearl); color: #111; }
+  .switch ul {
+    list-style: none; margin: 0.4rem 0 0; padding: 0.35rem;
+    position: absolute; left: 0; right: 0; z-index: 10;
+    background: var(--sl-color-bg); border: 1px solid var(--sl-color-hairline-light); border-radius: 0.8rem;
+    box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.35);
+  }
+  .switch li a {
+    display: flex; align-items: center; gap: 0.6rem; padding: 0.4rem 0.45rem; border-radius: 0.55rem;
+    color: var(--sl-color-gray-2); text-decoration: none; font-size: 0.9rem;
+  }
+  .switch li a:hover { background: var(--tool-ic-bg); color: var(--sl-color-white); }
+  .switch li a[aria-current] { color: var(--sl-color-white); font-weight: 600; }
+  .switch li.sep { border-top: 1px solid var(--sl-color-hairline); margin-top: 0.3rem; padding-top: 0.3rem; }
+  .switch li.sep a { padding-left: 0.6rem; font-size: 0.85rem; }
+</style>

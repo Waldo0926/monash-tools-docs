@@ -1,421 +1,318 @@
 ---
-import '@fontsource-variable/inter';
-import '../styles/landing.css';
+import Shell from './Shell.astro';
 import ArrowRight from '@lucide/astro/icons/arrow-right';
+import ArrowUpRight from '@lucide/astro/icons/arrow-up-right';
 import Copy from '@lucide/astro/icons/copy';
 import Check from '@lucide/astro/icons/check';
-import Sun from '@lucide/astro/icons/sun';
-import Moon from '@lucide/astro/icons/moon';
-import Lock from '@lucide/astro/icons/lock';
-import BookOpen from '@lucide/astro/icons/book-open';
-import Quote from '@lucide/astro/icons/quote';
-import Gift from '@lucide/astro/icons/gift';
-import Eye from '@lucide/astro/icons/eye';
-import HardDrive from '@lucide/astro/icons/hard-drive';
-import Search from '@lucide/astro/icons/search';
-import RefreshCw from '@lucide/astro/icons/refresh-cw';
 import { strings, type Lang } from '../i18n/landing';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = strings[lang];
-const zh = lang === 'zh';
 const link = (href: string) => (href.startsWith('http') || href.startsWith('/') ? href : `${t.prefix}/${href}`);
-const ruleIcons = [Eye, Lock, Quote, Gift];
-const stepIcons = [RefreshCw, HardDrive, Search];
+
+// A page thumbnail is a few grey bars. Widths come from a fixed seed so every build looks the same.
+let seed = 7;
+const rand = () => ((seed = (seed * 9301 + 49297) % 233280) / 233280);
+const page = () => {
+  const n = 3 + Math.floor(rand() * 4);
+  return Array.from({ length: n }, (_, i) => (i === 0 ? 45 + rand() * 30 : 55 + rand() * 45));
+};
+const kinds = ['pdf', 'pdf', 'ed', 'pdf', 'rec', 'web', 'pdf', 'ed'];
+
+// Hero wall: 7 x 5 pages, one of them lit.
+const HERO_HIT = 17;
+const heroPages = Array.from({ length: 35 }, (_, i) => ({ bars: page(), kind: kinds[i % kinds.length] }));
+
+// Story wall: 8 x 5 pages. The hit sits in the middle so it has room to lift out.
+const COLS = 8;
+const HIT = 19;
+const storyPages = Array.from({ length: 40 }, (_, i) => ({
+  bars: page(),
+  kind: kinds[(i * 3) % kinds.length],
+  from: i % 3 === 0 ? 'ed' : 'moodle',
+  label: t.sheets[(i * 5) % t.sheets.length],
+}));
 ---
 
-<!doctype html>
-<html lang={t.htmlLang}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{t.title}</title>
-    <meta name="description" content={t.description} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" hreflang="en" href="https://docs.secureview.tech/" />
-    <link rel="alternate" hreflang="zh-CN" href="https://docs.secureview.tech/zh-cn/" />
-    <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
-    <meta property="og:title" content={t.title} />
-    <meta property="og:description" content={t.description} />
-    <meta property="og:type" content="website" />
-    <script is:inline>
-      // Share the theme choice with the docs pages, which store it under the same key.
-      (() => {
-        let saved = '';
-        try { saved = localStorage.getItem('starlight-theme') || ''; } catch {}
-        const dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
-      })();
-    </script>
-  </head>
-  <body>
-    <header class="nav">
-      <div class="wrap nav-row">
-        <a class="brand" href={`${t.prefix}/`}>
-          <img src="/favicon.svg" alt="" width="26" height="26" />
-          <span>{t.title}</span>
-        </a>
-        <nav class="nav-links" aria-label="Main">
-          <a href={link('choose/')}>{t.nav.docs}</a>
-          <a href={link('study-kit/')}>{t.nav.kit}</a>
-          <a href={link('monash-hub/')}>{t.nav.hub}</a>
-          <a href="https://github.com/Waldo0926" class="icon-link" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
-          <a href={t.otherLang.href} lang={zh ? 'en' : 'zh-CN'}>{t.otherLang.label}</a>
-          <button class="icon-btn" type="button" data-theme-toggle aria-label={t.theme}>
-            <span class="sun"><Sun size={18} /></span><span class="moon"><Moon size={18} /></span>
-          </button>
-          <a class="pill" href={link('study-kit/install/')}>{t.nav.start}<ArrowRight size={16} /></a>
-        </nav>
-      </div>
-    </header>
+<Shell lang={lang}>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 data-rise>
+          <span>{t.hero.h1a}</span>
+          <span class="accent">{t.hero.h1b}</span>
+        </h1>
+        <p class="lead" data-rise>{t.hero.lead}</p>
 
-    <main>
-      <!-- Hero -->
-      <section class="hero wrap">
-        <div class="hero-copy">
-          <p class="eyebrow">{t.hero.eyebrow}</p>
-          <h1>
-            <span>{t.hero.h1a}</span>
-            <span>{t.hero.h1b}</span>
-            <span class="soft">{t.hero.h1c}</span>
-          </h1>
-          <p class="lead">{t.hero.lead}</p>
-
-          <div class="install" data-tabs>
-            <div class="install-tabs" role="tablist">
-              {t.hero.tabs.map((label, i) => (
-                <button type="button" role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-tab={i}>{label}</button>
-              ))}
-            </div>
-            {t.hero.cmds.map((cmd, i) => (
-              <div class="install-panel" data-panel={i} hidden={i !== 0}>
-                <div class="cmd">
-                  <code>{i < 2 && <span class="prompt">{i === 0 ? '$' : '>'}</span>}{cmd}</code>
-                  <button type="button" class="copy" data-copy={cmd} aria-label={t.copy}>
-                    <span class="i-copy"><Copy size={16} /></span><span class="i-done"><Check size={16} /></span>
-                  </button>
-                </div>
-                <p class="install-note">{t.hero.notes[i]}</p>
-              </div>
+        <div class="install" data-tabs data-os data-rise>
+          <div class="seg" role="tablist">
+            {t.hero.tabs.map((label, i) => (
+              <button type="button" role="tab" data-tab aria-selected={i === 0 ? 'true' : 'false'}>{label}</button>
             ))}
           </div>
-
-          <ul class="meta">
-            {t.hero.meta.map((m) => <li>{m}</li>)}
-          </ul>
-          <a class="text-link" href={link('choose/')}>{t.hero.secondary} <ArrowRight size={16} /></a>
-        </div>
-
-        <!-- Chat demo -->
-        <div class="demo" data-demo>
-          <div class="window">
-            <div class="window-bar">
-              <span class="dots"><i></i><i></i><i></i></span>
-              <span class="window-title">{t.demo.window}</span>
-              <span class="connected"><i></i>{t.demo.connected}</span>
-            </div>
-            <div class="window-body">
-              {t.demo.items.map((d, i) => (
-                <div class="convo" data-convo={i} hidden={i !== 0}>
-                  <div class="bubble">{d.q}</div>
-                  <div class="toolcall"><span class="tc-dot"></span>monash<span class="tc-sep">·</span>{d.tool}</div>
-                  <div class="answer">
-                    <div class="answer-head">
-                      <strong>{d.head}</strong>
-                      <span>{d.sub}</span>
-                    </div>
-                    {d.rows.length > 0 && (
-                      <ul class="rows">
-                        {d.rows.map((r) => (
-                          <li class={r.tone ? `tone-${r.tone}` : ''}>
-                            <span class="tag">{r.tag}</span>
-                            <span class="row-title">{r.title}</span>
-                            <span class="row-meta">{r.meta}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                    {d.bars && (
-                      <ul class="bars">
-                        {d.bars.map((b) => (
-                          <li>
-                            <span class="bar-label">{b.label}</span>
-                            <span class="bar"><i style={`--w:${b.value}%`}></i></span>
-                            <span class="bar-text">{b.text}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                  <p class="reply">{d.reply}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div class="questions" role="tablist" aria-label={zh ? '示例问题' : 'Example questions'}>
-            {t.demo.items.map((d, i) => (
-              <button type="button" role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-q={i}>
-                <span>{d.q}</span><i class="progress"></i>
-              </button>
-            ))}
-          </div>
-          <p class="sample">{t.demo.sample}</p>
-        </div>
-      </section>
-
-      <!-- Flow -->
-      <section class="flow">
-        <div class="wrap">
-          <p class="eyebrow">{t.flow.eyebrow}</p>
-          <h2><span>{t.flow.h2a}</span> <span class="soft">{t.flow.h2b}</span></h2>
-
-          <div class="diagram" data-reveal>
-            <div class="node-col">
-              {t.flow.sources.map((s, i) => (
-                <div class="node source">
-                  <strong>{s}</strong><span>{t.flow.sourceNotes[i]}</span>
-                </div>
-              ))}
-            </div>
-            <svg class="wires" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
-              <path pathLength="1" class="wire w1" d="M0 50 C 160 50, 160 100, 400 100" />
-              <path pathLength="1" class="wire w2" d="M0 150 C 160 150, 160 100, 400 100" />
-              <path pathLength="1" class="pulse w1" d="M0 50 C 160 50, 160 100, 400 100" />
-              <path pathLength="1" class="pulse w2" d="M0 150 C 160 150, 160 100, 400 100" />
-            </svg>
-            <div class="node machine">
-              <div class="machine-head"><Lock size={16} /><strong>{t.flow.middle}</strong></div>
-              <ul>
-                {t.flow.middleNotes.map((n) => <li>{n}</li>)}
-              </ul>
-            </div>
-            <svg class="wires short" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
-              <path pathLength="1" class="wire w3" d="M0 100 L 200 100" />
-              <path pathLength="1" class="pulse w3" d="M0 100 L 200 100" />
-            </svg>
-            <div class="node ai">
-              <strong>{t.flow.ai}</strong><span>{t.flow.aiNote}</span>
-            </div>
-          </div>
-
-          <ol class="steps">
-            {t.flow.steps.map((s, i) => {
-              const Icon = stepIcons[i];
-              return (
-                <li>
-                  <span class="step-icon"><Icon size={18} /></span>
-                  <h3>{s.h}</h3>
-                  <p>{s.p}</p>
-                </li>
-              );
-            })}
-          </ol>
-
-          <dl class="stats">
-            {t.flow.stats.map((s) => (
-              <div><dt>{s.n}</dt><dd>{s.l}</dd></div>
-            ))}
-          </dl>
-          <a class="text-link" href={link('study-kit/privacy/')}>{t.flow.more} <ArrowRight size={16} /></a>
-        </div>
-      </section>
-
-      <!-- Tools -->
-      <section class="tools wrap" id="tools">
-        <p class="eyebrow">{t.tools.eyebrow}</p>
-        <h2><span>{t.tools.h2a}</span> <span class="soft">{t.tools.h2b}</span></h2>
-        <div class="tool-grid">
-          {t.tools.cards.map((c) => (
-            <a class={`tool tool-${c.key}`} href={link(c.href)}>
-              <div class="preview" aria-hidden="true">
-                {c.key === 'kit' && (
-                  <div class="mini-term">
-                    <p><b>$</b> monash todo</p>
-                    <p class="dim">{zh ? '本周 · 3 项截止' : 'This week · 3 due'}</p>
-                    <p><span class="warn">!</span> FIT2014 Lab 8 {zh ? '可能漏交' : 'may be missing'}</p>
-                    <p><span class="ok">·</span> FIT2102 A2 {zh ? '周五 23:55' : 'Fri 23:55'}</p>
-                    <p><b>$</b> monash grep "monad"<span class="caret"></span></p>
-                  </div>
-                )}
-                {c.key === 'hub' && (
-                  <div class="mini-hub">
-                    <div class="mh-search"><Search size={14} /><span>{zh ? 'WAM 怎么算' : 'how is WAM calculated'}</span></div>
-                    <div class="mh-result"><span class="lbl official">Official source</span><p>{zh ? 'WAM 和 GPA 的计算方法' : 'How WAM and GPA are calculated'}</p></div>
-                    <div class="mh-result"><span class="lbl hb">Official Handbook</span><p>{zh ? '各课程学分和级别' : 'Credit points and level of each unit'}</p></div>
-                    <div class="mh-result"><span class="lbl comm">Community</span><p>{zh ? '同学的经验帖' : 'What other students found'}</p></div>
-                  </div>
-                )}
-                {c.key === 'ed' && (
-                  <div class="mini-ed">
-                    <div class="me-post"><span class="me-badge">{zh ? '老师答' : 'Staff'}</span><p>{zh ? '可以晚交到周一，不扣分' : 'Monday is fine, no penalty'}</p></div>
-                    <div class="me-post"><span class="me-badge alt">{zh ? '48 小时内' : 'New'}</span><p>{zh ? 'Quiz 6 考哪几周？' : 'Which weeks does Quiz 6 cover?'}</p></div>
-                    <div class="me-zip">{zh ? '一键下载资料 · Week 1–9.zip' : 'Download all · Week 1–9.zip'}</div>
-                  </div>
-                )}
-                {c.key === 'att' && (
-                  <div class="mini-att">
-                    <label><i class="box on"></i><span>FIT2102 Workshop</span><code>K7Q2M</code></label>
-                    <label><i class="box on"></i><span>FIT2109 Lab</span><code>W47VD</code></label>
-                    <label><i class="box"></i><span>FIT2014 Tutorial</span><em>{zh ? '待确认' : 'review'}</em></label>
-                    <div class="att-btn">{zh ? '确认并提交' : 'Confirm and submit'}</div>
-                  </div>
-                )}
-                {c.key === 'bot' && (
-                  <div class="mini-chat">
-                    <p class="me" lang="zh-CN">怎么申请特殊考虑？</p>
-                    <p class="them" lang="zh-CN">在官网的 Special Consideration 表格提交，附上证明材料。<span class="src">monash.edu</span></p>
-                  </div>
-                )}
+          {t.hero.cmds.map((cmd, i) => (
+            <div class="cmd-panel" data-panel hidden={i !== 0}>
+              <div class="cmd">
+                <span class="prompt" aria-hidden="true">{i < 2 ? '$' : '›'}</span>
+                <code>{cmd}</code>
+                <button class="copy" type="button" data-copy={cmd} aria-label={t.copy}>
+                  <span class="i-copy"><Copy size={15} /></span><span class="i-done"><Check size={15} /></span>
+                </button>
               </div>
-              <div class="tool-body">
-                <h3>{c.name}</h3>
-                <p>{c.line}</p>
-                <dl class="tool-meta">
-                  <div><dt>{t.tools.installLabel}</dt><dd>{c.install}</dd></div>
-                  <div><dt>{t.tools.runsLabel}</dt><dd>{c.runs}</dd></div>
-                </dl>
-                <span class="tool-link">{t.tools.open}<ArrowRight size={16} /></span>
-              </div>
-            </a>
+              <p class="cmd-note">{t.hero.notes[i]}</p>
+            </div>
           ))}
         </div>
-      </section>
 
-      <!-- Rules -->
-      <section class="rules wrap">
-        <p class="eyebrow">{t.rules.eyebrow}</p>
-        <ul>
-          {t.rules.items.map((r, i) => {
-            const Icon = ruleIcons[i];
-            return (
-              <li>
-                <Icon size={20} />
-                <h3>{r.h}</h3>
-                <p>{r.p}</p>
+        <div class="hero-actions" data-rise>
+          <a class="btn btn-light" href={link('study-kit/install/')}>{t.hero.primary}<ArrowRight size={16} /></a>
+          <a class="btn btn-ghost" href={link('tools/')}>{t.hero.secondary}</a>
+        </div>
+        <p class="hero-meta" data-rise>{t.hero.meta}</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="wall-scene">
+          <div class="wall">
+            {heroPages.map((p, i) => (
+              <div class:list={['pg', `k-${p.kind}`, { hit: i === HERO_HIT }]} style={`--i:${i}`}>
+                {p.bars.map((w) => <i style={`width:${w.toFixed(0)}%`}></i>)}
+                {i === HERO_HIT && <b>p.14</b>}
+              </div>
+            ))}
+            <div class="sweep"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll story: the wall of pages, step by step -->
+  <section class="story" id="how" data-story style={`--cols:${COLS}`}>
+    <div class="story-pin">
+      <div class="wrap story-grid">
+        <div class="story-text">
+          <h2>
+            <span>{t.story.h2a}</span>
+            <span class="soft">{t.story.h2b}</span>
+          </h2>
+          <div class="steps-wrap">
+          <ol class="steps">
+            {t.story.steps.map((s, i) => (
+              <li data-step-text={i}>
+                <span class="n">0{i + 1}</span>
+                <div><h3>{s.h}</h3><p>{s.p}</p></div>
               </li>
-            );
-          })}
-        </ul>
-      </section>
-
-      <!-- Agent -->
-      <section class="agent">
-        <div class="wrap agent-grid">
-          <div>
-            <p class="eyebrow">{t.agent.eyebrow}</p>
-            <h2>{t.agent.h2}</h2>
-            <p class="agent-p">{t.agent.p}</p>
-            <a class="text-link light" href={link('ai-setup/')}>{t.agent.more} <ArrowRight size={16} /></a>
+            ))}
+          </ol>
+          <div class="progress" aria-hidden="true"><i data-progress></i></div>
           </div>
-          <div class="agent-card">
-            <div class="cmd dark">
-              <code>{t.agent.prompt}</code>
-              <button type="button" class="copy" data-copy={t.agent.prompt} aria-label={t.copy}>
-                <span class="i-copy"><Copy size={16} /></span><span class="i-done"><Check size={16} /></span>
-              </button>
+          <a class="text-link" href={link('study-kit/privacy/')}>{t.story.more}<ArrowRight size={15} /></a>
+        </div>
+
+        <div class="stage" aria-hidden="true">
+          <svg class="beams" data-beams>
+            <defs>
+              <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#c3b8ff" stop-opacity="0.9" />
+                <stop offset="1" stop-color="#9fd8ff" stop-opacity="0.15" />
+              </linearGradient>
+            </defs>
+            <path data-beam="moodle" />
+            <path data-beam="ed" />
+          </svg>
+          <div class="sources">
+            {t.story.sources.map((s, i) => (
+              <div class="source" data-source={i === 0 ? 'moodle' : 'ed'}><strong>{s.name}</strong><span>{s.note}</span></div>
+            ))}
+          </div>
+          <div class="laptop-label">{t.story.laptop}<em>{t.story.sample}</em></div>
+
+          <div class="query" data-query>
+            <span class="q-icon"></span><span class="q-text" data-q-text data-full={t.story.query}></span><span class="caret"></span>
+          </div>
+
+          <div class="grid" data-grid>
+            {storyPages.map((p, i) => (
+              <div class:list={['pg', `k-${p.kind}`, { hit: i === HIT }]} data-pg={i} data-from={p.from}>
+                {p.bars.map((w) => <i style={`width:${w.toFixed(0)}%`}></i>)}
+                {i === HIT && <b>p.14</b>}
+              </div>
+            ))}
+            <div class="scan" data-scan></div>
+          </div>
+
+          <div class="answer" data-answer>
+            <div class="a-q">{t.story.query}</div>
+            <div class="a-tool"><i></i>monash · {t.story.answer.tool}</div>
+            <div class="a-src">
+              <span class="a-thumb"><i></i><i></i><i></i></span>
+              <div><strong>{t.story.answer.source}</strong><span>{t.story.answer.read}</span></div>
             </div>
-            <p class="you-label">{t.agent.youLabel}</p>
-            <ul class="you">
-              {t.agent.you.map((y) => <li><Lock size={14} />{y}</li>)}
-            </ul>
+            <p class="a-reply">{t.story.answer.reply}</p>
           </div>
         </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="wrap footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href={`${t.prefix}/`}><img src="/favicon.svg" alt="" width="22" height="22" /><span>{t.title}</span></a>
-          <p>{t.footer.blurb}</p>
-        </div>
-        {t.footer.cols.map((col) => (
-          <div>
-            <h4>{col.h}</h4>
-            <ul>{col.links.map(([label, href]) => <li><a href={link(href)}>{label}</a></li>)}</ul>
-          </div>
-        ))}
       </div>
-      <div class="wrap footer-small">
-        <span>{t.footer.small}</span>
-        <span><BookOpen size={14} /> {t.footer.credit}</span>
-      </div>
-    </footer>
+    </div>
+  </section>
 
-    <script>
-      // Install tabs
-      for (const box of document.querySelectorAll<HTMLElement>('[data-tabs]')) {
-        const tabs = box.querySelectorAll<HTMLButtonElement>('[data-tab]');
-        const panels = box.querySelectorAll<HTMLElement>('[data-panel]');
-        const show = (i: number) => {
-          tabs.forEach((b, j) => b.setAttribute('aria-selected', String(i === j)));
-          panels.forEach((p, j) => (p.hidden = i !== j));
-        };
-        tabs.forEach((b, i) => b.addEventListener('click', () => show(i)));
-        // Windows visitors see the PowerShell line first.
-        if (/Windows/.test(navigator.userAgent)) show(1);
-      }
+  <!-- Tools -->
+  <section class="tools wrap" id="tools">
+    <h2 class="section-h" data-rise>{t.tools.h2}</h2>
+    <ul class="tool-list" data-rise-group>
+      {t.tools.rows.map((r, i) => (
+        <li>
+          <a href={link(r.href)}>
+            <span class="t-n">0{i + 1}</span>
+            <span class="t-name">{r.name}</span>
+            <span class="t-line">{r.line}</span>
+            <span class="t-meta"><em>{t.tools.installLabel}</em>{r.install}<em>{t.tools.runsLabel}</em>{r.runs}</span>
+            <span class="t-go"><ArrowUpRight size={20} /></span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <ul class="rules" data-rise>
+      {t.tools.rules.map((r) => <li>{r}</li>)}
+    </ul>
+  </section>
 
-      // Copy buttons
-      for (const btn of document.querySelectorAll<HTMLButtonElement>('[data-copy]')) {
-        btn.addEventListener('click', async () => {
-          try {
-            await navigator.clipboard.writeText(btn.dataset.copy || '');
-            btn.classList.add('done');
-            setTimeout(() => btn.classList.remove('done'), 1600);
-          } catch {}
-        });
-      }
+  <!-- Let your AI install it -->
+  <section class="agent wrap">
+    <h2 class="section-h center" data-rise>
+      <span>{t.agent.h2a}</span>
+      <span class="accent">{t.agent.h2b}</span>
+    </h2>
+    <p class="agent-p" data-rise>{t.agent.p}</p>
+    <div class="cmd cmd-wide" data-rise>
+      <span class="prompt" aria-hidden="true">›</span>
+      <code>{t.agent.prompt}</code>
+      <button class="copy" type="button" data-copy={t.agent.prompt} aria-label={t.copy}>
+        <span class="i-copy"><Copy size={15} /></span><span class="i-done"><Check size={15} /></span>
+      </button>
+    </div>
+    <a class="text-link center" href={link('ai-setup/')} data-rise>{t.agent.more}<ArrowRight size={15} /></a>
+  </section>
+</Shell>
 
-      // Chat demo: cycles through the questions until the visitor picks one.
-      const demo = document.querySelector<HTMLElement>('[data-demo]');
-      if (demo) {
-        const qs = demo.querySelectorAll<HTMLButtonElement>('[data-q]');
-        const convos = demo.querySelectorAll<HTMLElement>('[data-convo]');
-        const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-        let current = 0;
-        let timer = 0;
-        const show = (i: number) => {
-          current = i;
-          qs.forEach((b, j) => b.setAttribute('aria-selected', String(i === j)));
-          convos.forEach((c, j) => {
-            c.hidden = i !== j;
-            if (i === j) {
-              c.classList.remove('play');
-              void c.offsetWidth;
-              c.classList.add('play');
-            }
-          });
-        };
-        const auto = () => {
-          if (still) return;
-          demo.classList.add('auto');
-          timer = window.setInterval(() => show((current + 1) % qs.length), 7000);
-        };
-        qs.forEach((b, i) =>
-          b.addEventListener('click', () => {
-            window.clearInterval(timer);
-            demo.classList.remove('auto');
-            show(i);
-          }),
-        );
-        show(0);
-        auto();
-      }
+<script>
+  // Scroll story. The section is tall; its inner stage is sticky. Progress 0..1 through the
+  // section drives four steps: pages arrive, get indexed, one is found, it becomes the answer.
+  const story = document.querySelector<HTMLElement>('[data-story]');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      // Reveal the diagram when it scrolls into view.
-      const io = new IntersectionObserver((entries) => {
-        for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      }, { threshold: 0.35 });
-      document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+  if (story && still) story.classList.add('static');
 
-      // Theme toggle, stored where the docs pages read it.
-      document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
-        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-        document.documentElement.dataset.theme = next;
-        try { localStorage.setItem('starlight-theme', next); } catch {}
+  if (story && !still) {
+    const pages = [...story.querySelectorAll<HTMLElement>('[data-pg]')];
+    const hit = story.querySelector<HTMLElement>('.pg.hit')!;
+    const scan = story.querySelector<HTMLElement>('[data-scan]')!;
+    const qText = story.querySelector<HTMLElement>('[data-q-text]')!;
+    const full = qText.dataset.full || '';
+    const bar = story.querySelector<HTMLElement>('[data-progress]')!;
+    const texts = [...story.querySelectorAll<HTMLElement>('[data-step-text]')];
+    const grid = story.querySelector<HTMLElement>('[data-grid]')!;
+    const answer = story.querySelector<HTMLElement>('[data-answer]')!;
+    const cols = 8;
+    const stage = story.querySelector<HTMLElement>('.stage')!;
+
+    // Where each page starts its flight: the centre of the Moodle or Ed label above the grid.
+    // offsetLeft/Top ignore transforms, so this can be measured at any point in the animation.
+    let origin: { dx: number; dy: number }[] = [];
+    const layout = () => {
+      const src: Record<string, { x: number; y: number }> = {};
+      story.querySelectorAll<HTMLElement>('[data-source]').forEach((el) => {
+        const box = el.offsetParent as HTMLElement;
+        src[el.dataset.source!] = { x: box.offsetLeft + el.offsetLeft + el.offsetWidth / 2, y: box.offsetTop + el.offsetTop + el.offsetHeight / 2 };
       });
-    </script>
-  </body>
-</html>
+      origin = pages.map((el) => {
+        const s = src[el.dataset.from!];
+        return { dx: s.x - (grid.offsetLeft + el.offsetLeft + el.offsetWidth / 2), dy: s.y - (grid.offsetTop + el.offsetTop + el.offsetHeight / 2) };
+      });
+      // Beams: a curve from each label down into the grid.
+      const svg = story.querySelector<SVGSVGElement>('[data-beams]')!;
+      svg.setAttribute('viewBox', `0 0 ${stage.clientWidth} ${stage.clientHeight}`);
+      const mid = grid.offsetLeft + grid.clientWidth / 2;
+      const top = grid.offsetTop + grid.clientHeight * 0.35;
+      svg.querySelectorAll<SVGPathElement>('[data-beam]').forEach((path) => {
+        const s = src[path.dataset.beam!];
+        path.setAttribute('d', `M ${s.x} ${s.y + 20} C ${s.x} ${top - 40}, ${mid} ${s.y + 60}, ${mid} ${top}`);
+      });
+      last = -1;
+    };
+
+    const clamp = (v: number) => Math.min(1, Math.max(0, v));
+    const seg = (p: number, a: number, b: number) => clamp((p - a) / (b - a));
+    const ease = (x: number) => 1 - Math.pow(1 - x, 3);
+    // Spring-like overshoot for pages landing in the grid.
+    const back = (x: number) => 1 + 2.2 * Math.pow(x - 1, 3) + 1.2 * Math.pow(x - 1, 2);
+
+    // Progress chases the scroll position instead of jumping to it, so the scene stays smooth
+    // when the wheel moves in steps.
+    let p = 0;
+    let last = -1;
+    const render = () => {
+      const r = story.getBoundingClientRect();
+      const target = clamp(-r.top / (r.height - innerHeight));
+      p += (target - p) * 0.16;
+      if (Math.abs(target - p) < 0.0004) p = target;
+      if (Math.abs(p - last) < 0.0002) return;
+      last = p;
+
+      const step = p < 0.27 ? 0 : p < 0.5 ? 1 : p < 0.72 ? 2 : 3;
+      story.dataset.step = String(step);
+      texts.forEach((el, i) => el.classList.toggle('on', i === step));
+      bar.style.transform = `scaleY(${p})`;
+
+      // 1. Sync: each page flies in from its source, in reading order.
+      const sync = seg(p, 0.02, 0.26);
+      pages.forEach((el, i) => {
+        const start = (i / pages.length) * 0.75;
+        const k = seg(sync, start, start + 0.25);
+        const e = back(k);
+        const o = origin[i];
+        el.style.opacity = String(Math.min(1, k * 3));
+        el.style.setProperty('--x', `${(1 - e) * o.dx}px`);
+        el.style.setProperty('--y', `${(1 - e) * o.dy}px`);
+        el.style.setProperty('--s', String(0.35 + 0.65 * Math.min(1, e)));
+      });
+
+      // 2. Index: a scan line passes down the grid and leaves pages marked as read.
+      const idx = seg(p, 0.28, 0.48);
+      scan.style.opacity = idx > 0 && idx < 1 ? '1' : '0';
+      scan.style.transform = `translateY(${idx * grid.clientHeight}px)`;
+      const rows = Math.ceil(pages.length / cols);
+      pages.forEach((el, i) => el.classList.toggle('read', Math.floor(i / cols) < idx * rows));
+
+      // 3. Find: the question types out, then every page but one fades.
+      const typed = seg(p, 0.46, 0.58);
+      qText.textContent = full.slice(0, Math.round(typed * full.length));
+      const find = ease(seg(p, 0.56, 0.68));
+      grid.style.setProperty('--dim', String(1 - find * 0.8));
+      hit.style.setProperty('--glow', String(find));
+
+      // 4. Answer: the page lifts out and the answer card takes its place.
+      const lift = ease(seg(p, 0.72, 0.86));
+      hit.style.setProperty('--lift', String(lift));
+      const ans = seg(p, 0.8, 0.94);
+      answer.style.opacity = String(ans);
+      if (ans > 0) hit.style.opacity = String(1 - ans);
+      answer.style.transform = `translateY(${(1 - back(ans)) * 40}px) scale(${0.96 + 0.04 * ans})`;
+    };
+
+    layout();
+    addEventListener('resize', layout);
+
+    // Only run while the section is near the screen.
+    let running = false;
+    const loop = () => { if (!running) return; render(); requestAnimationFrame(loop); };
+    new IntersectionObserver(([e]) => {
+      const was = running;
+      running = e.isIntersecting;
+      if (running && !was) requestAnimationFrame(loop);
+    }, { rootMargin: '200px 0px' }).observe(story);
+  }
+</script>

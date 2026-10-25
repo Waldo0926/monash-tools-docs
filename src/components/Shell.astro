@@ -1,0 +1,140 @@
+---
+// Page frame for the home page and the tools page: head, nav, footer, smooth scroll and reveals.
+// Docs pages are Starlight and do not use this.
+import '@fontsource-variable/inter';
+import '@fontsource/instrument-serif/400-italic.css';
+import '../styles/landing.css';
+import ArrowRight from '@lucide/astro/icons/arrow-right';
+import { strings, type Lang } from '../i18n/landing';
+
+interface Props { lang: Lang; title?: string; description?: string; path?: string }
+const { lang, path = '' } = Astro.props;
+const t = strings[lang];
+const title = Astro.props.title ?? t.title;
+const description = Astro.props.description ?? t.description;
+const link = (href: string) => (href.startsWith('http') || href.startsWith('/') ? href : `${t.prefix}/${href}`);
+const other = lang === 'zh' ? `/${path}` : `/zh-cn/${path}`;
+---
+
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#060607" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" hreflang="en" href={`https://docs.secureview.tech/${path}`} />
+    <link rel="alternate" hreflang="zh-CN" href={`https://docs.secureview.tech/zh-cn/${path}`} />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <header class="nav" data-nav>
+      <div class="wrap nav-row">
+        <a class="brand" href={`${t.prefix}/`}>
+          <img src="/favicon.svg" alt="" width="24" height="24" />
+          <span>{t.title}</span>
+        </a>
+        <nav class="nav-links" aria-label="Main">
+          <a class="hide-sm" href={`${t.prefix}/#how`}>{t.nav.how}</a>
+          <a class="hide-sm" href={link('tools/')}>{t.nav.tools}</a>
+          <a class="hide-sm" href={link('choose/')}>{t.nav.docs}</a>
+          <a class="hide-sm" href="https://github.com/Waldo0926">{t.nav.github}</a>
+          <a href={other} lang={lang === 'zh' ? 'en' : 'zh-CN'}>{t.otherLang.label}</a>
+          <a class="pill" href={link('study-kit/install/')}>{t.nav.start}<ArrowRight size={15} /></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href={`${t.prefix}/`}>
+            <img src="/favicon.svg" alt="" width="22" height="22" />
+            <span>{t.title}</span>
+          </a>
+          <p>{t.footer.blurb}</p>
+        </div>
+        {t.footer.cols.map((c) => (
+          <div class="footer-col">
+            <h3>{c.h}</h3>
+            <ul>{c.links.map(([label, href]) => <li><a href={link(href)}>{label}</a></li>)}</ul>
+          </div>
+        ))}
+      </div>
+      <div class="wrap footer-small">{t.footer.small}</div>
+    </footer>
+
+    <script>
+      import Lenis from 'lenis';
+      import { animate, inView } from 'motion';
+
+      const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Smooth, slightly weighted scrolling. Skipped for reduced motion and on touch screens,
+      // where native scrolling already has momentum.
+      if (!still && matchMedia('(pointer: fine)').matches) {
+        const lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 0.95, anchors: { offset: -72 } });
+        (window as any).__lenis = lenis;
+        const raf = (time: number) => { lenis.raf(time); requestAnimationFrame(raf); };
+        requestAnimationFrame(raf);
+      }
+
+      // Nav turns solid once the page has scrolled.
+      const nav = document.querySelector<HTMLElement>('[data-nav]');
+      const onScroll = () => nav?.classList.toggle('solid', window.scrollY > 8);
+      addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Elements marked data-rise spring up into place the first time they enter the viewport.
+      // Children of a data-rise-group come in one after another.
+      const spring = { type: 'spring', stiffness: 170, damping: 19, mass: 0.9 } as const;
+      if (!still) {
+        document.querySelectorAll<HTMLElement>('[data-rise], [data-rise-group] > *').forEach((el) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(34px)';
+          el.style.filter = 'blur(6px)';
+        });
+        inView('[data-rise]', (el) => {
+          animate(el, { opacity: 1, transform: 'translateY(0px)', filter: 'blur(0px)' }, { ...spring, opacity: { duration: 0.6, ease: 'easeOut' }, filter: { duration: 0.6, ease: 'easeOut' } });
+        }, { amount: 0.25 });
+        inView('[data-rise-group]', (group) => {
+          [...group.children].forEach((el, i) =>
+            animate(el, { opacity: 1, transform: 'translateY(0px)', filter: 'blur(0px)' }, { ...spring, delay: i * 0.07, opacity: { duration: 0.6, delay: i * 0.07 }, filter: { duration: 0.6, delay: i * 0.07 } }),
+          );
+        }, { amount: 0.15 });
+      }
+
+      // Copy buttons
+      for (const btn of document.querySelectorAll<HTMLButtonElement>('[data-copy]')) {
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(btn.dataset.copy || '');
+            btn.classList.add('done');
+            setTimeout(() => btn.classList.remove('done'), 1600);
+          } catch {}
+        });
+      }
+
+      // Tabs: install commands on the home page, demo panels on the tools page.
+      for (const box of document.querySelectorAll<HTMLElement>('[data-tabs]')) {
+        const tabs = box.querySelectorAll<HTMLButtonElement>('[data-tab]');
+        const panels = box.querySelectorAll<HTMLElement>('[data-panel]');
+        const show = (i: number) => {
+          tabs.forEach((b, j) => b.setAttribute('aria-selected', String(i === j)));
+          panels.forEach((p, j) => (p.hidden = i !== j));
+        };
+        tabs.forEach((b, i) => b.addEventListener('click', () => show(i)));
+        if (box.hasAttribute('data-os') && /Windows/.test(navigator.userAgent)) show(1);
+      }
+    </script>
+  </body>
+</html>

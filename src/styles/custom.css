@@ -1,67 +1,103 @@
-/* Docs pages: Starlight with the same palette and type as the home page. */
+/* Docs pages: the home page's palette on plain white or near-black, serif page titles,
+   and the lit-page gradient as the only colour, used to mark where you are. */
 :root {
+  --pearl: linear-gradient(135deg, #ffd7c2 0%, #f2b8e4 30%, #c3b8ff 60%, #9fd8ff 100%);
   --sl-font: 'Inter Variable', 'Inter', system-ui, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   --sl-font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
-  --sl-color-accent-low: #15203d;
-  --sl-color-accent: #6d97ff;
-  --sl-color-accent-high: #c9d8ff;
-  --sl-color-bg: #090b10;
-  --sl-color-bg-nav: #090b10;
-  --sl-color-bg-sidebar: #090b10;
-  --sl-color-hairline: #1c212c;
-  --sl-color-hairline-light: #272d3a;
-  --sl-content-width: 46rem;
+  --serif: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --sl-content-width: 45rem;
+  --sl-sidebar-width: 17.5rem;
+
+  /* dark: the home page's near-black */
+  --sl-color-accent-low: #1d1a33;
+  --sl-color-accent: #c3b8ff;
+  --sl-color-accent-high: #e6e1ff;
+  --sl-color-white: #f3f2ef;
+  --sl-color-gray-1: #e2e1dc;
+  --sl-color-gray-2: #b5b4bc;
+  --sl-color-gray-3: #85848d;
+  --sl-color-gray-4: #55545c;
+  --sl-color-gray-5: #2f2e35;
+  --sl-color-gray-6: #18181c;
+  --sl-color-black: #060607;
+  --sl-color-bg: #060607;
+  --sl-color-bg-nav: #060607;
+  --sl-color-bg-sidebar: #060607;
+  --sl-color-bg-inline-code: #18181c;
+  --sl-color-hairline: #1a1a1f;
+  --sl-color-hairline-light: #26262c;
+  --sl-color-hairline-shade: #1a1a1f;
+  --tool-ic-bg: #18181c;
 }
 :root[data-theme='light'] {
-  --sl-color-accent-low: #e9efff;
-  --sl-color-accent: #1e5eff;
-  --sl-color-accent-high: #0b2a73;
-  --sl-color-bg: #fafaf8;
-  --sl-color-bg-nav: #fafaf8;
-  --sl-color-bg-sidebar: #fafaf8;
-  --sl-color-hairline: #e4e5e1;
-  --sl-color-hairline-light: #ecede9;
-  --sl-color-white: #0d1117;
-  --sl-color-gray-1: #252a33;
-  --sl-color-gray-2: #4a5160;
+  --sl-color-accent-low: #efedff;
+  --sl-color-accent: #5847d6;
+  --sl-color-accent-high: #2e2287;
+  --sl-color-white: #0f0f12;
+  --sl-color-gray-1: #24242a;
+  --sl-color-gray-2: #474750;
+  --sl-color-gray-3: #72727c;
+  --sl-color-gray-4: #a3a3ac;
+  --sl-color-gray-5: #d9d9e0;
+  --sl-color-gray-6: #f1f1f5;
+  --sl-color-gray-7: #f7f7fa;
+  --sl-color-black: #ffffff;
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-nav: #ffffff;
+  --sl-color-bg-sidebar: #ffffff;
+  --sl-color-bg-inline-code: #f1f1f5;
+  --sl-color-hairline: #ececf1;
+  --sl-color-hairline-light: #e3e3ea;
+  --sl-color-hairline-shade: #ececf1;
+  --tool-ic-bg: #f1f1f5;
 }
 
-.sl-markdown-content h1,
-.sl-markdown-content h2,
-h1#_top { letter-spacing: -0.025em; }
-h1#_top { font-weight: 750; }
-:lang(zh-CN) h1#_top, :lang(zh-CN) .sl-markdown-content h2 { letter-spacing: -0.005em; }
+/* Header: brand in ink. */
+.site-title { font-size: 1.02rem; font-weight: 650; letter-spacing: -0.015em; color: var(--sl-color-white); gap: 0.55rem; }
+.site-title img { height: 1.5rem; width: auto; }
+site-search button[data-open-modal] { border-radius: 999px; }
+
+/* Sidebar: switcher on top, then the pages; the current page gets a lit bar. */
+.sidebar-content { padding-top: 1.25rem; gap: 1.2rem; }
+.sidebar-content > sl-sidebar-state-persist > ul > li > details > summary .large,
+.sidebar-content .large { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sl-color-gray-3); }
+:lang(zh-CN) .sidebar-content .large { letter-spacing: 0.02em; text-transform: none; font-size: 0.8rem; }
+.sidebar-content ul ul { border-inline-start: 1px solid var(--sl-color-hairline-light); }
+.sidebar-content a { position: relative; padding-block: 0.32rem; color: var(--sl-color-gray-2); border-radius: 0; }
+.sidebar-content a:hover { color: var(--sl-color-white); }
+.sidebar-content a[aria-current='page'] { background: transparent; color: var(--sl-color-white); font-weight: 600; }
+.sidebar-content a[aria-current='page']::before {
+  content: ''; position: absolute; left: calc(-1 * var(--sl-sidebar-item-padding-inline, 0.5rem) - 1px); top: 0.2rem; bottom: 0.2rem;
+  width: 2px; border-radius: 2px; background: var(--pearl);
+}
+
+/* Page title in the serif from the home page. Chinese keeps the sans. */
+h1#_top { font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 4vw, 3.2rem); letter-spacing: -0.01em; line-height: 1.05; }
+:lang(zh-CN) h1#_top { font-family: var(--sl-font); font-weight: 650; font-size: 2.3rem; letter-spacing: -0.01em; }
+.sl-markdown-content h2, .sl-markdown-content h3 { font-weight: 650; letter-spacing: -0.02em; }
+.sl-markdown-content h2 { margin-top: 2.6rem; padding-top: 0.2rem; }
+:lang(zh-CN) .sl-markdown-content h2, :lang(zh-CN) .sl-markdown-content h3 { letter-spacing: 0; }
+.sl-markdown-content { line-height: 1.75; }
 :lang(zh-CN) .sl-markdown-content { line-height: 1.85; }
+.sl-markdown-content a:not(.sl-link-card a):not(.sl-link-button) { text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.sl-markdown-content :not(pre) > code { border-radius: 0.35rem; padding: 0.1em 0.35em; }
 
-/* Sidebar: quieter group labels, a pill for the current page. */
-.sidebar-content .large { font-size: var(--sl-text-sm); font-weight: 650; color: var(--sl-color-white); }
-.sidebar-content a[aria-current='page'] {
-  background: var(--sl-color-accent-low);
-  color: var(--sl-color-accent-high);
-  font-weight: 600;
-}
-:root[data-theme='light'] .sidebar-content a[aria-current='page'] { color: var(--sl-color-accent); }
+/* Tables, code, cards */
+.sl-markdown-content table { border-radius: 0.6rem; overflow: hidden; border: 1px solid var(--sl-color-hairline-light); display: table; width: 100%; }
+.sl-markdown-content th { background: var(--sl-color-gray-6); font-weight: 600; }
+.sl-markdown-content th, .sl-markdown-content td { border-color: var(--sl-color-hairline-light); }
+.expressive-code .frame { border-radius: 0.6rem; }
+.sl-link-card { border-radius: 0.8rem; border-color: var(--sl-color-hairline-light); transition: border-color 0.2s, transform 0.25s; }
+.sl-link-card:hover { border-color: var(--sl-color-accent); transform: translateY(-1px); }
+.sl-link-card .title { font-weight: 600; }
 
-/* Tables and code read as cards. */
-.sl-markdown-content table { border-radius: 10px; overflow: hidden; }
-.expressive-code .frame { border-radius: 10px; }
-.sl-markdown-content :not(pre) > code { border-radius: 5px; }
-
-.sl-link-card { border-radius: 14px; transition: transform 0.2s, box-shadow 0.2s; }
-.sl-link-card:hover { transform: translateY(-2px); }
+/* Steps: numbers on a lit chip */
+.sl-steps > li::before { background: var(--pearl); color: #111; border: 0; font-weight: 650; }
 
 .prompt-label { font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); margin-bottom: -0.5rem; font-weight: 600; }
 
-/* Header: brand in ink, not accent. */
-.site-title { font-size: 1.05rem; font-weight: 650; letter-spacing: -0.01em; color: var(--sl-color-white); gap: 0.6rem; }
-.site-title img { height: 1.6rem; width: auto; }
-
-/* Asides in the site palette instead of Starlight's purple and orange. */
-.starlight-aside { border-radius: 12px; border-inline-start-width: 3px; }
-.starlight-aside--tip, .starlight-aside--note {
-  background-color: var(--sl-color-accent-low);
-  border-color: var(--sl-color-accent);
-  --sl-color-asides-text-accent: var(--sl-color-accent-high);
-}
+/* Asides */
+.starlight-aside { border-radius: 0.6rem; border-inline-start-width: 3px; }
+.starlight-aside--tip, .starlight-aside--note { background-color: var(--sl-color-accent-low); border-color: var(--sl-color-accent); --sl-color-asides-text-accent: var(--sl-color-accent-high); }
 :root[data-theme='light'] .starlight-aside--tip, :root[data-theme='light'] .starlight-aside--note { --sl-color-asides-text-accent: var(--sl-color-accent); }
-:root[data-theme='light'] .starlight-aside--caution { background-color: #fff6ec; border-color: #ea8a2e; }
+:root[data-theme='light'] .starlight-aside--caution { background-color: #fff5ec; border-color: #e0782e; }
