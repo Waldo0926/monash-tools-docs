@@ -1,6 +1,7 @@
 # Monash Student Tools docs
 
 [![Site](https://img.shields.io/badge/site-docs.secureview.tech-1e5eff)](https://docs.secureview.tech)
+[![Uptime](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FWaldo0926%2Fuptime%2FHEAD%2Fapi%2Ftool-docs%2Fuptime.json)](https://waldo0926.github.io/uptime/history/tool-docs)
 [![Deploy](https://github.com/Waldo0926/monash-tools-docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/Waldo0926/monash-tools-docs/actions/workflows/deploy.yml)
 [![Astro](https://img.shields.io/badge/Astro-Starlight-0d1117?logo=astro)](https://starlight.astro.build)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
