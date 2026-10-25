@@ -3,7 +3,7 @@ title: About
 description: Who built these tools, how to report a problem, and the rules they follow.
 ---
 
-I am Shuoxun Wen, a computer science student at Monash. I built these tools for my own study first, then cleaned them up so other students can use them. More about how they were built is on [my blog](https://waldo0926.github.io).
+I am Shuoxun Wen, a computer science student at Monash. I built these tools for my own study first, then cleaned them up so other students can use them. More about how they were built is on [my blog](https://blog.secureview.tech).
 
 ## Rules every tool follows
 
