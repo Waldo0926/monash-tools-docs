@@ -35,7 +35,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         cmd: INSTALL_MAC,
         links: [['Guide', 'study-kit/'], ['GitHub', 'https://github.com/Waldo0926/monash-study-kit'], ['PyPI', 'https://pypi.org/project/monash-study-kit/']],
         tabs: ['In the terminal', 'In Claude'],
-        note: 'Sample course data. The terminal prints in Chinese.',
+        note: 'Real command output with sample course data. The terminal prints in Chinese.',
       },
       {
         id: 'monash-hub',
@@ -45,7 +45,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['Install', 'None, add to home screen if you like'], ['Version', '1.0.0'], ['Languages', 'English, 简体中文, 日本語, 한국어'], ['Runs on', 'Any browser'], ['Account', 'Not needed']],
         links: [['Open Monash Hub', 'https://monashhub.secureview.tech'], ['Guide', 'monash-hub/']],
         tabs: ['WAM and GPA', 'Search'],
-        note: 'Sample marks and results.',
+        note: 'Screenshots of the live site. The marks are made up.',
       },
       {
         id: 'ed-web',
@@ -55,7 +55,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['Install', 'None'], ['Runs on', 'Any desktop browser'], ['Your token', 'Kept in the tab, sent only to Ed'], ['Interface', 'Chinese'], ['Licence', 'Source on GitHub']],
         links: [['Open Ed Web', 'https://monashed.secureview.tech/app/'], ['Guide', 'ed-web/'], ['GitHub', 'https://github.com/Waldo0926/ed-web']],
         tabs: ['Posts', 'Lessons'],
-        note: 'Sample posts. Labels are shown as they appear in the app.',
+        note: 'Screenshots of the real page, loaded with made-up posts so no classmate posts are shown.',
       },
       {
         id: 'attendance',
@@ -65,7 +65,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['Install', 'Download, unzip, load in Chrome'], ['Version', '1.3.51'], ['Runs on', 'Chrome on Windows, macOS, Linux'], ['For', 'Classes on attendance.monash.edu.my'], ['Text recognition', 'On your computer']],
         links: [['Download', '/downloads/monash-attendance-helper.zip'], ['Install guide', 'attendance/install/']],
         tabs: ['Confirm page', 'Popup'],
-        note: 'The confirm page, redrawn with sample codes. The popup is a real screenshot.',
+        note: 'Real screenshots of the extension.',
       },
       {
         id: 'wechat-bot',
@@ -75,7 +75,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['Where', 'WeChat account 马莫百科'], ['Install', 'None, just follow the account'], ['Language', 'Chinese'], ['For', 'Students at the Malaysia campus'], ['When unsure', 'Hands the question to a person']],
         links: [['Guide', 'wechat-bot/']],
         tabs: ['Not sure', 'Thanks'],
-        note: 'Sample chat.',
+        note: 'The reply text is copied from the bot code.',
       },
     ],
   },
@@ -96,7 +96,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         cmd: INSTALL_MAC,
         links: [['说明', 'study-kit/'], ['GitHub', 'https://github.com/Waldo0926/monash-study-kit'], ['PyPI', 'https://pypi.org/project/monash-study-kit/']],
         tabs: ['在终端里', '在 Claude 里'],
-        note: '示例课程数据。',
+        note: '真实命令输出，课程数据是示例。',
       },
       {
         id: 'monash-hub',
@@ -106,7 +106,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['安装', '不用装，想要可以加到主屏幕'], ['版本', '1.0.0'], ['语言', 'English、简体中文、日本語、한국어'], ['运行在', '任何浏览器'], ['账号', '不需要']],
         links: [['打开 Monash Hub', 'https://monashhub.secureview.tech'], ['说明', 'monash-hub/']],
         tabs: ['WAM 和 GPA', '搜索'],
-        note: '示例成绩和搜索结果。',
+        note: '线上网站截图，成绩是编的。',
       },
       {
         id: 'ed-web',
@@ -116,7 +116,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['安装', '不用装'], ['运行在', '任何电脑浏览器'], ['令牌', '只存在标签页里，只发给 Ed'], ['界面', '中文'], ['源码', 'GitHub 公开']],
         links: [['打开 Ed Web', 'https://monashed.secureview.tech/app/'], ['说明', 'ed-web/'], ['GitHub', 'https://github.com/Waldo0926/ed-web']],
         tabs: ['帖子', '课程内容'],
-        note: '示例帖子。',
+        note: '真实页面截图，帖子是编的，不放同学的真实帖子。',
       },
       {
         id: 'attendance',
@@ -126,7 +126,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['安装', '下载、解压、在 Chrome 里加载'], ['版本', '1.3.51'], ['运行在', 'Windows、macOS、Linux 上的 Chrome'], ['适用', 'attendance.monash.edu.my 的课'], ['文字识别', '在你电脑上跑']],
         links: [['下载', '/downloads/monash-attendance-helper.zip'], ['安装说明', 'attendance/install/']],
         tabs: ['确认页', '弹窗'],
-        note: '确认页按实际界面重画，签到码是示例。弹窗是真实截图。',
+        note: '扩展的真实截图。',
       },
       {
         id: 'wechat-bot',
@@ -136,7 +136,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['在哪', '微信公众号 马莫百科'], ['安装', '不用装，关注就行'], ['语言', '中文'], ['适用', '马来西亚校区的同学'], ['拿不准时', '转给真人回答']],
         links: [['说明', 'wechat-bot/']],
         tabs: ['拿不准时', '道谢'],
-        note: '示例对话。',
+        note: '回复原文取自机器人代码。',
       },
     ],
   },
