@@ -1,13 +1,13 @@
 ---
 title: Monash Hub
-description: 课程、学位、选课规划、WAM 和 GPA、官方指南都在一个网站里，支持中英日韩。不用安装。
+description: 课程、学位、选课规划、WAM 和 GPA、马来西亚学费、重要日期和官方指南都在一个网站里，支持英文和简体中文。不用安装。
 sidebar:
   label: 概览
 ---
 
 import { LinkCard, Aside } from '@astrojs/starlight/components';
 
-[Monash Hub](https://monashhub.secureview.tech) 把平时要在 Handbook 和学校各个页面里翻的东西放在一起。每个答案都附来源链接和最后核对日期。界面有英文、简体中文、日文和韩文。
+[Monash Hub](https://monashhub.secureview.tech) 把平时要在 Handbook 和学校各个页面里翻的东西放在一起。每个答案都附来源链接和最后核对日期。界面有英文和简体中文。
 
 <LinkCard title="打开 Monash Hub" description="monashhub.secureview.tech" href="https://monashhub.secureview.tech" />
 
@@ -21,8 +21,13 @@ import { LinkCard, Aside } from '@astrojs/starlight/components';
 | 按学期排课，每门课自动核对开课情况和先修 | **选课规划** |
 | 往回看一门课需要先修什么，往后看它能解锁什么 | **先修图** |
 | 算 WAM 或 GPA（马来西亚校区还有 CGPA） | **WAM/GPA 计算**。输入课号，或粘贴、截图 WES 成绩 |
-| 快速问个问题 | **提问**按钮。答案来自 Handbook、官网和同学帖子，不用 AI |
+| 查马来西亚每个课程的学费、按年还是整个课程，以及和 2026 年比的变化 | **马莫学费** |
+| 查 census、退课截止、考试、出成绩、Allocate+ 和 WES 续注册日期 | 首页的**重要日期**，完整列表点**查看全部日期** |
+| 给考虑马来西亚校区的家长看中文介绍 | 页头的**给家长看** |
+| 快速问个问题 | **提问**按钮。答案来自 Handbook、官网和同学帖子，也显示[马莫百科机器人](/zh-cn/wechat-bot/)的回答。机器人没有现成答案时，可能用免费模型从官方页面挑句子，每句都和来源逐字核对 |
 | 看和分享同学经验 | **社区**。用邮箱登录后可以发帖 |
+
+选课规划、先修图和 WAM/GPA 计算都在页头的**选课工具**菜单里。
 
 ## 分清你看的是什么
 
@@ -38,7 +43,7 @@ Monash Hub 不是 Monash University 运营的。选课、签证、考核和学�
 
 ## 你的数据
 
-- **选课规划**只存在你的浏览器里。核对时会把规划发到服务器和 Handbook 比对，不保存。换设备用**导出**。
+- **选课规划**只存在你的浏览器里。核对时会把规划发到服务器和 Handbook 比对，不保存。换设备时，在**更多**菜单点**复制规划码**。规划写在链接的 `#` 后面，浏览器不会把这部分发给服务器。在另一台设备打开链接，或用**粘贴规划码**。**导出**也还能保存文件。
 - **成绩**在你的浏览器里计算，只有课号会发到服务器，用来查学分和级别。
 - **课程评分**不用注册账号。
 

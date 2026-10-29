@@ -108,6 +108,16 @@ monash connect cursor --remove # 移除
   </TabItem>
 </Tabs>
 
+## Agent skill
+
+使用支持 skill 的 agent 时，可以这样安装 Study Kit 的 skill：
+
+```bash
+npx skills add Waldo0926/monash-study-kit
+```
+
+它把学习问题对应到 `monash` 命令，作业问题遵循同样的来源规则。登录、令牌和提交作业仍由你自己操作。使用前需要先安装 Study Kit 并完成设置。
+
 ## 注意
 
 - 登录和选课还是用 `monash setup`。没装 Claude 的话，最后一步会提示找不到 Claude Desktop，忽略就行。

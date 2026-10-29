@@ -18,22 +18,26 @@ The interface is in Chinese. Button names below are given as they appear.
 <Steps>
 
 1. Open [monashed.secureview.tech/app](https://monashed.secureview.tech/app/).
-2. Give it your Ed token. The page shows two ways to get one; follow either.
+2. Give it your Ed token. There are two ways:
+   - **Browser token**: on any Ed page, open the browser console and run `copy(localStorage.authToken)`. It expires in about 14 days; Ed Web shows how many days are left.
+   - **API token**: create one at [Ed settings](https://edstem.org/au/settings/api-tokens). It does not expire and you can revoke it there. Whether it works in a browser depends on Ed's cross-origin settings. If Ed Web says it cannot use it, switch to a browser token.
 3. Pick the units you want and click **开始抓取** (Start fetching).
-4. Search, browse by category, and read the takeaway under each post.
-5. Open **课程内容** (Lessons) to see each unit's lessons by module, with their status and the PDFs and links on each. Filters narrow it to not started, due soon, overdue, or **有资料** (has materials).
-6. Click **一键下载资料** (download all materials) for one zip of the unit's PDFs and links, sorted into week folders. The zip is built in your browser.
+4. Search, browse by category, and read the takeaway under each post. Every search word must appear, and replies count too. Filters include **新内容** (new), **待解答** (unanswered), **有提醒** (alerts), **老师已答** (staff answered), **公告** (announcements), **有未读回复** (unread replies), **我发的** (mine) and **收藏** (starred).
+5. Click **↻ 刷新** (refresh) to fetch only posts whose fingerprint changed: updated time, reply count or answered state. New posts and replies are marked **新** or **+N 新回复**.
+6. Open **课程内容** (Lessons) to see each unit's lessons by module, with their status and the PDFs and links on each. It also saves the text of Ed reading pages and quiz questions; Ed does not release answers to students. Filters narrow it to not started, due soon, overdue, or **有资料** (has materials).
+7. Click **一键下载资料** (download all materials) for one zip of the unit's PDFs and links, sorted into week folders. The zip is built in your browser.
+8. **导出 JSON** saves a file. On another computer, choose **载入之前导出的 JSON** on the first screen to restore it.
 
 </Steps>
 
 ## How the takeaways work
 
-No AI. If staff replied, it shows the first sentence or two of the first staff reply, marked **老师答** (staff answered). Otherwise it shows the post's first sentence. It also tags deadline and extension changes, time and room changes, grade releases and exam news, and highlights unanswered posts and posts from the last 48 hours.
+No AI. If staff replied, it shows the first sentence or two of the **last** staff reply, marked **老师答** (staff answered). Otherwise it takes the first substantial student answer, marked **同学答** (student answered). Only when neither exists does it use the post's first sentence. It also tags deadline and extension changes, time and room changes, grade releases and exam news. Initially, it highlights unanswered posts and posts from the last 48 hours. After the first refresh, **新** means content that appeared since the previous refresh.
 
 ## Privacy
 
 - Your token is kept in `sessionStorage`, so it is gone when you close the tab. It is only sent to Ed's own API at `edstem.org`.
-- Fetched posts are stored in your browser's IndexedDB and are never uploaded.
+- Fetched posts are stored in your browser's IndexedDB and are never uploaded. The only other local preference is light or dark mode, kept in `localStorage`.
 - The [source is public](https://github.com/Waldo0926/ed-web), so you can check that the only places it talks to are Ed's API and Ed's file host.
 
 <Aside type="caution">
