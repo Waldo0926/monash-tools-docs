@@ -127,5 +127,5 @@ It maps study questions to `monash` commands and carries the same source rules f
 - Sign in and pick units with `monash setup` as usual. Without Claude installed, the last step says it cannot find Claude Desktop. Ignore it.
 - Background sync and Moodle refresh only run while the app is open and the MCP server is running.
 - Read-only course queries have been verified in ChatGPT and Codex through the remote integration; other workflows and models still need their own checks.
-- **ChatGPT on the web or phone needs a remote server.** `monash mcp` is local only. From 1.4.0 the package includes an optional `monash remote` mode, but you need your own server, domain and HTTPS. See [Host it yourself](/study-kit/remote/).
+- **ChatGPT, and Claude on the web or phone, need an HTTPS address.** `monash mcp` is local only. From 1.4.0 the package includes an optional `monash remote` mode. Use your own server and domain, or a free Cloudflare quick tunnel on your own computer. See [Host it yourself](/study-kit/remote/).
 - Panels only show in apps that support MCP Apps. Other apps get the same text answers.
