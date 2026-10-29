@@ -52,7 +52,7 @@ Tell the student, in these words or close to them:
 > 1. open Ed's token page: click Create Token, copy it, and paste it into that terminal (nothing shows while you paste),
 > 2. open a separate browser window: log in to Monash with Okta and MFA, and the window closes by itself,
 > 3. ask which units to track,
-> 4. connect to Claude Desktop and Claude Code. On Windows, fully quit Claude Desktop from the tray first when it asks.
+> 4. connect to Claude Desktop and Claude Code. On Windows, fully quit Claude Desktop from the tray first when it asks. If you do not use Claude, ignore the message that it cannot find Claude Desktop.
 >
 > Do not paste your token here. Tell me when it says setup is done.
 
@@ -76,6 +76,7 @@ monash todo
 Tell the student:
 
 - In Claude Desktop, the **+** button in the chat box, then **Connectors**, should list **monash**. Restart Claude Desktop if it does not.
+- If they use Codex, Cursor, VS Code, Windsurf or Gemini CLI instead, run `monash connect <client>` (see the next section) and tell them to restart that app.
 - They can now ask things like "What's due this week?", "Anything new on Ed?" or "Which slide covers recursion?".
 - `monash login` signs in to Moodle again when the session expires; `monash update` updates.
 
@@ -91,4 +92,5 @@ Tell the student:
 | Windows install says a file is in use | Fully quit Claude Desktop from the tray, then run the install again |
 | Login window does not open | Install Chrome or Edge, or `monash config browser "<path to chrome>"` |
 | monash missing in Claude | `monash setup claude` (on Windows, quit Claude from the tray first) |
+| monash missing in Codex, Cursor and others | `monash connect` to check, then `monash connect <client>` and restart the app |
 | Anything else | `monash doctor`, then https://docs.secureview.tech/study-kit/troubleshooting/ |

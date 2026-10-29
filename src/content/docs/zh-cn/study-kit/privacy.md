@@ -1,6 +1,6 @@
 ---
 title: 隐私和安全
-description: Study Kit 把数据存在哪、存了哪些凭据、Claude 能看到什么，以及怎么彻底删除。
+description: Study Kit 把数据存在哪、存了哪些凭据、AI 软件能看到什么，以及怎么彻底删除。
 ---
 
 ## 数据存在哪
@@ -22,9 +22,9 @@ description: Study Kit 把数据存在哪、存了哪些凭据、Claude 能看�
 
 用了可选的[远程模式](/zh-cn/study-kit/remote/)的话，`secrets/remote-mcp.db` 里还会记下配对过的软件。只存令牌的哈希，不存令牌本身。
 
-## Claude 能看到什么
+## AI 能看到什么
 
-只有你提问时工具返回的内容：截止日期列表、某个帖子的正文、某份课件的文字。令牌和 cookie 永远不会发给 Claude。也不要把 Ed 令牌贴进聊天，只在终端里输入。
+只有你提问时工具返回的内容：截止日期列表、某个帖子的正文、某份课件的文字。令牌和 cookie 永远不会发给 AI。也不要把 Ed 令牌贴进聊天，只在终端里输入。
 
 ## 课件浏览页
 
@@ -45,7 +45,7 @@ monash uninstall
 uv tool uninstall monash-study-kit
 ```
 
-`monash uninstall` 会把它从 Claude 里移除，并问你要不要删掉所有数据。最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌。
+`monash uninstall` 会把它从 Claude 和其他 AI 软件里移除，并问你要不要删掉所有数据。最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌。
 
 ## 怎么验证的
 

@@ -26,7 +26,7 @@ description: 所有 monash 命令、输出格式和退出码。
 | `monash ed lessons FIT2109` / `quiz FIT2109` | Ed lesson 进度 / 复习用的测验题 |
 | `monash ed read FIT2109 "W3 Pre-Class"` | 整节 lesson 转成 Markdown，附测验题 |
 | `monash media` | 转写录播（要装[录播字幕](/zh-cn/study-kit/recordings/)） |
-| `monash config [key] [value]` | 看或改设置，改完重启 Claude Desktop |
+| `monash config [key] [value]` | 看或改设置，改完重启 AI 软件 |
 | `monash connect [软件]` | 接进 Codex、Cursor、VS Code、Windsurf 或 Gemini CLI（[其他 AI 软件](/zh-cn/study-kit/other-clients/)） |
 | `monash remote serve` / `pair` / `clients` / `revoke` | 可选：自己托管远程 MCP 服务器（[自己托管](/zh-cn/study-kit/remote/)） |
 | `monash update` | 更新到最新版 |

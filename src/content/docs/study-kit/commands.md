@@ -26,7 +26,7 @@ description: Every monash command, output formats and exit codes.
 | `monash ed lessons FIT2109` / `quiz FIT2109` | Ed lesson progress / quiz questions for revision |
 | `monash ed read FIT2109 "W3 Pre-Class"` | A whole lesson as Markdown with its quiz questions |
 | `monash media` | Transcribe lecture recordings (needs the [media extra](/study-kit/recordings/)) |
-| `monash config [key] [value]` | View or change settings. Restart Claude Desktop afterwards |
+| `monash config [key] [value]` | View or change settings. Restart your AI app afterwards |
 | `monash connect [app]` | Connect to Codex, Cursor, VS Code, Windsurf or Gemini CLI ([Other AI apps](/study-kit/other-clients/)) |
 | `monash remote serve` / `pair` / `clients` / `revoke` | Optional: host your own remote MCP server ([Host it yourself](/study-kit/remote/)) |
 | `monash update` | Update to the latest version |

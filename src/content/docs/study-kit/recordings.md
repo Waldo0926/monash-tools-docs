@@ -1,9 +1,9 @@
 ---
 title: Lecture recordings
-description: Optional. Turn YouTube and Zoom lecture recordings into timestamped transcripts that Claude can search.
+description: Optional. Turn YouTube and Zoom lecture recordings into timestamped transcripts that your AI can search.
 ---
 
-Want Claude to know what was said in class? Recordings can become timestamped transcripts:
+Want your AI to know what was said in class? Recordings can become timestamped transcripts:
 
 - **YouTube** links in Ed "Week N … Recording" posts: the YouTube captions are fetched directly, which is fast.
 - **Zoom** recordings: downloaded with the passcode from the post, then transcribed on your computer with Whisper. A two-hour lecture takes 20 to 30 minutes on an ordinary laptop.

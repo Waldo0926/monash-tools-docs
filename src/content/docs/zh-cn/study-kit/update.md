@@ -9,9 +9,9 @@ description: 一条命令更新到最新版，或者彻底删除。
 monash update
 ```
 
-更新后重启 Claude Desktop。Windows 上它会告诉你先退出 Claude、再运行哪条命令，因为正在运行的程序没法被覆盖。
+更新后重启你用的 AI 软件。Windows 上它会告诉你先退出 Claude、再运行哪条命令，因为正在运行的程序没法被覆盖。用 Codex、Cursor 等的话，更新前先把它们关掉。
 
-有新版本时会提醒你：终端命令后面多一行提示，在 Claude 里问待办时也会顺带说一句。每天最多查一次 GitHub，不带任何个人信息。不想要的话：`monash config update_check false`。
+有新版本时会提醒你：终端命令后面多一行提示，在 AI 里问待办时也会顺带说一句。每天最多查一次 GitHub，不带任何个人信息。不想要的话：`monash config update_check false`。
 
 每个版本改了什么见[更新日志](https://github.com/Waldo0926/monash-study-kit/blob/main/CHANGELOG.md)。
 
@@ -22,4 +22,4 @@ monash uninstall
 uv tool uninstall monash-study-kit
 ```
 
-`monash uninstall` 会把它从 Claude 里移除，并问你要不要删掉所有数据。最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌。
+`monash uninstall` 会把它从 Claude 和其他 AI 软件里移除，并问你要不要删掉所有数据。最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌。

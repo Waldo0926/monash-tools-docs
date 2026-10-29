@@ -1,6 +1,6 @@
 ---
 title: First-time setup
-description: monash setup walks you through four steps. Ed token, Moodle login with MFA, units, and connecting to Claude.
+description: monash setup walks you through four steps. Ed token, Moodle login with MFA, units, and connecting your AI app, such as Claude, Codex or Cursor.
 ---
 
 import { Steps, Aside } from '@astrojs/starlight/components';
@@ -21,20 +21,24 @@ Follow the prompts. There are four steps.
 
 3. **Units.** It tracks this semester's units by default. You can pick your own instead.
 
-4. **Connect to Claude.** It adds `monash` to Claude Desktop and Claude Code.
+4. **Connect your AI app.** It adds `monash` to Claude Desktop and Claude Code by itself.
    - On macOS it quits Claude Desktop first (Claude overwrites config changes made while it runs), then opens it again.
    - On Windows it asks you to **fully quit** Claude Desktop first: tray icon at the bottom right, right-click, **Quit**.
+   - Using Codex, Cursor, VS Code, Windsurf or Gemini CLI instead? If this step says it cannot find Claude Desktop, ignore it. After setup, run `monash connect codex` (or `cursor`, `vscode`, `windsurf`, `gemini`) and restart that app. Details on [Other AI apps](/study-kit/other-clients/).
 
 </Steps>
 
 At the end you can sync straight away. The first sync downloads every course file and takes from a few minutes to about a quarter of an hour.
 
-## Check it in Claude
+## Check it in your AI app
 
-Open Claude Desktop. In the chat box, under **+** then **Connectors**, you should see **monash**. Leave it on, then ask "What's due this week?".
+- **Claude Desktop**: in the chat box, under **+** then **Connectors**, you should see **monash**. Leave it on.
+- **Codex, Cursor and others**: run `monash connect` to see which apps have monash, then check the app's MCP or tools list.
+
+Then ask "What's due this week?".
 
 <Aside type="tip">
-Not showing up? See [Troubleshooting](/study-kit/troubleshooting/#monash-does-not-show-up-in-claude).
+Not showing up? See [Troubleshooting](/study-kit/troubleshooting/#monash-does-not-show-up-in-your-ai-app).
 </Aside>
 
 ## Redo one step
@@ -45,3 +49,4 @@ Not showing up? See [Troubleshooting](/study-kit/troubleshooting/#monash-does-no
 | Ed token | `monash login ed` |
 | Pick units again | `monash courses` |
 | Connect to Claude again | `monash setup claude` |
+| Connect another AI app | `monash connect codex` (or `cursor`, `vscode`, `windsurf`, `gemini`) |

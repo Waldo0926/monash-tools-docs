@@ -3,7 +3,7 @@ title: 不用 AI 也能查
 description: monash 命令在终端里回答同样的问题，完全不耗 AI 额度。
 ---
 
-`monash` 命令不用任何 AI，Claude 额度用完或者只想快速看一眼时都能用。先运行 `monash sync`，然后：
+`monash` 命令不用任何 AI，AI 额度用完或者只想快速看一眼时都能用。先运行 `monash sync`，然后：
 
 | 想知道 | 命令 |
 | --- | --- |
@@ -18,7 +18,7 @@ description: monash 命令在终端里回答同样的问题，完全不耗 AI �
 
 区别是没人帮你总结，只列出原始信息。想要总结的话，可以把输出贴给任何 AI。
 
-后台同步和续期是跟着 Claude Desktop 跑的。Claude 开着时，就算额度用完也照常进行；Claude 关掉的话，查之前先 `monash sync`，Moodle 过期了先 `monash login`。
+后台同步和续期是跟着 AI 软件跑的，因为软件开着时 MCP 服务器才在运行。就算额度用完也照常进行；软件关掉的话，查之前先 `monash sync`，Moodle 过期了先 `monash login`。
 
 全部命令见[命令速查](/zh-cn/study-kit/commands/)。
 
@@ -38,7 +38,7 @@ monash library --open
 
 ## 搜得到哪些内容
 
-`monash grep` 和 Claude 的课件搜索覆盖：
+`monash grep` 和 AI 的课件搜索覆盖：
 
 - Moodle 课件：PDF、Word、PowerPoint、文本和代码，包括 `.zip` 压缩包里的文本文件
 - Ed Lessons 里的 PDF，以及直接写在 Ed 里的正文页

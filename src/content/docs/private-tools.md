@@ -9,7 +9,7 @@ Two of my tools are private because they run on my own server with my own course
 
 A daily digest of my Ed forums: it syncs posts on a schedule, stores them in a database and builds a dashboard, with an optional AI pass I trigger by hand to sort what matters.
 
-**Use instead:** [Ed Web](/ed-web/) for reading and searching in the browser, or [Study Kit](/study-kit/) to ask Claude what is new on Ed.
+**Use instead:** [Ed Web](/ed-web/) for reading and searching in the browser, or [Study Kit](/study-kit/) to ask your AI app what is new on Ed.
 
 ## moodle-sync
 
