@@ -35,7 +35,7 @@ export default defineConfig({
       sidebar: [
         group('Start here', '从这里开始', '', ['choose', 'ai-setup']),
         group('Study Kit', 'Study Kit', 'study-kit', [
-          'index', 'install', 'setup', 'ask-claude', 'cli', 'other-clients', 'recordings', 'privacy', 'troubleshooting', 'commands', 'update',
+          'index', 'install', 'setup', 'ask-claude', 'cli', 'other-clients', 'remote', 'recordings', 'privacy', 'troubleshooting', 'commands', 'update',
         ]),
         group('Monash Hub', 'Monash Hub', 'monash-hub', ['index', 'app']),
         group('Ed Web', 'Ed Web', 'ed-web', ['index']),

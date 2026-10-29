@@ -13,6 +13,7 @@ Study Kit connects Monash **Moodle** and **Ed** to the AI app on your computer: 
 - "Anything new on Ed? Has anyone replied to my question?"
 - "Which week of FIT2102 covered monads? Which slide deck, which page?"
 - "What does the A2 spec ask for?" "What's my current grade in FIT2109?"
+- "Quiz me on FIT2109 week 3." In apps that show MCP Apps panels, your to-dos, Ed lesson progress and quiz questions appear as small panels you can click.
 
 Answers come from your real Moodle and Ed data, with sources like "Workshop 5 Slides, page 25". The AI finds the right file and reads only the pages it needs, so you do not download PDFs and upload them again.
 
@@ -27,8 +28,8 @@ All tools are **read-only**. Study Kit never submits assignments, attempts quizz
 
 ## You need
 
-- A computer (macOS, Windows or Linux). Phone apps cannot reach it: they only connect to MCP servers on the internet, and Study Kit runs on your computer so your login stays there.
-- An AI app that supports local MCP. Tested locally with **Claude Desktop** ([download](https://claude.ai/download)) and **Claude Code**. **ChatGPT** and **Codex** have also passed read-only course queries through a private remote integration using the same v1.3.0 core. One-command local setup is available for Codex, Cursor, VS Code, Windsurf and Gemini CLI; see [Other AI apps](/study-kit/other-clients/) for connection modes and test coverage.
+- A computer (macOS, Windows or Linux). Phone apps cannot reach it by default: they only connect to MCP servers on the internet, and Study Kit runs on your computer so your login stays there. To use it from ChatGPT or from Claude on the web and phone, [give it an HTTPS address](/study-kit/remote/) with your own server or a free Cloudflare tunnel.
+- An AI app that supports local MCP. Tested locally with **Claude Desktop** ([download](https://claude.ai/download)) and **Claude Code**. **ChatGPT** and **Codex** have also passed read-only course queries through a private remote integration using the v1.3.0 core. One-command local setup is available for Codex, Cursor, VS Code, Windsurf and Gemini CLI; see [Other AI apps](/study-kit/other-clients/) for connection modes and test coverage.
 - **Chrome, Edge or Brave**, used only for the Moodle login window. The Edge that comes with Windows is fine.
 - A Monash account.
 

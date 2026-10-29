@@ -20,9 +20,15 @@ Inside are your course files (`files`), the database (`data`), login credentials
 
 They stay on your computer and are only sent to Moodle or Ed. **Never send the `secrets` folder to anyone.**
 
+If you use the optional [remote mode](/study-kit/remote/), `secrets/remote-mcp.db` also holds the apps you paired. Only hashes of their tokens are stored, never the tokens themselves.
+
 ## What Claude sees
 
 Only what a tool returns when you ask something: a list of deadlines, the text of a post, the text of a course file. Tokens and cookies are never sent to Claude. Do not paste your Ed token into a chat either; enter it in the terminal only.
+
+## The course library page
+
+`monash library` only listens on `127.0.0.1`, so other devices cannot reach it. It only serves files that `monash sync` registered, refuses paths outside the course-file folders and never serves the `secrets` folder or the login profile. It has no password, so do not forward it to the internet.
 
 ## What it does to Moodle and Ed
 

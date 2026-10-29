@@ -24,10 +24,12 @@ monash connect cursor --remove # take it out again
 `monash connect` needs Study Kit 1.2.0 or later. Run `monash update` if it says the command does not exist.
 
 <Aside>
-**Claude Desktop** and **Claude Code** have been tested with the local server. **ChatGPT** and **Codex** have also been verified with read-only course queries through a private remote integration using the same **v1.3.0** core; Codex successfully queried both Moodle and Ed. These remote checks do not test `monash connect codex` or every Codex interface. The public package's stdio handshake, 17-tool catalog, course query with isolated empty data and ping also passed an offline smoke test on 30 October 2026.
+**Claude Desktop** and **Claude Code** have been tested with the local server. **ChatGPT** and **Codex** have also been verified with read-only course queries through a private remote integration using the **v1.3.0** core; Codex successfully queried both Moodle and Ed. These remote checks do not test `monash connect codex` or every Codex interface.
+
+On 30 October 2026 the **1.4.0** package from PyPI was checked in a clean environment with made-up data: the stdio handshake, the 18-tool catalog, the three panels, the course library, and the full sign-in and query flow of `monash remote` using the Claude and ChatGPT callback addresses. That check ran on one machine without a public domain, so it does not replace a real test in ChatGPT or Codex against 1.4.0.
 </Aside>
 
-`monash connect` writes the format from each vendor's docs as of October 2026. The local Codex, Cursor, VS Code, Windsurf and Gemini CLI connections have not yet been tested end to end; if the formats differ, the vendor's docs win. The private remote server is not included in this public package.
+`monash connect` writes the format from each vendor's docs as of October 2026. The local Codex, Cursor, VS Code, Windsurf and Gemini CLI connections have not yet been tested end to end; if the formats differ, the vendor's docs win.
 
 If your config file has comments (VS Code allows them), `monash connect` leaves it alone and prints the entry for you to paste. To do it by hand, follow the two steps below.
 
@@ -125,4 +127,5 @@ It maps study questions to `monash` commands and carries the same source rules f
 - Sign in and pick units with `monash setup` as usual. Without Claude installed, the last step says it cannot find Claude Desktop. Ignore it.
 - Background sync and Moodle refresh only run while the app is open and the MCP server is running.
 - Read-only course queries have been verified in ChatGPT and Codex through the remote integration; other workflows and models still need their own checks.
-- **ChatGPT needs a remote server.** The verified private remote integration uses the same core, while this package starts a local stdio server. Installing it does not by itself provide a remote endpoint for ChatGPT on the web or phone.
+- **ChatGPT, and Claude on the web or phone, need an HTTPS address.** `monash mcp` is local only. From 1.4.0 the package includes an optional `monash remote` mode. Use your own server and domain, or a free Cloudflare quick tunnel on your own computer. See [Host it yourself](/study-kit/remote/).
+- Panels only show in apps that support MCP Apps. Other apps get the same text answers.

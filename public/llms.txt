@@ -20,8 +20,9 @@ If you are an AI agent asked to install something for a student, read the agent 
 - [Install](https://docs.secureview.tech/study-kit/install/): one command installs uv and the monash command
 - [First-time setup](https://docs.secureview.tech/study-kit/setup/): Ed token, Moodle login with MFA, units, connecting to Claude
 - [What to ask Claude](https://docs.secureview.tech/study-kit/ask-claude/): example questions
-- [Use it without AI](https://docs.secureview.tech/study-kit/cli/): the monash command in a terminal
+- [Use it without AI](https://docs.secureview.tech/study-kit/cli/): the monash command in a terminal, and monash library to browse synced files
 - [Other AI apps](https://docs.secureview.tech/study-kit/other-clients/): monash connect for Codex, Cursor, VS Code, Windsurf, Gemini CLI
+- [Host it yourself](https://docs.secureview.tech/study-kit/remote/): optional single-user remote MCP server (1.4.0+) for ChatGPT and Claude on the web or phone, behind your own domain or a Cloudflare quick tunnel
 - [Lecture recordings](https://docs.secureview.tech/study-kit/recordings/): timestamped transcripts Claude can search
 - [Privacy and security](https://docs.secureview.tech/study-kit/privacy/): where data and credentials are kept, how to remove everything
 - [Troubleshooting](https://docs.secureview.tech/study-kit/troubleshooting/): start with monash doctor

@@ -58,6 +58,10 @@ Most Ed lessons have no due date. Moodle is the source of truth for deadlines. T
 
 A running program cannot be overwritten on Windows, and Claude Desktop keeps `monash` running. Fully quit Claude from the tray, then run the update again in a new PowerShell window.
 
+## No panel shows up
+
+Panels need Study Kit 1.4.0 and an app that supports MCP Apps. Run `monash update` and restart the app. If the app does not support panels you still get the normal text answer, which has the same content.
+
 ## Still stuck
 
 The MCP background log is `mcp.log` in the [data folder](/study-kit/privacy/#where-data-lives). Open an [issue](https://github.com/Waldo0926/monash-study-kit/issues) with the `monash doctor` output.
