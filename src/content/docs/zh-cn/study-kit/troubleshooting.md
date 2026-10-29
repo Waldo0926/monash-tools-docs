@@ -9,13 +9,14 @@ description: 常见问题的解决办法。先运行 monash doctor。
 monash doctor
 ```
 
-它会一项项检查，并告诉你没通过的怎么修。需要别人帮忙时把整段输出发过去，里面没有令牌和 cookie。也可以直接跟 Claude 说“monash 用不了了”，它会跑同样的检查。
+它会一项项检查，并告诉你没通过的怎么修。需要别人帮忙时把整段输出发过去，里面没有令牌和 cookie。也可以直接跟 AI 说“monash 用不了了”，它会跑同样的检查。
 
 `monash doctor --deep` 还会去 Moodle 和 Ed 再拉一遍，用第二个来源核对结果（截止日期对日历订阅、本地课件对 Moodle 等），只输出数量、课号、日期和活动编号。
 
-## Claude 里看不到 monash
+## AI 软件里看不到 monash
 
-运行 `monash setup claude` 重新接一次。Windows 上一定先从托盘**完全退出** Claude。还不行的话，看 Claude Desktop 的 **Settings** 里 **Developer** 有没有报错。
+- **Claude Desktop 或 Claude Code**：运行 `monash setup claude` 重新接一次。Windows 上一定先从托盘**完全退出** Claude。还不行的话，看 Claude Desktop 的 **Settings** 里 **Developer** 有没有报错。
+- **Codex、Cursor、VS Code、Windsurf 或 Gemini CLI**：运行 `monash connect` 看这个软件接上没有。没接上就运行 `monash connect codex`（换成你的软件名），再重启软件。配置文件里有注释的话，它会把要加的内容打印出来让你手动粘贴，见[其他 AI 软件](/zh-cn/study-kit/other-clients/)。
 
 ## 提示 “monash: command not found”
 
@@ -56,7 +57,7 @@ monash config tz_offset 10
 
 ## Windows 更新时提示文件被占用
 
-Windows 上正在运行的程序不能被覆盖，Claude Desktop 会一直开着 `monash`。先从托盘完全退出 Claude，再在新的 PowerShell 窗口里重新运行更新。
+Windows 上正在运行的程序不能被覆盖，AI 软件开着时会一直开着 `monash`。先从托盘完全退出 Claude Desktop（用 Codex、Cursor 等就把它们关掉），再在新的 PowerShell 窗口里重新运行更新。
 
 ## 没有出现面板
 

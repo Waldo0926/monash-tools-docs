@@ -1,6 +1,6 @@
 ---
 title: Privacy and security
-description: Where Study Kit keeps your data, which credentials it stores, what Claude can see, and how to remove everything.
+description: Where Study Kit keeps your data, which credentials it stores, what your AI app can see, and how to remove everything.
 ---
 
 ## Where data lives
@@ -22,9 +22,9 @@ They stay on your computer and are only sent to Moodle or Ed. **Never send the `
 
 If you use the optional [remote mode](/study-kit/remote/), `secrets/remote-mcp.db` also holds the apps you paired. Only hashes of their tokens are stored, never the tokens themselves.
 
-## What Claude sees
+## What the AI sees
 
-Only what a tool returns when you ask something: a list of deadlines, the text of a post, the text of a course file. Tokens and cookies are never sent to Claude. Do not paste your Ed token into a chat either; enter it in the terminal only.
+Only what a tool returns when you ask something: a list of deadlines, the text of a post, the text of a course file. Tokens and cookies are never sent to the AI. Do not paste your Ed token into a chat either; enter it in the terminal only.
 
 ## The course library page
 
@@ -45,7 +45,7 @@ monash uninstall
 uv tool uninstall monash-study-kit
 ```
 
-`monash uninstall` removes it from Claude and asks whether to delete all data. Last, delete the token on Ed's [API token page](https://edstem.org/au/settings/api-tokens).
+`monash uninstall` removes it from Claude and the other AI apps and asks whether to delete all data. Last, delete the token on Ed's [API token page](https://edstem.org/au/settings/api-tokens).
 
 ## How it is checked
 

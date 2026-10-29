@@ -1,9 +1,9 @@
 ---
 title: 录播字幕
-description: 可选。把 YouTube 和 Zoom 录播转成带时间戳的字幕稿，Claude 就能搜到上课讲了什么。
+description: 可选。把 YouTube 和 Zoom 录播转成带时间戳的字幕稿，AI 就能搜到上课讲了什么。
 ---
 
-想让 Claude 知道老师上课讲了什么，可以把录播转成带时间戳的字幕稿：
+想让 AI 知道老师上课讲了什么，可以把录播转成带时间戳的字幕稿：
 
 - Ed 上 “Week N … Recording” 帖子里的 **YouTube** 链接：直接取 YouTube 字幕，很快。
 - **Zoom** 录像：用帖子里的 Passcode 下载，再在你电脑上用 Whisper 转写。普通笔记本上一节两小时的课要二三十分钟。

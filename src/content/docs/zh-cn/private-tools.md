@@ -9,7 +9,7 @@ description: ed-digest 和 moodle-sync 是私有的。它们做什么，以及�
 
 每天汇总我的 Ed 论坛：定时同步帖子、存进数据库、生成一个看板，需要时我手动触发一次 AI 整理，挑出重要的。
 
-**代替它：** 在浏览器里看和搜用 [Ed Web](/zh-cn/ed-web/)，在 Claude 里问 Ed 有什么新的用 [Study Kit](/zh-cn/study-kit/)。
+**代替它：** 在浏览器里看和搜用 [Ed Web](/zh-cn/ed-web/)，在 AI 软件里问 Ed 有什么新的用 [Study Kit](/zh-cn/study-kit/)。
 
 ## moodle-sync
 

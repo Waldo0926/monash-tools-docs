@@ -63,7 +63,7 @@ Apps without panel support still get the same text answer as before. Whether a p
 
 ## Ready-made prompts
 
-In Claude's **+** menu, monash offers seven presets: a feature overview, this week's to-dos, Ed catch-up, find a topic, quiz review, grades with feedback, and **作业要求** (assignment requirements). Give the last one an assignment name: it reads the brief, rubric and staff answers on Ed, then lists what to submit, marking criteria, deadlines, format and Ed clarifications, each with its source. Their titles are in Chinese. A preset is only sent when you click it, so it costs nothing otherwise.
+In Claude's **+** menu, monash offers seven presets (other apps show MCP prompts in their own place, and some do not show them): a feature overview, this week's to-dos, Ed catch-up, find a topic, quiz review, grades with feedback, and **作业要求** (assignment requirements). Give the last one an assignment name: it reads the brief, rubric and staff answers on Ed, then lists what to submit, marking criteria, deadlines, format and Ed clarifications, each with its source. Their titles are in Chinese. A preset is only sent when you click it, so it costs nothing otherwise.
 
 In a terminal, `monash help` prints every feature with an example question and the matching command.
 
@@ -75,14 +75,14 @@ These rules are in the server instructions. There is nothing to configure.
 
 ## What happens in the background
 
-While Claude is open, Study Kit:
+While your AI app is open, Study Kit:
 
 - syncs Ed and Moodle every hour (new posts, replies and course files) and refreshes the search index;
 - refreshes your Moodle session every 20 minutes, because Moodle logs you out after 4 idle hours.
 
 ## When the Moodle login expires
 
-After a shutdown or a long sleep the Moodle session expires. Claude tells you and asks whether to log in. If you agree, it opens the login window on your computer. If Okta still remembers you, it logs in silently without showing a window. You can also run `monash login` yourself.
+After a shutdown or a long sleep the Moodle session expires. The AI tells you and asks whether to log in. If you agree, it opens the login window on your computer. If Okta still remembers you, it logs in silently without showing a window. You can also run `monash login` yourself.
 
 While the login is expired, **deadlines still work** (they come from Moodle's calendar subscription link, which needs no login) and Ed is not affected.
 

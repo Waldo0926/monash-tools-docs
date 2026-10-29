@@ -1,6 +1,6 @@
 ---
 title: 第一次设置
-description: monash setup 带你走完四步：Ed 令牌、Moodle 登录（含 MFA）、选课、接进 Claude。
+description: monash setup 带你走完四步：Ed 令牌、Moodle 登录（含 MFA）、选课、接进你用的 AI 软件（Claude、Codex、Cursor 等）。
 ---
 
 import { Steps, Aside } from '@astrojs/starlight/components';
@@ -21,20 +21,24 @@ monash setup
 
 3. **选课。** 默认跟踪本学期的课，也可以自己挑。
 
-4. **接进 Claude。** 自动把 `monash` 加进 Claude Desktop 和 Claude Code。
+4. **接进 AI 软件。** 自动把 `monash` 加进 Claude Desktop 和 Claude Code。
    - macOS 上会先帮你退出 Claude Desktop（开着时改配置会被它覆盖），改完再打开。
    - Windows 上会请你先**完全退出** Claude Desktop：右下角托盘里的 Claude 图标，右键，**Quit**。
+   - 用的是 Codex、Cursor、VS Code、Windsurf 或 Gemini CLI？这一步提示找不到 Claude Desktop 的话，忽略就行。设置完再运行 `monash connect codex`（或 `cursor`、`vscode`、`windsurf`、`gemini`），然后重启那个软件。详见[其他 AI 软件](/zh-cn/study-kit/other-clients/)。
 
 </Steps>
 
 最后可以选择马上同步一次。第一次同步会下载所有课件，要几分钟到十几分钟。
 
-## 在 Claude 里确认
+## 在 AI 软件里确认
 
-打开 Claude Desktop，在聊天输入框的 **+** 里点 **Connectors**，能看到 **monash**。开着它，问一句“这周我有什么要交的？”。
+- **Claude Desktop**：在聊天输入框的 **+** 里点 **Connectors**，能看到 **monash**，开着它。
+- **Codex、Cursor 等**：运行 `monash connect` 看哪些软件已经接上，再到软件的 MCP 或工具列表里看看。
+
+然后问一句“这周我有什么要交的？”。
 
 <Aside type="tip">
-没看到？见[常见问题](/zh-cn/study-kit/troubleshooting/#claude-里看不到-monash)。
+没看到？见[常见问题](/zh-cn/study-kit/troubleshooting/#ai-软件里看不到-monash)。
 </Aside>
 
 ## 只重做某一步
@@ -45,3 +49,4 @@ monash setup
 | Ed 令牌 | `monash login ed` |
 | 重新选课 | `monash courses` |
 | 重新接进 Claude | `monash setup claude` |
+| 接进别的 AI 软件 | `monash connect codex`（或 `cursor`、`vscode`、`windsurf`、`gemini`） |

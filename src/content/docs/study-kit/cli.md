@@ -3,7 +3,7 @@ title: Use it without AI
 description: The monash command answers the same questions in your terminal and uses no AI usage at all.
 ---
 
-The `monash` command does not use any AI, so it works when you are out of Claude usage or just want a quick look. Run `monash sync` first, then:
+The `monash` command does not use any AI, so it works when you are out of AI usage or just want a quick look. Run `monash sync` first, then:
 
 | I want to know | Command |
 | --- | --- |
@@ -18,7 +18,7 @@ The `monash` command does not use any AI, so it works when you are out of Claude
 
 You get the raw information without a summary. You can paste the output into any AI if you want one.
 
-Background sync and session refresh run alongside Claude Desktop. While Claude is open they keep going even if your usage runs out. If Claude is closed, run `monash sync` before you query, and `monash login` if Moodle has expired.
+Background sync and session refresh run while your AI app is open, because that is when the MCP server runs. They keep going even if your usage runs out. If the app is closed, run `monash sync` before you query, and `monash login` if Moodle has expired.
 
 Every command is listed on [Command reference](/study-kit/commands/).
 
@@ -38,7 +38,7 @@ Needs Study Kit 1.4.0 or later.
 
 ## What search covers
 
-`monash grep` and Claude's course-file search look at:
+`monash grep` and the AI's course-file search look at:
 
 - Moodle course files: PDF, Word, PowerPoint, text and code, including text files inside `.zip` archives
 - PDFs in Ed Lessons, and pages written directly in Ed
