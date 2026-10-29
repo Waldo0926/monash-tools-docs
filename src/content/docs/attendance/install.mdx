@@ -1,11 +1,33 @@
 ---
 title: Install Attendance Helper
-description: Download the extension, load it in Chrome, sign in to the four Monash services and run the first scan.
+description: Add the extension from the Chrome Web Store, sign in to the four Monash services and run the first scan.
 ---
 
 import { Steps, Aside } from '@astrojs/starlight/components';
 
-Submitted to the Chrome Web Store on 25 October 2026, and currently under review. Until it is listed, use the zip installation below. The current version is **1.3.52**, which removed the `tabs` permission.
+Attendance Helper is on the [Chrome Web Store](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd). The current version is **1.3.52**.
+
+<Steps>
+
+1. Open [Monash Attendance Helper on the Chrome Web Store](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd) and click **Add to Chrome**.
+
+2. Click the puzzle icon next to the address bar and pin **Monash Attendance Helper**.
+
+3. In the same Chrome profile, sign in to **Monash Attendance**, **Gmail**, **Moodle**, and **Ed** if your units use it.
+
+4. Open the extension's **Settings** (click its icon, or right-click it and choose **Options**). Keep automatic discovery on, set this semester's **Week 1 Monday**, and pick your reminder times.
+
+5. Click **Save, then test now**. It scans in the background and tells you how many classes and codes it found. You can close the settings page while it runs.
+
+</Steps>
+
+## Update
+
+Chrome updates store extensions by itself, usually within a day of a new version. The version on the extension's card in `chrome://extensions` should match the [changelog](https://github.com/Waldo0926/monash-attendance-reminder/blob/main/CHANGELOG.md).
+
+## Install from the zip instead
+
+Use this only if your Chrome can't install from the store, or you want to try a fix before it reaches the store. Don't keep the store copy and a zip copy in the same Chrome profile, or every reminder shows up twice.
 
 <Steps>
 
@@ -17,13 +39,7 @@ Submitted to the Chrome Web Store on 25 October 2026, and currently under review
 
 4. Click **Load unpacked** and choose the unzipped `monash-attendance-helper` folder. You should see `manifest.json` directly inside the folder you pick.
 
-5. Click the puzzle icon next to the address bar and pin **Monash Attendance Helper**.
-
-6. In the same Chrome profile, sign in to **Monash Attendance**, **Gmail**, **Moodle**, and **Ed** if your units use it.
-
-7. Open the extension's **Settings** (click its icon, or right-click it and choose **Options**). Keep automatic discovery on, set this semester's **Week 1 Monday**, and pick your reminder times.
-
-8. Click **Save, then test now**. It scans in the background and tells you how many classes and codes it found. You can close the settings page while it runs.
+5. Carry on from step 2 above.
 
 </Steps>
 
@@ -31,14 +47,10 @@ Submitted to the Chrome Web Store on 25 October 2026, and currently under review
 Chrome may show a banner about developer mode extensions when it starts. That is normal for extensions loaded by hand. Click away from it.
 </Aside>
 
-## Update
+To update a zip copy, download the zip again, unzip it over the same folder, then click the reload arrow on the extension's card in `chrome://extensions`.
 
-Download the zip again, unzip it over the same folder, then click the reload arrow on the extension's card in `chrome://extensions`. The version shown there should match the [changelog](https://github.com/Waldo0926/monash-attendance-reminder/blob/main/CHANGELOG.md).
-
-## Already use git?
-
-Clone [the repository](https://github.com/Waldo0926/monash-attendance-reminder) and load its `extension` folder instead. After `git pull`, reload the extension in `chrome://extensions`.
+If you use git, you can clone [the repository](https://github.com/Waldo0926/monash-attendance-reminder) and load its `extension` folder instead. After `git pull`, reload the extension in `chrome://extensions`.
 
 ## Remove
 
-Click **Remove** on the extension's card in `chrome://extensions`. That deletes its settings, results and log. Then delete the folder.
+Click **Remove** on the extension's card in `chrome://extensions`. That deletes its settings, results and log. If you installed from the zip, delete the folder too.

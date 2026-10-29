@@ -1,11 +1,33 @@
 ---
 title: 安装签到助手
-description: 下载扩展、在 Chrome 里加载、登录四个 Monash 服务，然后跑第一次扫描。
+description: 从 Chrome 应用商店添加扩展、登录四个 Monash 服务，然后跑第一次扫描。
 ---
 
 import { Steps, Aside } from '@astrojs/starlight/components';
 
-2026 年 10 月 25 日已提交到 Chrome 应用商店，正在审核。上架前按下面的步骤从 zip 安装。当前版本是 **1.3.52**，这一版去掉了 `tabs` 权限。
+签到助手已经上架 [Chrome 应用商店](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd?hl=zh-CN)。当前版本是 **1.3.52**。
+
+<Steps>
+
+1. 打开 [Chrome 应用商店里的 Monash Attendance Helper](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd?hl=zh-CN)，点**添加至 Chrome**。
+
+2. 点地址栏旁边的拼图图标，把 **Monash Attendance Helper** 固定到工具栏。
+
+3. 在同一个 Chrome 用户里登录 **Monash Attendance**、**Gmail**、**Moodle**，课程用 Ed 的话也登录 **Ed**。
+
+4. 打开扩展的 **Settings**（点图标，或右键选**选项**）。保持自动发现开启，填好本学期 **Week 1 的周一**，选好提醒时间。
+
+5. 点 **Save, then test now**。它会在后台扫描，告诉你找到几节课、几个签到码。扫描时可以关掉设置页。
+
+</Steps>
+
+## 更新
+
+商店装的扩展 Chrome 会自己更新，新版本一般一天内就会到。`chrome://extensions` 里扩展卡片上的版本应该和[更新日志](https://github.com/Waldo0926/monash-attendance-reminder/blob/main/CHANGELOG.zh-CN.md)对得上。
+
+## 用 zip 安装
+
+只有 Chrome 装不了商店扩展，或者想在新修复上架之前先试，才需要这种方式。同一个 Chrome 用户里不要商店版和 zip 版都装，不然每个提醒都会弹两次。
 
 <Steps>
 
@@ -17,13 +39,7 @@ import { Steps, Aside } from '@astrojs/starlight/components';
 
 4. 点**加载已解压的扩展程序**，选解压出来的 `monash-attendance-helper` 文件夹。你选的文件夹里应该直接能看到 `manifest.json`。
 
-5. 点地址栏旁边的拼图图标，把 **Monash Attendance Helper** 固定到工具栏。
-
-6. 在同一个 Chrome 用户里登录 **Monash Attendance**、**Gmail**、**Moodle**，课程用 Ed 的话也登录 **Ed**。
-
-7. 打开扩展的 **Settings**（点图标，或右键选**选项**）。保持自动发现开启，填好本学期 **Week 1 的周一**，选好提醒时间。
-
-8. 点 **Save, then test now**。它会在后台扫描，告诉你找到几节课、几个签到码。扫描时可以关掉设置页。
+5. 接着从上面第 2 步往下做。
 
 </Steps>
 
@@ -31,14 +47,10 @@ import { Steps, Aside } from '@astrojs/starlight/components';
 Chrome 启动时可能提示有开发者模式的扩展。手动加载的扩展都会这样，点掉就行。
 </Aside>
 
-## 更新
+zip 版要更新的话，重新下载 zip，解压覆盖原来的文件夹，然后在 `chrome://extensions` 里点扩展卡片上的刷新箭头。
 
-重新下载 zip，解压覆盖原来的文件夹，然后在 `chrome://extensions` 里点扩展卡片上的刷新箭头。那里显示的版本应该和[更新日志](https://github.com/Waldo0926/monash-attendance-reminder/blob/main/CHANGELOG.zh-CN.md)对得上。
-
-## 会用 git？
-
-克隆[仓库](https://github.com/Waldo0926/monash-attendance-reminder)，加载里面的 `extension` 文件夹。`git pull` 之后在 `chrome://extensions` 里刷新扩展。
+会用 git 的话，也可以克隆[仓库](https://github.com/Waldo0926/monash-attendance-reminder)，加载里面的 `extension` 文件夹。`git pull` 之后在 `chrome://extensions` 里刷新扩展。
 
 ## 删除
 
-在 `chrome://extensions` 里点扩展卡片上的**移除**，它的设置、结果和日志会一起删掉。然后删掉那个文件夹。
+在 `chrome://extensions` 里点扩展卡片上的**移除**，它的设置、结果和日志会一起删掉。用 zip 装的话，再把那个文件夹删掉。

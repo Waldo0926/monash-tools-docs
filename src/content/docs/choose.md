@@ -10,7 +10,7 @@ Start from what you want to do. Most people want Study Kit or Monash Hub.
 | Ask your AI app (Claude, Codex, Cursor and others) what is due, what is new on Ed, which slide covers a topic | [Study Kit](/study-kit/) | One command | macOS, Windows, Linux |
 | Check a unit's assessments, requisites and offerings, plan a degree, work out WAM | [Monash Hub](/monash-hub/) | None. A website you can add to your home screen | Any browser, phone or computer |
 | Skim an Ed forum quickly and download a unit's lesson files as one zip | [Ed Web](/ed-web/) | None | A desktop browser |
-| Find attendance codes posted in Gmail, Ed or Moodle | [Attendance Helper](/attendance/) | A Chrome extension you load by hand | Chrome on a computer |
+| Find attendance codes posted in Gmail, Ed or Moodle | [Attendance Helper](/attendance/) | A Chrome extension from the Chrome Web Store | Chrome on a computer |
 | Ask a question in Chinese and get the official link | [WeChat Q&A bot](/wechat-bot/) | None | WeChat |
 
 ## How they differ
