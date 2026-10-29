@@ -13,6 +13,12 @@ The **马莫百科** WeChat official account has a question-answering bot. Follo
 2. Send your question as a normal message, for example "FIT2004 的先修课是什么" or "怎么申请 special consideration".
 3. Read the answer and open the link it gives to confirm.
 
+## Ask on Monash Hub
+
+On any [Monash Hub](https://monashhub.secureview.tech) page except search, click **Ask** in the corner. Your question also goes to the bot, and its reply appears under **来自马莫百科**. The web panel allows up to 60 questions per network per hour.
+
+When neither source has an answer, the panel shows the official account's QR code. Send your question to the account so its owner can answer later.
+
 ## Where answers come from
 
 In this order:

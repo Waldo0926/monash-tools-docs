@@ -1,13 +1,13 @@
 ---
 title: Monash Hub
-description: Units, degrees, course maps, WAM and GPA, and official guides in one site, in English, Chinese, Japanese and Korean. Nothing to install.
+description: Units, degrees, course maps, WAM and GPA, Malaysia tuition fees, key dates and official guides in one site, in English and Simplified Chinese. Nothing to install.
 sidebar:
   label: Overview
 ---
 
 import { LinkCard, Aside } from '@astrojs/starlight/components';
 
-[Monash Hub](https://monashhub.secureview.tech) puts what you usually dig through the Handbook and university pages for in one place. Every answer links its source and shows when it was last checked. The interface is in English, Simplified Chinese, Japanese and Korean.
+[Monash Hub](https://monashhub.secureview.tech) puts what you usually dig through the Handbook and university pages for in one place. Every answer links its source and shows when it was last checked. The interface is in English and Simplified Chinese.
 
 <LinkCard title="Open Monash Hub" description="monashhub.secureview.tech" href="https://monashhub.secureview.tech" />
 
@@ -21,8 +21,13 @@ import { LinkCard, Aside } from '@astrojs/starlight/components';
 | Lay out units by semester and have each one checked against offerings and requisites | **Course map** |
 | Follow a unit back to what it needs, or forward to what it unlocks | **Unit tree** |
 | Work out WAM or GPA (and CGPA for the Malaysia campus) | **WAM/GPA calculator**. Type unit codes, or paste or screenshot your WES results |
-| Ask a quick question | The **Ask** button. It answers from the Handbook, official pages and student posts, with no AI |
+| Check Malaysia tuition fees for each course, whether per year or for the whole course, and the change since 2026 | **Malaysia fees** |
+| Check census, withdrawal, exams, results, Allocate+ and WES re-enrolment dates | **Key dates** on the home page, with the full list under **All key dates** |
+| Read a Chinese introduction for parents considering the Malaysia campus | **For parents** in the header |
+| Ask a quick question | The **Ask** button. Answers come from the Handbook, official pages and student posts. It also shows replies from the [马莫百科 bot](/wechat-bot/). When the bot has no ready answer, a free model may pick sentences from official pages, each checked word for word against its source |
 | Read and share student experience | **Community**. Sign in with an email address to post |
+
+The course map, unit tree and WAM/GPA calculator sit under **Planning** in the header.
 
 ## Know what you are reading
 
@@ -38,7 +43,7 @@ Monash Hub is not run by Monash University. For enrolment, visas, assessment and
 
 ## Your data
 
-- **Course maps** are kept only in your browser. A check sends the plan to the server, which compares it with the Handbook and keeps nothing. Use **Export** to move a plan to another device.
+- **Course maps** are kept only in your browser. A check sends the plan to the server, which compares it with the Handbook and keeps nothing. Use **Copy plan code** in the **More** menu to move a plan to another device. The plan is written after the link's `#`, which the browser never sends to the server. Open the link there, or use **Paste plan code**. **Export** still saves a file.
 - **Marks** are worked out in your browser. Only the unit codes go to the server, to look up credit points and level.
 - **Ratings** need no account.
 

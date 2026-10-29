@@ -49,9 +49,15 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 
 ## Ready-made prompts
 
-In Claude's **+** menu, monash offers six presets: a feature overview, this week's to-dos, Ed catch-up, find a topic, quiz review, and grades with feedback. Their titles are in Chinese. A preset is only sent when you click it, so it costs nothing otherwise.
+In Claude's **+** menu, monash offers seven presets: a feature overview, this week's to-dos, Ed catch-up, find a topic, quiz review, grades with feedback, and **作业要求** (assignment requirements). Give the last one an assignment name: it reads the brief, rubric and staff answers on Ed, then lists what to submit, marking criteria, deadlines, format and Ed clarifications, each with its source. Their titles are in Chinese. A preset is only sent when you click it, so it costs nothing otherwise.
 
 In a terminal, `monash help` prints every feature with an example question and the matching command.
+
+## Rules for assignment questions
+
+Study Kit reads the Moodle brief and marking rubric first. On Ed, only replies from teaching staff and answers they endorse count as requirements. Other students' replies are leads. A later staff correction takes priority. If the brief and Ed disagree, the answer lists both with their dates and suggests asking staff, rather than choosing one. Each rule names its source.
+
+These rules are in the server instructions. There is nothing to configure.
 
 ## What happens in the background
 
