@@ -9,6 +9,7 @@ Follow these steps in order. Run commands yourself where it says so. Stop and ha
 - **Never ask for, accept or store the student's Ed token, Monash password or MFA code.** If the student pastes an Ed token into the chat, do not use it. Tell them to delete that token at https://edstem.org/au/settings/api-tokens and create a new one during setup in their own terminal.
 - Do not edit files under the Study Kit data folder (`~/Library/Application Support/monash-study-kit` on macOS, `%LOCALAPPDATA%\monash-study-kit` on Windows) and never print anything from its `secrets` folder.
 - Do not run `monash setup` yourself. It is interactive and needs the student.
+- Do not start `monash remote serve` or `monash library` for the student unless they ask. Remote mode is an optional self-hosting setup that needs their own server and domain: https://docs.secureview.tech/study-kit/remote/
 - Talk to the student in the language they use with you.
 
 ## 1. Check the system

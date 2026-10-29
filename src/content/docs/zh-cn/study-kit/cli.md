@@ -22,6 +22,20 @@ description: monash 命令在终端里回答同样的问题，完全不耗 AI �
 
 全部命令见[命令速查](/zh-cn/study-kit/commands/)。
 
+## 在浏览器里翻课件
+
+```bash
+monash library --open
+```
+
+会在浏览器里打开一个页面，列出已经同步下来的 Moodle 课件和 Ed lesson 文件。可以按课程、周次或文件名筛选，点文件就能下载。只想拿第 7 周的 slides、不想问 AI 的时候很方便。
+
+- 只显示 `monash sync` 已经下载好的文件，它自己不会去同步。
+- 只监听 `127.0.0.1`，同一个 Wi-Fi 下的其他设备打不开。默认端口是 8766，想换的话加 `--port`。
+- 页面没有登录，不要把它转发到公网。按 Ctrl-C 关掉。
+
+要 Study Kit 1.4.0 以上。
+
 ## 搜得到哪些内容
 
 `monash grep` 和 Claude 的课件搜索覆盖：

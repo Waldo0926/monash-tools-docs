@@ -17,6 +17,7 @@ description: 所有 monash 命令、输出格式和退出码。
 | `monash login` / `monash login ed` | 登录 Moodle / 换 Ed 令牌 |
 | `monash courses` | 重新选要跟踪的课 |
 | `monash open` | 打开课件文件夹 |
+| `monash library [--open] [--port 8766]` | 在浏览器里翻和下载已同步的课件（[说明](/zh-cn/study-kit/cli/#在浏览器里翻课件)） |
 | `monash moodle grades [FIT2102]` | 成绩和反馈 |
 | `monash moodle assignments --missing` | 可能漏交的作业 |
 | `monash moodle news` / `find` / `get` / `messages` / `calendar` | 公告 / 找活动 / 下载单个文件 / 私信 / 日历订阅链接 |
@@ -27,6 +28,7 @@ description: 所有 monash 命令、输出格式和退出码。
 | `monash media` | 转写录播（要装[录播字幕](/zh-cn/study-kit/recordings/)） |
 | `monash config [key] [value]` | 看或改设置，改完重启 Claude Desktop |
 | `monash connect [软件]` | 接进 Codex、Cursor、VS Code、Windsurf 或 Gemini CLI（[其他 AI 软件](/zh-cn/study-kit/other-clients/)） |
+| `monash remote serve` / `pair` / `clients` / `revoke` | 可选：自己托管远程 MCP 服务器（[自己托管](/zh-cn/study-kit/remote/)） |
 | `monash update` | 更新到最新版 |
 | `monash uninstall` | 从 Claude 和其他 AI 软件移除，可选删除所有数据 |
 

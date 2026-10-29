@@ -20,6 +20,7 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | "Which week covered monads? Which slides, which page?" | Full-text search over course files, course-notes websites, Ed lesson pages and recording transcripts, with page numbers or timestamps |
 | "What does the A2 spec ask for?" | Finds the spec and reads the pages it needs |
 | "What's in week 5 of FIT2109?" | That week's files and links |
+| "Where is the week 7 workshop on Moodle?" | Finds Moodle sections and activities by name and gives the link. Needs a Moodle login |
 
 ## Ed
 
@@ -30,6 +31,7 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | "Has anyone asked whether A1 can use lodash?" | Searches threads and reads them in full |
 | "Walk me through the FIT2109 week 3 pre-class" | A whole lesson in order: text, readings, PDFs and its quiz questions |
 | "Quiz me on week 3" | Ed lesson quiz questions, one at a time |
+| "Show my FIT2109 lesson progress" | Done and unfinished lessons, grouped by module |
 
 ## Grades and messages
 
@@ -46,6 +48,18 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | "Log me in to Moodle again" | Opens the login window on your computer |
 | "Sync the latest" | Runs a sync now |
 | "monash isn't working" | Runs the same checks as `monash doctor` |
+
+## Panels
+
+From Study Kit 1.4.0, three answers can also show up as a small panel in apps that support MCP Apps:
+
+- **To-dos**: "What do I need to do this week?" shows deadline cards and lessons you have not started.
+- **Lesson progress**: "Show my FIT2109 lesson progress" shows each module with how many lessons are done.
+- **Quiz practice**: "Help me practise the FIT2109 week 3 quiz" shows the questions with clickable options. When you finish, **交给 AI 批改** sends your choices back to the chat and the AI explains them from the lesson text.
+
+Your answers stay in the panel until you send them. Nothing is submitted to Ed and no lesson is marked as done. Ed does not show students the answer key, so the AI works the answers out from the lesson and says when it is unsure.
+
+Apps without panel support still get the same text answer as before. Whether a panel appears, and whether its buttons can send messages or open links, is up to the app. The panel labels are in Chinese.
 
 ## Ready-made prompts
 

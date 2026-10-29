@@ -22,6 +22,20 @@ Background sync and session refresh run alongside Claude Desktop. While Claude i
 
 Every command is listed on [Command reference](/study-kit/commands/).
 
+## Browse your course files
+
+```bash
+monash library --open
+```
+
+This opens a page in your browser that lists every Moodle and Ed lesson file already synced. Filter by unit, week or file name and click a file to download it. It is handy when you just want the week 7 slides without asking an AI.
+
+- It only shows what `monash sync` has already downloaded. It does not sync by itself.
+- It listens on `127.0.0.1` only, so other devices on your Wi-Fi cannot open it. The default port is 8766; use `--port` to pick another one.
+- It has no login, so do not forward it to the internet. Stop it with Ctrl-C.
+
+Needs Study Kit 1.4.0 or later.
+
 ## What search covers
 
 `monash grep` and Claude's course-file search look at:

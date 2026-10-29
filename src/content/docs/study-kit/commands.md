@@ -17,6 +17,7 @@ description: Every monash command, output formats and exit codes.
 | `monash login` / `monash login ed` | Log in to Moodle / replace the Ed token |
 | `monash courses` | Pick tracked units again |
 | `monash open` | Open the course-files folder |
+| `monash library [--open] [--port 8766]` | Browse and download synced files in your browser ([details](/study-kit/cli/#browse-your-course-files)) |
 | `monash moodle grades [FIT2102]` | Grades and feedback |
 | `monash moodle assignments --missing` | Possibly missed assignments |
 | `monash moodle news` / `find` / `get` / `messages` / `calendar` | Announcements / find an activity / download one file / messages / calendar subscription link |
@@ -27,6 +28,7 @@ description: Every monash command, output formats and exit codes.
 | `monash media` | Transcribe lecture recordings (needs the [media extra](/study-kit/recordings/)) |
 | `monash config [key] [value]` | View or change settings. Restart Claude Desktop afterwards |
 | `monash connect [app]` | Connect to Codex, Cursor, VS Code, Windsurf or Gemini CLI ([Other AI apps](/study-kit/other-clients/)) |
+| `monash remote serve` / `pair` / `clients` / `revoke` | Optional: host your own remote MCP server ([Host it yourself](/study-kit/remote/)) |
 | `monash update` | Update to the latest version |
 | `monash uninstall` | Remove it from Claude and other AI apps, and optionally delete all data |
 

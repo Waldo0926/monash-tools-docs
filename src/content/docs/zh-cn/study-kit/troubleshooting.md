@@ -58,6 +58,10 @@ monash config tz_offset 10
 
 Windows 上正在运行的程序不能被覆盖，Claude Desktop 会一直开着 `monash`。先从托盘完全退出 Claude，再在新的 PowerShell 窗口里重新运行更新。
 
+## 没有出现面板
+
+面板要 Study Kit 1.4.0，并且软件支持 MCP Apps。先 `monash update`，再重启软件。软件不支持面板的话，照样会收到普通的文字回答，内容是一样的。
+
 ## 还是不行
 
 MCP 后台日志是[数据文件夹](/zh-cn/study-kit/privacy/#数据存在哪)里的 `mcp.log`。带上 `monash doctor` 的输出开个 [issue](https://github.com/Waldo0926/monash-study-kit/issues)。
