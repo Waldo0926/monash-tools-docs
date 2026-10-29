@@ -10,11 +10,13 @@
 
 给 Monash 学生用的几个免费工具的使用指南，中英双语：
 
-- **Study Kit**：让 Claude 等 AI 读你自己的 Moodle 和 Ed，一条命令安装。
+- **Study Kit**：让你电脑上的 AI 软件（Claude、Codex、Cursor 等）读你自己的 Moodle 和 Ed，一条命令安装。1.4 起还可以开远程模式，让 ChatGPT 和网页版 Claude 也能用。
 - **Monash Hub**：课程、学位、选课规划、WAM/GPA 和官方指南。
 - **Ed Web**：在浏览器里读和搜 Ed 论坛。
-- **签到助手**：找签到码、只提交你确认过的课的 Chrome 扩展。
+- **签到助手**：找签到码、只提交你确认过的课的 Chrome 扩展，已上架 [Chrome 应用商店](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd?hl=zh-CN)。
 - **公众号问答机器人**：按官方页面回答，附出处。
+
+另外有一页讲我只给自己跑的两个工具（ed-digest 和 moodle-sync），以及该用哪个公开工具代替。
 
 ![docs.secureview.tech 首页：Study Kit 安装命令和各工具指南入口](docs/home.png)
 
@@ -22,6 +24,6 @@
 
 本地运行需要 Node 22.23.4 以上：`npm ci` 后 `npm run dev`。文档在 `src/content/docs/`，中文在 `zh-cn/` 下；首页是 `src/components/Landing.astro`，文字在 `src/i18n/landing.ts`。
 
-推到 `main` 会自动构建，从 monash-attendance-reminder 打包签到助手 zip，发布到 `gh-pages` 分支；每天也会自动跑一次。线上站点放在我的 VPS 上（国内打开更稳），VPS 每 10 分钟拉一次 `gh-pages`，nginx 配置和拉取脚本在 `deploy/vps/`。
+推到 `main` 会自动构建，从 monash-attendance-reminder 打包签到助手的 zip 版（给用不了应用商店的人），发布到 `gh-pages` 分支；每天也会自动跑一次。线上站点放在我的 VPS 上（国内打开更稳），VPS 每 10 分钟拉一次 `gh-pages`，nginx 配置和拉取脚本在 `deploy/vps/`。
 
 本项目和 Monash University、Ed、Anthropic 没有关系。图标来自 Lucide（ISC）。

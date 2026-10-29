@@ -10,7 +10,7 @@ description: 按你想做的事、要不要安装、数据去哪儿，对比这�
 | 在 AI 软件（Claude、Codex、Cursor 等）里问这周要交什么、Ed 上有什么新消息、某个知识点在哪页 | [Study Kit](/zh-cn/study-kit/) | 一条命令 | macOS、Windows、Linux |
 | 查课程的考核、先修、开课学期，规划学位，算 WAM | [Monash Hub](/zh-cn/monash-hub/) | 不用装，是网站，可以加到主屏幕 | 任何浏览器，手机电脑都行 |
 | 快速过一遍 Ed 论坛，把整门课的课件打包下载 | [Ed Web](/zh-cn/ed-web/) | 不用装 | 电脑浏览器 |
-| 找老师发在 Gmail、Ed、Moodle 里的签到码 | [签到助手](/zh-cn/attendance/) | Chrome 扩展，手动加载 | 电脑上的 Chrome |
+| 找老师发在 Gmail、Ed、Moodle 里的签到码 | [签到助手](/zh-cn/attendance/) | Chrome 扩展，从应用商店添加 | 电脑上的 Chrome |
 | 用中文提问，拿到官网链接 | [公众号问答](/zh-cn/wechat-bot/) | 不用装 | 微信 |
 
 ## 它们有什么不同
