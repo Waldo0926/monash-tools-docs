@@ -23,9 +23,11 @@ monash connect cursor --remove # take it out again
 
 `monash connect` needs Study Kit 1.2.0 or later. Run `monash update` if it says the command does not exist.
 
-<Aside type="caution">
-Only **Claude Desktop** and **Claude Code** have been tested with real use. `monash connect` writes the format from each vendor's docs as of October 2026. If they differ, the vendor's docs win.
+<Aside>
+**Claude Desktop** and **Claude Code** have been tested with the local server. **ChatGPT** and **Codex** have also been verified with read-only course queries through a private remote integration using the same **v1.3.0** core; Codex successfully queried both Moodle and Ed. These remote checks do not test `monash connect codex` or every Codex interface. The public package's stdio handshake, 17-tool catalog, course query with isolated empty data and ping also passed an offline smoke test on 30 October 2026.
 </Aside>
+
+`monash connect` writes the format from each vendor's docs as of October 2026. The local Codex, Cursor, VS Code, Windsurf and Gemini CLI connections have not yet been tested end to end; if the formats differ, the vendor's docs win. The private remote server is not included in this public package.
 
 If your config file has comments (VS Code allows them), `monash connect` leaves it alone and prints the entry for you to paste. To do it by hand, follow the two steps below.
 
@@ -122,5 +124,5 @@ It maps study questions to `monash` commands and carries the same source rules f
 
 - Sign in and pick units with `monash setup` as usual. Without Claude installed, the last step says it cannot find Claude Desktop. Ignore it.
 - Background sync and Moodle refresh only run while the app is open and the MCP server is running.
-- The tool descriptions are written with Claude in mind. Other models usually follow them, but that has not been checked.
-- **ChatGPT on the web or phone is not supported.** It can only reach remote servers, not a program on your computer.
+- Read-only course queries have been verified in ChatGPT and Codex through the remote integration; other workflows and models still need their own checks.
+- **ChatGPT needs a remote server.** The verified private remote integration uses the same core, while this package starts a local stdio server. Installing it does not by itself provide a remote endpoint for ChatGPT on the web or phone.

@@ -23,9 +23,11 @@ monash connect cursor --remove # 移除
 
 `monash connect` 要 Study Kit 1.2.0 以上。提示没有这个命令的话先运行 `monash update`。
 
-<Aside type="caution">
-实际用过的只有 **Claude Desktop** 和 **Claude Code**。`monash connect` 写的格式照各家 2026 年 10 月的官方文档，有出入时以官方文档为准。
+<Aside>
+**Claude Desktop** 和 **Claude Code** 已实测本地服务器。**ChatGPT** 和 **Codex** 也已通过使用同一套 **v1.3.0** 核心的私有远程集成验证只读课程查询；Codex 成功查询了 Moodle 和 Ed。这些远程验证不等同于测试 `monash connect codex` 或全部 Codex 界面。公开包的 stdio 握手、17 个工具目录、隔离空数据下的课程查询和 ping 也已于 2026 年 10 月 30 日通过离线测试。
 </Aside>
+
+`monash connect` 写的格式照各家 2026 年 10 月的官方文档。本地 Codex、Cursor、VS Code、Windsurf、Gemini CLI 连接尚未完成端到端实测，有出入时以官方文档为准。私有远程服务器不包含在这个公开包里。
 
 配置文件里有注释的话（VS Code 允许写注释），`monash connect` 不会动它，会把要加的那段打印出来让你自己贴。想手动配置就按下面两步。
 
@@ -122,5 +124,5 @@ npx skills add Waldo0926/monash-study-kit
 
 - 登录和选课还是用 `monash setup`。没装 Claude 的话，最后一步会提示找不到 Claude Desktop，忽略就行。
 - 后台同步和 Moodle 续期只在软件开着、MCP 在运行时进行。
-- 工具说明是按 Claude 写的，别的模型一般也能照着用，但没验证过。
-- **网页版和手机上的 ChatGPT 不支持。** 它们只能连网上的服务器，连不到你电脑上的程序。
+- ChatGPT 和 Codex 已通过远程集成验证只读课程查询；其他工作流和模型仍需分别验证。
+- **ChatGPT 需要远程服务器。** 已验证的私有远程集成使用同一套核心，而这个包启动的是本地 stdio 服务器。仅安装公开包不会自动提供给网页版或手机 ChatGPT 使用的远程地址。
