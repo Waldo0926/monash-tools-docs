@@ -26,7 +26,7 @@ monash connect cursor --remove # 移除
 <Aside>
 **Claude Desktop** 和 **Claude Code** 已实测本地服务器。**ChatGPT** 和 **Codex** 也已通过使用 **v1.3.0** 核心的私有远程集成验证只读课程查询；Codex 成功查询了 Moodle 和 Ed。这些远程验证不等同于测试 `monash connect codex` 或全部 Codex 界面。
 
-2026 年 10 月 30 日，PyPI 上的 **1.4.0** 包在干净环境里用编造的数据测过一遍：stdio 握手、18 个工具的目录、三个面板、课件浏览页，以及 `monash remote` 用 Claude 和 ChatGPT 回调地址走完的整套登录和查询流程。这次测试是在一台机器上跑的，没有公网域名，所以不能代替在 ChatGPT 或 Codex 里对 1.4.0 的真实测试。
+2026 年 10 月 30 日，PyPI 上的 **1.4.0** 包在干净环境里用编造的数据测过一遍：stdio 握手、18 个工具的目录、三个面板、课件浏览页，以及 `monash remote` 用 Claude 和 ChatGPT 回调地址走完的整套登录和查询流程。这次测试是在一台机器上跑的，没有公网域名。另外，作者用 ChatGPT Plus 加自己的域名和服务器可以正常使用，见[自己托管](/zh-cn/study-kit/remote/)。
 </Aside>
 
 `monash connect` 写的格式照各家 2026 年 10 月的官方文档。本地 Codex、Cursor、VS Code、Windsurf、Gemini CLI 连接尚未完成端到端实测，有出入时以官方文档为准。
