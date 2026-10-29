@@ -26,7 +26,7 @@ monash connect cursor --remove # take it out again
 <Aside>
 **Claude Desktop** and **Claude Code** have been tested with the local server. **ChatGPT** and **Codex** have also been verified with read-only course queries through a private remote integration using the **v1.3.0** core; Codex successfully queried both Moodle and Ed. These remote checks do not test `monash connect codex` or every Codex interface.
 
-On 30 October 2026 the **1.4.0** package from PyPI was checked in a clean environment with made-up data: the stdio handshake, the 18-tool catalog, the three panels, the course library, and the full sign-in and query flow of `monash remote` using the Claude and ChatGPT callback addresses. That check ran on one machine without a public domain, so it does not replace a real test in ChatGPT or Codex against 1.4.0.
+On 30 October 2026 the **1.4.0** package from PyPI was checked in a clean environment with made-up data: the stdio handshake, the 18-tool catalog, the three panels, the course library, and the full sign-in and query flow of `monash remote` using the Claude and ChatGPT callback addresses. That check ran on one machine without a public domain. Separately, ChatGPT Plus works with the author's own domain and server; see [Host it yourself](/study-kit/remote/).
 </Aside>
 
 `monash connect` writes the format from each vendor's docs as of October 2026. The local Codex, Cursor, VS Code, Windsurf and Gemini CLI connections have not yet been tested end to end; if the formats differ, the vendor's docs win.
