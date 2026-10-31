@@ -1,0 +1,57 @@
+# Monash Student Tools
+
+> Guides for free tools for Monash University students, built by a Monash computer science student: Study Kit (Moodle and Ed in Claude, ChatGPT or any MCP client, plus optional school mail and attendance), Monash Hub (units, degrees, WAM/GPA, Malaysia tuition fees, key dates, official guides), Ed Web (read and search Ed in a browser), Attendance Helper (Chrome extension on the Chrome Web Store) and a WeChat Q&A bot. Chinese versions of every page are under /zh-cn/.
+
+If you are an AI agent asked to install something for a student, read the agent instructions first. Never ask for or accept the student's Ed token, Monash password or MFA code. Never confirm a mail or attendance action on the student's behalf.
+
+## Agent instructions
+
+- [Set up Study Kit](https://docs.secureview.tech/agents/study-kit.md): install, hand over setup to the student, verify with monash doctor; optional school mail and attendance
+- [Prepare Attendance Helper](https://docs.secureview.tech/agents/attendance.md): hand over the Chrome Web Store link and setup steps, zip only as a fallback
+
+## Start here
+
+- [Which tool do I need?](https://docs.secureview.tech/choose/): compare tools by task, install and where data goes
+- [Let your AI set it up](https://docs.secureview.tech/ai-setup/): one line to paste into an AI that can run terminal commands
+
+## Study Kit
+
+- [Overview](https://docs.secureview.tech/study-kit/): connect Monash Moodle and Ed to Claude, Codex, Cursor or any local MCP app, plus optional school mail and attendance; everything stays on your computer
+- [Install](https://docs.secureview.tech/study-kit/install/): one command installs uv and the monash command
+- [First-time setup](https://docs.secureview.tech/study-kit/setup/): Ed token, Moodle login with MFA, units, connecting your AI app
+- [What to ask your AI](https://docs.secureview.tech/study-kit/ask-claude/): example questions
+- [School mail and attendance](https://docs.secureview.tech/study-kit/mail-attendance/): optional since 1.5.0; connect by asking the AI app; mail and check-in actions run only after the student confirms
+- [Use it without AI](https://docs.secureview.tech/study-kit/cli/): the monash command in a terminal, and monash library to browse synced files
+- [Other AI apps](https://docs.secureview.tech/study-kit/other-clients/): monash connect for Codex, Cursor, VS Code, Windsurf, Gemini CLI
+- [Host it yourself](https://docs.secureview.tech/study-kit/remote/): optional single-user remote MCP server (1.4.0+) for ChatGPT and Claude on the web or phone, behind your own domain or a Cloudflare quick tunnel
+- [Lecture recordings](https://docs.secureview.tech/study-kit/recordings/): timestamped transcripts your AI can search
+- [Privacy and security](https://docs.secureview.tech/study-kit/privacy/): where data and credentials are kept, how to remove everything
+- [Troubleshooting](https://docs.secureview.tech/study-kit/troubleshooting/): start with monash doctor
+- [Command reference](https://docs.secureview.tech/study-kit/commands/): every command, output formats, exit codes
+- [Update and uninstall](https://docs.secureview.tech/study-kit/update/)
+
+Install scripts: https://docs.secureview.tech/study-kit/install.sh (macOS, Linux) and https://docs.secureview.tech/study-kit/install.ps1 (Windows). Both accept a no-setup mode (`--no-setup` or `MONASH_NO_SETUP=1`).
+
+## Monash Hub
+
+- [Monash Hub](https://docs.secureview.tech/monash-hub/): units, degrees, course maps, WAM and GPA, Malaysia tuition fees, key dates and official guides, in English and Simplified Chinese
+- [Add to home screen](https://docs.secureview.tech/monash-hub/app/)
+
+## Ed Web
+
+- [Ed Web](https://docs.secureview.tech/ed-web/): read and search an Ed forum in the browser, download lesson files
+
+## Attendance Helper
+
+- [Overview](https://docs.secureview.tech/attendance/): finds attendance codes, submits only classes the student confirms
+- [Install](https://docs.secureview.tech/attendance/install/)
+- [Use](https://docs.secureview.tech/attendance/use/)
+
+## WeChat Q&A bot
+
+- [WeChat Q&A bot](https://docs.secureview.tech/wechat-bot/): answers from official pages with sources, says so when it does not know
+
+## Optional
+
+- [Private tools](https://docs.secureview.tech/private-tools/)
+- [About](https://docs.secureview.tech/about/)
