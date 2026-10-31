@@ -26,7 +26,7 @@ export const strings = {
     nav: { how: 'How it works', tools: 'Tools', docs: 'Docs', github: 'GitHub', start: 'Get started' },
     copy: 'Copy',
     hero: {
-      h1a: 'Moodle, Ed, mail\nand attendance,',
+      h1a: 'Moodle, Ed, Mail\nand Attendance,',
       h1b: 'answered by your AI.',
       lead:
         'Study Kit copies your own Moodle and Ed to your laptop, plus your school mail and attendance if you connect them, and lets the AI app on your computer search them: Claude, Codex (also inside the ChatGPT desktop app), Cursor and others. Ask what is due, what changed on Ed, which slide covers a topic, which emails need you, or which classes you have not checked in to. Your login stays on your computer, and the AI only gets what it looks up.',
