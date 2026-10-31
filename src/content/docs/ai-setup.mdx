@@ -7,7 +7,7 @@ import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 If you use an AI that can run commands on your computer (Claude Code, Codex, Cursor's agent, Gemini CLI and similar), it can do the install for you. Paste one of these:
 
-<p class="prompt-label">Study Kit (Moodle and Ed in your AI app)</p>
+<p class="prompt-label">Study Kit (Moodle, Ed and optional mail and attendance in your AI app)</p>
 
 ```text
 Read https://docs.secureview.tech/agents/study-kit.md and set up Monash Study Kit on my computer.
@@ -32,6 +32,8 @@ Those pages are plain instructions written for an AI: which command to run on wh
 3. **The AI checks.** When you say you are done, it runs `monash doctor` and `monash todo` and tells you what it found.
 
 </Steps>
+
+School mail and attendance are optional. Connect them later by asking your AI app; see [School mail and attendance](/study-kit/mail-attendance/).
 
 <Aside type="caution" title="Never paste your Ed token into a chat">
 An Ed token can do everything your Ed account can, including posting and reading private threads. It belongs in the terminal only. The agent guides tell the AI to refuse a token if you paste one.

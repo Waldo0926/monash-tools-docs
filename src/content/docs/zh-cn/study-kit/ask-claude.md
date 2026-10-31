@@ -92,7 +92,8 @@ description: 截止日期、课件、Ed、成绩和维护的示例问法。用�
 AI 软件开着的时候，Study Kit 会：
 
 - 每小时同步一次 Ed 和 Moodle（新帖、新回复、新课件），并更新搜索索引；
-- 每 20 分钟给 Moodle 续一次期，因为 Moodle 空闲 4 小时就会把你登出。
+- 每 20 分钟给 Moodle 续一次期，因为 Moodle 空闲 4 小时就会把你登出；
+- 接上学校邮箱的话，每 30 分钟同步一次邮件；接上考勤的话，按课表读签到状态（[详细](/zh-cn/study-kit/mail-attendance/#自己会跑的部分)）。
 
 ## Moodle 登录过期了
 

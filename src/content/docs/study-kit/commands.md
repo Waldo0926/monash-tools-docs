@@ -6,7 +6,7 @@ description: Every monash command, output formats and exit codes.
 | Command | What it does |
 | --- | --- |
 | `monash setup` | First-time setup. `monash setup claude` only reconnects Claude |
-| `monash status` | Login status and last sync time |
+| `monash status` | Login status and last sync time, including mail and attendance once connected |
 | `monash help` | Everything it can do, each with an example question and the matching command |
 | `monash doctor` | Health check that tells you how to fix each problem |
 | `monash doctor --deep` | Also cross-checks results against a second source on Moodle and Ed |
@@ -32,7 +32,7 @@ description: Every monash command, output formats and exit codes.
 | `monash gmail login` / `sync` / `todo` / `search` / `thread` | Optional school mail: connect / sync with progress / unread inbox mail / offline search / read a thread ([details](/study-kit/mail-attendance/)) |
 | `monash gmail draft` / `send-draft` / `labels` | Preview a mailbox action; add `--confirm` to run it |
 | `monash attendance login` / `status` / `sync` / `overview` / `codes` / `probe` | Optional attendance: connect / status and login lifetime / read the portal / saved classes / find codes / compare both ways of reading |
-| `monash update` | Update to the latest version |
+| `monash update` | Update to the latest version, keeping the optional parts you installed |
 | `monash uninstall` | Remove it from Claude and other AI apps, and optionally delete all data |
 
 Every command has `--help`.

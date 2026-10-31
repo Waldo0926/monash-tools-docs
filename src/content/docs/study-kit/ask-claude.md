@@ -92,7 +92,8 @@ These rules are in the server instructions. There is nothing to configure.
 While your AI app is open, Study Kit:
 
 - syncs Ed and Moodle every hour (new posts, replies and course files) and refreshes the search index;
-- refreshes your Moodle session every 20 minutes, because Moodle logs you out after 4 idle hours.
+- refreshes your Moodle session every 20 minutes, because Moodle logs you out after 4 idle hours;
+- if you connected them, syncs school mail every 30 minutes and reads attendance on your timetable ([details](/study-kit/mail-attendance/#what-runs-by-itself)).
 
 ## When the Moodle login expires
 

@@ -6,7 +6,7 @@ description: 所有 monash 命令、输出格式和退出码。
 | 命令 | 作用 |
 | --- | --- |
 | `monash setup` | 第一次设置。`monash setup claude` 只重新接进 Claude |
-| `monash status` | 登录状态、上次同步时间 |
+| `monash status` | 登录状态、上次同步时间；接上的话也包括邮箱和考勤 |
 | `monash help` | 能做的所有事，每条附示例问法和对应命令 |
 | `monash doctor` | 体检，告诉你每个问题怎么修 |
 | `monash doctor --deep` | 再用 Moodle 和 Ed 上的第二个来源核对结果 |
@@ -32,7 +32,7 @@ description: 所有 monash 命令、输出格式和退出码。
 | `monash gmail login` / `sync` / `todo` / `search` / `thread` | 可选的学校邮箱：接上 / 同步（显示进度）/ 未读邮件待办 / 离线搜索 / 读对话（[详细](/zh-cn/study-kit/mail-attendance/)） |
 | `monash gmail draft` / `send-draft` / `labels` | 预览邮箱操作；加 `--confirm` 才执行 |
 | `monash attendance login` / `status` / `sync` / `overview` / `codes` / `probe` | 可选的考勤：接上 / 状态和登录时长 / 读门户 / 已保存的班次 / 找签到码 / 对照两种读法 |
-| `monash update` | 更新到最新版 |
+| `monash update` | 更新到最新版，保留你装过的可选部分 |
 | `monash uninstall` | 从 Claude 和其他 AI 软件移除，可选删除所有数据 |
 
 每个命令都有 `--help`。
