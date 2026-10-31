@@ -41,6 +41,19 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | "Any recent announcements for FIT2102?" | Moodle announcements |
 | "Has anyone messaged me on Moodle?" | Moodle messages, read-only |
 
+## School mail and attendance (optional)
+
+Once [connected](/study-kit/mail-attendance/):
+
+| You can ask | What it checks |
+| --- | --- |
+| "Anything in my school email I need to deal with?" | Recent unread inbox mail, without promotions and social updates |
+| "Find the email about my exchange application and tell me what the attachment says" | Offline search, the whole thread and the attachment text |
+| "Draft a reply asking for an extension" | Shows the full draft first; it is created only after you confirm |
+| "Which classes this week haven't I checked in to?" | Your classes and check-in status from the attendance portal |
+| "What's the code for today's FIT2102 workshop?" | Candidate codes from Moodle, Ed and school mail, each with its source |
+| "I just finished the workshop, check me in with ABCDE" | Shows the class and code first; it submits only after you confirm |
+
 ## Upkeep
 
 | You can ask | What happens |
@@ -48,6 +61,7 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | "Log me in to Moodle again" | Opens the login window on your computer |
 | "Sync the latest" | Runs a sync now |
 | "monash isn't working" | Runs the same checks as `monash doctor` |
+| "Connect my school email" / "Connect my attendance" | Installs what is missing and opens the sign-in window |
 
 ## Panels
 
@@ -88,4 +102,4 @@ While the login is expired, **deadlines still work** (they come from Moodle's ca
 
 ## It cannot
 
-Submit assignments, attempt quizzes or post on Ed. Do those on the website yourself.
+Submit assignments, attempt quizzes or post on Ed. Do those on the website yourself. Mail actions and attendance check-in only run after you confirm each one.

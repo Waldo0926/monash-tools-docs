@@ -79,6 +79,7 @@ Tell the student:
 - If they use Codex, Cursor, VS Code, Windsurf or Gemini CLI instead, run `monash connect <client>` (see the next section) and tell them to restart that app.
 - They can now ask things like "What's due this week?", "Anything new on Ed?" or "Which slide covers recursion?".
 - `monash login` signs in to Moodle again when the session expires; `monash update` updates.
+- Optional (Study Kit 1.5.0 or later): school mail and attendance. Mention them once. If the student wants them, they can say "connect my school email" or "connect my attendance" in their AI app, which installs what is missing and opens a sign-in window; or you can run `uv tool install --reinstall --refresh "monash-study-kit[gmail,attendance]"` for them and ask them to run `monash gmail login` and `monash attendance login` in their own terminal. Never handle their password or MFA code. Details: https://docs.secureview.tech/study-kit/mail-attendance/
 
 ## If the student uses another MCP client
 

@@ -10,7 +10,7 @@
 
 给 Monash 学生用的几个免费工具的使用指南，中英双语：
 
-- **Study Kit**：让你电脑上的 AI 软件（Claude、Codex、Cursor 等）读你自己的 Moodle 和 Ed，一条命令安装。1.4 起还可以开远程模式，让 ChatGPT 和网页版 Claude 也能用。
+- **Study Kit**：让你电脑上的 AI 软件（Claude、Codex、Cursor 等）读你自己的 Moodle 和 Ed，一条命令安装。1.4 起还可以开远程模式，让 ChatGPT 和网页版 Claude 也能用；1.5 起还可以选择接上学校邮箱和考勤。
 - **Monash Hub**：课程、学位、选课规划、WAM/GPA 和官方指南。
 - **Ed Web**：在浏览器里读和搜 Ed 论坛。
 - **签到助手**：找签到码、只提交你确认过的课的 Chrome 扩展，已上架 [Chrome 应用商店](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd?hl=zh-CN)。

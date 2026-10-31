@@ -63,6 +63,18 @@ Windows 上正在运行的程序不能被覆盖，AI 软件开着时会一直开
 
 面板要 Study Kit 1.4.0，并且软件支持 MCP Apps。先 `monash update`，再重启软件。软件不支持面板的话，照样会收到普通的文字回答，内容是一样的。
 
+## 我的课不用 Ed
+
+运行 `monash config use_ed false`。之后同步、待办和 `monash doctor` 都不会再提醒 Ed 令牌，AI 软件里也不再列 Ed 的工具。以后要用了，运行 `monash login ed` 就会重新打开。
+
+## Google 提示“尚未验证此应用”
+
+自带的应用都会这样，点 **高级**，再点 **继续**。如果 Google 提示这个应用的用户已满，就按[设置教程](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/google-and-attendance-setup.md)改用你自己的 Google Cloud 应用。
+
+## 邮件或考勤不更新了
+
+运行 `monash doctor`，接上以后它会各给一行，告诉你哪里要修。登录过期的话，让 AI 重新接一次，或者运行 `monash gmail login` / `monash attendance login`。
+
 ## 还是不行
 
 MCP 后台日志是[数据文件夹](/zh-cn/study-kit/privacy/#数据存在哪)里的 `mcp.log`。带上 `monash doctor` 的输出开个 [issue](https://github.com/Waldo0926/monash-study-kit/issues)。
