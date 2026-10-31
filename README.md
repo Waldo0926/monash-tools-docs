@@ -10,7 +10,7 @@
 
 Guides for the free tools I built for Monash students, in English and Chinese:
 
-- **Study Kit**: ask the AI app on your computer (Claude, Codex, Cursor and others) about your own Moodle and Ed. One-command install. Since 1.4 it can also reach ChatGPT and Claude on the web through an optional remote mode.
+- **Study Kit**: ask the AI app on your computer (Claude, Codex, Cursor and others) about your own Moodle and Ed. One-command install. Since 1.4 it can also reach ChatGPT and Claude on the web through an optional remote mode, and since 1.5 it can optionally read your school mail and attendance.
 - **Monash Hub**: units, degrees, course maps, WAM/GPA and official guides.
 - **Ed Web**: read and search an Ed forum in the browser.
 - **Attendance Helper**: Chrome extension that finds attendance codes and submits only the classes you confirm. On the [Chrome Web Store](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd).

@@ -63,6 +63,18 @@ A running program cannot be overwritten on Windows, and your AI app keeps `monas
 
 Panels need Study Kit 1.4.0 and an app that supports MCP Apps. Run `monash update` and restart the app. If the app does not support panels you still get the normal text answer, which has the same content.
 
+## My units don't use Ed
+
+Run `monash config use_ed false`. Sync, the to-do list and `monash doctor` stop reminding you about the Ed token, and your AI app no longer lists the Ed tools. `monash login ed` turns it back on.
+
+## Google says "this app hasn't been verified"
+
+That is expected for the bundled app. Click **Advanced**, then **Continue**. If Google says the app has reached its user limit, use your own Google Cloud app as the [setup guide](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/google-and-attendance-setup.md) explains.
+
+## Mail or attendance stopped updating
+
+Run `monash doctor`: it has a line for each once they are connected, with what to fix. If a login expired, ask your AI to connect it again, or run `monash gmail login` or `monash attendance login`.
+
 ## Still stuck
 
 The MCP background log is `mcp.log` in the [data folder](/study-kit/privacy/#where-data-lives). Open an [issue](https://github.com/Waldo0926/monash-study-kit/issues) with the `monash doctor` output.

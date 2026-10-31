@@ -29,6 +29,9 @@ description: Every monash command, output formats and exit codes.
 | `monash config [key] [value]` | View or change settings. Restart your AI app afterwards |
 | `monash connect [app]` | Connect to Codex, Cursor, VS Code, Windsurf or Gemini CLI ([Other AI apps](/study-kit/other-clients/)) |
 | `monash remote serve` / `pair` / `clients` / `revoke` | Optional: host your own remote MCP server ([Host it yourself](/study-kit/remote/)) |
+| `monash gmail login` / `sync` / `todo` / `search` / `thread` | Optional school mail: connect / sync with progress / unread inbox mail / offline search / read a thread ([details](/study-kit/mail-attendance/)) |
+| `monash gmail draft` / `send-draft` / `labels` | Preview a mailbox action; add `--confirm` to run it |
+| `monash attendance login` / `status` / `sync` / `overview` / `codes` / `probe` | Optional attendance: connect / status and login lifetime / read the portal / saved classes / find codes / compare both ways of reading |
 | `monash update` | Update to the latest version |
 | `monash uninstall` | Remove it from Claude and other AI apps, and optionally delete all data |
 

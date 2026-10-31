@@ -13,6 +13,14 @@ Restart your AI app afterwards. On Windows it tells you to quit Claude first and
 
 When a new version is out you will hear about it: an extra line after terminal commands, and a short mention when you ask your AI for your to-dos. It checks GitHub at most once a day and sends no personal information. Turn it off with `monash config update_check false`.
 
+`monash update` keeps the optional parts you installed (school mail, attendance, recordings).
+
+If you ever reinstall by hand with `uv tool install`, add `--refresh` so uv checks PyPI again instead of using an old list of versions:
+
+```bash
+uv tool install --reinstall --refresh "monash-study-kit[gmail,attendance]"
+```
+
 What changed in each version is in the [changelog](https://github.com/Waldo0926/monash-study-kit/blob/main/CHANGELOG.md).
 
 ## Uninstall

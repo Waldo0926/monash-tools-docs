@@ -22,6 +22,14 @@ description: Study Kit 把数据存在哪、存了哪些凭据、AI 软件能看
 
 用了可选的[远程模式](/zh-cn/study-kit/remote/)的话，`secrets/remote-mcp.db` 里还会记下配对过的软件。只存令牌的哈希，不存令牌本身。
 
+## 学校邮箱和考勤
+
+只有[接上](/zh-cn/study-kit/mail-attendance/)以后才有。接上后 `secrets` 里还会有 Google 的授权令牌和考勤门户的登录状态，`data` 里有邮件和考勤记录的副本。不存任何密码。
+
+安装包里自带一个 Google 应用，这样你不用自己建 Google Cloud 项目也能登录。它只是告诉 Google 是哪个应用在请求授权，邮件从 Google 直接到你电脑，不经过维护者。随时可以在 [myaccount.google.com/permissions](https://myaccount.google.com/permissions) 收回授权。完整的[隐私政策](https://github.com/Waldo0926/monash-study-kit/blob/main/PRIVACY.md)里写了 Google 用户数据的规定。
+
+起草、发送草稿、改标签和签到，每一项都要你确认才执行。不会彻底删除任何邮件。
+
 ## AI 能看到什么
 
 只有你提问时工具返回的内容：截止日期列表、某个帖子的正文、某份课件的文字。令牌和 cookie 永远不会发给 AI。也不要把 Ed 令牌贴进聊天，只在终端里输入。

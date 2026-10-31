@@ -110,6 +110,7 @@ After `revoke` the app has to pair again.
 ## What remote mode can and cannot do
 
 - It offers 16 read-only query tools and the same panels and prompts as the local server.
+- From 1.5.0, school mail and attendance can be added per app. When you pair an app, the sign-in page lists the parts turned on on this computer: read-only mail and attendance start ticked, actions (drafting, labels, check-in) start unticked. Untick anything that app should not have. Apps paired earlier keep Moodle and Ed only until you pair them again, and `monash remote clients` shows what each app has.
 - Logging in to Moodle and starting a sync are left out. Do those on the computer itself.
 - There is no way to set credentials, submit assignments, attempt quizzes, post on Ed or download files over the internet.
 - Sign-in uses OAuth with PKCE. Access tokens last one hour. Refresh tokens last 30 days and change every time they are used. Only hashes are stored, in `secrets/remote-mcp.db`.

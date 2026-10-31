@@ -14,6 +14,7 @@ Study Kit connects Monash **Moodle** and **Ed** to the AI app on your computer: 
 - "Which week of FIT2102 covered monads? Which slide deck, which page?"
 - "What does the A2 spec ask for?" "What's my current grade in FIT2109?"
 - "Quiz me on FIT2109 week 3." In apps that show MCP Apps panels, your to-dos, Ed lesson progress and quiz questions appear as small panels you can click.
+- New in 1.5.0, optional: "Anything in my school email I need to deal with?" and "Which classes haven't I checked in to?" See [School mail and attendance](/study-kit/mail-attendance/).
 
 Answers come from your real Moodle and Ed data, with sources like "Workshop 5 Slides, page 25". The AI finds the right file and reads only the pages it needs, so you do not download PDFs and upload them again.
 
@@ -24,7 +25,7 @@ Answers come from your real Moodle and Ed data, with sources like "Workshop 5 Sl
 
 ## What it never does
 
-All tools are **read-only**. Study Kit never submits assignments, attempts quizzes or posts on Ed. Course files, the login and the database live on your computer and never pass through a third-party server.
+Everything it does with Moodle and Ed is **read-only**. Study Kit never submits assignments, attempts quizzes or posts on Ed. The optional [school mail and attendance](/study-kit/mail-attendance/) parts can draft mail, change labels or check you in, and only after you confirm each action. Course files, the login and the database live on your computer and never pass through a third-party server.
 
 ## You need
 
@@ -44,6 +45,7 @@ Times are handled as UTC+8 by default. On an Australian campus, run `monash conf
   <LinkCard title="First-time setup" description="Ed token, Moodle login, units, your AI app. About five minutes." href="/study-kit/setup/" />
   <LinkCard title="What to ask your AI" description="Example questions for each kind of task." href="/study-kit/ask-claude/" />
   <LinkCard title="Use it without AI" description="The same answers in your terminal, no usage needed." href="/study-kit/cli/" />
+  <LinkCard title="School mail and attendance" description="Optional since 1.5.0. Connect them by asking your AI app." href="/study-kit/mail-attendance/" />
 </CardGrid>
 
 Source code: [Waldo0926/monash-study-kit](https://github.com/Waldo0926/monash-study-kit) (MIT).
