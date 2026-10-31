@@ -10,7 +10,8 @@ Start from what you want to do. Most people want Study Kit or Monash Hub.
 | Ask your AI app (Claude, Codex, Cursor and others) what is due, what is new on Ed, which slide covers a topic | [Study Kit](/study-kit/) | One command | macOS, Windows, Linux |
 | Check a unit's assessments, requisites and offerings, plan a degree, work out WAM | [Monash Hub](/monash-hub/) | None. A website you can add to your home screen | Any browser, phone or computer |
 | Skim an Ed forum quickly and download a unit's lesson files as one zip | [Ed Web](/ed-web/) | None | A desktop browser |
-| Find attendance codes posted in Gmail, Ed or Moodle | [Attendance Helper](/attendance/) | A Chrome extension from the Chrome Web Store | Chrome on a computer |
+| Find attendance codes posted in Gmail, Ed or Moodle | [Attendance Helper](/attendance/), or ask your AI app with [Study Kit](/study-kit/mail-attendance/) | A Chrome extension from the Chrome Web Store, or Study Kit's optional attendance part | Chrome on a computer, or your AI app |
+| Ask your AI app about your school mail | [Study Kit](/study-kit/mail-attendance/) (optional since 1.5.0) | Say "connect my school email" in your AI app | macOS, Windows, Linux |
 | Ask a question in Chinese and get the official link | [WeChat Q&A bot](/wechat-bot/) | None | WeChat |
 
 ## How they differ
@@ -19,13 +20,15 @@ Start from what you want to do. Most people want Study Kit or Monash Hub.
 
 **Monash Hub is about the university, not your own units.** It answers "what is this unit like" and "what does my degree need" from the Handbook and official pages. Study Kit answers "what do I have to do this week" from your own Moodle and Ed.
 
-**Only the attendance helper ever submits anything**, and only after you tick each class you attended and confirm a declaration.
+**Study Kit 1.5 can also find attendance codes**, from your AI app instead of Chrome, and uses the same parser as the attendance helper. Pick whichever you already use.
+
+**Nothing submits or sends without you.** The attendance helper submits only after you tick each class you attended and confirm a declaration. Study Kit never writes to Moodle or Ed; its optional mail and attendance actions show a full preview and run only after you confirm that exact action.
 
 ## Where your data goes
 
 | Tool | What it signs in with | Where that is kept | Who it talks to |
 | --- | --- | --- | --- |
-| Study Kit | Ed API token, Moodle session cookie | A folder on your computer readable only by your user | Moodle and Ed |
+| Study Kit | Ed API token, Moodle session cookie; if connected, a Google sign-in token and the attendance portal login | A folder on your computer readable only by your user | Moodle and Ed; if connected, Gmail and Monash Attendance |
 | Monash Hub | Nothing, unless you sign in to post in the community | Plans and marks stay in your browser | monashhub.secureview.tech |
 | Ed Web | Your Ed token | That browser tab only, cleared when you close it | edstem.org directly |
 | Attendance Helper | Your existing signed-in Chrome sessions | Chrome's local extension storage | Monash Attendance, Moodle, Ed, Gmail |

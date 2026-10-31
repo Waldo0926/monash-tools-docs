@@ -14,7 +14,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: { en: 'Monash Student Tools', 'zh-CN': 'Monash 学生工具' },
-      description: 'Guides for the free tools I built for Monash students: Moodle and Ed in Claude, Monash Hub, Ed Web and the attendance helper.',
+      description: 'Guides for the free tools I built for Monash students: Moodle, Ed, school mail and attendance in Claude, Monash Hub, Ed Web and the attendance helper.',
       defaultLocale: 'root',
       locales: {
         root: { label: 'English', lang: 'en' },

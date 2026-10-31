@@ -20,7 +20,7 @@ export const strings = {
     htmlLang: 'en',
     title: 'Monash Student Tools',
     description:
-      'Free tools for Monash students: ask your AI about your Moodle and Ed, look up units and plan a degree, read Ed faster, and find attendance codes.',
+      'Free tools for Monash students: ask your AI about your Moodle, Ed, school mail and attendance, look up units and plan a degree, read Ed faster, and find attendance codes.',
     prefix: '',
     otherLang: { label: '中文', href: '/zh-cn/' },
     nav: { how: 'How it works', tools: 'Tools', docs: 'Docs', github: 'GitHub', start: 'Get started' },
@@ -43,7 +43,7 @@ export const strings = {
       ],
       primary: 'Install guide',
       secondary: 'All tools',
-      meta: 'Read-only · MIT · Computer only, not phones',
+      meta: 'Read-only for Moodle and Ed · MIT · Runs on your computer',
     },
     sheets: SHEETS_EN,
     story: {
@@ -76,13 +76,13 @@ export const strings = {
       installLabel: 'Install',
       runsLabel: 'Runs on',
       rows: [
-        { name: 'Study Kit', line: 'Ask your AI about your own Moodle and Ed: deadlines, Ed updates, grades, which slide covers what.', install: 'One command', runs: 'Your computer', href: 'study-kit/' },
+        { name: 'Study Kit', line: 'Ask your AI about your own Moodle and Ed: deadlines, Ed updates, grades, which slide covers what. Optional: school mail and attendance.', install: 'One command', runs: 'Your computer', href: 'study-kit/' },
         { name: 'Monash Hub', line: 'Units, degrees, course maps, WAM and GPA, Malaysia tuition fees, key dates and official guides with source links.', install: 'None', runs: 'Any browser', href: 'monash-hub/' },
         { name: 'Ed Web', line: 'Fetch an Ed forum into your browser, skim one line per post, download a unit\'s lesson files as a zip.', install: 'None', runs: 'Browser tab', href: 'ed-web/' },
         { name: 'Attendance Helper', line: 'Finds attendance codes in Gmail, Ed and Moodle. Submits only the classes you tick as attended.', install: 'Chrome Web Store', runs: 'Chrome', href: 'attendance/' },
         { name: 'WeChat Q&A', line: 'Ask 马莫百科 in Chinese. Answers come from official pages with links, and unknowns go to a person.', install: 'None', runs: 'WeChat', href: 'wechat-bot/' },
       ],
-      rules: ['Study Kit only reads', 'Attendance Helper submits only the classes you tick', 'Your login stays with you', 'Free, no tracking'],
+      rules: ['Study Kit only reads Moodle and Ed, and asks before any mail or check-in', 'Attendance Helper submits only the classes you tick', 'Your login stays with you', 'Free, no tracking'],
     },
     agent: {
       h2a: 'Or paste one line',
@@ -104,7 +104,7 @@ export const strings = {
   zh: {
     htmlLang: 'zh-CN',
     title: 'Monash 学生工具',
-    description: '给 Monash 同学的免费工具：让 AI 查自己的 Moodle 和 Ed、查课和规划学位、更快地看 Ed、找签到码。',
+    description: '给 Monash 同学的免费工具：让 AI 查自己的 Moodle、Ed、学校邮箱和考勤，查课和规划学位，更快地看 Ed，找签到码。',
     prefix: '/zh-cn',
     otherLang: { label: 'English', href: '/' },
     nav: { how: '怎么工作', tools: '工具', docs: '文档', github: 'GitHub', start: '开始使用' },
@@ -127,7 +127,7 @@ export const strings = {
       ],
       primary: '安装说明',
       secondary: '全部工具',
-      meta: '只读 · MIT 开源 · 只能在电脑上用，手机不行',
+      meta: '对 Moodle 和 Ed 只读 · MIT 开源 · 在你电脑上运行',
     },
     sheets: [
       { unit: 'FIT2102', name: '第 8 周课件', meta: 'PDF · 第 14 页' },
@@ -166,13 +166,13 @@ export const strings = {
       installLabel: '安装',
       runsLabel: '运行在',
       rows: [
-        { name: 'Study Kit', line: '让 AI 查自己的 Moodle 和 Ed：截止日期、Ed 新消息、成绩、某个知识点在哪页。', install: '一条命令', runs: '你的电脑', href: 'study-kit/' },
+        { name: 'Study Kit', line: '让 AI 查自己的 Moodle 和 Ed：截止日期、Ed 新消息、成绩、某个知识点在哪页。还可以选择接上学校邮箱和考勤。', install: '一条命令', runs: '你的电脑', href: 'study-kit/' },
         { name: 'Monash Hub', line: '课程、学位、选课规划、WAM 和 GPA、马来西亚学费、重要日期，还有带出处的官方指南。', install: '不用装', runs: '任何浏览器', href: 'monash-hub/' },
         { name: 'Ed Web', line: '把 Ed 论坛抓到浏览器里，每帖一句话概括，一键打包下载整门课的课件。', install: '不用装', runs: '浏览器标签页', href: 'ed-web/' },
         { name: '签到助手', line: '从 Gmail、Ed、Moodle 里找签到码。只提交你勾选确认上过的课。', install: 'Chrome 应用商店', runs: 'Chrome', href: 'attendance/' },
         { name: '公众号问答', line: '在马莫百科公众号用中文提问。答案来自官网并附链接，不知道的转给人工。', install: '不用装', runs: '微信', href: 'wechat-bot/' },
       ],
-      rules: ['Study Kit 只读不写', '签到助手只提交你勾选的课', '登录信息留在你这', '免费，无追踪'],
+      rules: ['Study Kit 对 Moodle 和 Ed 只读，邮件和签到都先问你', '签到助手只提交你勾选的课', '登录信息留在你这', '免费，无追踪'],
     },
     agent: {
       h2a: '或者把一句话',
