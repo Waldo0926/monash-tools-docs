@@ -3,7 +3,7 @@ title: 我该用哪个工具？
 description: 按你想做的事、要不要安装、数据去哪儿，对比这几个工具。
 ---
 
-从你想做的事出发。大多数人要的是 Study Kit 或 Monash Hub。
+先看你想解决什么问题。查学校公开信息用Monash Hub；查自己的Moodle和Ed用Study Kit。
 
 | 我想 | 用 | 安装 | 能在哪用 |
 | --- | --- | --- | --- |
@@ -28,8 +28,10 @@ description: 按你想做的事、要不要安装、数据去哪儿，对比这�
 
 | 工具 | 用什么登录 | 存在哪 | 会访问谁 |
 | --- | --- | --- | --- |
-| Study Kit | Ed API 令牌、Moodle 会话 cookie；接上的话还有 Google 授权令牌和考勤门户的登录状态 | 你电脑上一个只有你自己账户能读的文件夹 | Moodle 和 Ed；接上的话还有 Gmail 和 Monash Attendance |
+| Study Kit | Ed API令牌、Moodle会话cookie；接上的话还有Google授权令牌和考勤门户登录状态 | 默认存储在你自己的设备 | Moodle和Ed；可选Gmail、Monash Attendance；查询结果还会交给你使用的AI客户端 |
 | Monash Hub | 不用登录，除非你要在社区发帖 | 规划和成绩只存在你的浏览器里 | monashhub.secureview.tech |
 | Ed Web | 你的 Ed 令牌 | 只在那个标签页里，关掉就清除 | 直接访问 edstem.org |
 | 签到助手 | Chrome 里已经登录的账号 | Chrome 本地的扩展存储 | Monash Attendance、Moodle、Ed、Gmail |
 | 公众号问答 | 不用登录 | 答不上的问题会转给公众号作者 | 微信和 Monash Hub |
+
+> 隐私提示：Study Kit不会把你的登录凭据交给AI，但你提问时返回的课程、邮件或考勤内容会被所选AI服务处理。远程MCP由使用者自行托管，具体权限取决于配对时的授权。详情见[隐私与安全](/zh-cn/study-kit/privacy/)。
