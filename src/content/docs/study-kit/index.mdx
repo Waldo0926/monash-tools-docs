@@ -1,6 +1,6 @@
 ---
 title: Study Kit
-description: Connect Monash Moodle and Ed, plus optional school mail and attendance, to the AI app on your computer. Ask what is due, what is new on Ed, which slide covers a topic, or which emails need you. Everything stays on your computer.
+description: Connect Monash Moodle and Ed, plus optional school mail and attendance, to the AI app on your computer. Ask what is due, what is new on Ed, which slide covers a topic, or which emails need you. Synced data and credentials stay on your device by default; query results go to the AI provider you connect.
 sidebar:
   label: Overview
 ---
@@ -25,7 +25,7 @@ Answers come from your real Moodle and Ed data, with sources like "Workshop 5 Sl
 
 ## What it never does
 
-Everything it does with Moodle and Ed is **read-only**. Study Kit never submits assignments, attempts quizzes or posts on Ed. The optional [school mail and attendance](/study-kit/mail-attendance/) parts can draft mail, change labels or check you in, and only after you confirm each action. Course files, the login and the database live on your computer and never pass through a third-party server.
+Everything it does with Moodle and Ed is **read-only**. Study Kit never submits assignments, attempts quizzes or posts on Ed. The optional [school mail and attendance](/study-kit/mail-attendance/) parts can draft mail, change labels or check you in, and only after you confirm each action. Course files, credentials and the database live on your computer by default and do not pass through this project's maintainer. MCP query results are sent to the AI client you choose, which has its own privacy policy.
 
 ## You need
 
@@ -47,5 +47,7 @@ Times are handled as UTC+8 by default. On an Australian campus, run `monash conf
   <LinkCard title="Use it without AI" description="The same answers in your terminal, no usage needed." href="/study-kit/cli/" />
   <LinkCard title="School mail and attendance" description="Optional since 1.5.0. Connect them by asking your AI app." href="/study-kit/mail-attendance/" />
 </CardGrid>
+
+Check the [privacy and security guide](/study-kit/privacy/) before connecting personal mail or attendance data.
 
 Source code: [Waldo0926/monash-study-kit](https://github.com/Waldo0926/monash-study-kit) (MIT).
