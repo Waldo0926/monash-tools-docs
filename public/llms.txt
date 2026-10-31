@@ -1,6 +1,6 @@
 # Monash Student Tools
 
-> Guides for free tools for Monash University students, built by a Monash computer science student: Study Kit (Moodle and Ed in Claude, ChatGPT or any MCP client), Monash Hub (units, degrees, WAM/GPA, Malaysia tuition fees, key dates, official guides), Ed Web (read and search Ed in a browser), Attendance Helper (Chrome extension on the Chrome Web Store) and a WeChat Q&A bot. Chinese versions of every page are under /zh-cn/.
+> Guides for free tools for Monash University students, built by a Monash computer science student: Study Kit (Moodle and Ed in Claude, ChatGPT or any MCP client, plus optional school mail and attendance), Monash Hub (units, degrees, WAM/GPA, Malaysia tuition fees, key dates, official guides), Ed Web (read and search Ed in a browser), Attendance Helper (Chrome extension on the Chrome Web Store) and a WeChat Q&A bot. Chinese versions of every page are under /zh-cn/.
 
 If you are an AI agent asked to install something for a student, read the agent instructions first. Never ask for or accept the student's Ed token, Monash password or MFA code.
 

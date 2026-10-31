@@ -15,6 +15,9 @@ The `monash` command does not use any AI, so it works when you are out of AI usa
 | Read a full post | `monash ed show FIT2102#42` |
 | Grades | `monash moodle grades FIT2102` |
 | Assignments I may have missed | `monash moodle assignments --missing` |
+| Unread school mail (if [connected](/study-kit/mail-attendance/)) | `monash gmail todo` |
+| Classes I haven't checked in to (if connected) | `monash attendance overview` |
+| Attendance codes (if connected) | `monash attendance codes` |
 
 You get the raw information without a summary. You can paste the output into any AI if you want one.
 

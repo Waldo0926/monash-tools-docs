@@ -7,7 +7,7 @@ I am Waldo, a computer science student at Monash. I built these tools for my own
 
 ## Rules every tool follows
 
-- **Read-only by default.** Nothing submits, attempts or posts for you. The attendance helper is the only exception, and it waits for you to confirm each class.
+- **Nothing happens without you.** No tool submits work, attempts quizzes or posts on Ed for you. The attendance helper and Study Kit's optional mail and attendance actions are the only things that act, and each one waits for you to confirm that exact action.
 - **Your login stays with you.** Tokens and cookies stay on your computer or in your browser.
 - **Say so when unsure.** The Q&A tools quote sources and link them, and pass a question on rather than guess.
 - **Free.** No paid tier, ads or tracking.

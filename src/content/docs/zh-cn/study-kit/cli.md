@@ -15,6 +15,9 @@ description: monash 命令在终端里回答同样的问题，完全不耗 AI �
 | 读某个帖子全文 | `monash ed show FIT2102#42` |
 | 成绩 | `monash moodle grades FIT2102` |
 | 可能漏交的作业 | `monash moodle assignments --missing` |
+| 没读的学校邮件（[接上](/zh-cn/study-kit/mail-attendance/)以后） | `monash gmail todo` |
+| 哪节课还没签到（接上以后） | `monash attendance overview` |
+| 签到码（接上以后） | `monash attendance codes` |
 
 区别是没人帮你总结，只列出原始信息。想要总结的话，可以把输出贴给任何 AI。
 
