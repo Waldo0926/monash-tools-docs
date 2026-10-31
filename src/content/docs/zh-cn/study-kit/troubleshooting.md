@@ -9,7 +9,7 @@ description: 常见问题的解决办法。先运行 monash doctor。
 monash doctor
 ```
 
-它会一项项检查，并告诉你没通过的怎么修。需要别人帮忙时把整段输出发过去，里面没有令牌和 cookie。也可以直接跟 AI 说“monash 用不了了”，它会跑同样的检查。
+它会一项项检查，并告诉你没通过的怎么修。需要别人帮忙时把整段输出发过去，里面没有令牌、cookie，也不显示邮箱地址。也可以直接跟 AI 说“monash 用不了了”，它会跑同样的检查。
 
 `monash doctor --deep` 还会去 Moodle 和 Ed 再拉一遍，用第二个来源核对结果（截止日期对日历订阅、本地课件对 Moodle 等），只输出数量、课号、日期和活动编号。
 
@@ -65,7 +65,7 @@ Windows 上正在运行的程序不能被覆盖，AI 软件开着时会一直开
 
 ## 我的课不用 Ed
 
-运行 `monash config use_ed false`。之后同步、待办和 `monash doctor` 都不会再提醒 Ed 令牌，AI 软件里也不再列 Ed 的工具。以后要用了，运行 `monash login ed` 就会重新打开。
+运行 `monash config use_ed false`，或者在 `monash setup` 里跳过 Ed 令牌，问你是不是不用 Ed 时选是。之后同步、待办和 `monash doctor` 都不会再提醒 Ed 令牌，AI 软件里也不再列 Ed 的工具。以后要用了，运行 `monash login ed` 就会重新打开。
 
 ## Google 提示“尚未验证此应用”
 

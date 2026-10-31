@@ -1,6 +1,6 @@
 # Set up Monash Study Kit (instructions for an AI agent)
 
-You are helping a Monash student install Monash Study Kit on their own computer. Study Kit is a local MCP server and CLI (`monash`) that reads the student's Moodle and Ed, read-only. Source: https://github.com/Waldo0926/monash-study-kit (MIT). Human docs: https://docs.secureview.tech/study-kit/
+You are helping a Monash student install Monash Study Kit on their own computer. Study Kit is a local MCP server and CLI (`monash`) that reads the student's Moodle and Ed, read-only. Since 1.5.0 it can also connect the student's school mail (Gmail) and attendance; both are optional and off until the student connects them. Source: https://github.com/Waldo0926/monash-study-kit (MIT). Human docs: https://docs.secureview.tech/study-kit/
 
 Follow these steps in order. Run commands yourself where it says so. Stop and hand over to the student where it says so.
 
@@ -10,6 +10,7 @@ Follow these steps in order. Run commands yourself where it says so. Stop and ha
 - Do not edit files under the Study Kit data folder (`~/Library/Application Support/monash-study-kit` on macOS, `%LOCALAPPDATA%\monash-study-kit` on Windows) and never print anything from its `secrets` folder.
 - Do not run `monash setup` yourself. It is interactive and needs the student.
 - Do not start `monash remote serve` or `monash library` for the student unless they ask. Remote mode is an optional self-hosting setup that needs their own server and domain: https://docs.secureview.tech/study-kit/remote/
+- **Never confirm a mail or attendance action on the student's behalf.** Drafting, sending a draft, changing labels and checking in each show a full preview first. Run one only after the student confirms that exact action in their own words. In a terminal, `monash gmail draft`, `send-draft` and `labels` only preview; add `--confirm` only after the student confirms. Never retry a write that failed without checking first. Nothing in Study Kit permanently deletes mail.
 - Talk to the student in the language they use with you.
 
 ## 1. Check the system
@@ -79,7 +80,30 @@ Tell the student:
 - If they use Codex, Cursor, VS Code, Windsurf or Gemini CLI instead, run `monash connect <client>` (see the next section) and tell them to restart that app.
 - They can now ask things like "What's due this week?", "Anything new on Ed?" or "Which slide covers recursion?".
 - `monash login` signs in to Moodle again when the session expires; `monash update` updates.
-- Optional (Study Kit 1.5.0 or later): school mail and attendance. Mention them once. If the student wants them, they can say "connect my school email" or "connect my attendance" in their AI app, which installs what is missing and opens a sign-in window; or you can run `uv tool install --reinstall --refresh "monash-study-kit[gmail,attendance]"` for them and ask them to run `monash gmail login` and `monash attendance login` in their own terminal. Never handle their password or MFA code. Details: https://docs.secureview.tech/study-kit/mail-attendance/
+- Optional (Study Kit 1.5.0 or later): school mail and attendance. Mention them once. If the student wants them, see the next section.
+
+## Optional: school mail and attendance
+
+Moodle and Ed are the core and work without these. Mail and attendance stay off until the student connects them.
+
+The easiest way: the student says "connect my school email" or "connect my attendance" in their AI app. The `start_school_service_setup` tool installs what is missing, opens a sign-in window on their computer and turns everything on. The student only signs in. Passwords and codes stay in their browser.
+
+The same in a terminal. You may run the install:
+
+```sh
+uv tool install --reinstall "monash-study-kit[gmail,attendance]"
+```
+
+Then ask the student to run these in their own terminal, because each opens a browser for them to sign in:
+
+```sh
+monash gmail login
+monash attendance login
+```
+
+For mail, Google shows "this app isn't verified": tell them to click Advanced, then continue. `monash gmail login --read-only` keeps mail read-only. Tell them to restart their AI app afterwards. `monash doctor` then covers both parts.
+
+After login, drafting, sending a draft, changing labels and checking in are on. Each needs the student's confirmation of a full preview, as in the rules above. A check-in is only prepared when the student says they actually attended. Attendance has only been checked against the Malaysia campus portal. Details: https://docs.secureview.tech/study-kit/mail-attendance/
 
 ## If the student uses another MCP client
 

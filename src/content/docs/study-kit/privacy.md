@@ -28,11 +28,13 @@ Only if you [connect them](/study-kit/mail-attendance/). Then `secrets` also hol
 
 The package includes a Google app so you can sign in without a Google Cloud project of your own. It only tells Google which app is asking. Your mail goes from Google straight to your computer and never passes through the maintainer. Revoke access any time at [myaccount.google.com/permissions](https://myaccount.google.com/permissions). The full [privacy policy](https://github.com/Waldo0926/monash-study-kit/blob/main/PRIVACY.md) covers the Google user data rules.
 
-Drafting, sending a draft, changing labels and checking in run only after you confirm each action. Nothing permanently deletes mail.
+Drafting, sending a draft, changing labels and checking in run only after you confirm each action. Nothing permanently deletes mail. To give Google read access only, connect with `monash gmail login --read-only`.
 
 ## What the AI sees
 
 Only what a tool returns when you ask something: a list of deadlines, the text of a post, the text of a course file. Tokens and cookies are never sent to the AI. Do not paste your Ed token into a chat either; enter it in the terminal only.
+
+With [remote mode](/study-kit/remote/), a paired app gets mail or attendance results only if you ticked them when pairing it.
 
 ## The course library page
 

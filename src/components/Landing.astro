@@ -30,7 +30,7 @@ const HIT = 19;
 const storyPages = Array.from({ length: 40 }, (_, i) => ({
   bars: page(),
   kind: kinds[(i * 3) % kinds.length],
-  from: i % 3 === 0 ? 'ed' : 'moodle',
+  from: i % 3 === 0 ? 'ed' : i % 8 === 5 ? 'mail' : 'moodle',
   label: t.sheets[(i * 5) % t.sheets.length],
 }));
 ---
@@ -42,7 +42,7 @@ const storyPages = Array.from({ length: 40 }, (_, i) => ({
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1 data-rise>
-          <span>{t.hero.h1a}</span>
+          {t.hero.h1a.split('\n').map((line) => <span>{line}</span>)}
           <span class="accent">{t.hero.h1b}</span>
         </h1>
         <p class="lead" data-rise>{t.hero.lead}</p>
@@ -121,12 +121,11 @@ const storyPages = Array.from({ length: 40 }, (_, i) => ({
                 <stop offset="1" stop-color="#9fd8ff" stop-opacity="0.15" />
               </linearGradient>
             </defs>
-            <path data-beam="moodle" />
-            <path data-beam="ed" />
+            {t.story.sources.map((s) => <path data-beam={s.id} class:list={{ optional: s.optional }} />)}
           </svg>
           <div class="sources">
-            {t.story.sources.map((s, i) => (
-              <div class="source" data-source={i === 0 ? 'moodle' : 'ed'}><strong>{s.name}</strong><span>{s.note}</span></div>
+            {t.story.sources.map((s) => (
+              <div class:list={['source', { optional: s.optional }]} data-source={s.id}><strong>{s.name}</strong><span>{s.note}</span></div>
             ))}
           </div>
           <div class="laptop-label">{t.story.laptop}<em>{t.story.sample}</em></div>
@@ -219,7 +218,7 @@ const storyPages = Array.from({ length: 40 }, (_, i) => ({
     const cols = 8;
     const stage = story.querySelector<HTMLElement>('.stage')!;
 
-    // Where each page starts its flight: the centre of the Moodle or Ed label above the grid.
+    // Where each page starts its flight: the centre of its source label (Moodle, Ed or mail) above the grid.
     // offsetLeft/Top ignore transforms, so this can be measured at any point in the animation.
     let origin: { dx: number; dy: number }[] = [];
     const layout = () => {

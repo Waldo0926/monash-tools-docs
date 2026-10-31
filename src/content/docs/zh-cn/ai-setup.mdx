@@ -7,7 +7,7 @@ import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 如果你用的 AI 能在你电脑上运行命令（Claude Code、Codex、Cursor 的 Agent、Gemini CLI 等），可以让它帮你装。粘贴下面任意一句：
 
-<p class="prompt-label">Study Kit（在 AI 软件里查 Moodle 和 Ed）</p>
+<p class="prompt-label">Study Kit（在 AI 软件里查 Moodle、Ed，可选邮箱和考勤）</p>
 
 ```text
 阅读 https://docs.secureview.tech/agents/study-kit.md ，帮我在电脑上装好 Monash Study Kit。
@@ -32,6 +32,8 @@ import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 3. **AI 负责检查。** 你说完成之后，它运行 `monash doctor` 和 `monash todo`，告诉你结果。
 
 </Steps>
+
+学校邮箱和考勤是可选的，以后在 AI 软件里说一声就能接上，见[学校邮箱和考勤](/zh-cn/study-kit/mail-attendance/)。
 
 <Aside type="caution" title="不要把 Ed 令牌贴进聊天">
 Ed 令牌能做你 Ed 账号能做的一切，包括发帖和看私密帖子。它只应该出现在终端里。写给 AI 的说明里也要求它：你把令牌贴进聊天时，拒绝使用并提醒你去 Ed 删掉重建。

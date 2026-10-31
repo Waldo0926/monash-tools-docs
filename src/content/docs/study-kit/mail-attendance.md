@@ -29,7 +29,9 @@ monash gmail login
 monash attendance login
 ```
 
-Restart your AI app after connecting. A full step-by-step guide in Chinese, including using your own Google Cloud app instead of the bundled one, is in the [setup guide](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/google-and-attendance-setup.md).
+Restart your AI app after connecting. With both connected, the tool descriptions your AI app reads at the start of every conversation come to about 5,132 tokens instead of 3,377.
+
+A full step-by-step guide in Chinese, including using your own Google Cloud app instead of the bundled one, is in the [setup guide](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/google-and-attendance-setup.md).
 
 ## What runs by itself
 

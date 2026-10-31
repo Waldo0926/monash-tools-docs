@@ -15,7 +15,7 @@ monash update
 
 `monash update` 会保留你装过的可选部分（学校邮箱、考勤、录播字幕）。
 
-如果自己用 `uv tool install` 重新安装，记得加 `--refresh`，让 uv 重新查一次 PyPI，不然它可能用缓存里旧的版本列表：
+如果自己用 `uv tool install` 重新安装，记得加 `--refresh`，让 uv 重新查一次 PyPI，不然它可能用缓存里旧的版本列表。方括号里写你装过的可选部分（`gmail`、`attendance`、`media`），没装就去掉：
 
 ```bash
 uv tool install --reinstall --refresh "monash-study-kit[gmail,attendance]"

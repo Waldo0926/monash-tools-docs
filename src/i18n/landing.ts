@@ -26,10 +26,10 @@ export const strings = {
     nav: { how: 'How it works', tools: 'Tools', docs: 'Docs', github: 'GitHub', start: 'Get started' },
     copy: 'Copy',
     hero: {
-      h1a: 'Your Moodle and Ed,',
+      h1a: 'Moodle, Ed, mail\nand attendance,',
       h1b: 'answered by your AI.',
       lead:
-        'Study Kit copies your own Moodle and Ed to your laptop and lets the AI app on your computer search them: Claude, Codex (also inside the ChatGPT desktop app), Cursor and others. Ask what is due, what changed on Ed, or which slide covers a topic. Your login stays on your computer, and the AI only gets the pages it looks up.',
+        'Study Kit copies your own Moodle and Ed to your laptop, plus your school mail and attendance if you connect them, and lets the AI app on your computer search them: Claude, Codex (also inside the ChatGPT desktop app), Cursor and others. Ask what is due, what changed on Ed, which slide covers a topic, which emails need you, or which classes you have not checked in to. Your login stays on your computer, and the AI only gets what it looks up.',
       tabs: ['macOS', 'Windows', 'Ask your AI'],
       cmds: [
         INSTALL_MAC,
@@ -43,7 +43,7 @@ export const strings = {
       ],
       primary: 'Install guide',
       secondary: 'All tools',
-      meta: 'Read-only for Moodle and Ed · MIT · Runs on your computer',
+      meta: 'Read-only for Moodle and Ed · Mail and check-in only after you confirm · MIT · Runs on your computer',
     },
     sheets: SHEETS_EN,
     story: {
@@ -51,14 +51,16 @@ export const strings = {
       h2b: 'one page read.',
       sample: 'Sample course data',
       sources: [
-        { name: 'Moodle', note: 'Files, deadlines, grades' },
-        { name: 'Ed', note: 'Posts, lessons, replies' },
+        { id: 'moodle', name: 'Moodle', note: 'Files, deadlines, grades' },
+        { id: 'ed', name: 'Ed', note: 'Posts, lessons, replies' },
+        { id: 'mail', name: 'Mail', note: 'Optional · inbox, attachments', optional: true },
+        { id: 'attendance', name: 'Attendance', note: 'Optional · classes, codes', optional: true },
       ],
       laptop: 'Your computer',
       query: 'Where were monads covered?',
       steps: [
-        { h: 'Sync', p: 'Every hour while your AI app is open, new files, Ed posts and replies are copied to your computer. It never submits or posts anything.' },
-        { h: 'Index', p: 'Slides, PDFs, notes and lecture transcripts go into a full-text index, in a folder only your user account can read.' },
+        { h: 'Sync', p: 'Every hour while your AI app is open, new files, Ed posts and replies are copied to your computer. Connected mail syncs every 30 minutes and attendance follows your timetable. Nothing is posted to Moodle or Ed, and mail or check-in waits for your OK.' },
+        { h: 'Index', p: 'Slides, PDFs, notes, lecture transcripts and mail attachments go into a full-text index, in a folder only your user account can read.' },
         { h: 'Find', p: 'Your question is searched locally. The result is a file and a page number, like page 14 of the Week 8 slides.' },
         { h: 'Answer', p: 'The AI reads that one page instead of the whole PDF. On a real course search that used about 10% of the tokens.' },
       ],
@@ -76,7 +78,7 @@ export const strings = {
       installLabel: 'Install',
       runsLabel: 'Runs on',
       rows: [
-        { name: 'Study Kit', line: 'Ask your AI about your own Moodle and Ed: deadlines, Ed updates, grades, which slide covers what. Optional: school mail and attendance.', install: 'One command', runs: 'Your computer', href: 'study-kit/' },
+        { name: 'Study Kit', line: 'Ask your AI about your own Moodle and Ed, plus school mail and attendance if you connect them: deadlines, Ed updates, grades, which slide covers what, unread mail, check-in status.', install: 'One command', runs: 'Your computer', href: 'study-kit/' },
         { name: 'Monash Hub', line: 'Units, degrees, course maps, WAM and GPA, Malaysia tuition fees, key dates and official guides with source links.', install: 'None', runs: 'Any browser', href: 'monash-hub/' },
         { name: 'Ed Web', line: 'Fetch an Ed forum into your browser, skim one line per post, download a unit\'s lesson files as a zip.', install: 'None', runs: 'Browser tab', href: 'ed-web/' },
         { name: 'Attendance Helper', line: 'Finds attendance codes in Gmail, Ed and Moodle. Submits only the classes you tick as attended.', install: 'Chrome Web Store', runs: 'Chrome', href: 'attendance/' },
@@ -87,14 +89,14 @@ export const strings = {
     agent: {
       h2a: 'Or paste one line',
       h2b: 'into your AI.',
-      p: 'Claude Code, Codex, Cursor and similar tools can read a guide written for them and install Study Kit. They stop when it is time for your Ed token and Monash login, which never go through the chat.',
+      p: 'Claude Code, Codex, Cursor and similar tools can read a guide written for them and install Study Kit. They stop when it is time for your Ed token, Monash login and, if you connect mail, Google sign-in. None of these go through the chat.',
       prompt: 'Read https://docs.secureview.tech/agents/study-kit.md and set up Monash Study Kit on my computer.',
       more: 'How it works',
     },
     footer: {
       blurb: 'Free tools for Monash students, built by one. Not affiliated with Monash University, Ed, Anthropic or OpenAI.',
       cols: [
-        { h: 'Start', links: [['Which tool do I need?', 'choose/'], ['Let your AI set it up', 'ai-setup/'], ['Install Study Kit', 'study-kit/install/']] },
+        { h: 'Start', links: [['Which tool do I need?', 'choose/'], ['Let your AI set it up', 'ai-setup/'], ['Install Study Kit', 'study-kit/install/'], ['Connect mail and attendance', 'study-kit/mail-attendance/']] },
         { h: 'Tools', links: [['Study Kit', 'study-kit/'], ['Monash Hub', 'monash-hub/'], ['Ed Web', 'ed-web/'], ['Attendance Helper', 'attendance/'], ['WeChat Q&A', 'wechat-bot/']] },
         { h: 'Project', links: [['About', 'about/'], ['GitHub', 'https://github.com/Waldo0926'], ['Blog', 'https://blog.secureview.tech'], ['llms.txt', '/llms.txt']] },
       ],
@@ -110,10 +112,10 @@ export const strings = {
     nav: { how: '怎么工作', tools: '工具', docs: '文档', github: 'GitHub', start: '开始使用' },
     copy: '复制',
     hero: {
-      h1a: 'Moodle 和 Ed，',
+      h1a: 'Moodle、Ed、\n邮箱和考勤，',
       h1b: '直接问 AI。',
       lead:
-        'Study Kit 把你自己的 Moodle 和 Ed 复制到电脑上，让电脑上的 AI 来搜：Claude、Codex（ChatGPT 桌面版里也有）、Cursor 等都能接。可以问这周要交什么、Ed 上有什么新消息、某个知识点在哪份课件第几页。登录信息只留在你电脑上，AI 只拿到它查的那几页。',
+        'Study Kit 把你自己的 Moodle 和 Ed 复制到电脑上，接上的话学校邮箱和考勤也一起，让电脑上的 AI 来搜：Claude、Codex（ChatGPT 桌面版里也有）、Cursor 等都能接。可以问这周要交什么、Ed 上有什么新消息、某个知识点在哪份课件第几页、哪些邮件要处理、哪节课还没签到。登录信息只留在你电脑上，AI 只拿到它查的那部分。',
       tabs: ['macOS', 'Windows', '让 AI 装'],
       cmds: [
         INSTALL_MAC,
@@ -127,7 +129,7 @@ export const strings = {
       ],
       primary: '安装说明',
       secondary: '全部工具',
-      meta: '对 Moodle 和 Ed 只读 · MIT 开源 · 在你电脑上运行',
+      meta: '对 Moodle 和 Ed 只读 · 邮件和签到须你确认 · MIT 开源 · 在你电脑上运行',
     },
     sheets: [
       { unit: 'FIT2102', name: '第 8 周课件', meta: 'PDF · 第 14 页' },
@@ -142,14 +144,16 @@ export const strings = {
       h2b: '只读一页。',
       sample: '示例课程数据',
       sources: [
-        { name: 'Moodle', note: '课件、截止、成绩' },
-        { name: 'Ed', note: '帖子、lesson、回复' },
+        { id: 'moodle', name: 'Moodle', note: '课件、截止、成绩' },
+        { id: 'ed', name: 'Ed', note: '帖子、lesson、回复' },
+        { id: 'mail', name: '邮箱', note: '可选 · 收件箱、附件', optional: true },
+        { id: 'attendance', name: '考勤', note: '可选 · 课表、签到码', optional: true },
       ],
       laptop: '你的电脑',
       query: 'monad 在哪份资料里讲过？',
       steps: [
-        { h: '同步', p: 'AI 软件开着时每小时把新课件、Ed 帖子和回复复制到你电脑上。从不提交作业或发帖。' },
-        { h: '索引', p: '课件、PDF、笔记和录播字幕建成全文索引，放在只有你自己账户能读的文件夹里。' },
+        { h: '同步', p: 'AI 软件开着时每小时把新课件、Ed 帖子和回复复制到你电脑上。接上的邮箱每 30 分钟同步一次，考勤按你的课表查。不会在 Moodle 或 Ed 上提交、发帖，发邮件和签到都要你点头。' },
+        { h: '索引', p: '课件、PDF、笔记、录播字幕和邮件附件建成全文索引，放在只有你自己账户能读的文件夹里。' },
         { h: '查找', p: '问题在你电脑上搜，结果是哪份文件第几页，比如第 8 周课件第 14 页。' },
         { h: '回答', p: 'AI 只读那一页，不读整份 PDF。在一次真实课程搜索里，用的 token 大约是直接贴文件的 10%。' },
       ],
@@ -166,7 +170,7 @@ export const strings = {
       installLabel: '安装',
       runsLabel: '运行在',
       rows: [
-        { name: 'Study Kit', line: '让 AI 查自己的 Moodle 和 Ed：截止日期、Ed 新消息、成绩、某个知识点在哪页。还可以选择接上学校邮箱和考勤。', install: '一条命令', runs: '你的电脑', href: 'study-kit/' },
+        { name: 'Study Kit', line: '让 AI 查自己的 Moodle 和 Ed，接上的话还有学校邮箱和考勤：截止日期、Ed 新消息、成绩、某个知识点在哪页、未读邮件、签到情况。', install: '一条命令', runs: '你的电脑', href: 'study-kit/' },
         { name: 'Monash Hub', line: '课程、学位、选课规划、WAM 和 GPA、马来西亚学费、重要日期，还有带出处的官方指南。', install: '不用装', runs: '任何浏览器', href: 'monash-hub/' },
         { name: 'Ed Web', line: '把 Ed 论坛抓到浏览器里，每帖一句话概括，一键打包下载整门课的课件。', install: '不用装', runs: '浏览器标签页', href: 'ed-web/' },
         { name: '签到助手', line: '从 Gmail、Ed、Moodle 里找签到码。只提交你勾选确认上过的课。', install: 'Chrome 应用商店', runs: 'Chrome', href: 'attendance/' },
@@ -177,14 +181,14 @@ export const strings = {
     agent: {
       h2a: '或者把一句话',
       h2b: '贴给你的 AI。',
-      p: 'Claude Code、Codex、Cursor 这类工具可以读一份专门写给它的说明，把 Study Kit 装好。到了输入 Ed 令牌和登录 Monash 这一步，它会停下来交给你，这两样都不经过聊天。',
+      p: 'Claude Code、Codex、Cursor 这类工具可以读一份专门写给它的说明，把 Study Kit 装好。到了输入 Ed 令牌、登录 Monash，以及接邮箱时登录 Google 这几步，它会停下来交给你，这些都不经过聊天。',
       prompt: '阅读 https://docs.secureview.tech/agents/study-kit.md ，帮我在电脑上装好 Monash Study Kit。',
       more: '具体流程',
     },
     footer: {
       blurb: '一个 Monash 学生给同学做的免费工具。与 Monash University、Ed 和 Anthropic 无关。',
       cols: [
-        { h: '开始', links: [['该用哪个工具？', 'choose/'], ['让 AI 帮你装', 'ai-setup/'], ['安装 Study Kit', 'study-kit/install/']] },
+        { h: '开始', links: [['该用哪个工具？', 'choose/'], ['让 AI 帮你装', 'ai-setup/'], ['安装 Study Kit', 'study-kit/install/'], ['接上邮箱和考勤', 'study-kit/mail-attendance/']] },
         { h: '工具', links: [['Study Kit', 'study-kit/'], ['Monash Hub', 'monash-hub/'], ['Ed Web', 'ed-web/'], ['签到助手', 'attendance/'], ['公众号问答', 'wechat-bot/']] },
         { h: '项目', links: [['关于', 'about/'], ['GitHub', 'https://github.com/Waldo0926'], ['博客', 'https://blog.secureview.tech'], ['llms.txt', '/llms.txt']] },
       ],

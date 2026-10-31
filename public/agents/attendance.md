@@ -56,3 +56,9 @@ Remind the student:
 
 - Only tick classes they actually attended. The extension is a helper, not an auto-attendance bot.
 - Daily use is described at https://docs.secureview.tech/attendance/use/
+
+## If the student uses Study Kit
+
+Study Kit 1.5.0 or later can also read attendance and find candidate codes from the student's AI app. It is optional, separate from this extension, and off until the student connects it: they say "connect my attendance" in their AI app, or run `monash attendance login` in their own terminal after `uv tool install --reinstall "monash-study-kit[gmail,attendance]"`. Setup steps: https://docs.secureview.tech/agents/study-kit.md
+
+The same rule applies there: a check-in is only prepared when the student says they attended, and runs only after they confirm the full preview. Never confirm it for them.

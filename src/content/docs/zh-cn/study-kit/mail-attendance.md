@@ -29,7 +29,9 @@ monash gmail login
 monash attendance login
 ```
 
-接好后重启一下 AI 软件。完整的分步教程（包括改用你自己的 Google Cloud 应用）见[设置教程](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/google-and-attendance-setup.md)。
+接好后重启一下 AI 软件。两样都接上以后，AI 软件每次对话开头读到的工具说明从约 3,377 个 token 变成约 5,132 个。
+
+完整的分步教程（包括改用你自己的 Google Cloud 应用）见[设置教程](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/google-and-attendance-setup.md)。
 
 ## 自己会跑的部分
 

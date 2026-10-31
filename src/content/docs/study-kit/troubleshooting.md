@@ -9,7 +9,7 @@ description: Fixes for the common problems. Start with monash doctor.
 monash doctor
 ```
 
-It checks each part and prints how to fix anything that fails. If you need help, send the whole output; it contains no tokens or cookies. You can also tell your AI "monash isn't working" and it runs the same checks.
+It checks each part and prints how to fix anything that fails. If you need help, send the whole output; it contains no tokens or cookies and does not show your mail address. You can also tell your AI "monash isn't working" and it runs the same checks.
 
 `monash doctor --deep` also fetches from Moodle and Ed and compares the results against a second source (due dates against the calendar feed, synced files against Moodle, and so on). It prints only counts, unit codes, dates and activity ids.
 
@@ -65,7 +65,7 @@ Panels need Study Kit 1.4.0 and an app that supports MCP Apps. Run `monash updat
 
 ## My units don't use Ed
 
-Run `monash config use_ed false`. Sync, the to-do list and `monash doctor` stop reminding you about the Ed token, and your AI app no longer lists the Ed tools. `monash login ed` turns it back on.
+Run `monash config use_ed false`, or in `monash setup` skip the Ed token and answer yes to "not using Ed". Sync, the to-do list and `monash doctor` stop reminding you about the Ed token, and your AI app no longer lists the Ed tools. `monash login ed` turns it back on.
 
 ## Google says "this app hasn't been verified"
 

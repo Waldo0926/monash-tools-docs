@@ -15,7 +15,7 @@ When a new version is out you will hear about it: an extra line after terminal c
 
 `monash update` keeps the optional parts you installed (school mail, attendance, recordings).
 
-If you ever reinstall by hand with `uv tool install`, add `--refresh` so uv checks PyPI again instead of using an old list of versions:
+If you ever reinstall by hand with `uv tool install`, add `--refresh` so uv checks PyPI again instead of using an old list of versions. In the brackets, list the optional parts you installed (`gmail`, `attendance`, `media`), or drop them if you installed none:
 
 ```bash
 uv tool install --reinstall --refresh "monash-study-kit[gmail,attendance]"
