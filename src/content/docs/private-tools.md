@@ -15,7 +15,7 @@ A daily digest of my Ed forums: it syncs posts on a schedule, stores them in a d
 
 The server version of Study Kit's Moodle side. It keeps my course files synced and lets me reach them from Claude on any device.
 
-**Use instead:** [Study Kit](/study-kit/). Since version 1.1.0 both share the same code, so fixes in one reach the other. From 1.4.0 Study Kit also has an optional remote mode, so you can reach your own copy from ChatGPT, or Claude on the web and phone, the same way. See [Host it yourself](/study-kit/remote/). From 1.5.0 it also has the school mail and attendance parts I used to run only on my server; see [School mail and attendance](/study-kit/mail-attendance/).
+**Use instead:** [Study Kit](/study-kit/). Since version 1.1.0 both share the same code, so fixes in one reach the other. From 1.4.0 Study Kit also has an optional remote mode, so you can reach your own copy from ChatGPT, or Claude on the web and phone, the same way. See [Host it yourself](/study-kit/remote/). From 1.5.0 it also has the school mail and attendance parts I used to run only on my server; see [School mail and attendance](/study-kit/mail-attendance/). Both can zip a unit's Ed materials: Study Kit with `monash ed export` from 1.7.0, and my server copy by handing Claude a download link that lasts one hour.
 
 ## Why not host them for everyone?
 

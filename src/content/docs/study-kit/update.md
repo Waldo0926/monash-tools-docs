@@ -15,6 +15,8 @@ When a new version is out you will hear about it: an extra line after terminal c
 
 `monash update` keeps the optional parts you installed (school mail, attendance, recordings).
 
+The first sync after moving from 1.6 or earlier to 1.7.0 moves the Ed files you already have from numbered folders into folders named by unit, week and lesson. Nothing is downloaded again.
+
 If you ever reinstall by hand with `uv tool install`, add `--refresh` so uv checks PyPI again instead of using an old list of versions. In the brackets, list the optional parts you installed (`gmail`, `attendance`, `media`), or drop them if you installed none:
 
 ```bash

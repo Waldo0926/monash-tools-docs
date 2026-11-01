@@ -38,7 +38,9 @@ With [remote mode](/study-kit/remote/), a paired app gets mail or attendance res
 
 ## The course library page
 
-`monash library` only listens on `127.0.0.1`, so other devices cannot reach it. It only serves files that `monash sync` registered, refuses paths outside the course-file folders and never serves the `secrets` folder or the login profile. It has no password, so do not forward it to the internet.
+`monash library` only listens on `127.0.0.1`, so other devices cannot reach it. It only serves files that `monash sync` registered, refuses paths outside the course-file folders and never serves the `secrets` folder or the login profile. It has no password, so do not forward it to the internet. Its **Download all Ed files** button works the same way: it only packs Ed files already registered on this computer, and the zip is built locally.
+
+`monash ed export`, and the same request from your AI app, only writes one zip to your Downloads folder (or wherever `--to` points). It does not go online and changes nothing on Moodle or Ed. Remote mode does not offer this tool, so a zip is never written on a server.
 
 ## What it does to Moodle and Ed
 

@@ -11,12 +11,13 @@ description: Every monash command, output formats and exit codes.
 | `monash doctor` | Health check that tells you how to fix each problem |
 | `monash doctor --deep` | Also cross-checks results against a second source on Moodle and Ed |
 | `monash todo` | This week: deadlines, possibly missed work, unfinished Ed lessons, announcements, unread replies |
+| `monash semester [--days 7] [--ics [path]]` | 1.6.0 and later: deadlines, Ed lessons and replies and the local attendance cache on one page; `--ics` exports the deadlines as a private calendar file (a one-off snapshot, not a live feed) |
 | `monash due [FIT2102]` | Deadlines |
 | `monash grep "monad" [FIT2102]` | Full-text search with page numbers or timestamps |
 | `monash sync` | Sync now. `--dry-run` lists what Moodle would download |
 | `monash login` / `monash login ed` | Log in to Moodle / replace the Ed token |
 | `monash courses` | Pick tracked units again |
-| `monash open` | Open the course-files folder |
+| `monash open [ed]` | Open the course-files folder; `ed`: the Ed Lessons materials, sorted by unit, week and lesson (1.7.0 and later) |
 | `monash library [--open] [--port 8766]` | Browse and download synced files in your browser ([details](/study-kit/cli/#browse-your-course-files)) |
 | `monash moodle grades [FIT2102]` | Grades and feedback |
 | `monash moodle assignments --missing` | Possibly missed assignments |
@@ -25,6 +26,7 @@ description: Every monash command, output formats and exit codes.
 | `monash ed new` / `following` / `search` / `show FIT2102#42` | Ed updates / replies to my posts / search / read a post |
 | `monash ed lessons FIT2109` / `quiz FIT2109` | Ed lesson progress / quiz questions for revision |
 | `monash ed read FIT2109 "W3 Pre-Class"` | A whole lesson as Markdown with its quiz questions |
+| `monash ed export FIT2109 [--module "Week 3"] [--to <folder>] [--open]` | 1.7.0 and later: a unit's Ed materials as one zip sorted by week, saved to Downloads ([details](/study-kit/cli/#download-a-units-ed-materials-as-one-zip)) |
 | `monash media` | Transcribe lecture recordings (needs the [media extra](/study-kit/recordings/)) |
 | `monash config [key] [value]` | View or change settings. Restart your AI app afterwards |
 | `monash connect [app]` | Connect to Codex, Cursor, VS Code, Windsurf or Gemini CLI ([Other AI apps](/study-kit/other-clients/)) |
