@@ -15,6 +15,8 @@ monash update
 
 `monash update` 会保留你装过的可选部分（学校邮箱、考勤、录播字幕）。
 
+从 1.6 或更早升到 1.7.0 后，第一次同步会把已经下载的 Ed 课件从数字编号的文件夹挪到按 课号/周/lesson 分的文件夹，不会重新下载。
+
 如果自己用 `uv tool install` 重新安装，记得加 `--refresh`，让 uv 重新查一次 PyPI，不然它可能用缓存里旧的版本列表。方括号里写你装过的可选部分（`gmail`、`attendance`、`media`），没装就去掉：
 
 ```bash

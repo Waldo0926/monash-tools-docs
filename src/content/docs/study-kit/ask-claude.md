@@ -19,8 +19,9 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | --- | --- |
 | "Which week covered monads? Which slides, which page?" | Full-text search over course files, course-notes websites, Ed lesson pages and recording transcripts, with page numbers or timestamps |
 | "What does the A2 spec ask for?" | Finds the spec and reads the pages it needs |
-| "What's in week 5 of FIT2109?" | That week's files and links |
+| "What's in week 5 of FIT2109?" | That week's files and links, from Moodle and Ed Lessons |
 | "Where is the week 7 workshop on Moodle?" | Finds Moodle sections and activities by name and gives the link. Needs a Moodle login |
+| "Zip up my FIT2109 Ed materials" / "just week 3" | Packs the synced Ed Lessons into a zip sorted by week, saves it to your Downloads folder and tells you where (1.7.0 and later) |
 
 ## Ed
 

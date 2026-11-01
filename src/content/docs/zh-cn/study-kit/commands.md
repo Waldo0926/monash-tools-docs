@@ -11,12 +11,13 @@ description: 所有 monash 命令、输出格式和退出码。
 | `monash doctor` | 体检，告诉你每个问题怎么修 |
 | `monash doctor --deep` | 再用 Moodle 和 Ed 上的第二个来源核对结果 |
 | `monash todo` | 本周：截止、可能漏交、Ed 没做完的 lesson、公告、未读回复 |
+| `monash semester [--days 7] [--ics [路径]]` | 1.6.0 起：截止、Ed lesson 和回复、本地考勤缓存放在一页；`--ics` 把截止日期导出成私有日历文件（一次性快照，不会自动更新） |
 | `monash due [FIT2102]` | 截止日期 |
 | `monash grep "monad" [FIT2102]` | 全文搜索，带页码或时间戳 |
 | `monash sync` | 马上同步。`--dry-run` 只列出 Moodle 会下载什么 |
 | `monash login` / `monash login ed` | 登录 Moodle / 换 Ed 令牌 |
 | `monash courses` | 重新选要跟踪的课 |
-| `monash open` | 打开课件文件夹 |
+| `monash open [ed]` | 打开课件文件夹；`ed`：Ed Lessons 的课件，按 课号/周/lesson 分好（1.7.0 起） |
 | `monash library [--open] [--port 8766]` | 在浏览器里翻和下载已同步的课件（[说明](/zh-cn/study-kit/cli/#在浏览器里翻课件)） |
 | `monash moodle grades [FIT2102]` | 成绩和反馈 |
 | `monash moodle assignments --missing` | 可能漏交的作业 |
@@ -25,6 +26,7 @@ description: 所有 monash 命令、输出格式和退出码。
 | `monash ed new` / `following` / `search` / `show FIT2102#42` | Ed 新动态 / 我的帖子有没有新回复 / 搜索 / 读帖子 |
 | `monash ed lessons FIT2109` / `quiz FIT2109` | Ed lesson 进度 / 复习用的测验题 |
 | `monash ed read FIT2109 "W3 Pre-Class"` | 整节 lesson 转成 Markdown，附测验题 |
+| `monash ed export FIT2109 [--module "Week 3"] [--to 文件夹] [--open]` | 1.7.0 起：整门课的 Ed 课件按周打包成 zip，默认存到“下载”（[说明](/zh-cn/study-kit/cli/#把整门课的-ed-课件打包)） |
 | `monash media` | 转写录播（要装[录播字幕](/zh-cn/study-kit/recordings/)） |
 | `monash config [key] [value]` | 看或改设置，改完重启 AI 软件 |
 | `monash connect [软件]` | 接进 Codex、Cursor、VS Code、Windsurf 或 Gemini CLI（[其他 AI 软件](/zh-cn/study-kit/other-clients/)） |
