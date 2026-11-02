@@ -46,15 +46,15 @@ Every command has `--help`.
 
 ## Output
 
-Add `--json` for JSON. Output is JSON automatically when piped to another program; `--text` forces text.
+For query/export commands whose `--help` lists these options, `--json` requests JSON and `--text` forces text; those commands choose JSON automatically when piped. These flags are not universal: for example, Google service commands already print JSON, while setup/configuration commands have their own output.
 
 ## Exit codes
 
 | Code | Meaning |
 | --- | --- |
 | 0 | Success |
-| 1 | Bad arguments |
-| 2 | Login required (`monash login` or `monash login ed`) |
+| 1 | Invalid values or command-specific failure (including export failures) |
+| 2 | Login required; argparse also uses 2 for invalid command syntax. Read stderr to distinguish them |
 | 3 | Cannot reach Moodle or Ed, or the server returned an error |
 | 4 | Unit or post not found |
 | 130 | Interrupted with Ctrl-C |

@@ -119,3 +119,29 @@ After login, drafting, sending a draft, changing labels and checking in are on. 
 | monash missing in Claude | `monash setup claude` (on Windows, quit Claude from the tray first) |
 | monash missing in Codex, Cursor and others | `monash connect` to check, then `monash connect <client>` and restart the app |
 | Anything else | `monash doctor`, then https://docs.secureview.tech/study-kit/troubleshooting/ |
+
+## Optional: whole-course materials and isolated accounts (1.11.1)
+
+For a student who asks to export teaching materials, use the current guide:
+https://docs.secureview.tech/study-kit/materials/ (Chinese: /zh-cn/study-kit/materials/).
+`monash export FIT2109 --sync --format both --to "./exports"` syncs the selected
+unit's Moodle and Ed Lessons, then writes a local package. `--refresh-google`
+implies sync; `--no-ask` skips the destination picker. Without sync flags, export
+uses only the cache. Check the missing-item index; do not promise every resource
+was downloaded. Personal submissions, grades, feedback, mail and attendance are
+excluded, but sharing the resulting teaching materials still needs review.
+
+Google files need the optional `[gmail]` OAuth dependency and separate
+`monash google login` in the student's own terminal/browser. It requests
+`drive.readonly`, not Gmail access. The scope can read all Drive files the
+account can access; the exporter uses course links. Do not request broader
+scopes to work around missing file permissions.
+
+A named account uses `monash --profile NAME setup`, handed to the student just
+like default-account setup. Named profiles isolate local data and force
+materials-only mode; do not run `monash todo`, Gmail/attendance setup, remote
+serving or `monash connect` for them. Use profile-scoped `status`, `sync` and
+`export` as appropriate. Manage removal from the default account with
+`monash profile remove NAME`; it revokes Google before clearing sessions,
+preserves materials unless `--all` is requested, and keeps files on revocation
+failure. Ed token deletion remains manual.
