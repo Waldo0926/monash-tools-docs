@@ -62,3 +62,9 @@ uv tool uninstall monash-study-kit
 ## How it is checked
 
 The project's [security notes](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/security.md) describe what is protected and how it is tested. To report a problem privately, see [SECURITY.md](https://github.com/Waldo0926/monash-study-kit/blob/main/SECURITY.md).
+
+## Google course files and isolated accounts
+
+Ordinary `monash gmail login` defaults to `gmail.modify`; add `--read-only` for `gmail.readonly`. Course files use `monash google login` with only `drive.readonly`, saved in `secrets/google-drive-token.json` separately from Gmail. This scope can read all files accessible to the account; the exporter uses course-linked files. It cannot edit Drive or access Gmail. An API restriction may trigger fallback to the dedicated browser session; those cookies stay in memory.
+
+`monash google logout` revokes first and keeps the token for retry on failure. Named profiles isolate credentials, databases, materials and browser sessions under `profiles/NAME`, force materials-only mode, skip Gmail, attendance and Ed discussions, and cannot configure remote serving or `monash connect`. Course packages exclude submissions, grades, feedback, mail, messages and attendance, but are ordinary local files: review before sharing. [Details](/study-kit/materials/).

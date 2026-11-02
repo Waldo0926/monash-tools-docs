@@ -29,7 +29,7 @@ export const strings = {
       h1a: 'Moodle, Ed, Mail\nand Attendance,',
       h1b: 'answered by your AI.',
       lead:
-        'Study Kit copies your own Moodle and Ed to your laptop, plus your school mail and attendance if you connect them, and lets the AI app on your computer search them: Claude, Codex (also inside the ChatGPT desktop app), Cursor and others. Ask what is due, what changed on Ed, which slide covers a topic, which emails need you, or which classes you have not checked in to. Your login stays on your computer, and the AI only gets what it looks up.',
+        'Study Kit copies your own Moodle and Ed to your laptop, plus your school mail and attendance if you connect them, and lets the AI app on your computer search them: Claude, Codex (also inside the ChatGPT desktop app), Cursor and others. Ask what is due, what changed on Ed, which slide covers a topic, export a whole unit with Moodle, Ed and linked Google files, see which emails need you, or which classes you have not checked in to. Your login stays on your computer, and the AI only gets what it looks up.',
       tabs: ['macOS', 'Windows', 'Ask your AI'],
       cmds: [
         INSTALL_MAC,
@@ -115,7 +115,7 @@ export const strings = {
       h1a: 'Moodle、Ed、\n邮箱和考勤，',
       h1b: '问你的AI',
       lead:
-        'Study Kit在你电脑上同步Moodle和Ed资料，也能选择连接学校邮箱和考勤。接进Claude、Codex或Cursor后，可以问这周要交什么、Ed有什么新消息、知识点在哪页、还有哪些课没签到。登录信息留在你的设备上，工具返回的查询内容会发送给你所使用的AI服务。',
+        'Study Kit在你电脑上同步Moodle和Ed资料，也能选择连接学校邮箱和考勤。接进Claude、Codex或Cursor后，可以问这周要交什么、Ed有什么新消息、知识点在哪页、还有哪些课没签到，也可以把 Moodle、Ed 和链接的 Google 资料按整课导出为 PDF/Markdown。登录信息留在你的设备上，工具返回的查询内容会发送给你所使用的AI服务。',
       tabs: ['macOS', 'Windows', '让AI装'],
       cmds: [
         INSTALL_MAC,

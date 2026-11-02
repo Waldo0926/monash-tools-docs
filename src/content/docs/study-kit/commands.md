@@ -14,7 +14,12 @@ description: Every monash command, output formats and exit codes.
 | `monash semester [--days 7] [--ics [path]]` | 1.6.0 and later: deadlines, Ed lessons and replies and the local attendance cache on one page; `--ics` exports the deadlines as a private calendar file (a one-off snapshot, not a live feed) |
 | `monash due [FIT2102]` | Deadlines |
 | `monash grep "monad" [FIT2102]` | Full-text search with page numbers or timestamps |
-| `monash sync` | Sync now. `--dry-run` lists what Moodle would download |
+| `monash export FIT2109 [--sync] [--refresh-google] [--format pdf\|both\|md] [--to folder] [--no-ask] [--dir] [--open] [--json]` | 1.11.1 whole-course package; [options and prerequisites](/study-kit/materials/) |
+| `monash google login [--client JSON]` / `status` / `logout` | Separate read-only Drive authorization, status and revocation for course files |
+| `monash --profile NAME setup` / `sync` / `export FIT2109` | Select an isolated materials-only account |
+| `monash profile list` / `remove NAME [--all] [--yes]` | Manage profiles from the default account; `--all` also deletes materials/databases |
+| `monash move "D:\MonashStudyKit"` | Move the default home including files, databases, credentials and settings; named profiles cannot move independently |
+| `monash sync [FIT2109] [--refresh-google]` | Sync now. `--dry-run` lists what Moodle would download |
 | `monash login` / `monash login ed` | Log in to Moodle / replace the Ed token |
 | `monash courses` | Pick tracked units again |
 | `monash open [ed]` | Open the course-files folder; `ed`: the Ed Lessons materials, sorted by unit, week and lesson (1.7.0 and later) |

@@ -76,3 +76,11 @@ FIT2109 Ed Lessons/
 - Ed Lessons 里的 PDF、Ed 正文里附的文件（1.7.0 起，单个最多 200 MB），以及直接写在 Ed 里的正文页
 - 课程链接到的**课程笔记网页**，比如 FIT2102 的 tgdwyer.github.io。只抓课程直接链接的页面，不会整站爬，每页最多一周抓一次。不想要的话：`monash config web_notes false`
 - 录播字幕稿，前提是装了[录播字幕](/zh-cn/study-kit/recordings/)
+
+## 导出整门课
+
+```bash
+monash export FIT2109 --sync --format both --to "./exports"
+```
+
+不加 `--sync` 只读本地缓存；`--refresh-google` 隐含同步。PDF 为初始默认，`both` 同时保留 Markdown，缺浏览器时回退 Markdown。完整内容、账号隔离、遗漏索引和参数见[整课导出指南](/zh-cn/study-kit/materials/)。

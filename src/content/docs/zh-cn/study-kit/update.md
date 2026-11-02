@@ -33,3 +33,7 @@ uv tool uninstall monash-study-kit
 ```
 
 `monash uninstall` 会把它从 Claude 和其他 AI 软件里移除，并问你要不要删掉所有数据。最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌。
+
+## 升级到 1.11.1 后
+
+1.8 增加整课包与数据目录移动；1.9 补齐 Moodle 正文、图片、Google 文件与遗漏索引；1.10 增加隔离 profile 和 materials-only，并修正 Ed 无扩展名图片；1.11 默认导出 PDF；1.11.1 修复登录窗口关闭、Windows 临时目录清理，增加进度、目录选择和 `--refresh-google`。更新后运行 `monash export --help`，再按[整课导出指南](/zh-cn/study-kit/materials/)同步课程。Google 文件需独立授权；原有 Gmail 登录不等于 Drive 授权。
