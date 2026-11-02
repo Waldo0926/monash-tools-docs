@@ -62,3 +62,9 @@ uv tool uninstall monash-study-kit
 ## 怎么验证的
 
 项目的[安全说明](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/security.md)写了保护了什么、怎么测试。要私下报告问题，见 [SECURITY.md](https://github.com/Waldo0926/monash-study-kit/blob/main/SECURITY.md)。
+
+## Google 课程文件和账号隔离
+
+普通 `monash gmail login` 默认申请 `gmail.modify`；只读请加 `--read-only`，申请 `gmail.readonly`。课程文件另用 `monash google login`，只申请 `drive.readonly`，保存在 `secrets/google-drive-token.json`，与 Gmail 令牌分离。该 scope 允许读取账号可访问的全部 Drive 文件，导出器只处理课程链接；不能改文件，也不授予邮箱权限。API 受限时可尝试专用浏览器会话，Cookie 只在内存中。
+
+`monash google logout` 先吊销授权，失败则保留令牌供重试。命名 profile 把凭据、数据库、课件和浏览器会话隔离在 `profiles/NAME`，强制只导课程资料，跳过 Gmail、考勤和 Ed 讨论区，不可配置远程服务或 `monash connect`。整课包排除个人提交、成绩、反馈、邮件、私信和考勤，但仍是普通本地文件，分享前要检查。[详细说明](/zh-cn/study-kit/materials/)。

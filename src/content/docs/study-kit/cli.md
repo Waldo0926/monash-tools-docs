@@ -76,3 +76,11 @@ Needs Study Kit 1.7.0 or later. After upgrading from an older version, the first
 - PDFs in Ed Lessons, files attached inside Ed pages (1.7.0 and later, up to 200 MB each), and pages written directly in Ed
 - **Course-notes websites** that a unit links to, such as tgdwyer.github.io for FIT2102. Only pages the unit links directly are fetched, never a whole site, and each page at most once a week. Turn it off with `monash config web_notes false`
 - Lecture-recording transcripts, if you set up [recordings](/study-kit/recordings/)
+
+## Export a whole unit
+
+```bash
+monash export FIT2109 --sync --format both --to "./exports"
+```
+
+Without `--sync`, this reads only the local cache; `--refresh-google` implies sync. PDF is the initial default; `both` keeps Markdown too, with Markdown fallback if no supported browser exists. See [whole-course export](/study-kit/materials/) for contents, isolated profiles, the missing-item index and options.

@@ -28,6 +28,8 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+      - name: Check internal links and fragments
+        run: python3 scripts/check_links.py dist https://docs.secureview.tech
 
       - name: Package Attendance Helper
         run: |

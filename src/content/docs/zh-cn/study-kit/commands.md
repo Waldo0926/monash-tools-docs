@@ -14,7 +14,12 @@ description: 所有 monash 命令、输出格式和退出码。
 | `monash semester [--days 7] [--ics [路径]]` | 1.6.0 起：截止、Ed lesson 和回复、本地考勤缓存放在一页；`--ics` 把截止日期导出成私有日历文件（一次性快照，不会自动更新） |
 | `monash due [FIT2102]` | 截止日期 |
 | `monash grep "monad" [FIT2102]` | 全文搜索，带页码或时间戳 |
-| `monash sync` | 马上同步。`--dry-run` 只列出 Moodle 会下载什么 |
+| `monash export FIT2109 [--sync] [--refresh-google] [--format pdf\|both\|md] [--to 文件夹] [--no-ask] [--dir] [--open] [--json]` | 1.11.1 整课资料包；[参数和前置条件](/zh-cn/study-kit/materials/) |
+| `monash google login [--client JSON]` / `status` / `logout` | 课程 Google 文件独立 Drive 只读授权、状态、吊销 |
+| `monash --profile NAME setup` / `sync` / `export FIT2109` | 选择隔离的课程资料账号；命名账号强制 materials-only |
+| `monash profile list` / `remove NAME [--all] [--yes]` | 从默认账号查看或清理 profile；`--all` 包含课件与数据库 |
+| `monash move "D:\MonashStudyKit"` | 移动默认账号的资料、数据库、凭据和设置；命名账号不能独立移动 |
+| `monash sync [FIT2109] [--refresh-google]` | 马上同步。`--dry-run` 只列出 Moodle 会下载什么 |
 | `monash login` / `monash login ed` | 登录 Moodle / 换 Ed 令牌 |
 | `monash courses` | 重新选要跟踪的课 |
 | `monash open [ed]` | 打开课件文件夹；`ed`：Ed Lessons 的课件，按 课号/周/lesson 分好（1.7.0 起） |
@@ -41,15 +46,15 @@ description: 所有 monash 命令、输出格式和退出码。
 
 ## 输出
 
-加 `--json` 输出 JSON。输出被管道接到别的程序时自动是 JSON，`--text` 强制文本。
+对 `--help` 列出这些选项的查询/导出命令，`--json` 输出 JSON，`--text` 强制文本，接管道时自动选择 JSON。这些参数并非所有命令都支持：例如 Google 服务命令本身就输出 JSON，安装和配置命令则有各自的输出。
 
 ## 退出码
 
 | 码 | 意思 |
 | --- | --- |
 | 0 | 成功 |
-| 1 | 参数不对 |
-| 2 | 需要登录（`monash login` 或 `monash login ed`） |
+| 1 | 值不合法，或命令自身失败（包括导出失败） |
+| 2 | 需要登录；argparse 也会在命令语法不合法时返回 2，请根据错误正文区分 |
 | 3 | 连不上 Moodle 或 Ed，或对方出错 |
 | 4 | 找不到课程或帖子 |
 | 130 | 被 Ctrl-C 中断 |
