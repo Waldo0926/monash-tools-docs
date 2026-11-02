@@ -37,3 +37,7 @@ uv tool uninstall monash-study-kit
 ## After upgrading to 1.11.1
 
 1.8 added whole-course packages and data-home moves; 1.9 added Moodle bodies, images, Google files and missing-item reporting; 1.10 added isolated profiles and materials-only mode, followed by extensionless Ed image fixes; 1.11 made PDF the export default; 1.11.1 fixed closed login windows and Windows temporary-profile cleanup, and added progress, folder selection and `--refresh-google`. Run `monash export --help`, then follow [whole-course export](/study-kit/materials/). Google files need separate authorization: an existing Gmail login does not grant Drive access.
+
+## Proposed patch: 1.11.2
+
+[Study Kit PR #39](https://github.com/Waldo0926/monash-study-kit/pull/39) addresses Windows PDF browser cold-start failure by reaping the failed process and retrying once with a fresh temporary profile, while tolerating partially written port files and transient connection failures. This patch is not released; the latest published version remains 1.11.1 and `monash update` does not install an unreleased patch.
