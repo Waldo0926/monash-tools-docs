@@ -3,6 +3,7 @@ import Shell from './Shell.astro';
 import { Image } from 'astro:assets';
 import Copy from '@lucide/astro/icons/copy';
 import Check from '@lucide/astro/icons/check';
+import courseExport from '../assets/study-kit/course-export.png';
 import popup from '../assets/attendance/popup.png';
 import confirm from '../assets/attendance/confirm-page.png';
 import hubMarksZh from '../assets/hub/marks-zh.png';
@@ -69,27 +70,12 @@ const [kit, hub, ed, att, bot] = p.tools;
           {n === 0 && (
             <>
               <div class="demo-body" data-panel>
-<pre class="term"><span class="c">$</span> <span class="b">monash grep "monad"</span>
-[FIT2102] Week 8 Lecture Slides  @ p.14
-    …a «monad» wraps a value and gives you bind…
-
-[FIT2102] Course notes: Monads  @ p.2
-    …the Maybe «monad» handles a missing value…
-
-[FIT2102] Week 8 Lecture  @ 41:20<i class="w2">（</i><i class="w2">视</i><i class="w2">频</i> Week 8 Lecture.mp4<i class="w2">）</i>
-    …so this is why we call Maybe a «monad»…
-
-<span class="c">$</span> <span class="b">monash due</span>
-<i class="w2">时</i><i class="w2">间</i>             <i class="w2">剩</i><i class="w2">余</i>    <i class="w2">课</i><i class="w2">程</i>     <i class="w2">类</i><i class="w2">型</i>  <i class="w2">内</i><i class="w2">容</i>
-───────────────  ──────  ───────  ────  ────────────
-10-27 Mon 23:55  <span class="w">2 <i class="w2">天</i><i class="w2">后</i></span>  FIT2102  <i class="w2">截</i><i class="w2">止</i>  Assignment 2
-10-29 Wed 23:55  4 <i class="w2">天</i><i class="w2">后</i>  FIT2109  <i class="w2">截</i><i class="w2">止</i>  Quiz 6
-10-31 Fri 17:00  6 <i class="w2">天</i><i class="w2">后</i>  FIT2014  <i class="w2">截</i><i class="w2">止</i>  Lab 9 report</pre>
+<Image src={courseExport} alt={zh ? 'Study Kit 1.11.2 实际整课导出，包含 PDF、Markdown、Ed Lessons 和遗漏索引；合成课程数据' : 'Actual Study Kit 1.11.2 whole-course export with PDF, Markdown, Ed Lessons and omission index; synthetic course data'} widths={[700, 1100, 1280]} sizes="(max-width: 900px) 100vw, 900px" />
               </div>
               <div class="demo-body" data-panel hidden>
                 <div class="chat" style="font-size:13.5px">
                   <div class="bubble me" style="background:#e8e6df">{zh ? 'monad 在哪份资料里讲过？' : 'Where were monads covered?'}</div>
-                  <div class="a-tool"><i></i>moodle_search_content</div>
+                  <div class="a-tool"><i></i>search_content</div>
                   <div class="ui-row"><span class="ui-tag">PDF</span><div class="ui-main"><strong>Week 8 Lecture Slides</strong><span>{zh ? '第 14 页' : 'Page 14'}</span></div></div>
                   <div class="ui-row"><span class="ui-tag">{zh ? '录播' : 'Video'}</span><div class="ui-main"><strong>Week 8 Lecture</strong><span>41:20</span></div></div>
                   <p class="a-reply" style="margin-top:6px">{zh ? '第 8 周课件第 14 页开始讲，录播 41:20 讲了 Maybe 的例子。要我读一下那几页，再给你讲一遍吗？' : 'Week 8 introduces it on page 14 of the slides, and the lecture explains the Maybe example at 41:20. Want me to read those pages and walk you through it?'}</p>

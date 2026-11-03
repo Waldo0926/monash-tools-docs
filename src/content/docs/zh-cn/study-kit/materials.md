@@ -5,6 +5,11 @@ description: 把 Moodle、Ed Lessons 和课程链接的 Google 文件打成一�
 
 Study Kit **1.11.2** 可以将 Moodle 和 Ed Lessons 合并为一个课程资料包，不需要 AI 软件。导出包含教学资料和作业说明，但不含个人提交、成绩、反馈、Ed 讨论区、邮件、私信和考勤。它是当前账号有权访问且已经同步的内容快照；是否完整，要先看索引。
 
+![1.11.2 实际离线导出和 ZIP 内容（合成课程数据）](../../../../assets/study-kit/course-export.png)
+
+截图：2026-11-03。示例故意保留缺失附件和未授权 Google 链接；请以导出索引为准。
+
+
 ## 第一次导出
 
 完成[安装](/zh-cn/study-kit/install/)和[初次设置](/zh-cn/study-kit/setup/)后：

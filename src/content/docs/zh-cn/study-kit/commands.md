@@ -14,7 +14,7 @@ description: 所有 monash 命令、输出格式和退出码。
 | `monash semester [--days 7] [--ics [路径]]` | 1.6.0 起：截止、Ed lesson 和回复、本地考勤缓存放在一页；`--ics` 把截止日期导出成私有日历文件（一次性快照，不会自动更新） |
 | `monash due [FIT2102]` | 截止日期 |
 | `monash grep "monad" [FIT2102]` | 全文搜索，带页码或时间戳 |
-| `monash export FIT2109 [--sync] [--refresh-google] [--format pdf\|both\|md] [--to 文件夹] [--no-ask] [--dir] [--open] [--json]` | 1.11.1 整课资料包；[参数和前置条件](/zh-cn/study-kit/materials/) |
+| `monash export FIT2109 [--sync] [--refresh-google] [--format pdf\|both\|md] [--to 文件夹] [--no-ask] [--dir] [--open] [--json]` | 1.11.2 整课资料包；[参数和前置条件](/zh-cn/study-kit/materials/) |
 | `monash google login [--client JSON]` / `status` / `logout` | 课程 Google 文件独立 Drive 只读授权、状态、吊销 |
 | `monash --profile NAME setup` / `sync` / `export FIT2109` | 选择隔离的课程资料账号；命名账号强制 materials-only |
 | `monash profile list` / `remove NAME [--all] [--yes]` | 从默认账号查看或清理 profile；`--all` 包含课件与数据库 |

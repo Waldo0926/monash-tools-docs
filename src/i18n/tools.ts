@@ -34,8 +34,8 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['Install', 'One command'], ['Version', '1.11.2'], ['Tested with', 'Claude Desktop, Claude Code; ChatGPT, Codex (remote integration)'], ['One-command local setup', 'Codex, Cursor, VS Code, Windsurf, Gemini CLI'], ['Remote mode', 'Optional, for ChatGPT and Claude on the web'], ['School mail and attendance', 'Optional, since 1.5.0'], ['Local server runs on', 'macOS, Windows, Linux'], ['Licence', 'MIT']],
         cmd: INSTALL_MAC,
         links: [['Guide', 'study-kit/'], ['GitHub', 'https://github.com/Waldo0926/monash-study-kit'], ['PyPI', 'https://pypi.org/project/monash-study-kit/']],
-        tabs: ['In the terminal', 'In an AI app'],
-        note: 'Real command output with sample course data. The terminal prints in Chinese.',
+        tabs: ['Whole-course export', 'In an AI app'],
+        note: 'Study Kit 1.11.2, captured 3 November 2026. Actual offline export using synthetic data; includes a missing attachment and an unauthorized Google link.',
       },
       {
         id: 'monash-hub',
@@ -45,7 +45,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['Install', 'None, add to home screen if you like'], ['Version', '1.0.0'], ['Languages', 'English, 简体中文'], ['Runs on', 'Any browser'], ['Account', 'Not needed']],
         links: [['Open Monash Hub', 'https://monashhub.secureview.tech'], ['Guide', 'monash-hub/']],
         tabs: ['WAM and GPA', 'Search'],
-        note: 'Screenshots of the live site. The marks are made up.',
+        note: 'Live site captured 3 November 2026. Marks are synthetic; no account data.',
       },
       {
         id: 'ed-web',
@@ -95,8 +95,8 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['安装', '一条命令'], ['版本', '1.11.2'], ['实测过', 'Claude Desktop、Claude Code；ChatGPT、Codex（远程集成）'], ['本地一键接入', 'Codex、Cursor、VS Code、Windsurf、Gemini CLI'], ['远程模式', '可选，给 ChatGPT 和网页版 Claude 用'], ['学校邮箱和考勤', '可选，1.5.0 起'], ['本地服务器运行在', 'macOS、Windows、Linux'], ['许可证', 'MIT']],
         cmd: INSTALL_MAC,
         links: [['说明', 'study-kit/'], ['GitHub', 'https://github.com/Waldo0926/monash-study-kit'], ['PyPI', 'https://pypi.org/project/monash-study-kit/']],
-        tabs: ['在终端里', '在 AI 里'],
-        note: '真实命令输出，课程数据是示例。',
+        tabs: ['整课资料导出', '在 AI 里'],
+        note: 'Study Kit 1.11.2，2026-11-03 截图。合成资料的实际离线导出，含一个缺失附件和未授权 Google 链接。',
       },
       {
         id: 'monash-hub',
@@ -106,7 +106,7 @@ export const toolsPage: Record<Lang, { title: string; description: string; h1a: 
         spec: [['安装', '不用装，想要可以加到主屏幕'], ['版本', '1.0.0'], ['语言', 'English、简体中文'], ['运行在', '任何浏览器'], ['账号', '不需要']],
         links: [['打开 Monash Hub', 'https://monashhub.secureview.tech'], ['说明', 'monash-hub/']],
         tabs: ['WAM 和 GPA', '搜索'],
-        note: '线上网站截图，成绩是编的。',
+        note: '2026-11-03 线上网站截图。成绩为示例，不含账号数据。',
       },
       {
         id: 'ed-web',
