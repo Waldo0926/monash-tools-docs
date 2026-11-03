@@ -21,7 +21,7 @@ If you are an AI agent asked to install something for a student, read the agent 
 - [First-time setup](https://docs.secureview.tech/study-kit/setup/): Ed token, Moodle login with MFA, units, connecting your AI app
 - [What to ask your AI](https://docs.secureview.tech/study-kit/ask-claude/): example questions
 - [School mail and attendance](https://docs.secureview.tech/study-kit/mail-attendance/): optional since 1.5.0; connect by asking the AI app; mail and check-in actions run only after the student confirms
-- [Export a whole unit](https://docs.secureview.tech/study-kit/materials/): Moodle Page/Book/assignment materials, Ed Lessons/images and linked Google files; PDF/Markdown, missing-item index, separate Drive authorization and isolated materials-only profiles (1.11.1)
+- [Export a whole unit](https://docs.secureview.tech/study-kit/materials/): Moodle Page/Book/assignment materials, Ed Lessons/images and linked Google files; PDF/Markdown, missing-item index, separate Drive authorization and isolated materials-only profiles (1.11.2)
 - [整课导出（中文）](https://docs.secureview.tech/zh-cn/study-kit/materials/): 参数、Google 授权、PDF、隔离账号与遗漏排查
 - [Use it without AI](https://docs.secureview.tech/study-kit/cli/): the monash command in a terminal, and monash library to browse synced files
 - [Other AI apps](https://docs.secureview.tech/study-kit/other-clients/): monash connect for Codex, Cursor, VS Code, Windsurf, Gemini CLI

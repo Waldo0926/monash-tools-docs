@@ -81,4 +81,4 @@ The MCP background log is `mcp.log` in the [data folder](/study-kit/privacy/#whe
 
 ## Missing whole-course, Google or PDF content
 
-Upgrade to 1.11.1, then use the [export troubleshooting steps](/study-kit/materials/). `--to "./exports"` or `--no-ask` skips the picker; `--format md` does not need a PDF browser. `--refresh-google` syncs online; export without `--sync` reads only local data. Google permissions, size and administrator restrictions appear in the missing-item index; retry cannot bypass sharing permissions. Re-run `monash login` if the login window was closed early; no browser reinstall is needed.
+Upgrade to 1.11.2, then use the [export troubleshooting steps](/study-kit/materials/). `--to "./exports"` or `--no-ask` skips the picker; `--format md` does not need a PDF browser. `--refresh-google` syncs online; export without `--sync` reads only local data. Google permissions, size and administrator restrictions appear in the missing-item index; retry cannot bypass sharing permissions. Re-run `monash login` if the login window was closed early; no browser reinstall is needed.

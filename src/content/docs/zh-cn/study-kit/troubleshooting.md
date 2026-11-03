@@ -81,4 +81,4 @@ MCP 后台日志是[数据文件夹](/zh-cn/study-kit/privacy/#数据存在哪)�
 
 ## 整课导出、Google 或 PDF 缺内容
 
-先升级到 1.11.1，再查看[整课导出的排错步骤](/zh-cn/study-kit/materials/)。用 `--to "./exports"` 或 `--no-ask` 跳过目录弹窗；`--format md` 不需要 PDF 浏览器。`--refresh-google` 会联网同步，普通不带 `--sync` 的导出只读本地缓存。Google 权限/大小/管理员限制会记录在遗漏索引；重试不能绕过文件权限。登录窗口提前关闭时重新运行 `monash login`，无需重装浏览器。
+先升级到 1.11.2，再查看[整课导出的排错步骤](/zh-cn/study-kit/materials/)。用 `--to "./exports"` 或 `--no-ask` 跳过目录弹窗；`--format md` 不需要 PDF 浏览器。`--refresh-google` 会联网同步，普通不带 `--sync` 的导出只读本地缓存。Google 权限/大小/管理员限制会记录在遗漏索引；重试不能绕过文件权限。登录窗口提前关闭时重新运行 `monash login`，无需重装浏览器。

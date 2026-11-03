@@ -145,3 +145,5 @@ serving or `monash connect` for them. Use profile-scoped `status`, `sync` and
 `monash profile remove NAME`; it revokes Google before clearing sessions,
 preserves materials unless `--all` is requested, and keeps files on revocation
 failure. Ed token deletion remains manual.
+
+Latest published patch: 1.11.2. Use `monash update` for an existing installation; its release workflow verified PyPI installs on Windows, macOS and Linux. Windows PDF cold-start retry is included.

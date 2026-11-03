@@ -38,6 +38,6 @@ uv tool uninstall monash-study-kit
 
 1.8 added whole-course packages and data-home moves; 1.9 added Moodle bodies, images, Google files and missing-item reporting; 1.10 added isolated profiles and materials-only mode, followed by extensionless Ed image fixes; 1.11 made PDF the export default; 1.11.1 fixed closed login windows and Windows temporary-profile cleanup, and added progress, folder selection and `--refresh-google`. Run `monash export --help`, then follow [whole-course export](/study-kit/materials/). Google files need separate authorization: an existing Gmail login does not grant Drive access.
 
-## Proposed patch: 1.11.2
+## 1.11.2 is released
 
-[Study Kit PR #39](https://github.com/Waldo0926/monash-study-kit/pull/39) addresses Windows PDF browser cold-start failure by reaping the failed process and retrying once with a fresh temporary profile, while tolerating partially written port files and transient connection failures. This patch is not released; the latest published version remains 1.11.1 and `monash update` does not install an unreleased patch.
+[Release 1.11.2](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.11.2) is published on PyPI and GitHub. Run `monash update`, then restart the AI app using Study Kit. On Windows, a failed PDF browser cold start is reaped and retried once with a fresh temporary profile; partially written port files and transient connections are retried too. The release also corrects Gmail/Drive permission and materials-isolation documentation. The release workflow passed cross-platform tests, packaging and installation from PyPI on all three platforms.
