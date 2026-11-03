@@ -35,7 +35,7 @@ monash library --open
 
 This opens a page in your browser that lists every Moodle and Ed lesson file already synced, with a unit's Moodle and Ed files in the same group. Filter by unit, week or file name and click a file to download it. It is handy when you just want the week 7 slides without asking an AI. Units with Ed materials also get a **Download all Ed files (.zip)** button next to their name, giving the same zip as `monash ed export` below (1.7.0 and later).
 
-![The library page: a unit heading with a Download all Ed files button, then the unit's Moodle and Ed files in one list (made-up course data)](../../../assets/study-kit/library.png)
+![The library page: a unit heading with a Download all Ed files button, then the unit's Moodle and Ed files in one list (synthetic 1.11.2 course data; captured 3 November 2026)](../../../assets/study-kit/library.png)
 
 - It only shows what `monash sync` has already downloaded. It does not sync by itself.
 - It listens on `127.0.0.1` only, so other devices on your Wi-Fi cannot open it. The default port is 8766; use `--port` to pick another one.

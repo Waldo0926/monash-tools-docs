@@ -3,7 +3,12 @@ title: Export a whole unit
 description: Moodle, Ed Lessons and linked Google files in one local package, with PDF or Markdown pages and an index of missing materials.
 ---
 
-Study Kit **1.11.1** combines Moodle and Ed Lessons in one course package. You can use it without an AI app. It exports teaching materials, including assignment instructions, but leaves out submissions, grades, feedback, Ed discussions, mail, messages and attendance. A package is a snapshot of what your account can access and has synced; check the index before relying on it as complete.
+Study Kit **1.11.2** combines Moodle and Ed Lessons in one course package. You can use it without an AI app. It exports teaching materials, including assignment instructions, but leaves out submissions, grades, feedback, Ed discussions, mail, messages and attendance. A package is a snapshot of what your account can access and has synced; check the index before relying on it as complete.
+
+![Actual 1.11.2 offline export and ZIP contents (synthetic course data)](../../../assets/study-kit/course-export.png)
+
+Captured 3 November 2026. The demo deliberately includes a missing attachment and an unauthorized Google link; always check the export index.
+
 
 ## First export
 

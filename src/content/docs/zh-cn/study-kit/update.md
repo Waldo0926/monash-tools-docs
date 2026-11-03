@@ -38,6 +38,6 @@ uv tool uninstall monash-study-kit
 
 1.8 增加整课包与数据目录移动；1.9 补齐 Moodle 正文、图片、Google 文件与遗漏索引；1.10 增加隔离 profile 和 materials-only，并修正 Ed 无扩展名图片；1.11 默认导出 PDF；1.11.1 修复登录窗口关闭、Windows 临时目录清理，增加进度、目录选择和 `--refresh-google`。更新后运行 `monash export --help`，再按[整课导出指南](/zh-cn/study-kit/materials/)同步课程。Google 文件需独立授权；原有 Gmail 登录不等于 Drive 授权。
 
-## 待评审补丁：1.11.2
+## 1.11.2 已发布
 
-[Study Kit PR #39](https://github.com/Waldo0926/monash-study-kit/pull/39)修复 Windows PDF 浏览器冷启动失败：先清理失败进程，再用新的临时 profile 重试一次，并容忍端口文件尚未写完和短暂连接失败。此版本尚未发布，当前已发布版本仍是 1.11.1，`monash update` 不会安装未发布补丁。
+[1.11.2 Release](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.11.2) 已在 PyPI 和 GitHub 正式发布。运行 `monash update`，然后重启使用 Study Kit 的 AI 软件。Windows PDF 浏览器冷启动失败时，会清理失败进程并用新的临时 profile 重试一次，也会容忍端口文件尚未写完和短暂连接失败。Gmail/Drive 权限和资料隔离说明同步修正。发布工作流已通过三平台测试、打包和从 PyPI 安装验证。

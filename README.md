@@ -10,7 +10,7 @@
 
 Guides for the free tools I built for Monash students, in English and Chinese:
 
-- **Study Kit**: ask the AI app on your computer (Claude, Codex, Cursor and others) about your own Moodle and Ed. One-command install. Since 1.4 it can also reach ChatGPT and Claude on the web through an optional remote mode, and since 1.5 it can optionally read your school mail and attendance.
+- **Study Kit 1.11.2**: whole-course Moodle, Ed Lessons and linked Google material exports, PDF / Markdown, isolated profiles and materials-only mode, plus AI / MCP, full-text search and optional mail and attendance.
 - **Monash Hub**: units, degrees, course maps, WAM/GPA and official guides.
 - **Ed Web**: read and search an Ed forum in the browser.
 - **Attendance Helper**: Chrome extension that finds attendance codes and submits only the classes you confirm. On the [Chrome Web Store](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd).
@@ -42,3 +42,9 @@ The live site is served from my VPS so it loads reliably from China. The VPS pul
 ## Not affiliated
 
 Not affiliated with Monash University, Ed or Anthropic. Icons by [Lucide](https://lucide.dev) (ISC).
+
+## Keeping examples current
+
+The Study Kit guide and Tools page cover release **1.11.2**. Screenshots refreshed on **3 November 2026** include the current live Hub marks/search pages, the actual 1.11.2 local library, the docs homepage and a synthetic offline course export. Demo marks and materials contain no personal account data. The export screenshot intentionally retains a missing attachment and an unauthorized Google link; it is not proof that every course can be exported completely. The fixture and reproduction steps live in [Study Kit screenshots](https://github.com/Waldo0926/monash-study-kit/tree/main/docs/screenshots).
+
+When changing a tool, review both language guides, Tools-page text and tabs, screenshots, README descriptions and Blog project/article descriptions together. A version-label edit alone does not refresh an image.
