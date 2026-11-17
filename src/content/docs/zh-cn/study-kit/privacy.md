@@ -57,7 +57,7 @@ monash uninstall
 uv tool uninstall monash-study-kit
 ```
 
-`monash uninstall` 会把它从 Claude 和其他 AI 软件里移除，并问你要不要删掉所有数据。最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌。
+`monash uninstall` 会把它从 Claude 和其他 AI 软件里移除，并问你要不要删掉所有数据。删除之前，它会先撤销默认账号和所有命名账号的 Google Drive、Gmail 授权，不会让授权继续留在 Google 那边。撤销失败时什么都不会删。最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌。
 
 ## 怎么验证的
 

@@ -10,7 +10,7 @@
 
 Guides for the free tools I built for Monash students, in English and Chinese:
 
-- **Study Kit 1.11.2**: whole-course Moodle, Ed Lessons and linked Google material exports, PDF / Markdown, isolated profiles and materials-only mode, plus AI / MCP, full-text search and optional mail and attendance.
+- **Study Kit 1.15.0**: whole-course Moodle, Ed Lessons and linked Google material exports, PDF / Markdown, isolated profiles and materials-only mode, plus AI / MCP, full-text search and optional mail and attendance.
 - **Monash Hub**: units, degrees, course maps, WAM/GPA and official guides.
 - **Ed Web**: read and search an Ed forum in the browser.
 - **Attendance Helper**: Chrome extension that finds attendance codes and submits only the classes you confirm. On the [Chrome Web Store](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd).
@@ -45,6 +45,6 @@ Not affiliated with Monash University, Ed or Anthropic. Icons by [Lucide](https:
 
 ## Keeping examples current
 
-The Study Kit guide and Tools page cover release **1.11.2**. Screenshots refreshed on **3 November 2026** include the current live Hub marks/search pages, the actual 1.11.2 local library, the docs homepage and a synthetic offline course export. Demo marks and materials contain no personal account data. The export screenshot intentionally retains a missing attachment and an unauthorized Google link; it is not proof that every course can be exported completely. The fixture and reproduction steps live in [Study Kit screenshots](https://github.com/Waldo0926/monash-study-kit/tree/main/docs/screenshots).
+The Study Kit guide and Tools page cover release **1.15.0**. Screenshots refreshed on **3 November 2026** include the current live Hub marks/search pages, the actual 1.11.2 local library, the docs homepage and a synthetic offline course export. Demo marks and materials contain no personal account data. The export screenshot intentionally retains a missing attachment and an unauthorized Google link; it is not proof that every course can be exported completely. The fixture and reproduction steps live in [Study Kit screenshots](https://github.com/Waldo0926/monash-study-kit/tree/main/docs/screenshots).
 
 When changing a tool, review both language guides, Tools-page text and tabs, screenshots, README descriptions and Blog project/article descriptions together. A version-label edit alone does not refresh an image.

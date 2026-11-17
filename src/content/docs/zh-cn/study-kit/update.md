@@ -32,7 +32,7 @@ monash uninstall
 uv tool uninstall monash-study-kit
 ```
 
-`monash uninstall` 会把它从 Claude 和其他 AI 软件里移除，并问你要不要删掉所有数据。最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌。
+`monash uninstall` 会把它从 Claude 和其他 AI 软件里移除，并问你要不要删掉所有数据。删除之前，它会先撤销默认账号和所有命名账号的 Google Drive、Gmail 授权，不会让授权继续留在 Google 那边。撤销失败时什么都不会删。最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌。
 
 ## 升级到 1.11.1 后
 
@@ -41,3 +41,9 @@ uv tool uninstall monash-study-kit
 ## 1.11.2 已发布
 
 [1.11.2 Release](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.11.2) 已在 PyPI 和 GitHub 正式发布。运行 `monash update`，然后重启使用 Study Kit 的 AI 软件。Windows PDF 浏览器冷启动失败时，会清理失败进程并用新的临时 profile 重试一次，也会容忍端口文件尚未写完和短暂连接失败。Gmail/Drive 权限和资料隔离说明同步修正。发布工作流已通过三平台测试、打包和从 PyPI 安装验证。
+
+## 1.15.0 已发布
+
+[1.15.0 Release](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.15.0) 是 1.11.2 之后第一次发到 PyPI 的版本，所以也带上了 1.12.0 到 1.14.0 的改动（这几个版本合并了但没发布），详见[更新日志](https://github.com/Waldo0926/monash-study-kit/blob/main/CHANGELOG.md)。运行 `monash update`，然后重启使用 Study Kit 的 AI 软件。
+
+主要改动在 `monash uninstall`：删除数据文件夹之前，它会先撤销你的 Google Drive 和 Gmail 授权。以前它只删本地的令牌文件，授权在 Google 那边仍然有效。README 现在先讲要求、安装和日常使用，FAQ 增加了 `monash: command not found`、第一次同步很慢、换学期后出现新课程、Ed 令牌无效和怎么全部删除。
