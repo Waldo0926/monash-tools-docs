@@ -57,7 +57,7 @@ monash uninstall
 uv tool uninstall monash-study-kit
 ```
 
-`monash uninstall` removes it from Claude and the other AI apps and asks whether to delete all data. Last, delete the token on Ed's [API token page](https://edstem.org/au/settings/api-tokens).
+`monash uninstall` removes it from Claude and the other AI apps and asks whether to delete all data. Before it deletes anything it revokes the Google Drive and Gmail access of the default account and of every named profile, so the grants do not stay active on Google's side. If revoking fails, nothing is deleted. Last, delete the token on Ed's [API token page](https://edstem.org/au/settings/api-tokens).
 
 ## How it is checked
 
