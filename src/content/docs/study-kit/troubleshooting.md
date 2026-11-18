@@ -46,10 +46,10 @@ monash sync
 Moodle shows times in your account's time zone, and Study Kit assumes UTC+8. Set yours:
 
 ```bash
-monash config tz_offset 10
+monash config timezone Australia/Melbourne
 ```
 
-Use 11 during daylight saving.
+Use your own city (`Australia/Perth`, `Australia/Brisbane` and so on). Daylight saving is handled for you. Restart your AI app afterwards.
 
 ## Where are Ed assignment deadlines?
 

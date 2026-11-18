@@ -29,7 +29,7 @@ monash gmail login
 monash attendance login
 ```
 
-接好后重启一下 AI 软件。两样都接上以后，AI 软件每次对话开头读到的工具说明从约 3,377 个 token 变成约 5,132 个。
+接好后重启一下 AI 软件。两样都接上以后，每次对话开头的工具说明会多大约 1,900 个 token。
 
 完整的分步教程（包括改用你自己的 Google Cloud 应用）见[设置教程](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/google-and-attendance-setup.md)。
 
@@ -74,5 +74,5 @@ monash config attendance_submit_enabled false
 
 - 考勤只在马来西亚校区的门户上验证过。
 - 签到提交还没在真实账号上测过。
-- 考勤登录能维持多久还在测，`monash attendance status` 里能看到。过期了就让 AI 重新接一次考勤，或者运行 `monash attendance login`。
+- 考勤登录能维持多久还在测，`monash attendance status` 里能看到。过期后 Study Kit 会先用你电脑上已有的浏览器登录状态悄悄登回去（`monash attendance renew`）；Monash 要你输密码或 MFA 时，它会停下来让你自己运行 `monash attendance login`。失败一次后隔一小时才会再试
 - Google 对没审核的应用最多允许 100 个用户。遇到这个上限，就按设置教程改用你自己的 Google Cloud 应用。

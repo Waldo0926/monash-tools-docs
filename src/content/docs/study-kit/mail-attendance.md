@@ -29,7 +29,7 @@ monash gmail login
 monash attendance login
 ```
 
-Restart your AI app after connecting. With both connected, the tool descriptions your AI app reads at the start of every conversation come to about 5,132 tokens instead of 3,377.
+Restart your AI app after connecting. With both connected, each conversation starts with about 1,900 more tokens of tool descriptions.
 
 A full step-by-step guide in Chinese, including using your own Google Cloud app instead of the bundled one, is in the [setup guide](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/google-and-attendance-setup.md).
 
@@ -74,5 +74,5 @@ With [remote mode](/study-kit/remote/), each app you pair chooses which of these
 
 - Attendance is checked only against the Malaysia campus portal.
 - Check-in has not yet been tested on a real account.
-- How long the attendance login lasts is still being measured; `monash attendance status` shows it. When it expires, ask the AI to connect attendance again or run `monash attendance login`.
+- How long the attendance login lasts is still being measured; `monash attendance status` shows it. When it expires, Study Kit first tries to sign back in quietly with the browser profile already on your computer (`monash attendance renew`). If Monash wants your password or MFA, it stops and asks you to run `monash attendance login`. After a failed try it waits an hour before trying again.
 - Google allows at most 100 users for an app it has not reviewed. If you see that limit, use your own Google Cloud app as the setup guide explains.

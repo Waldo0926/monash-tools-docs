@@ -78,7 +78,7 @@ Tell the student:
 
 - In Claude Desktop, the **+** button in the chat box, then **Connectors**, should list **monash**. Restart Claude Desktop if it does not.
 - If they use Codex, Cursor, VS Code, Windsurf or Gemini CLI instead, run `monash connect <client>` (see the next section) and tell them to restart that app.
-- They can now ask things like "What's due this week?", "Anything new on Ed?" or "Which slide covers recursion?".
+- They can now ask things like "What's due this week?", "Anything new on Ed?", "Which slide covers recursion?", "What changed in my units this week?" or "Read what I submitted for A1 and go through the marker's comments".
 - `monash login` signs in to Moodle again when the session expires; `monash update` updates.
 - Optional (Study Kit 1.5.0 or later): school mail and attendance. Mention them once. If the student wants them, see the next section.
 
@@ -120,7 +120,7 @@ After login, drafting, sending a draft, changing labels and checking in are on. 
 | monash missing in Codex, Cursor and others | `monash connect` to check, then `monash connect <client>` and restart the app |
 | Anything else | `monash doctor`, then https://docs.secureview.tech/study-kit/troubleshooting/ |
 
-## Optional: whole-course materials and isolated accounts (1.11.1)
+## Optional: whole-course materials and isolated accounts
 
 For a student who asks to export teaching materials, use the current guide:
 https://docs.secureview.tech/study-kit/materials/ (Chinese: /zh-cn/study-kit/materials/).

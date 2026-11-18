@@ -10,11 +10,11 @@
 
 Guides for the free tools I built for Monash students, in English and Chinese:
 
-- **Study Kit 1.15.0**: whole-course Moodle, Ed Lessons and linked Google material exports, PDF / Markdown, isolated profiles and materials-only mode, plus AI / MCP, full-text search and optional mail and attendance.
-- **Monash Hub**: units, degrees, course maps, WAM/GPA and official guides.
+- **Study Kit 1.15.0**: lets your AI app read your own Moodle and Ed. Deadlines, Ed updates, what changed in your units, your submitted work and marking feedback, full-text search and whole-unit exports, plus optional school mail and attendance. Your AI can install it for you from one pasted line.
+- **Monash Hub**: units, electives with no exam or no prerequisite, degrees, course maps, WAM/GPA, Malaysia fees and official guides.
 - **Ed Web**: read and search an Ed forum in the browser.
 - **Attendance Helper**: Chrome extension that finds attendance codes and submits only the classes you confirm. On the [Chrome Web Store](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd).
-- **WeChat Q&A bot**: answers from official pages, with sources.
+- **WeChat Q&A bot**: answers students and parents in Chinese from official pages, with sources, and hands real questions it can't answer to a person.
 
 There is also a page on the two tools I keep private (ed-digest and moodle-sync) and which public tool to use instead.
 

@@ -16,11 +16,11 @@ If you are an AI agent asked to install something for a student, read the agent 
 
 ## Study Kit
 
-- [Overview](https://docs.secureview.tech/study-kit/): connect Monash Moodle and Ed to Claude, Codex, Cursor or any local MCP app, plus optional school mail and attendance; data stays local by default; query results go to the connected AI provider
+- [Overview](https://docs.secureview.tech/study-kit/): connect Monash Moodle and Ed to Claude, Codex, Cursor or any local MCP app: deadlines, Ed updates, course changes, submitted work and marking feedback, whole-unit exports, plus optional school mail and attendance; data stays local by default; query results go to the connected AI provider
 - [Install](https://docs.secureview.tech/study-kit/install/): one command installs uv and the monash command
 - [First-time setup](https://docs.secureview.tech/study-kit/setup/): Ed token, Moodle login with MFA, units, connecting your AI app
 - [What to ask your AI](https://docs.secureview.tech/study-kit/ask-claude/): example questions
-- [School mail and attendance](https://docs.secureview.tech/study-kit/mail-attendance/): optional since 1.5.0; connect by asking the AI app; mail and check-in actions run only after the student confirms
+- [School mail and attendance](https://docs.secureview.tech/study-kit/mail-attendance/): optional; connect by asking the AI app; mail and check-in actions run only after the student confirms
 - [Export a whole unit](https://docs.secureview.tech/study-kit/materials/): Moodle Page/Book/assignment materials, Ed Lessons/images and linked Google files; PDF/Markdown, missing-item index, separate Drive authorization and isolated materials-only profiles (1.11.2)
 - [整课导出（中文）](https://docs.secureview.tech/zh-cn/study-kit/materials/): 参数、Google 授权、PDF、隔离账号与遗漏排查
 - [Use it without AI](https://docs.secureview.tech/study-kit/cli/): the monash command in a terminal, and monash library to browse synced files
@@ -36,7 +36,7 @@ Install scripts: https://docs.secureview.tech/study-kit/install.sh (macOS, Linux
 
 ## Monash Hub
 
-- [Monash Hub](https://docs.secureview.tech/monash-hub/): units, degrees, course maps, WAM and GPA, Malaysia tuition fees, key dates and official guides, in English and Simplified Chinese
+- [Monash Hub](https://docs.secureview.tech/monash-hub/): units, electives with no exam or no prerequisite, Handbook year comparison, degrees, course maps, WAM and GPA, Malaysia tuition fees, key dates and official guides, in English and Simplified Chinese
 - [Add to home screen](https://docs.secureview.tech/monash-hub/app/)
 
 ## Ed Web
@@ -51,7 +51,7 @@ Install scripts: https://docs.secureview.tech/study-kit/install.sh (macOS, Linux
 
 ## WeChat Q&A bot
 
-- [WeChat Q&A bot](https://docs.secureview.tech/wechat-bot/): answers from official pages with sources, says so when it does not know
+- [WeChat Q&A bot](https://docs.secureview.tech/wechat-bot/): answers students and parents in Chinese from official pages with sources, sends elective questions to Monash Hub, says so when it does not know
 
 ## Optional
 

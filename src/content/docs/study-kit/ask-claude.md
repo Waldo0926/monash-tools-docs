@@ -12,6 +12,7 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | "What do I need to do this week?" | Deadlines, work you may have missed, unfinished Ed lessons, latest announcements |
 | "What's due for FIT2102 in the next two weeks?" | Moodle deadlines. Works even when your Moodle login has expired |
 | "Did I forget to submit anything?" | Assignment submission status |
+| "What changed in my units this week?" | New or edited files, assignment instructions, moved deadlines and staff replies since earlier syncs |
 
 ## Course files
 
@@ -39,6 +40,7 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | You can ask | What it checks |
 | --- | --- |
 | "What's my grade in FIT2109 so far?" | Totals, each item's mark and feedback |
+| "Read what I submitted for A1 and go through the marker's comments" | Your submitted files or online text and the full feedback for that assignment |
 | "Any recent announcements for FIT2102?" | Moodle announcements |
 | "Has anyone messaged me on Moodle?" | Moodle messages, read-only |
 

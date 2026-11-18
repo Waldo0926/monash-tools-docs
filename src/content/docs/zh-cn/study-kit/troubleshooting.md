@@ -46,10 +46,10 @@ monash sync
 Moodle 按你账号的时区显示时间，Study Kit 默认按 UTC+8。改成你的：
 
 ```bash
-monash config tz_offset 10
+monash config timezone Australia/Melbourne
 ```
 
-夏令时用 11。
+换成你所在的城市（`Australia/Perth`、`Australia/Brisbane` 等），夏令时会自动处理，改完重启一下 AI 软件
 
 ## Ed 上的作业截止日期在哪？
 

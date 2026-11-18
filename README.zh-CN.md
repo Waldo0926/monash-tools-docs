@@ -10,11 +10,11 @@
 
 给 Monash 学生用的几个免费工具的使用指南，中英双语：
 
-- **Study Kit 1.15.0**：Moodle、Ed Lessons 和课程链接中的 Google 文件整课导出，支持 PDF / Markdown、隔离账号和仅资料模式，也可接入 AI / MCP、全文搜索及可选邮箱和考勤。
-- **Monash Hub**：课程、学位、选课规划、WAM/GPA 和官方指南。
+- **Study Kit 1.15.0**：让 AI 读你自己的 Moodle 和 Ed，问截止日期、Ed 新帖、课程这周改了什么、交过的作业和老师评语，还能全文搜索和整课导出，学校邮箱和考勤可选。贴一句话给 AI 就能让它帮你装好
+- **Monash Hub**：查课、找没考试或不用先修的选修课、学位、选课规划、WAM/GPA、马来西亚学费和官方指南
 - **Ed Web**：在浏览器里读和搜 Ed 论坛。
 - **签到助手**：找签到码、只提交你确认过的课的 Chrome 扩展，已上架 [Chrome 应用商店](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd?hl=zh-CN)。
-- **公众号问答机器人**：按官方页面回答，附出处。
+- **公众号问答机器人**：用中文回答同学和家长的问题，答案来自官方页面并附出处，答不上来的正经问题转给真人
 
 另外有一页讲我只给自己跑的两个工具（ed-digest 和 moodle-sync），以及该用哪个公开工具代替。
 
