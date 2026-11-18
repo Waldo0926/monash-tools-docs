@@ -7,11 +7,11 @@ sidebar:
 
 import { LinkCard, CardGrid, Aside } from '@astrojs/starlight/components';
 
-Study Kit lets the AI app on your computer (Claude, Codex, Cursor and others) read your own Monash **Moodle** and **Ed**. You stop opening five tabs and just ask.
+Study Kit lets the AI app on your computer (Claude, ChatGPT, Codex, Cursor and others) read your own Monash **Moodle** and **Ed**, so you can ask it instead of going through each site yourself.
 
 ## Install it the easy way
 
-If your AI app can run commands (Claude Code, Codex, Cursor's agent, Gemini CLI), paste this and it installs everything for you:
+If your AI app can run commands (Claude Code, Codex or Codex mode in the ChatGPT app, Cursor's agent, Gemini CLI), paste this and it installs everything for you:
 
 ```text wrap
 Read https://docs.secureview.tech/agents/study-kit.md and set up Monash Study Kit on my computer.
@@ -42,7 +42,12 @@ Moodle and Ed are **read-only**. It never submits assignments, attempts quizzes 
 ## You need
 
 - A computer with macOS, Windows or Linux.
-- An AI app that supports local MCP. Tested with **Claude Desktop** ([download](https://claude.ai/download)) and **Claude Code**. Codex, Cursor, VS Code, Windsurf and Gemini CLI connect with one command, see [other AI apps](/study-kit/other-clients/). Phone apps and ChatGPT need [remote mode](/study-kit/remote/). You don't need an AI app at all if you only want to export course files or use the `monash` command.
+- An AI app:
+  - **Claude Desktop** ([download](https://claude.ai/download)) and **Claude Code** are the most tested, and `monash setup` connects them for you
+  - **ChatGPT** works through the desktop app's Codex mode with one command, see [Use it with ChatGPT](/study-kit/chatgpt/)
+  - Codex, Cursor, VS Code, Windsurf and Gemini CLI also take one command, see [other AI apps](/study-kit/other-clients/)
+  - ChatGPT on the web and phone apps need [remote mode](/study-kit/remote/)
+  - You don't need an AI app at all to export course files or use the `monash` command
 - **Chrome, Edge or Brave** for the Moodle login window. The Edge that comes with Windows is fine.
 - A Monash account.
 
@@ -55,6 +60,7 @@ Times follow Malaysia (UTC+8) by default. On an Australian campus run `monash co
 <CardGrid>
   <LinkCard title="Install" description="One command on macOS or Windows, or let your AI do it." href="/study-kit/install/" />
   <LinkCard title="First-time setup" description="Ed token, Moodle login, units, your AI app. About five minutes." href="/study-kit/setup/" />
+  <LinkCard title="Use it with ChatGPT" description="The desktop app connects with one command." href="/study-kit/chatgpt/" />
   <LinkCard title="What to ask your AI" description="Example questions for each kind of task." href="/study-kit/ask-claude/" />
   <LinkCard title="Use it without AI" description="The same answers in your terminal." href="/study-kit/cli/" />
   <LinkCard title="School mail and attendance" description="Optional. Connect them by asking your AI app." href="/study-kit/mail-attendance/" />

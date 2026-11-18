@@ -1,11 +1,13 @@
 ---
 title: 其他 AI 软件
-description: 一条命令把 Study Kit 接进 Codex（含 ChatGPT 桌面版）、Cursor、VS Code、Windsurf 或 Gemini CLI。
+description: 一条命令把 Study Kit 接进 Codex（含 ChatGPT 桌面版）、Cursor、VS Code、Windsurf 或 Gemini CLI
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 
-`monash mcp` 是标准的本地（stdio）MCP 服务器，支持本地 MCP 的软件理论上都能接。先运行 `monash setup` 登录、选课，再接进你用的软件。
+`monash mcp` 是标准的本地（stdio）MCP 服务器，支持本地 MCP 的软件理论上都能接
+
+先运行 `monash setup` 登录、选课，再接进你用的软件
 
 ## 一条命令
 
@@ -13,7 +15,13 @@ import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
 monash connect cursor
 ```
 
-可以写 `codex`、`cursor`、`vscode`、`windsurf` 或 `gemini`。它只在这个软件的配置文件里加 `monash` 这一项，写程序的完整路径，其他内容原样保留，改之前先备份。装了 `codex` 命令的话 Codex 用 `codex mcp add` 接。接好后重启软件。
+可以写 `codex`、`cursor`、`vscode`、`windsurf` 或 `gemini`
+
+它只在这个软件的配置文件里加 `monash` 这一项，写程序的完整路径，其他内容原样保留，改之前先备份
+
+装了 `codex` 命令的话 Codex 用 `codex mcp add` 接
+
+接好后重启软件
 
 ```bash
 monash connect                 # 列出所有软件和接入状态
@@ -21,42 +29,61 @@ monash connect vscode --print  # 只打印要加的配置，不改文件
 monash connect cursor --remove # 移除
 ```
 
-`monash connect` 要 Study Kit 1.2.0 以上。提示没有这个命令的话先运行 `monash update`。
+`monash connect` 要 Study Kit 1.2.0 以上
+
+提示没有这个命令的话先运行 `monash update`
 
 <Aside>
-**Claude Desktop** 和 **Claude Code** 已实测本地服务器。**ChatGPT** 和 **Codex** 也已通过使用 **v1.3.0** 核心的私有远程集成验证只读课程查询；Codex 成功查询了 Moodle 和 Ed。这些远程验证不等同于测试 `monash connect codex` 或全部 Codex 界面。
+**Claude Desktop** 和 **Claude Code** 已实测本地服务器**：ChatGPT** 和 **Codex** 也已通过使用 **v1.3.0** 核心的私有远程集成验证只读课程查询；Codex 成功查询了 Moodle 和 Ed
 
-2026 年 10 月 30 日，PyPI 上的 **1.4.0** 包在干净环境里用编造的数据测过一遍：stdio 握手、18 个工具的目录、三个面板、课件浏览页，以及 `monash remote` 用 Claude 和 ChatGPT 回调地址走完的整套登录和查询流程。这次测试是在一台机器上跑的，没有公网域名。另外，作者用 ChatGPT Plus 加自己的域名和服务器可以正常使用，见[自己托管](/zh-cn/study-kit/remote/)。
+这些远程验证不等同于测试 `monash connect codex` 或全部 Codex 界面
 
-2026 年 10 月 31 日，**1.5.0** 发布时从 PyPI 在 macOS、Windows、Linux 上各装了一遍，stdio 握手正常，19 个工具。学校邮箱和考勤在真实账号上用命令行测过；在 AI 里说一声就接上的流程目前只用编造的数据测过。
+2026 年 10 月 30 日，PyPI 上的 **1.4.0** 包在干净环境里用编造的数据测过一遍：stdio 握手、18 个工具的目录、三个面板、课件浏览页，以及 `monash remote` 用 Claude 和 ChatGPT 回调地址走完的整套登录和查询流程
+
+这次测试是在一台机器上跑的，没有公网域名
+
+另外，作者用 ChatGPT Plus 加自己的域名和服务器可以正常使用，见[自己托管](/zh-cn/study-kit/remote/)
+
+2026 年 10 月 31 日，**1.5.0** 发布时从 PyPI 在 macOS、Windows、Linux 上各装了一遍，stdio 握手正常，19 个工具
+
+学校邮箱和考勤在真实账号上用命令行测过；在 AI 里说一声就接上的流程目前只用编造的数据测过
 </Aside>
 
-`monash connect` 写的格式照各家 2026 年 10 月的官方文档。本地 Codex、Cursor、VS Code、Windsurf、Gemini CLI 连接尚未完成端到端实测，有出入时以官方文档为准。
+`monash connect` 写的格式照各家 2026 年 10 月的官方文档
 
-配置文件里有注释的话（VS Code 允许写注释），`monash connect` 不会动它，会把要加的那段打印出来让你自己贴。想手动配置就按下面两步。
+本地 Codex、Cursor、VS Code、Windsurf、Gemini CLI 连接尚未完成端到端实测，有出入时以官方文档为准
+
+配置文件里有注释的话（VS Code 允许写注释），`monash connect` 不会动它，会把要加的那段打印出来让你自己贴
+
+想手动配置就按下面两步
 
 ## 1. 找到 `monash` 的完整路径
 
-很多软件读不到终端的 PATH，所以写完整路径最稳。
+很多软件读不到终端的 PATH，所以写完整路径最稳
 
 <Tabs syncKey="os">
   <TabItem label="macOS" icon="apple">
     ```bash
     which monash
     ```
-    一般是 `/Users/你的用户名/.local/bin/monash`。
+    一般是 `/Users/你的用户名/.local/bin/monash`
   </TabItem>
   <TabItem label="Windows" icon="seti:windows">
     ```powershell
     (Get-Command monash).Source
     ```
-    一般是 `C:\Users\你的用户名\.local\bin\monash.exe`。写进 JSON 时反斜杠要写两遍（`C:\\Users\\...`），写进 TOML 时用单引号（`'C:\Users\...'`）。
+    一般是 `C:\Users\你的用户名\.local\bin\monash.exe`  
+    写进 JSON 时反斜杠要写两遍（`C:\\Users\\...`），写进 TOML 时用单引号（`'C:\Users\...'`）
   </TabItem>
 </Tabs>
 
 ## 2. 加到你的软件里
 
-把 `/full/path/monash` 换成你的路径。文件里已经有别的服务器的话，把 `monash` 这一项加进去，别覆盖整个文件。改完重启软件。
+把 `/full/path/monash` 换成你的路径
+
+文件里已经有别的服务器的话，把 `monash` 这一项加进去，别覆盖整个文件
+
+改完重启软件
 
 <Tabs>
   <TabItem label="Codex">
@@ -80,7 +107,8 @@ monash connect cursor --remove # 移除
     ```
   </TabItem>
   <TabItem label="VS Code">
-    命令面板里选 **MCP: Open User Configuration**。注意外层是 `servers`，不是 `mcpServers`：
+    命令面板里选 **MCP: Open User Configuration**  
+    注意外层是 `servers`，不是 `mcpServers`：
 
     ```json
     {
@@ -122,12 +150,20 @@ monash connect cursor --remove # 移除
 npx skills add Waldo0926/monash-study-kit
 ```
 
-它把学习问题对应到 `monash` 命令，作业问题遵循同样的来源规则。接上了学校邮箱和考勤的话也会用对应命令；改邮箱的命令只先给预览，你确认之后它才加 `--confirm`。登录、令牌和提交作业仍由你自己操作。使用前需要先安装 Study Kit 并完成设置。
+它把学习问题对应到 `monash` 命令，作业问题遵循同样的来源规则
+
+接上了学校邮箱和考勤的话也会用对应命令；改邮箱的命令只先给预览，你确认之后它才加 `--confirm`
+
+登录、令牌和提交作业仍由你自己操作
+
+使用前需要先安装 Study Kit 并完成设置
 
 ## 注意
 
-- 登录和选课还是用 `monash setup`。没装 Claude 的话，最后一步会提示找不到 Claude Desktop，忽略就行。
-- 后台同步和 Moodle 续期只在软件开着、MCP 在运行时进行。
-- ChatGPT 和 Codex 已通过远程集成验证只读课程查询；其他工作流和模型仍需分别验证。
-- **ChatGPT，以及网页版、手机上的 Claude，需要一个 HTTPS 地址。** `monash mcp` 只在本机用。1.4.0 起包里带了可选的 `monash remote`，可以用自己的服务器和域名，也可以在自己电脑上开 Cloudflare 免费的临时隧道，见[自己托管](/zh-cn/study-kit/remote/)。
-- 面板只在支持 MCP Apps 的软件里显示，其他软件照样收到文字回答。
+- 登录和选课还是用 `monash setup`  
+  没装 Claude 的话，最后一步会提示找不到 Claude Desktop，忽略就行
+- 后台同步和 Moodle 续期只在软件开着、MCP 在运行时进行
+- ChatGPT 和 Codex 已通过远程集成验证只读课程查询；其他工作流和模型仍需分别验证
+- **ChatGPT，以及网页版、手机上的 Claude，需要一个 HTTPS 地址**：`monash mcp` 只在本机用  
+  1.4.0 起包里带了可选的 `monash remote`，可以用自己的服务器和域名，也可以在自己电脑上开 Cloudflare 免费的临时隧道，见[自己托管](/zh-cn/study-kit/remote/)
+- 面板只在支持 MCP Apps 的软件里显示，其他软件照样收到文字回答

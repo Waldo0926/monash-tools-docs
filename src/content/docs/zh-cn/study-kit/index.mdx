@@ -1,23 +1,23 @@
 ---
 title: Study Kit
-description: 让电脑上的 AI 直接读你自己的 Moodle 和 Ed，问截止日期、Ed 新帖、哪页讲义讲了什么、老师怎么批的作业。学校邮箱和考勤可选，全部跑在你电脑上
+description: 让电脑上的 AI 直接读你自己的 Moodle 和 Ed，问截止日期、Ed 新帖、哪页讲义讲了什么、老师怎么批的作业，学校邮箱和考勤可选，全部跑在你电脑上
 sidebar:
   label: 概览
 ---
 
 import { LinkCard, CardGrid, Aside } from '@astrojs/starlight/components';
 
-Study Kit 让你电脑上的 AI（Claude、Codex、Cursor 等）能读你自己的 Monash **Moodle** 和 **Ed**，不用再开一堆标签页翻，直接问就行
+Study Kit 让你电脑上的 AI（Claude、ChatGPT、Codex、Cursor 等）能读你自己的 Monash **Moodle** 和 **Ed**，不用再开一堆标签页翻，直接问就行
 
 ## 最省事的装法
 
-如果你的 AI 能跑命令（Claude Code、Codex、Cursor 的 agent、Gemini CLI），把下面这句发给它，剩下的它来装：
+如果你的 AI 能跑命令（Claude Code、Codex 或 ChatGPT App 里的 Codex 模式、Cursor 的 agent、Gemini CLI），把下面这句发给它，剩下的它来装：
 
 ```text wrap
 阅读 https://docs.secureview.tech/agents/study-kit.md ，帮我在电脑上装好 Monash Study Kit。
 ```
 
-你自己只要做两件事：粘贴 Ed 令牌，在弹出的窗口里过 Monash 的 MFA，到时候 AI 会提醒你。[详细说明](/zh-cn/ai-setup/)，也可以[自己用一条命令装](/zh-cn/study-kit/install/)
+你自己只要做两件事：粘贴 Ed 令牌，在弹出的窗口里过 Monash 的 MFA，到时候 AI 会提醒你，[详细说明](/zh-cn/ai-setup/)，也可以[自己用一条命令装](/zh-cn/study-kit/install/)
 
 ## 能问什么
 
@@ -31,23 +31,30 @@ Study Kit 让你电脑上的 AI（Claude、Codex、Cursor 等）能读你自己�
 - “把 FIT2109 的资料全部打包给我” Moodle 文件、Ed Lessons 和链接的 Google 文件放进一个包，PDF 或 Markdown 都行，见[整课导出](/zh-cn/study-kit/materials/)
 - 可选：“我学校邮箱里有什么要处理的？”“哪节课还没签到？” 见[学校邮箱和考勤](/zh-cn/study-kit/mail-attendance/)
 
-答案都来自你真实的 Moodle 和 Ed，还会给出处，比如“Workshop 5 Slides 第 25 页”。AI 自己找到那份文件、只读需要的几页，你不用下载 PDF 再上传
+答案都来自你真实的 Moodle 和 Ed，还会给出处，比如“Workshop 5 Slides 第 25 页”，AI 自己找到那份文件、只读需要的几页，你不用下载 PDF 再上传
 
 ![整课导出和生成的压缩包，课程数据是编的](../../../../assets/study-kit/course-export.png)
 
 ## 它不会做的事
 
-对 Moodle 和 Ed **只读**，不会交作业、做测验或在 Ed 上发帖。可选的邮箱和考勤可以帮你起草邮件或签到，但一定先给你看完整预览，你确认了才执行。课件、登录状态和数据库都留在你电脑上。你问 AI 的时候，查到的结果会发给那个 AI，和你在里面打的其他字一样
+对 Moodle 和 Ed **只读**，不会交作业、做测验或在 Ed 上发帖，可选的邮箱和考勤可以帮你起草邮件或签到，但一定先给你看完整预览，你确认了才执行
+
+课件、登录状态和数据库都留在你电脑上，你问 AI 的时候，查到的结果会发给那个 AI，和你在里面打的其他字一样
 
 ## 你需要
 
 - 一台 macOS、Windows 或 Linux 电脑
-- 支持本地 MCP 的 AI 软件。**Claude Desktop**（[下载](https://claude.ai/download)）和 **Claude Code** 实测过；Codex、Cursor、VS Code、Windsurf、Gemini CLI 一条命令就能接上，见[其他 AI 软件](/zh-cn/study-kit/other-clients/)。手机 App 和 ChatGPT 要用[远程模式](/zh-cn/study-kit/remote/)。只想导出课件或者用 `monash` 命令的话，不装 AI 软件也行
+- 一个 AI 软件：
+  - **Claude Desktop**（[下载](https://claude.ai/download)）和 **Claude Code** 测试得最多，`monash setup` 会自动接上
+  - **ChatGPT** 用桌面版的 Codex 模式，一条命令接上，见[在 ChatGPT 里用](/zh-cn/study-kit/chatgpt/)
+  - Codex、Cursor、VS Code、Windsurf、Gemini CLI 也是一条命令，见[其他 AI 软件](/zh-cn/study-kit/other-clients/)
+  - 网页版 ChatGPT 和手机 App 要用[远程模式](/zh-cn/study-kit/remote/)
+  - 只想导出课件或者用 `monash` 命令的话，不装 AI 软件也行
 - **Chrome、Edge 或 Brave** 其中一个，用来弹 Moodle 登录窗口，Windows 自带的 Edge 就够了
 - Monash 账号
 
 <Aside>
-时间默认按马来西亚（UTC+8）算。澳洲校区运行 `monash config timezone Australia/Melbourne`，夏令时也会自动处理
+时间默认按马来西亚（UTC+8）算，澳洲校区运行 `monash config timezone Australia/Melbourne`，夏令时也会自动处理
 </Aside>
 
 ## 下一步
@@ -55,6 +62,7 @@ Study Kit 让你电脑上的 AI（Claude、Codex、Cursor 等）能读你自己�
 <CardGrid>
   <LinkCard title="安装" description="macOS 或 Windows 一条命令，也可以让 AI 帮你装" href="/zh-cn/study-kit/install/" />
   <LinkCard title="第一次设置" description="Ed 令牌、Moodle 登录、选课、接进 AI 软件，大约五分钟" href="/zh-cn/study-kit/setup/" />
+  <LinkCard title="在 ChatGPT 里用" description="桌面版一条命令就能接上" href="/zh-cn/study-kit/chatgpt/" />
   <LinkCard title="可以问 AI 什么" description="每类事情的示例问法" href="/zh-cn/study-kit/ask-claude/" />
   <LinkCard title="不用 AI 也能查" description="在终端里看同样的结果" href="/zh-cn/study-kit/cli/" />
   <LinkCard title="学校邮箱和考勤" description="可选，在 AI 里说一声就能接上" href="/zh-cn/study-kit/mail-attendance/" />

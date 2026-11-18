@@ -133,7 +133,6 @@ const other = lang === 'zh' ? `/${path}` : `/zh-cn/${path}`;
           panels.forEach((p, j) => (p.hidden = i !== j));
         };
         tabs.forEach((b, i) => b.addEventListener('click', () => show(i)));
-        if (box.hasAttribute('data-os') && /Windows/.test(navigator.userAgent)) show(1);
       }
     </script>
   </body>

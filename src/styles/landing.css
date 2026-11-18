@@ -107,6 +107,8 @@ button { font: inherit; color: inherit; }
 }
 .cmd .prompt { color: var(--ink-3); font-family: var(--mono); }
 .cmd code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; scrollbar-width: none; color: var(--ink); }
+/* Commands and the AI prompt wrap so the whole line is visible; the copy button still copies it as one line. */
+.cmd code { white-space: normal; overflow-wrap: anywhere; line-height: 1.5; }
 .cmd code::-webkit-scrollbar { display: none; }
 .copy {
   flex: none; width: 34px; height: 34px; display: grid; place-items: center;

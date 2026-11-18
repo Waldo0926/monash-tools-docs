@@ -7,7 +7,7 @@ Start from what you want to do. Most people want Study Kit or Monash Hub.
 
 | I want to | Use | Install | Works on |
 | --- | --- | --- | --- |
-| Ask your AI app (Claude, Codex, Cursor and others) what is due, what is new on Ed, which slide covers a topic | [Study Kit](/study-kit/) | One command | macOS, Windows, Linux |
+| Ask your AI app (Claude, ChatGPT, Codex, Cursor and others) what is due, what is new on Ed, which slide covers a topic | [Study Kit](/study-kit/) | One command | macOS, Windows, Linux |
 | Check a unit's assessments, requisites and offerings, plan a degree, work out WAM | [Monash Hub](/monash-hub/) | None. A website you can add to your home screen | Any browser, phone or computer |
 | Find an elective with no exam or no prerequisite | [Monash Hub electives page](/monash-hub/) | None | Any browser |
 | Go through the marker's feedback on an assignment you submitted | [Study Kit](/study-kit/ask-claude/#grades-and-messages) | One command | macOS, Windows, Linux |

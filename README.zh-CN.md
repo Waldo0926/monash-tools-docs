@@ -10,26 +10,28 @@
 
 给 Monash 学生用的几个免费工具的使用指南，中英双语：
 
-- **Study Kit 1.15.0**：让 AI 读你自己的 Moodle 和 Ed，问截止日期、Ed 新帖、课程这周改了什么、交过的作业和老师评语，还能全文搜索和整课导出，学校邮箱和考勤可选。贴一句话给 AI 就能让它帮你装好
+- **Study Kit 1.15.0**：让 AI 读你自己的 Moodle 和 Ed，问截止日期、Ed 新帖、课程这周改了什么、交过的作业和老师评语，还能全文搜索和整课导出，学校邮箱和考勤可选，贴一句话给 AI 就能让它帮你装好
 - **Monash Hub**：查课、找没考试或不用先修的选修课、学位、选课规划、WAM/GPA、马来西亚学费和官方指南
-- **Ed Web**：在浏览器里读和搜 Ed 论坛。
-- **签到助手**：找签到码、只提交你确认过的课的 Chrome 扩展，已上架 [Chrome 应用商店](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd?hl=zh-CN)。
+- **Ed Web**：在浏览器里读和搜 Ed 论坛
+- **签到助手**：找签到码、只提交你确认过的课的 Chrome 扩展，已上架 [Chrome 应用商店](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd?hl=zh-CN)
 - **公众号问答机器人**：用中文回答同学和家长的问题，答案来自官方页面并附出处，答不上来的正经问题转给真人
 
-另外有一页讲我只给自己跑的两个工具（ed-digest 和 moodle-sync），以及该用哪个公开工具代替。
+另外有一页讲我只给自己跑的两个工具（ed-digest 和 moodle-sync），以及该用哪个公开工具代替
 
 ![docs.secureview.tech 首页：Study Kit 安装命令和各工具指南入口](docs/home.png)
 
-网站同时提供 Study Kit 安装脚本、给 AI 看的安装说明（`/agents/*.md`）和 `llms.txt`。
+网站同时提供 Study Kit 安装脚本、给 AI 看的安装说明（`/agents/*.md`）和 `llms.txt`
 
-本地运行需要 Node 22.23.4 以上：`npm ci` 后 `npm run dev`。文档在 `src/content/docs/`，中文在 `zh-cn/` 下；首页是 `src/components/Landing.astro`，文字在 `src/i18n/landing.ts`。
+本地运行需要 Node 22.23.4 以上：`npm ci` 后 `npm run dev`，文档在 `src/content/docs/`，中文在 `zh-cn/` 下；首页是 `src/components/Landing.astro`，文字在 `src/i18n/landing.ts`
 
-推到 `main` 会自动构建，从 monash-attendance-reminder 打包签到助手的 zip 版（给用不了应用商店的人），发布到 `gh-pages` 分支；每天也会自动跑一次。线上站点放在我的 VPS 上（国内打开更稳），VPS 每 10 分钟拉一次 `gh-pages`，nginx 配置和拉取脚本在 `deploy/vps/`。
+推到 `main` 会自动构建，从 monash-attendance-reminder 打包签到助手的 zip 版（给用不了应用商店的人），发布到 `gh-pages` 分支；每天也会自动跑一次，线上站点放在我的 VPS 上（国内打开更稳），VPS 每 10 分钟拉一次 `gh-pages`，nginx 配置和拉取脚本在 `deploy/vps/`
 
-本项目和 Monash University、Ed、Anthropic 没有关系。图标来自 Lucide（ISC）。
+本项目和 Monash University、Ed、Anthropic 没有关系，图标来自 Lucide（ISC）
 
 ## 同步维护示例
 
-Study Kit 指南和工具页覆盖 **1.15.0**。**2026-11-03** 更新了当前线上 Hub 成绩/搜索页、1.11.2 本地资料库、文档首页与合成资料的实际离线导出截图。示例成绩和资料不含个人账号数据；导出截图故意保留缺失附件及未授权 Google 链接，不代表所有课程都能完整导出。合成数据脚本与重现步骤见 [Study Kit 截图说明](https://github.com/Waldo0926/monash-study-kit/tree/main/docs/screenshots)。
+Study Kit 指南和工具页覆盖 **1.15.0**，**2026-11-03** 更新了当前线上 Hub 成绩/搜索页、1.11.2 本地资料库、文档首页与合成资料的实际离线导出截图
 
-工具功能变更时，一起检查双语指南、工具页文字和选项卡、截图、README 介绍及 Blog 项目/文章说明；只改版本号不会更新图片。
+示例成绩和资料不含个人账号数据；导出截图故意保留缺失附件及未授权 Google 链接，不代表所有课程都能完整导出，合成数据脚本与重现步骤见 [Study Kit 截图说明](https://github.com/Waldo0926/monash-study-kit/tree/main/docs/screenshots)
+
+工具功能变更时，一起检查双语指南、工具页文字和选项卡、截图、README 介绍及 Blog 项目/文章说明；只改版本号不会更新图片

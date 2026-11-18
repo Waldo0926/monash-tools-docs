@@ -77,6 +77,7 @@ monash todo
 Tell the student:
 
 - In Claude Desktop, the **+** button in the chat box, then **Connectors**, should list **monash**. Restart Claude Desktop if it does not.
+- If they use the ChatGPT desktop app, run `monash connect codex` for them: Codex mode in the ChatGPT app reads the same `~/.codex/config.toml`. Tell them to fully quit and reopen the app and switch to Codex mode. ChatGPT on the web needs remote mode, see https://docs.secureview.tech/study-kit/chatgpt/
 - If they use Codex, Cursor, VS Code, Windsurf or Gemini CLI instead, run `monash connect <client>` (see the next section) and tell them to restart that app.
 - They can now ask things like "What's due this week?", "Anything new on Ed?", "Which slide covers recursion?", "What changed in my units this week?" or "Read what I submitted for A1 and go through the marker's comments".
 - `monash login` signs in to Moodle again when the session expires; `monash update` updates.
