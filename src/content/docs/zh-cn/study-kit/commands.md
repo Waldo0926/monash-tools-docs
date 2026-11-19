@@ -37,7 +37,7 @@ description: 所有 monash 命令、输出格式和退出码
 | `monash media` | 转写录播（要装[录播字幕](/zh-cn/study-kit/recordings/)） |
 | `monash config [key] [value]` | 看或改设置，改完重启 AI 软件 |
 | `monash connect [软件]` | 接进 Codex、Cursor、VS Code、Windsurf 或 Gemini CLI（[其他 AI 软件](/zh-cn/study-kit/other-clients/)） |
-| `monash remote serve` / `pair` / `clients` / `revoke` | 可选：自己托管远程 MCP 服务器（[自己托管](/zh-cn/study-kit/remote/)） |
+| `monash remote serve` / `pair` / `clients` / `revoke` | 可选：远程模式，给 ChatGPT 聊天和手机用（[远程模式](/zh-cn/study-kit/remote/)） |
 | `monash gmail login` / `sync` / `todo` / `search` / `thread` | 可选的学校邮箱：接上 / 同步（显示进度）/ 未读邮件待办 / 离线搜索 / 读对话（[详细](/zh-cn/study-kit/mail-attendance/)） |
 | `monash gmail draft` / `send-draft` / `labels` | 预览邮箱操作；加 `--confirm` 才执行 |
 | `monash attendance login` / `status` / `sync` / `overview` / `codes` / `probe` | 可选的考勤：接上 / 状态和登录时长 / 读门户 / 已保存的班次 / 找签到码 / 对照两种读法 |

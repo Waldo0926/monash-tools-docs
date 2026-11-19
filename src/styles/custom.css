@@ -115,3 +115,8 @@ h1#_top { font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 
 .contact-grid figure { margin: 0; text-align: center; }
 .contact-grid img { width: 200px; height: 200px; border-radius: 12px; background: #fff; padding: 8px; border: 1px solid var(--sl-color-hairline); }
 .contact-grid figcaption { margin-top: 0.5rem; font-size: var(--sl-text-sm); }
+
+/* Comparison tables: keep the row labels on one line and give each option room */
+.compare-table table { width: 100%; }
+.compare-table th, .compare-table td { min-width: 8.5rem; }
+.compare-table th:first-child, .compare-table td:first-child { min-width: 0; white-space: nowrap; font-weight: 600; }

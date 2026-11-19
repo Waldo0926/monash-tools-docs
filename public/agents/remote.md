@@ -20,7 +20,11 @@ Ask, in one message:
 
 - Which app: ChatGPT chat, or Claude on the web or phone? (For Codex in the ChatGPT desktop app, Claude Desktop, Claude Code, Cursor and similar, they don't need remote mode. Use https://docs.secureview.tech/agents/study-kit.md instead and stop here.)
 - For ChatGPT: do they have a paid plan with developer mode? If they don't know, ask them to look for developer mode in ChatGPT's settings. Without it, ChatGPT chat can't add the app.
-- Do they have their own server and domain with HTTPS? If not, use the Cloudflare quick tunnel. Tell them plainly: the tunnel stops when their computer sleeps or shuts down, and its address changes every time it restarts, so they have to add the app again.
+- Which of the three setups fits them. Explain the trade-offs plainly and let them choose:
+  - **Quick tunnel (3a):** free, nothing to sign up for, ready in minutes. It stops when their computer sleeps or shuts down, and the address changes every time it restarts, so they have to add the app again and pair again.
+  - **Tunnel with a fixed address (3b):** needs a free Cloudflare account and a domain they own, added to Cloudflare with its nameservers changed to Cloudflare's. The address never changes. The computer running it still has to stay on and awake. Good for daily phone use with a computer at home that never turns off.
+  - **Their own server and domain (3c):** a VPS or similar with HTTPS and nginx or Caddy. Always available.
+  If they are unsure, suggest 3a to try it first.
 
 ## 2. Check Study Kit (you run this)
 
@@ -56,7 +60,44 @@ monash remote serve --public-url https://THE-ADDRESS.trycloudflare.com
 
 Both must keep running. If either stops, the app stops working.
 
-## 3b. Their own server and domain
+## 3b. Cloudflare tunnel with a fixed address
+
+Check first that their domain is already in their Cloudflare account and uses Cloudflare's nameservers. If not, stop and tell them to do that in the Cloudflare dashboard. Do not change their domain registrar settings yourself.
+
+Install `cloudflared` as in 3a. The login opens a browser; the student completes it:
+
+```bash
+cloudflared tunnel login
+```
+
+Ask which subdomain to use (for example `study.their-domain`), then:
+
+```bash
+cloudflared tunnel create monash
+cloudflared tunnel route dns monash THEIR-SUBDOMAIN
+```
+
+Read the tunnel UUID and the credentials file path from the output. Write `~/.cloudflared/config.yml` (`%USERPROFILE%\.cloudflared\config.yml` on Windows). If a `config.yml` already exists, show it and ask before changing it.
+
+```yaml
+tunnel: TUNNEL-UUID
+credentials-file: /full/path/to/TUNNEL-UUID.json
+ingress:
+  - hostname: THEIR-SUBDOMAIN
+    service: http://127.0.0.1:8765
+  - service: http_status:404
+```
+
+Port 8765 only serves remote mode and returns 404 for other paths, so the whole subdomain can go there. Start both as long-running background processes:
+
+```bash
+cloudflared tunnel run monash
+monash remote serve --public-url https://THEIR-SUBDOMAIN
+```
+
+Tell them to turn off automatic sleep on that computer. If they want it to start on boot, offer to set up `cloudflared` as a system service and a matching way to start `monash remote serve`, and only do it after they agree. After a restart the address stays the same and the app in ChatGPT or Claude keeps working.
+
+## 3c. Their own server and domain
 
 Start it under whatever they already use to keep services running (tmux, systemd and so on):
 

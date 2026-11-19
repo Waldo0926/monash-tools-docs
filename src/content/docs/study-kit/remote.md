@@ -1,6 +1,6 @@
 ---
-title: Host it yourself (advanced)
-description: Optional remote mode from Study Kit 1.4.0. Give Study Kit an HTTPS address so ChatGPT, or Claude on the web and phone, can reach your Moodle and Ed data. Use your own server and domain, or a free Cloudflare tunnel for a quick try.
+title: Remote mode (ChatGPT chat, phone)
+description: "Give Study Kit an HTTPS address so ChatGPT chat and Claude on the web and phone can use it. Three ways: a free quick tunnel, a Cloudflare tunnel with a fixed address, or your own server."
 ---
 
 Most people do not need this page. `monash mcp` on your own computer is enough for Claude Desktop, Claude Code, Codex, Cursor and the others.
@@ -21,16 +21,30 @@ Read https://docs.secureview.tech/agents/remote.md and set up Study Kit remote m
 
 It asks which app you want first, then sets up the tunnel or your server and checks it. You add the app in ChatGPT or Claude and type the pairing code yourself.
 
-## Two ways to get an HTTPS address
+## Three ways to get an HTTPS address
 
-| | Your own server and domain | Cloudflare quick tunnel |
-| --- | --- | --- |
-| What you need | A server or always-on computer, a domain with HTTPS, nginx or Caddy | Just your own computer. No account and no domain |
-| Address | Fixed, e.g. `https://study.example.org` | Random, e.g. `https://some-words.trycloudflare.com` |
-| Works when | The server is on | Your computer is on and both terminals are open |
-| Good for | Daily use | Trying it out |
+<div class="compare-table">
 
-The author uses ChatGPT Plus with their own domain and server. The quick tunnel route is there so you can try it without buying anything; if something goes wrong with it, please [open an issue](https://github.com/Waldo0926/monash-study-kit/issues).
+| | A: quick tunnel | B: tunnel with a fixed address | C: your own server |
+| --- | --- | --- | --- |
+| What you need | Just your computer<br />No account, no domain | A computer that stays on<br />A free Cloudflare account<br />A domain of your own, managed by Cloudflare | A server (a VPS, say)<br />A domain with HTTPS, nginx or Caddy |
+| Address | Random, e.g. `https://some-words.trycloudflare.com` | Fixed, e.g. `https://study.example.org` | Fixed |
+| Works when | Your computer is on, awake, and both terminals are open | That computer is on and awake | The server is on |
+| After a restart | New address, so remove and re-add the app and pair again | Same address, nothing to redo | Same address |
+| Cost | Free | A domain, paid yearly | Server and domain |
+| Good for | Trying it, or using it next to your computer | Daily use on your phone with a computer at home that stays on | Always available, whatever your laptop is doing |
+
+</div>
+
+How to pick:
+
+- Just want to see it work? **Option A** takes about ten minutes.
+- Want it on your phone every day and have a computer that never turns off (an old laptop or a mini PC at home)? **Option B**.
+- Already have a server, or want the most reliable setup? **Option C**.
+
+Not sure? Let your AI set it up. It asks about your situation first and suggests one.
+
+The author uses ChatGPT Plus with their own domain and server. If something goes wrong, [open an issue](https://github.com/Waldo0926/monash-study-kit/issues) or [message me](/contact/).
 
 Either way, first install Study Kit and finish `monash setup` on the computer that will run it. Log in to Moodle and paste the Ed token in that computer's own terminal. Never paste the Ed token or a Moodle cookie into a chat.
 
@@ -61,7 +75,50 @@ Every time you restart `cloudflared` the address changes. Then restart `monash r
 
 While the tunnel is open, anyone with the address can reach the sign-in page, but nothing works without a pairing code from your terminal.
 
-## Option B: your own server and domain
+## Option B: Cloudflare tunnel with a fixed address
+
+You need a domain of your own that is already added to Cloudflare, with its nameservers changed to Cloudflare's. Replace `study.example.org` with your own subdomain. `monash` is just the tunnel's name.
+
+1. Install `cloudflared` (as in option A), then log in. A browser opens so you can pick your domain:
+
+   ```bash
+   cloudflared tunnel login
+   ```
+
+2. Create the tunnel and point your subdomain at it:
+
+   ```bash
+   cloudflared tunnel create monash
+   cloudflared tunnel route dns monash study.example.org
+   ```
+
+   The first command prints the tunnel's UUID and the path of a credentials file (`.json`). Note both.
+
+3. Create `config.yml` in `~/.cloudflared/` (`%USERPROFILE%\.cloudflared\` on Windows):
+
+   ```yaml
+   tunnel: YOUR-TUNNEL-UUID
+   credentials-file: /Users/you/.cloudflared/YOUR-TUNNEL-UUID.json
+   ingress:
+     - hostname: study.example.org
+       service: http://127.0.0.1:8765
+     - service: http_status:404
+   ```
+
+   Port 8765 only runs remote mode and Study Kit returns 404 for any other path, so sending the whole subdomain there is fine.
+
+4. In two terminals, run the tunnel and Study Kit:
+
+   ```bash
+   cloudflared tunnel run monash
+   monash remote serve --public-url https://study.example.org
+   ```
+
+5. [Connect your AI app](#connect-your-ai-app) with `https://study.example.org/mcp`.
+
+The address stays the same. After a restart, run those two commands again and leave ChatGPT as it is. Turn off automatic sleep on that computer. To start it automatically, `cloudflared` can run as a system service; your AI can set that up and will ask before changing system settings.
+
+## Option C: your own server and domain
 
 1. Start Study Kit on the server:
 

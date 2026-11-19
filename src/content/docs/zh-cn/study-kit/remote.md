@@ -1,6 +1,6 @@
 ---
-title: 自己托管（进阶）
-description: Study Kit 1.4.0 起的可选远程模式，给 Study Kit 一个 HTTPS 地址，让 ChatGPT 或网页版、手机上的 Claude 也能查你的 Moodle 和 Ed，可以用自己的服务器和域名，也可以用 Cloudflare 免费的临时隧道先试试
+title: 远程模式（ChatGPT 聊天、手机）
+description: 给 Study Kit 一个 HTTPS 地址，在 ChatGPT 聊天、网页版和手机上的 Claude 里也能用。三种办法：免费临时隧道、固定地址的 Cloudflare 隧道、自己的服务器
 ---
 
 大多数人用不到这一页
@@ -25,18 +25,30 @@ description: Study Kit 1.4.0 起的可选远程模式，给 Study Kit 一个 HTT
 
 它会先问你想在哪个 App 里用，再帮你弄好隧道或者服务器并检查一遍。在 ChatGPT 或 Claude 里加应用、输入配对码这两步要你自己来
 
-## 两种拿到 HTTPS 地址的办法
+## 三种拿到 HTTPS 地址的办法
 
-| | 自己的服务器和域名 | Cloudflare 临时隧道 |
-| --- | --- | --- |
-| 需要什么 | 一台服务器或常开的电脑、配好 HTTPS 的域名、nginx 或 Caddy | 只要你自己的电脑<br>不用注册账号，也不用买域名 |
-| 地址 | 固定的，比如 `https://study.example.org` | 随机的，比如 `https://some-words.trycloudflare.com` |
-| 什么时候能用 | 服务器开着就行 | 电脑开着、两个终端都没关 |
-| 适合 | 日常用 | 先试试 |
+<div class="compare-table">
 
-作者自己用的是 ChatGPT Plus 加自己的域名和服务器
+| | 一：临时隧道 | 二：固定地址的隧道 | 三：自己的服务器 |
+| --- | --- | --- | --- |
+| 需要什么 | 只要你自己的电脑<br />不用注册，不用买域名 | 一台一直开着的电脑<br />免费的 Cloudflare 账号<br />一个自己的域名，交给 Cloudflare 管 | 一台服务器（比如 VPS）<br />配好 HTTPS 的域名、nginx 或 Caddy |
+| 地址 | 随机的，比如 `https://some-words.trycloudflare.com` | 固定的，比如 `https://study.example.org` | 固定的 |
+| 什么时候能用 | 电脑开着、没睡眠、两个终端都没关 | 那台电脑开着、没睡眠 | 服务器开着就行 |
+| 重启以后 | 地址会变，要在 ChatGPT 里删掉重加、重新配对 | 地址不变，不用重加 | 地址不变 |
+| 花费 | 免费 | 域名一年要交一点钱 | 服务器和域名的钱 |
+| 适合 | 先试试，或者只在电脑旁边用 | 家里有台不关机的电脑，想手机上天天用 | 想随时都能用，不想管自己电脑开没开 |
 
-临时隧道是为了让大家不花钱也能试一下；用的时候遇到问题，欢迎[提 issue](https://github.com/Waldo0926/monash-study-kit/issues)
+</div>
+
+怎么选：
+
+- 只是想看看效果，用**办法一**，十分钟就能弄好
+- 想在手机上天天用，又有一台不关机的电脑（比如家里的旧笔记本或者小主机），用**办法二**
+- 已经有服务器，或者想要最稳的，用**办法三**
+
+不确定的话，直接让 AI 帮你搭，它会先问你的情况再推荐
+
+作者自己用的是 ChatGPT Plus 加自己的域名和服务器。遇到问题欢迎[提 issue](https://github.com/Waldo0926/monash-study-kit/issues)，或者[直接问我](/zh-cn/contact/)
 
 不管用哪种，都要先在跑 Study Kit 的那台电脑上装好并完成 `monash setup`
 
@@ -75,7 +87,50 @@ description: Study Kit 1.4.0 起的可选远程模式，给 Study Kit 一个 HTT
 
 隧道开着的时候，知道地址的人都能打开登录页，但没有你终端里的配对码什么也做不了
 
-## 办法二：自己的服务器和域名
+## 办法二：固定地址的 Cloudflare 隧道
+
+需要一个自己的域名，并且已经把它加进 Cloudflare、把域名的 nameserver 改成 Cloudflare 的。下面的 `study.example.org` 换成你自己的子域名，`monash` 是隧道的名字，可以随便起
+
+1. 装 `cloudflared`（同办法一），然后登录，会打开浏览器让你选域名：
+
+   ```bash
+   cloudflared tunnel login
+   ```
+
+2. 建隧道，再把子域名指向它：
+
+   ```bash
+   cloudflared tunnel create monash
+   cloudflared tunnel route dns monash study.example.org
+   ```
+
+   第一条命令会打印隧道的 UUID 和一个凭证文件（`.json`）的路径，记下来
+
+3. 在 `~/.cloudflared/` 里新建 `config.yml`（Windows 是 `%USERPROFILE%\.cloudflared\`）：
+
+   ```yaml
+   tunnel: 你的隧道UUID
+   credentials-file: /Users/你/.cloudflared/你的隧道UUID.json
+   ingress:
+     - hostname: study.example.org
+       service: http://127.0.0.1:8765
+     - service: http_status:404
+   ```
+
+   8765 端口只跑远程模式，别的路径 Study Kit 都会返回 404，所以整个子域名转过去就行
+
+4. 开两个终端，一个跑隧道，一个跑 Study Kit：
+
+   ```bash
+   cloudflared tunnel run monash
+   monash remote serve --public-url https://study.example.org
+   ```
+
+5. 按下面的[接进 AI 软件](#接进-ai-软件)，地址填 `https://study.example.org/mcp`
+
+地址固定，重启电脑以后把这两条命令再跑一遍就行，ChatGPT 里不用重加。记得把电脑的自动睡眠关掉。想开机自动启动的话，`cloudflared` 可以装成系统服务，可以让 AI 帮你弄（它改系统设置前会先问你）
+
+## 办法三：自己的服务器和域名
 
 1. 在服务器上启动 Study Kit：
 
