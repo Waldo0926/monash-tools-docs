@@ -15,6 +15,16 @@ description: Study Kit 1.4.0 起的可选远程模式，给 Study Kit 一个 HTT
 
 要 Study Kit 1.4.0 以上，先运行 `monash update`
 
+## 让 AI 帮你搭
+
+如果你用的 AI 能在电脑上跑命令（Claude Code、Codex 等），把这句发给它，剩下的它会带你做：
+
+```text wrap
+阅读 https://docs.secureview.tech/agents/remote.md ，帮我搭好 Study Kit 的远程模式。
+```
+
+它会先问你想在哪个 App 里用，再帮你弄好隧道或者服务器并检查一遍。在 ChatGPT 或 Claude 里加应用、输入配对码这两步要你自己来
+
 ## 两种拿到 HTTPS 地址的办法
 
 | | 自己的服务器和域名 | Cloudflare 临时隧道 |

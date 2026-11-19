@@ -33,7 +33,7 @@ export default defineConfig({
         { tag: 'link', attrs: { rel: 'alternate', type: 'text/plain', href: '/llms.txt', title: 'llms.txt' } },
       ],
       sidebar: [
-        group('Start here', '从这里开始', '', ['choose', 'ai-setup']),
+        group('Start here', '从这里开始', '', ['choose', 'ai-setup', 'contact']),
         group('Study Kit', 'Study Kit', 'study-kit', [
           'index', 'install', 'setup', 'chatgpt', 'ask-claude', 'mail-attendance', 'materials', 'cli', 'other-clients', 'remote', 'recordings', 'privacy', 'troubleshooting', 'commands', 'update',
         ]),

@@ -98,7 +98,7 @@ export const strings = {
       cols: [
         { h: 'Start', links: [['Which tool do I need?', 'choose/'], ['Let your AI set it up', 'ai-setup/'], ['Install Study Kit', 'study-kit/install/'], ['Connect mail and attendance', 'study-kit/mail-attendance/']] },
         { h: 'Tools', links: [['Study Kit', 'study-kit/'], ['Monash Hub', 'monash-hub/'], ['Ed Web', 'ed-web/'], ['Attendance Helper', 'attendance/'], ['WeChat Q&A', 'wechat-bot/']] },
-        { h: 'Project', links: [['About', 'about/'], ['GitHub', 'https://github.com/Waldo0926'], ['Blog', 'https://blog.secureview.tech'], ['llms.txt', '/llms.txt']] },
+        { h: 'Project', links: [['About', 'about/'], ['Contact', 'contact/'], ['GitHub', 'https://github.com/Waldo0926'], ['Blog', 'https://blog.secureview.tech'], ['llms.txt', '/llms.txt']] },
       ],
       small: 'No cookies, no analytics. Icons by Lucide (ISC).',
     },
@@ -190,7 +190,7 @@ export const strings = {
       cols: [
         { h: '开始', links: [['该用哪个工具？', 'choose/'], ['让AI帮你装', 'ai-setup/'], ['安装Study Kit', 'study-kit/install/'], ['接上邮箱和考勤', 'study-kit/mail-attendance/']] },
         { h: '工具', links: [['Study Kit', 'study-kit/'], ['Monash Hub', 'monash-hub/'], ['Ed Web', 'ed-web/'], ['签到助手', 'attendance/'], ['公众号问答', 'wechat-bot/']] },
-        { h: '项目', links: [['关于', 'about/'], ['GitHub', 'https://github.com/Waldo0926'], ['博客', 'https://blog.secureview.tech'], ['llms.txt', '/llms.txt']] },
+        { h: '项目', links: [['关于', 'about/'], ['联系我', 'contact/'], ['GitHub', 'https://github.com/Waldo0926'], ['博客', 'https://blog.secureview.tech'], ['llms.txt', '/llms.txt']] },
       ],
       small: '本站不设cookie，也没有统计代码，图标来自Lucide（ISC）',
     },

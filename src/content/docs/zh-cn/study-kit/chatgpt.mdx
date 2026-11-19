@@ -16,7 +16,15 @@ ChatGPT 里有两个地方能用 Study Kit，接法不一样：
 
 ChatGPT 聊天是从 OpenAI 的服务器去连 Study Kit 的，连不到你电脑上的本地程序，所以 Study Kit 需要一个网上能访问的 HTTPS 地址，也就是远程模式
 
-大概的步骤：
+最省事的是让能跑命令的 AI（Claude Code、Codex 等）帮你搭，把这句发给它：
+
+```text wrap
+阅读 https://docs.secureview.tech/agents/remote.md ，帮我搭好 Study Kit 的远程模式，让我能在 ChatGPT 聊天里用。
+```
+
+它会先问清楚你的情况，再帮你装好、启动、检查。最后在 ChatGPT 里加应用、输入配对码这两步要你自己来
+
+自己动手的话，大概的步骤：
 
 1. 先在电脑上装好 Study Kit 并跑完 `monash setup`，可以[让 AI 帮你装](/zh-cn/ai-setup/)
 2. 按[远程模式](/zh-cn/study-kit/remote/)那页拿到地址。有自己的服务器和域名最稳；想先试试的话，用免费的 Cloudflare 隧道也行，但电脑睡眠或关机就连不上了

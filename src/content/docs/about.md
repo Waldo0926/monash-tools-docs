@@ -28,7 +28,9 @@ Open an issue on the tool's repository:
 | Attendance Helper | [Waldo0926/monash-attendance-reminder](https://github.com/Waldo0926/monash-attendance-reminder/issues) |
 | This site | [Waldo0926/monash-tools-docs](https://github.com/Waldo0926/monash-tools-docs/issues) |
 
-For a security problem, do not post details in public. Follow the repository's `SECURITY.md` if it has one; otherwise open an issue that only says you found something, and I will get in touch.
+Don't use GitHub? [Message me on WhatsApp or WeChat](/contact/).
+
+For a security problem, do not post details in public. Follow the repository's `SECURITY.md` if it has one; otherwise [message me privately](/contact/).
 
 ## Credits
 

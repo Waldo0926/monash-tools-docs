@@ -11,6 +11,16 @@ It is for one person and **their own** data. Never host it for friends with your
 
 Needs Study Kit 1.4.0 or later. Run `monash update` first.
 
+## Let your AI set it up
+
+If you use an AI that can run commands on your computer (Claude Code, Codex and similar), send it this and it will walk you through the rest:
+
+```text wrap
+Read https://docs.secureview.tech/agents/remote.md and set up Study Kit remote mode for me.
+```
+
+It asks which app you want first, then sets up the tunnel or your server and checks it. You add the app in ChatGPT or Claude and type the pairing code yourself.
+
 ## Two ways to get an HTTPS address
 
 | | Your own server and domain | Cloudflare quick tunnel |

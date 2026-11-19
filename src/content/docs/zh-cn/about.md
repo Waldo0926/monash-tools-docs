@@ -37,9 +37,11 @@ Monash、Moodle、Ed 归各自所有者
 | 签到助手 | [Waldo0926/monash-attendance-reminder](https://github.com/Waldo0926/monash-attendance-reminder/issues) |
 | 本站 | [Waldo0926/monash-tools-docs](https://github.com/Waldo0926/monash-tools-docs/issues) |
 
+不用 GitHub 的话，也可以[加 WhatsApp 或微信问我](/zh-cn/contact/)
+
 如果是安全问题，请不要公开细节
 
-仓库里有 `SECURITY.md` 的按它说的做；没有的话，开个 issue 只说发现了问题，我会联系你
+仓库里有 `SECURITY.md` 的按它说的做；没有的话，[私下联系我](/zh-cn/contact/)
 
 ## 致谢
 

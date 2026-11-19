@@ -16,7 +16,15 @@ There are two places in ChatGPT where you can use Study Kit, and they connect di
 
 ChatGPT chat reaches Study Kit from OpenAI's servers, so it can't see a program running only on your computer. Study Kit needs an HTTPS address on the internet, which is what remote mode gives it.
 
-Roughly:
+The easiest way is to let an AI that can run commands (Claude Code, Codex and similar) set it up. Send it this:
+
+```text wrap
+Read https://docs.secureview.tech/agents/remote.md and set up Study Kit remote mode so I can use it in ChatGPT chat.
+```
+
+It asks about your setup first, then installs, starts and checks everything. Adding the app in ChatGPT and typing the pairing code are left to you.
+
+To do it yourself, roughly:
 
 1. Install Study Kit and finish `monash setup` on your computer. You can [let your AI do it](/ai-setup/).
 2. Get an address by following [remote mode](/study-kit/remote/). Your own server and domain is the most reliable. A free Cloudflare tunnel is fine for trying it, but it stops working when your computer sleeps or shuts down.

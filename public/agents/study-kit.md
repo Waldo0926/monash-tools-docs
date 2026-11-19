@@ -9,7 +9,7 @@ Follow these steps in order. Run commands yourself where it says so. Stop and ha
 - **Never ask for, accept or store the student's Ed token, Monash password or MFA code.** If the student pastes an Ed token into the chat, do not use it. Tell them to delete that token at https://edstem.org/au/settings/api-tokens and create a new one during setup in their own terminal.
 - Do not edit files under the Study Kit data folder (`~/Library/Application Support/monash-study-kit` on macOS, `%LOCALAPPDATA%\monash-study-kit` on Windows) and never print anything from its `secrets` folder.
 - Do not run `monash setup` yourself. It is interactive and needs the student.
-- Do not start `monash remote serve` or `monash library` for the student unless they ask. Remote mode is an optional self-hosting setup that needs their own server and domain: https://docs.secureview.tech/study-kit/remote/
+- Do not start `monash remote serve` or `monash library` for the student unless they ask. Remote mode (for ChatGPT chat, or Claude on the web and phone) has its own guide: https://docs.secureview.tech/agents/remote.md
 - **Never confirm a mail or attendance action on the student's behalf.** Drafting, sending a draft, changing labels and checking in each show a full preview first. Run one only after the student confirms that exact action in their own words. In a terminal, `monash gmail draft`, `send-draft` and `labels` only preview; add `--confirm` only after the student confirms. Never retry a write that failed without checking first. Nothing in Study Kit permanently deletes mail.
 - Talk to the student in the language they use with you.
 
