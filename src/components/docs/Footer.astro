@@ -1,0 +1,25 @@
+---
+// Default Starlight footer, plus one line on every page pointing to help when something still doesn't work.
+import Default from '@astrojs/starlight/components/Footer.astro';
+
+const { locale, id } = Astro.locals.starlightRoute;
+const zh = locale === 'zh-cn';
+const p = zh ? '/zh-cn' : '';
+const onContact = id.endsWith('contact');
+---
+
+{!onContact && (
+  <aside class="still-stuck">
+    {zh ? (
+      <p>还是没解决？看看<a href={`${p}/study-kit/troubleshooting/`}>常见问题</a>，或者<a href={`${p}/contact/`}>直接问我</a>，WhatsApp 和微信都行</p>
+    ) : (
+      <p>Still stuck? Check the <a href={`${p}/study-kit/troubleshooting/`}>common problems</a> or <a href={`${p}/contact/`}>message me</a> on WhatsApp or WeChat.</p>
+    )}
+  </aside>
+)}
+<Default><slot /></Default>
+
+<style>
+  .still-stuck { margin-top: 3rem; padding: 0.9rem 1.1rem; border: 1px solid var(--sl-color-hairline); border-radius: 0.75rem; background: var(--sl-color-bg-nav); font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); }
+  .still-stuck p { margin: 0; }
+</style>

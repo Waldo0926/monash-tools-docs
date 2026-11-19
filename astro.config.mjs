@@ -23,6 +23,7 @@ export default defineConfig({
       logo: { src: './src/assets/logo.svg' },
       components: {
         Sidebar: './src/components/docs/Sidebar.astro',
+        Footer: './src/components/docs/Footer.astro',
       },
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Waldo0926' }],
       favicon: '/favicon.svg',

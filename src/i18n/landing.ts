@@ -78,7 +78,7 @@ export const strings = {
       installLabel: 'Install',
       runsLabel: 'Runs on',
       rows: [
-        { name: 'Study Kit', line: 'Ask your AI about your own Moodle and Ed, plus school mail and attendance if you connect them: deadlines, Ed updates, grades, which slide covers what, unread mail, check-in status.', install: 'One command', runs: 'Your computer', href: 'study-kit/' },
+        { name: 'Study Kit', line: 'Ask your AI about your own Moodle and Ed, plus school mail and attendance if you connect them: deadlines, Ed updates, grades, which slide covers what, unread mail, check-in status.', install: 'Ask your AI, or one command', runs: 'Your computer', href: 'study-kit/' },
         { name: 'Monash Hub', line: 'Units, electives with no exam, degrees, course maps, WAM and GPA, Malaysia tuition fees, key dates and official guides with source links.', install: 'None', runs: 'Any browser', href: 'monash-hub/' },
         { name: 'Ed Web', line: 'Fetch an Ed forum into your browser, skim one line per post, download a unit\'s lesson files as a zip.', install: 'None', runs: 'Browser tab', href: 'ed-web/' },
         { name: 'Attendance Helper', line: 'Finds attendance codes in Gmail, Ed and Moodle. Submits only the classes you tick as attended.', install: 'Chrome Web Store', runs: 'Chrome', href: 'attendance/' },
@@ -87,11 +87,14 @@ export const strings = {
       rules: ['Study Kit only reads Moodle and Ed, and asks before any mail or check-in', 'Attendance Helper submits only the classes you tick', 'Your login stays with you', 'Free, no tracking'],
     },
     agent: {
-      h2a: 'Or paste one line',
-      h2b: 'into your AI.',
-      p: 'Claude Code, Codex, Cursor and similar tools can read a guide written for them and install Study Kit. They stop when it is time for your Ed token, Monash login and, if you connect mail, Google sign-in. None of these go through the chat.',
-      prompt: 'Read https://docs.secureview.tech/agents/study-kit.md and set up Monash Study Kit on my computer.',
-      more: 'How it works',
+      h2a: 'Stuck somewhere?',
+      h2b: 'Here is where to look',
+      p: 'Most problems have come up before. Start with the list of common ones, or let your AI look at it with you.',
+      cards: [
+        ['Common problems', 'Login windows, Ed tokens, missing units and other things people hit first.', 'study-kit/troubleshooting/'],
+        ['Let your AI fix it', 'Paste one line and your AI reads the setup guide, then checks what went wrong.', 'ai-setup/'],
+        ['Ask me', 'WhatsApp or WeChat if you would rather talk to a person.', 'contact/'],
+      ],
     },
     footer: {
       blurb: 'Free tools for Monash students, built by one. Not affiliated with Monash University, Ed, Anthropic or OpenAI.',
@@ -170,7 +173,7 @@ export const strings = {
       installLabel: '安装',
       runsLabel: '运行在',
       rows: [
-        { name: 'Study Kit', line: '让AI查自己的Moodle和Ed，接上的话还有学校邮箱和考勤：截止日期、Ed新消息、成绩、某个知识点在哪页、未读邮件、签到情况', install: '一条命令', runs: '你的电脑', href: 'study-kit/' },
+        { name: 'Study Kit', line: '让AI查自己的Moodle和Ed，接上的话还有学校邮箱和考勤：截止日期、Ed新消息、成绩、某个知识点在哪页、未读邮件、签到情况', install: '让AI装，或一条命令', runs: '你的电脑', href: 'study-kit/' },
         { name: 'Monash Hub', line: '查课、找没考试的选修课、学位、选课规划、WAM和GPA、马来西亚学费、重要日期，还有带出处的官方指南', install: '不用装', runs: '任何浏览器', href: 'monash-hub/' },
         { name: 'Ed Web', line: '把Ed论坛抓到浏览器里，每帖一句话概括，一键打包下载整门课的课件', install: '不用装', runs: '浏览器标签页', href: 'ed-web/' },
         { name: '签到助手', line: '从Gmail、Ed、Moodle里找签到码，只提交你勾选确认上过的课', install: 'Chrome应用商店', runs: 'Chrome', href: 'attendance/' },
@@ -179,11 +182,14 @@ export const strings = {
       rules: ['Study Kit对Moodle和Ed只读，邮件和签到都先问你', '签到助手只提交你勾选的课', '登录凭据留在你的设备上，AI会收到查询结果', '免费，无追踪'],
     },
     agent: {
-      h2a: '或者把一句话',
-      h2b: '贴给你的AI',
-      p: 'Claude Code、Codex、Cursor这类工具可以读一份专门写给它的说明，把Study Kit装好，到了输入Ed令牌、登录Monash，以及接邮箱时登录Google这几步，它会停下来交给你，这些都不经过聊天',
-      prompt: '阅读https://docs.secureview.tech/agents/study-kit.md ，帮我在电脑上装好Monash Study Kit',
-      more: '具体流程',
+      h2a: '用的时候卡住了？',
+      h2b: '先看这几个地方',
+      p: '大部分问题之前都有人遇到过，先看看常见问题，或者让AI陪你一起查',
+      cards: [
+        ['常见问题', '登录窗口、Ed令牌、课程没出来，大家最常遇到的都在这里', 'study-kit/troubleshooting/'],
+        ['让AI帮你看', '贴一句话给AI，它会读安装说明，再帮你查哪里出了问题', 'ai-setup/'],
+        ['直接问我', '想找真人问的话，WhatsApp或者微信都行', 'contact/'],
+      ],
     },
     footer: {
       blurb: '一个Monash学生给同学做的免费工具，与Monash University、Ed和Anthropic无关',

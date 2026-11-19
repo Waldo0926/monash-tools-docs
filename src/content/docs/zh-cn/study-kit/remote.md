@@ -1,6 +1,6 @@
 ---
 title: 远程模式（ChatGPT 聊天、手机）
-description: 给 Study Kit 一个 HTTPS 地址，在 ChatGPT 聊天、网页版和手机上的 Claude 里也能用。三种办法：免费临时隧道、固定地址的 Cloudflare 隧道、自己的服务器
+description: 给 Study Kit 一个 HTTPS 地址，在 ChatGPT 聊天、网页版和手机上的 Claude 里也能用，三种办法：免费临时隧道、固定地址的 Cloudflare 隧道、自己的服务器
 ---
 
 大多数人用不到这一页
@@ -23,7 +23,9 @@ description: 给 Study Kit 一个 HTTPS 地址，在 ChatGPT 聊天、网页版�
 阅读 https://docs.secureview.tech/agents/remote.md ，帮我搭好 Study Kit 的远程模式。
 ```
 
-它会先问你想在哪个 App 里用，再帮你弄好隧道或者服务器并检查一遍。在 ChatGPT 或 Claude 里加应用、输入配对码这两步要你自己来
+它会先问你想在哪个 App 里用，再帮你弄好隧道或者服务器并检查一遍
+
+在 ChatGPT 或 Claude 里加应用、输入配对码这两步要你自己来
 
 ## 三种拿到 HTTPS 地址的办法
 
@@ -48,7 +50,9 @@ description: 给 Study Kit 一个 HTTPS 地址，在 ChatGPT 聊天、网页版�
 
 不确定的话，直接让 AI 帮你搭，它会先问你的情况再推荐
 
-作者自己用的是 ChatGPT Plus 加自己的域名和服务器。遇到问题欢迎[提 issue](https://github.com/Waldo0926/monash-study-kit/issues)，或者[直接问我](/zh-cn/contact/)
+作者自己用的是 ChatGPT Plus 加自己的域名和服务器
+
+遇到问题欢迎[提 issue](https://github.com/Waldo0926/monash-study-kit/issues)，或者[直接问我](/zh-cn/contact/)
 
 不管用哪种，都要先在跑 Study Kit 的那台电脑上装好并完成 `monash setup`
 
@@ -89,7 +93,9 @@ description: 给 Study Kit 一个 HTTPS 地址，在 ChatGPT 聊天、网页版�
 
 ## 办法二：固定地址的 Cloudflare 隧道
 
-需要一个自己的域名，并且已经把它加进 Cloudflare、把域名的 nameserver 改成 Cloudflare 的。下面的 `study.example.org` 换成你自己的子域名，`monash` 是隧道的名字，可以随便起
+需要一个自己的域名，并且已经把它加进 Cloudflare、把域名的 nameserver 改成 Cloudflare 的
+
+下面的 `study.example.org` 换成你自己的子域名，`monash` 是隧道的名字，可以随便起
 
 1. 装 `cloudflared`（同办法一），然后登录，会打开浏览器让你选域名：
 
@@ -128,7 +134,11 @@ description: 给 Study Kit 一个 HTTPS 地址，在 ChatGPT 聊天、网页版�
 
 5. 按下面的[接进 AI 软件](#接进-ai-软件)，地址填 `https://study.example.org/mcp`
 
-地址固定，重启电脑以后把这两条命令再跑一遍就行，ChatGPT 里不用重加。记得把电脑的自动睡眠关掉。想开机自动启动的话，`cloudflared` 可以装成系统服务，可以让 AI 帮你弄（它改系统设置前会先问你）
+地址固定，重启电脑以后把这两条命令再跑一遍就行，ChatGPT 里不用重加
+
+记得把电脑的自动睡眠关掉
+
+想开机自动启动的话，`cloudflared` 可以装成系统服务，可以让 AI 帮你弄（它改系统设置前会先问你）
 
 ## 办法三：自己的服务器和域名
 
