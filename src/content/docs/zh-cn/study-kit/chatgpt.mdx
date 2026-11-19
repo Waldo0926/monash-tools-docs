@@ -1,30 +1,43 @@
 ---
 title: 在 ChatGPT 里用
-description: 在 ChatGPT 里用 Study Kit。桌面版通过 Codex 模式，一条命令就能接上；网页版要付费会员加远程模式
+description: 在 ChatGPT 聊天里用 Study Kit，网页、电脑客户端和手机都行，要先开远程模式。只用 ChatGPT 桌面版里的 Codex 的话，一条命令就能接上
 ---
 
 import { Aside, LinkCard } from '@astrojs/starlight/components';
 
-看你在哪用 ChatGPT，有两种办法：
+ChatGPT 里有两个地方能用 Study Kit，接法不一样：
 
-| 你用的是 | 怎么做 | 需要的会员 |
+| 在哪用 | 怎么接 | 要注意的 |
 | --- | --- | --- |
-| **ChatGPT 桌面版**（Mac 或 Windows） | 运行一次 `monash connect codex`，然后在 App 里切到 Codex 模式 | 包含 Codex 的会员都行 |
-| **浏览器里的 ChatGPT**（chatgpt.com） | 打开开发者模式，通过[远程模式](/zh-cn/study-kit/remote/)把 Study Kit 加成连接器 | Plus、Pro、Business、Enterprise 或 Edu |
+| **ChatGPT 聊天**（网页、电脑客户端、手机） | 开远程模式拿到一个 HTTPS 地址，在 ChatGPT 的开发者模式里加成应用，加一次三个地方都能用 | 要付费会员才有开发者模式（作者用 Plus 测过）<br />Study Kit 那台电脑或服务器要一直开着 |
+| **ChatGPT 桌面版里的 Codex** | 运行一次 `monash connect codex` | 最简单，但只能在这台电脑的 Codex 里用 |
 
-大部分同学用桌面版就好，它直接连你电脑上的 Study Kit，不用自己架服务器
+## 在 ChatGPT 聊天里用
 
-## ChatGPT 桌面版
+ChatGPT 聊天是从 OpenAI 的服务器去连 Study Kit 的，连不到你电脑上的本地程序，所以 Study Kit 需要一个网上能访问的 HTTPS 地址，也就是远程模式
 
-桌面版里有 **Codex** 模式，它和 Codex 命令行工具读的是同一份设置文件（`~/.codex/config.toml`），所以一条命令两边都能用
+大概的步骤：
 
-1. 先装好 Study Kit，跑完 `monash setup`。最省事的是在 ChatGPT App 的 Codex 模式里发这句话，Codex 能跑命令，会帮你装：
+1. 先在电脑上装好 Study Kit 并跑完 `monash setup`，可以[让 AI 帮你装](/zh-cn/ai-setup/)
+2. 按[远程模式](/zh-cn/study-kit/remote/)那页拿到地址。有自己的服务器和域名最稳；想先试试的话，用免费的 Cloudflare 隧道也行，但电脑睡眠或关机就连不上了
+3. 在 ChatGPT 的设置里打开开发者模式，新建一个应用，填你的地址（以 `/mcp` 结尾），登录方式选 OAuth
+4. 加好以后，在聊天里打 `monash` 就能选它，然后直接问“这周我有什么要交的？”。网页、电脑客户端和手机上都能用
+
+<LinkCard title="设置远程模式" description="拿到 HTTPS 地址，再在 ChatGPT 里加应用" href="/zh-cn/study-kit/remote/" />
+
+<Aside>
+ChatGPT 的菜单名字时不时会变，以你自己 ChatGPT 里显示的为准
+</Aside>
+
+## 在 ChatGPT 桌面版的 Codex 里用
+
+ChatGPT 桌面版里的 **Codex** 是在你自己电脑上跑的，可以直接用本地的 Study Kit，不用远程模式。它读的是 `~/.codex/config.toml`，和 Codex 命令行工具是同一份
+
+1. 装好 Study Kit，跑完 `monash setup`。也可以在 Codex 里发这句话让它帮你装：
 
    ```text wrap
    阅读 https://docs.secureview.tech/agents/study-kit.md ，帮我在电脑上装好 Monash Study Kit，然后接进 Codex。
    ```
-
-   也可以[自己手动装](/zh-cn/study-kit/install/)
 
 2. 如果 AI 还没帮你接上，运行：
 
@@ -32,27 +45,12 @@ import { Aside, LinkCard } from '@astrojs/starlight/components';
    monash connect codex
    ```
 
-3. 把 ChatGPT App 完全退出，再重新打开
+3. 把 ChatGPT App 完全退出（⌘Q），再重新打开
 
-4. 在 **Codex** 里新开一个对话，输入 `/mcp`，列表里应该有 `monash`，显示已启用。然后直接问“这周我有什么要交的？”，跟平时聊天一样，在 Codex 模式里也不用写代码
+4. 在 **Codex** 里新开一个对话，输入 `/mcp`，列表里应该有 `monash`，显示已启用。然后直接用中文问“这周我有什么要交的？”就行，不用写代码
 
-Codex 包含在 ChatGPT Plus、Pro、Business、Edu 和 Enterprise 里，免费版也有一点额度
+这条路只在 Codex 里有效，ChatGPT 聊天还是要走上面的远程模式。如果 `/mcp` 里看不到 `monash`，可以[提个 issue](https://github.com/Waldo0926/monash-study-kit/issues)
 
-<Aside>
-只有 Codex 模式会读这份本地设置。ChatGPT 平时的聊天模式连不到你电脑上的程序，要用就得走下面网页版那条路。如果 `/mcp` 里看不到 `monash`，可以[提个 issue](https://github.com/Waldo0926/monash-study-kit/issues)
-</Aside>
-
-## 浏览器里的 ChatGPT
-
-网页版的 ChatGPT 只能连网上的服务器，连不到你的电脑，所以需要：
-
-- ChatGPT 的**开发者模式**，Plus、Pro、Business、Enterprise 和 Edu 才有，免费版和 Go 没有。Business 或学校的账号可能要管理员先打开
-- **给 Study Kit 一个 HTTPS 地址**，想先试试的话用免费的 Cloudflare 隧道就行
-
-只有网页版能这样用，ChatGPT 手机 App 用不了这类连接器
-
-<LinkCard title="设置远程模式" description="拿到 HTTPS 地址，再在 ChatGPT 里加连接器" href="/zh-cn/study-kit/remote/" />
-
-## 没有 Codex 也没有付费会员？
+## 两种都不想弄？
 
 [Claude Desktop](https://claude.ai/download) 是测试得最多的，`monash setup` 会自动帮你接上。也可以不用 AI，直接用 [`monash` 命令](/zh-cn/study-kit/cli/)，比如 `monash todo`

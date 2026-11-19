@@ -24,7 +24,7 @@ If you are an AI agent asked to install something for a student, read the agent 
 - [Export a whole unit](https://docs.secureview.tech/study-kit/materials/): Moodle Page/Book/assignment materials, Ed Lessons/images and linked Google files; PDF/Markdown, missing-item index, separate Drive authorization and isolated materials-only profiles (1.11.2)
 - [整课导出（中文）](https://docs.secureview.tech/zh-cn/study-kit/materials/): 参数、Google 授权、PDF、隔离账号与遗漏排查
 - [Use it without AI](https://docs.secureview.tech/study-kit/cli/): the monash command in a terminal, and monash library to browse synced files
-- [Use it with ChatGPT](https://docs.secureview.tech/study-kit/chatgpt/): ChatGPT desktop app through Codex mode with monash connect codex; ChatGPT on the web needs a paid plan with developer mode and remote mode
+- [Use it with ChatGPT](https://docs.secureview.tech/study-kit/chatgpt/): ChatGPT chat on the web, desktop and phone through remote mode (HTTPS address, developer mode on a paid plan); Codex in the ChatGPT desktop app with monash connect codex
 - [Other AI apps](https://docs.secureview.tech/study-kit/other-clients/): monash connect for Codex, Cursor, VS Code, Windsurf, Gemini CLI
 - [Host it yourself](https://docs.secureview.tech/study-kit/remote/): optional single-user remote MCP server (1.4.0+) for ChatGPT and Claude on the web or phone, behind your own domain or a Cloudflare quick tunnel
 - [Lecture recordings](https://docs.secureview.tech/study-kit/recordings/): timestamped transcripts your AI can search
