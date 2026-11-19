@@ -19,6 +19,23 @@ const onContact = id.endsWith('contact');
 )}
 <Default><slot /></Default>
 
+<script>
+  // On phones, wide tables are hard to read. Give each cell its column name so CSS can show
+  // every row as a small card under 50rem. Tables with fewer than three columns stay as they are.
+  function labelTables() {
+    document.querySelectorAll<HTMLTableElement>('.sl-markdown-content table').forEach((table) => {
+      const heads = [...table.querySelectorAll('thead th')].map((th) => th.textContent?.trim() ?? '');
+      if (heads.length < 3) return;
+      table.classList.add('stackable');
+      table.querySelectorAll('tbody tr').forEach((tr) => {
+        [...tr.children].forEach((td, i) => { if (heads[i]) td.setAttribute('data-label', heads[i]); });
+      });
+    });
+  }
+  labelTables();
+  document.addEventListener('astro:page-load', labelTables);
+</script>
+
 <style>
   .still-stuck { margin-top: 3rem; padding: 0.9rem 1.1rem; border: 1px solid var(--sl-color-hairline); border-radius: 0.75rem; background: var(--sl-color-bg-nav); font-size: var(--sl-text-sm); color: var(--sl-color-gray-2); }
   .still-stuck p { margin: 0; }

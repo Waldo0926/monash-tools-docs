@@ -42,7 +42,7 @@ monash gmail login
 monash attendance login
 ```
 
-接好后重启一下 AI 软件
+接好后[重启一下 AI 软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件)
 
 两样都接上以后，每次对话开头的工具说明会多大约 1,900 个 token
 
@@ -89,7 +89,7 @@ monash config attendance_submit_enabled false
 | `attendance_fast_read` | `true` | 不开浏览器读；页面不对会自己退回浏览器 |
 | `attendance_keepalive_minutes` | `0` | 用轻量请求让考勤登录保持有效；暂时关着 |
 
-用 `monash config <设置> <值>` 修改，改完重启 AI 软件
+用 `monash config <设置> <值>` 修改，改完[重启 AI 软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件)
 
 ## 在 ChatGPT 或网页版 Claude 里用
 

@@ -9,7 +9,7 @@ description: Keep Study Kit current with one command, or remove it completely.
 monash update
 ```
 
-Restart your AI app afterwards. On Windows it tells you to quit Claude first and which command to run, because a running program cannot be overwritten. If you use Codex, Cursor or another app, close it before updating.
+[Restart your AI app](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app) afterwards. On Windows it tells you to quit Claude first and which command to run, because a running program cannot be overwritten. If you use Codex, Cursor or another app, close it before updating.
 
 When a new version is out you will hear about it: an extra line after terminal commands, and a short mention when you ask your AI for your to-dos. It checks GitHub at most once a day and sends no personal information. Turn it off with `monash config update_check false`.
 
@@ -48,10 +48,10 @@ Run `monash export --help`, then follow [whole-course export](/study-kit/materia
 
 ## 1.11.2 is released
 
-[Release 1.11.2](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.11.2) is published on PyPI and GitHub. Run `monash update`, then restart the AI app using Study Kit. On Windows, a failed PDF browser cold start is reaped and retried once with a fresh temporary profile; partially written port files and transient connections are retried too. The release also corrects Gmail/Drive permission and materials-isolation documentation. The release workflow passed cross-platform tests, packaging and installation from PyPI on all three platforms.
+[Release 1.11.2](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.11.2) is published on PyPI and GitHub. Run `monash update`, then [restart the AI app using Study Kit](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app). On Windows, a failed PDF browser cold start is reaped and retried once with a fresh temporary profile; partially written port files and transient connections are retried too. The release also corrects Gmail/Drive permission and materials-isolation documentation. The release workflow passed cross-platform tests, packaging and installation from PyPI on all three platforms.
 
 ## 1.15.0 is released
 
-[Release 1.15.0](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.15.0) is the first release on PyPI since 1.11.2. It also carries what 1.12.0 to 1.14.0 added, which was merged but never published; the [changelog](https://github.com/Waldo0926/monash-study-kit/blob/main/CHANGELOG.md) lists it. Run `monash update`, then restart the AI app using Study Kit.
+[Release 1.15.0](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.15.0) is the first release on PyPI since 1.11.2. It also carries what 1.12.0 to 1.14.0 added, which was merged but never published; the [changelog](https://github.com/Waldo0926/monash-study-kit/blob/main/CHANGELOG.md) lists it. Run `monash update`, then [restart the AI app using Study Kit](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app).
 
 The main change is in `monash uninstall`, which now revokes your Google Drive and Gmail access before it deletes the data folder. It used to delete only the local token files, which left the access active at Google. The README now starts with requirements, installation and everyday use, and the FAQ covers `monash: command not found`, a slow first sync, new units after a semester change, an invalid Ed token and removing everything.

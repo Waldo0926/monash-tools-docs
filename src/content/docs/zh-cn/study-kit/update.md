@@ -9,7 +9,7 @@ description: 一条命令更新到最新版，或者彻底删除
 monash update
 ```
 
-更新后重启你用的 AI 软件
+更新后[重启你用的 AI 软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件)
 
 Windows 上它会告诉你先退出 Claude、再运行哪条命令，因为正在运行的程序没法被覆盖
 
@@ -62,7 +62,7 @@ Google 文件需独立授权；原有 Gmail 登录不等于 Drive 授权
 
 [1.11.2 Release](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.11.2) 已在 PyPI 和 GitHub 正式发布
 
-运行 `monash update`，然后重启使用 Study Kit 的 AI 软件
+运行 `monash update`，然后[重启使用 Study Kit 的 AI 软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件)
 
 Windows PDF 浏览器冷启动失败时，会清理失败进程并用新的临时 profile 重试一次，也会容忍端口文件尚未写完和短暂连接失败
 
@@ -74,7 +74,7 @@ Gmail/Drive 权限和资料隔离说明同步修正
 
 [1.15.0 Release](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.15.0) 是 1.11.2 之后第一次发到 PyPI 的版本，所以也带上了 1.12.0 到 1.14.0 的改动（这几个版本合并了但没发布），详见[更新日志](https://github.com/Waldo0926/monash-study-kit/blob/main/CHANGELOG.md)
 
-运行 `monash update`，然后重启使用 Study Kit 的 AI 软件
+运行 `monash update`，然后[重启使用 Study Kit 的 AI 软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件)
 
 主要改动在 `monash uninstall`：删除数据文件夹之前，它会先撤销你的 Google Drive 和 Gmail 授权
 

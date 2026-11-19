@@ -5,6 +5,8 @@ description: monash 命令在终端里回答同样的问题，完全不耗 AI �
 
 `monash` 命令不用任何 AI，AI 额度用完或者只想快速看一眼时都能用
 
+命令在[终端](/zh-cn/study-kit/troubleshooting/#打开终端)里输入，Windows 上就是 PowerShell
+
 先运行 `monash sync`，然后：
 
 | 想知道 | 命令 |

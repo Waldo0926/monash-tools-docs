@@ -29,7 +29,7 @@ monash gmail login
 monash attendance login
 ```
 
-Restart your AI app after connecting. With both connected, each conversation starts with about 1,900 more tokens of tool descriptions.
+[Restart your AI app](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app) after connecting. With both connected, each conversation starts with about 1,900 more tokens of tool descriptions.
 
 A full step-by-step guide in Chinese, including using your own Google Cloud app instead of the bundled one, is in the [setup guide](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/google-and-attendance-setup.md).
 
@@ -64,7 +64,7 @@ monash config attendance_submit_enabled false
 | `attendance_fast_read` | `true` | Read without opening a browser; falls back by itself |
 | `attendance_keepalive_minutes` | `0` | Light requests to keep the attendance login alive; off for now |
 
-Change one with `monash config <setting> <value>` and restart your AI app.
+Change one with `monash config <setting> <value>` and [restart your AI app](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app).
 
 ## From ChatGPT or Claude on the web
 

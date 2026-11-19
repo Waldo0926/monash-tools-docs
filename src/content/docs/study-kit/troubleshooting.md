@@ -13,10 +13,29 @@ It checks each part and prints how to fix anything that fails. If you need help,
 
 `monash doctor --deep` also fetches from Moodle and Ed and compares the results against a second source (due dates against the calendar feed, synced files against Moodle, and so on). It prints only counts, unit codes, dates and activity ids.
 
+
+## Open a terminal
+
+When the docs say "run this in a terminal", open this window, paste the command and press Enter.
+
+- **macOS**: press Command and Space, type Terminal, press Enter.
+- **Windows**: open the Start menu, type PowerShell and open **Windows PowerShell**. Terminal on Windows 11 works too.
+- **Linux**: usually Ctrl + Alt + T.
+
+## Fully quit and reopen your AI app
+
+Many steps end with "restart your AI app". Closing the window is not enough. Most apps keep running in the background, so a changed setting doesn't take effect.
+
+- **macOS**: press Command + Q in the app, or right-click its icon in the Dock and choose Quit.
+- **Windows**: close the window, then check the system tray at the bottom right (next to the clock, you may need to click ^ first). If the app's icon is there, right-click it and choose Quit or Exit.
+- **Still running?** Open Activity Monitor on macOS, or press Ctrl + Shift + Esc for Task Manager on Windows, and end it there.
+
+Then open it again.
+
 ## monash does not show up in your AI app
 
 - **Claude Desktop or Claude Code**: run `monash setup claude` to connect again. On Windows, **fully quit** Claude from the tray first. If it still fails, look for errors under Claude Desktop, **Settings**, **Developer**.
-- **Codex, Cursor, VS Code, Windsurf or Gemini CLI**: run `monash connect` to see whether the app is connected. If not, run `monash connect codex` (or the app's name) and restart the app. If the config file has comments, it prints the entry for you to paste by hand; see [Other AI apps](/study-kit/other-clients/).
+- **Codex, Cursor, VS Code, Windsurf or Gemini CLI**: run `monash connect` to see whether the app is connected. If not, run `monash connect codex` (or the app's name) and [restart the app](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app). If the config file has comments, it prints the entry for you to paste by hand; see [Other AI apps](/study-kit/other-clients/).
 
 ## "monash: command not found"
 
@@ -49,7 +68,7 @@ Moodle shows times in your account's time zone, and Study Kit assumes UTC+8. Set
 monash config timezone Australia/Melbourne
 ```
 
-Use your own city (`Australia/Perth`, `Australia/Brisbane` and so on). Daylight saving is handled for you. Restart your AI app afterwards.
+Use your own city (`Australia/Perth`, `Australia/Brisbane` and so on). Daylight saving is handled for you. [Restart your AI app](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app) afterwards.
 
 ## Where are Ed assignment deadlines?
 
@@ -61,7 +80,7 @@ A running program cannot be overwritten on Windows, and your AI app keeps `monas
 
 ## No panel shows up
 
-Panels need Study Kit 1.4.0 and an app that supports MCP Apps. Run `monash update` and restart the app. If the app does not support panels you still get the normal text answer, which has the same content.
+Panels need Study Kit 1.4.0 and an app that supports MCP Apps. Run `monash update` and [restart the app](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app). If the app does not support panels you still get the normal text answer, which has the same content.
 
 ## My units don't use Ed
 

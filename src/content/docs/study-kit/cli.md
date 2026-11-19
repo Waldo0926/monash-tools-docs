@@ -3,7 +3,7 @@ title: Use it without AI
 description: The monash command answers the same questions in your terminal and uses no AI usage at all.
 ---
 
-The `monash` command does not use any AI, so it works when you are out of AI usage or just want a quick look. Run `monash sync` first, then:
+The `monash` command does not use any AI, so it works when you are out of AI usage or just want a quick look. Type these in a [terminal](/study-kit/troubleshooting/#open-a-terminal) (PowerShell on Windows). Run `monash sync` first, then:
 
 | I want to know | Command |
 | --- | --- |

@@ -121,6 +121,33 @@ h1#_top { font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 
 .compare-table th, .compare-table td { min-width: 8.5rem; }
 .compare-table th:first-child, .compare-table td:first-child { min-width: 0; white-space: nowrap; font-weight: 600; }
 
-/* Device table on the choose page: short cells, tool names on one line */
-.device-table th, .device-table td { white-space: nowrap; }
-.device-table th:not(:first-child), .device-table td:not(:first-child) { text-align: center; }
+/* Device cards on the choose page: one card per tool, devices as chips that wrap on small screens */
+.sl-markdown-content .devices { display: grid; gap: 0.75rem; margin: 1.25rem 0 0.75rem; }
+.sl-markdown-content .device-row { margin: 0; padding: 1rem 1.1rem; border: 1px solid var(--sl-color-hairline); border-radius: 0.9rem; background: var(--sl-color-bg-nav); }
+.sl-markdown-content .device-tool { font-weight: 600; font-size: 1.05rem; text-decoration: none; color: var(--sl-color-white); }
+.sl-markdown-content .device-tool:hover { color: var(--sl-color-text-accent); }
+.sl-markdown-content .device-note { margin: 0.2rem 0 0.7rem; font-size: var(--sl-text-sm); color: var(--sl-color-gray-3); }
+.sl-markdown-content .device-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+.sl-markdown-content .device-chips li { margin: 0; display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.2rem 0.6rem; border-radius: 999px; font-size: var(--sl-text-xs); line-height: 1.6; border: 1px solid transparent; }
+.sl-markdown-content .device-chips li.ok { background: color-mix(in srgb, #16a34a 14%, transparent); color: color-mix(in srgb, #16a34a 80%, var(--sl-color-white)); }
+.sl-markdown-content .device-chips li.mid { background: color-mix(in srgb, #d97706 14%, transparent); color: color-mix(in srgb, #d97706 85%, var(--sl-color-white)); }
+.sl-markdown-content .device-chips li.no { border-color: var(--sl-color-hairline); color: var(--sl-color-gray-4); }
+.sl-markdown-content .device-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; font-size: var(--sl-text-xs); color: var(--sl-color-gray-3); }
+.sl-markdown-content .device-legend .ok { color: #16a34a; }
+.sl-markdown-content .device-legend .mid { color: #d97706; }
+
+/* Phones: show wide tables as one card per row, each cell labelled with its column name */
+@media (max-width: 50rem) {
+  .sl-markdown-content table.stackable { display: block; border: 0; overflow: visible; }
+  .sl-markdown-content table.stackable thead { display: none; }
+  .sl-markdown-content table.stackable tbody { display: grid; gap: 0.75rem; }
+  .sl-markdown-content table.stackable tr { display: block; padding: 0.75rem 0.9rem; border: 1px solid var(--sl-color-hairline); border-radius: 0.8rem; background: var(--sl-color-bg-nav); }
+  .sl-markdown-content table.stackable td { display: block; padding: 0.15rem 0; border: 0; min-width: 0 !important; white-space: normal !important; text-align: left !important; background: none; }
+  .sl-markdown-content table.stackable td:first-child { font-weight: 600; color: var(--sl-color-white); padding-bottom: 0.35rem; }
+  .sl-markdown-content table.stackable td[data-label]:not(:first-child)::before { content: attr(data-label); display: block; font-size: var(--sl-text-xs); color: var(--sl-color-gray-3); margin-top: 0.35rem; }
+  .sl-markdown-content table.stackable td:empty { display: none; }
+}
+@media (max-width: 50rem) {
+  .sl-markdown-content table.stackable td > * { margin: 0; }
+  .sl-markdown-content table.stackable td[data-label]:not(:first-child)::before { margin-top: 0.5rem; }
+}

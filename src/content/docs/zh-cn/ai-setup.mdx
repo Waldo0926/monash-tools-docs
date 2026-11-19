@@ -31,7 +31,7 @@ import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 1. **AI 负责安装**：它运行安装脚本（跳过需要交互的部分），确认 `monash --version` 能用
 
-2. **你负责登录**：AI 会请你在自己的终端里运行 `monash setup`：粘贴 Ed 令牌、在登录窗口里通过 Monash 的 MFA、选课、接进 Claude（用 Codex、Cursor 等就运行 `monash connect`）  
+2. **你负责登录**：AI 会请你在自己的终端（[macOS 是“终端”，Windows 是 PowerShell](/zh-cn/study-kit/troubleshooting/#打开终端)）里运行 `monash setup`：粘贴 Ed 令牌、在登录窗口里通过 Monash 的 MFA、选课、接进 Claude（用 Codex、Cursor 等就运行 `monash connect`）  
    AI 看不到你的令牌和密码
 
 3. **AI 负责检查**：你说完成之后，它运行 `monash doctor` 和 `monash todo`，告诉你结果

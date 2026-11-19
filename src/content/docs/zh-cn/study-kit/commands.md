@@ -35,7 +35,7 @@ description: 所有 monash 命令、输出格式和退出码
 | `monash ed read FIT2109 "W3 Pre-Class"` | 整节 lesson 转成 Markdown，附测验题 |
 | `monash ed export FIT2109 [--module "Week 3"] [--to 文件夹] [--open]` | 1.7.0 起：整门课的 Ed 课件按周打包成 zip，默认存到“下载”（[说明](/zh-cn/study-kit/cli/#把整门课的-ed-课件打包)） |
 | `monash media` | 转写录播（要装[录播字幕](/zh-cn/study-kit/recordings/)） |
-| `monash config [key] [value]` | 看或改设置，改完重启 AI 软件 |
+| `monash config [key] [value]` | 看或改设置，改完[重启 AI 软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件) |
 | `monash connect [软件]` | 接进 Codex、Cursor、VS Code、Windsurf 或 Gemini CLI（[其他 AI 软件](/zh-cn/study-kit/other-clients/)） |
 | `monash remote serve` / `pair` / `clients` / `revoke` | 可选：远程模式，给 ChatGPT 聊天和手机用（[远程模式](/zh-cn/study-kit/remote/)） |
 | `monash gmail login` / `sync` / `todo` / `search` / `thread` | 可选的学校邮箱：接上 / 同步（显示进度）/ 未读邮件待办 / 离线搜索 / 读对话（[详细](/zh-cn/study-kit/mail-attendance/)） |

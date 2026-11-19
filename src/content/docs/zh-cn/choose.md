@@ -7,23 +7,15 @@ description: 按你的设备、想做的事、要不要安装、数据去哪儿�
 
 ## 按你的设备看
 
-<div class="device-table">
-
-| | Windows | Mac | Linux | iPhone / iPad | 安卓 |
-| --- | --- | --- | --- | --- | --- |
-| [Study Kit](/zh-cn/study-kit/) | ✓ | ✓ | ✓ | [远程模式](/zh-cn/study-kit/remote/) | [远程模式](/zh-cn/study-kit/remote/) |
-| [Monash Hub](/zh-cn/monash-hub/) | ✓ | ✓ | ✓ | ✓ | ✓ |
-| [Ed Web](/zh-cn/ed-web/) | ✓ | ✓ | ✓ | ✗ | ✗ |
-| [签到助手](/zh-cn/attendance/) | ✓ Chrome | ✓ Chrome | ✓ Chrome | ✗ | ✗ |
-| [公众号问答](/zh-cn/wechat-bot/) | ✓ | ✓ | ✓ | ✓ | ✓ |
-
+<div class="devices">
+<div class="device-row"><a class="device-tool" href="/zh-cn/study-kit/">Study Kit</a><p class="device-note">装在电脑上，手机通过 ChatGPT 或 Claude App 来问</p><ul class="device-chips"><li class="ok"><span aria-hidden="true">✓</span>Windows</li><li class="ok"><span aria-hidden="true">✓</span>Mac</li><li class="ok"><span aria-hidden="true">✓</span>Linux</li><li class="mid"><span aria-hidden="true">◐</span>iPhone / iPad · 要开远程模式</li><li class="mid"><span aria-hidden="true">◐</span>安卓 · 要开远程模式</li></ul></div>
+<div class="device-row"><a class="device-tool" href="/zh-cn/monash-hub/">Monash Hub</a><p class="device-note">任何浏览器都能打开，手机上可以加到主屏幕</p><ul class="device-chips"><li class="ok"><span aria-hidden="true">✓</span>Windows</li><li class="ok"><span aria-hidden="true">✓</span>Mac</li><li class="ok"><span aria-hidden="true">✓</span>Linux</li><li class="ok"><span aria-hidden="true">✓</span>iPhone / iPad</li><li class="ok"><span aria-hidden="true">✓</span>安卓</li></ul></div>
+<div class="device-row"><a class="device-tool" href="/zh-cn/ed-web/">Ed Web</a><p class="device-note">给电脑屏幕设计的</p><ul class="device-chips"><li class="ok"><span aria-hidden="true">✓</span>Windows</li><li class="ok"><span aria-hidden="true">✓</span>Mac</li><li class="ok"><span aria-hidden="true">✓</span>Linux</li><li class="no"><span aria-hidden="true">✕</span>iPhone / iPad (不支持)</li><li class="no"><span aria-hidden="true">✕</span>安卓 (不支持)</li></ul></div>
+<div class="device-row"><a class="device-tool" href="/zh-cn/attendance/">签到助手</a><p class="device-note">电脑上的 Chrome 扩展，手机上的 Chrome 装不了扩展</p><ul class="device-chips"><li class="ok"><span aria-hidden="true">✓</span>Windows</li><li class="ok"><span aria-hidden="true">✓</span>Mac</li><li class="ok"><span aria-hidden="true">✓</span>Linux</li><li class="no"><span aria-hidden="true">✕</span>iPhone / iPad (不支持)</li><li class="no"><span aria-hidden="true">✕</span>安卓 (不支持)</li></ul></div>
+<div class="device-row"><a class="device-tool" href="/zh-cn/wechat-bot/">公众号问答</a><p class="device-note">有微信就能用</p><ul class="device-chips"><li class="ok"><span aria-hidden="true">✓</span>Windows</li><li class="ok"><span aria-hidden="true">✓</span>Mac</li><li class="ok"><span aria-hidden="true">✓</span>Linux</li><li class="ok"><span aria-hidden="true">✓</span>iPhone / iPad</li><li class="ok"><span aria-hidden="true">✓</span>安卓</li></ul></div>
 </div>
 
-- **Study Kit** 装在电脑上。手机上要通过 ChatGPT 或 Claude App 来问，前提是电脑或服务器上开着[远程模式](/zh-cn/study-kit/remote/)
-- **Monash Hub** 任何浏览器都能打开，手机上可以[加到主屏幕](/zh-cn/monash-hub/app/)，用起来像 App
-- **Ed Web** 是给电脑屏幕设计的
-- **签到助手** 是 Chrome 扩展，手机上的 Chrome 装不了扩展
-- **公众号问答** 有微信就能用
+<p class="device-legend"><span class="ok">✓ 能用</span><span class="mid">◐ 要先在电脑或服务器上开<a href="/zh-cn/study-kit/remote/">远程模式</a></span><span class="no">✕ 不支持</span></p>
 
 ## 按你想做的事看
 

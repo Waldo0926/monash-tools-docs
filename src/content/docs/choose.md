@@ -7,23 +7,15 @@ Most people want Study Kit (your own Moodle and Ed) or Monash Hub (public info a
 
 ## By device
 
-<div class="device-table">
-
-| | Windows | Mac | Linux | iPhone / iPad | Android |
-| --- | --- | --- | --- | --- | --- |
-| [Study Kit](/study-kit/) | ✓ | ✓ | ✓ | [Remote mode](/study-kit/remote/) | [Remote mode](/study-kit/remote/) |
-| [Monash Hub](/monash-hub/) | ✓ | ✓ | ✓ | ✓ | ✓ |
-| [Ed Web](/ed-web/) | ✓ | ✓ | ✓ | ✗ | ✗ |
-| [Attendance Helper](/attendance/) | ✓ Chrome | ✓ Chrome | ✓ Chrome | ✗ | ✗ |
-| [WeChat Q&A bot](/wechat-bot/) | ✓ | ✓ | ✓ | ✓ | ✓ |
-
+<div class="devices">
+<div class="device-row"><a class="device-tool" href="/study-kit/">Study Kit</a><p class="device-note">Installs on a computer. On a phone, ask through the ChatGPT or Claude app</p><ul class="device-chips"><li class="ok"><span aria-hidden="true">✓</span>Windows</li><li class="ok"><span aria-hidden="true">✓</span>Mac</li><li class="ok"><span aria-hidden="true">✓</span>Linux</li><li class="mid"><span aria-hidden="true">◐</span>iPhone / iPad · remote mode</li><li class="mid"><span aria-hidden="true">◐</span>Android · remote mode</li></ul></div>
+<div class="device-row"><a class="device-tool" href="/monash-hub/">Monash Hub</a><p class="device-note">Any browser. On a phone you can add it to the home screen</p><ul class="device-chips"><li class="ok"><span aria-hidden="true">✓</span>Windows</li><li class="ok"><span aria-hidden="true">✓</span>Mac</li><li class="ok"><span aria-hidden="true">✓</span>Linux</li><li class="ok"><span aria-hidden="true">✓</span>iPhone / iPad</li><li class="ok"><span aria-hidden="true">✓</span>Android</li></ul></div>
+<div class="device-row"><a class="device-tool" href="/ed-web/">Ed Web</a><p class="device-note">Made for a computer screen</p><ul class="device-chips"><li class="ok"><span aria-hidden="true">✓</span>Windows</li><li class="ok"><span aria-hidden="true">✓</span>Mac</li><li class="ok"><span aria-hidden="true">✓</span>Linux</li><li class="no"><span aria-hidden="true">✕</span>iPhone / iPad (not supported)</li><li class="no"><span aria-hidden="true">✕</span>Android (not supported)</li></ul></div>
+<div class="device-row"><a class="device-tool" href="/attendance/">Attendance Helper</a><p class="device-note">A Chrome extension for computers. Chrome on phones can't install extensions</p><ul class="device-chips"><li class="ok"><span aria-hidden="true">✓</span>Windows</li><li class="ok"><span aria-hidden="true">✓</span>Mac</li><li class="ok"><span aria-hidden="true">✓</span>Linux</li><li class="no"><span aria-hidden="true">✕</span>iPhone / iPad (not supported)</li><li class="no"><span aria-hidden="true">✕</span>Android (not supported)</li></ul></div>
+<div class="device-row"><a class="device-tool" href="/wechat-bot/">WeChat Q&A bot</a><p class="device-note">Works wherever you have WeChat</p><ul class="device-chips"><li class="ok"><span aria-hidden="true">✓</span>Windows</li><li class="ok"><span aria-hidden="true">✓</span>Mac</li><li class="ok"><span aria-hidden="true">✓</span>Linux</li><li class="ok"><span aria-hidden="true">✓</span>iPhone / iPad</li><li class="ok"><span aria-hidden="true">✓</span>Android</li></ul></div>
 </div>
 
-- **Study Kit** installs on a computer. On a phone you ask it through the ChatGPT or Claude app, which needs [remote mode](/study-kit/remote/) running on a computer or server.
-- **Monash Hub** works in any browser. On a phone you can [add it to the home screen](/monash-hub/app/) like an app.
-- **Ed Web** is made for a computer screen.
-- **Attendance Helper** is a Chrome extension, and Chrome on phones can't install extensions.
-- **WeChat Q&A bot** works wherever you have WeChat.
+<p class="device-legend"><span class="ok">✓ works</span><span class="mid">◐ needs <a href="/study-kit/remote/">remote mode</a> running on a computer or server</span><span class="no">✕ not supported</span></p>
 
 ## By what you want to do
 

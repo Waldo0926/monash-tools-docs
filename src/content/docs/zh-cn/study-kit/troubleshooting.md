@@ -17,13 +17,35 @@ monash doctor
 
 `monash doctor --deep` 还会去 Moodle 和 Ed 再拉一遍，用第二个来源核对结果（截止日期对日历订阅、本地课件对 Moodle 等），只输出数量、课号、日期和活动编号
 
+
+## 打开终端
+
+文档里说“在终端里运行”，就是打开下面这个窗口，把命令粘贴进去回车
+
+- **macOS**：按 Command + 空格，输入“终端”或 Terminal，回车
+- **Windows**：点开始菜单，输入 PowerShell，打开 **Windows PowerShell**  
+  Windows 11 里的“终端”也可以
+- **Linux**：一般按 Ctrl + Alt + T
+
+## 完全退出再重开 AI 软件
+
+很多步骤最后都要“重启 AI 软件”
+
+只关窗口不算，很多软件关了窗口还在后台运行，改的设置就不会生效
+
+- **macOS**：在软件里按 Command + Q，或者在程序坞（Dock）的图标上右键选“退出”
+- **Windows**：关掉窗口后，看右下角托盘（时间旁边，可能要先点 ^ 展开）里还有没有它的图标，有的话右键选“退出”或 Quit
+- **还是关不掉**：macOS 打开“活动监视器”，Windows 按 Ctrl + Shift + Esc 打开任务管理器，找到它结束掉
+
+然后重新打开就行
+
 ## AI 软件里看不到 monash
 
 - **Claude Desktop 或 Claude Code**：运行 `monash setup claude` 重新接一次  
   Windows 上一定先从托盘**完全退出** Claude  
   还不行的话，看 Claude Desktop 的 **Settings** 里 **Developer** 有没有报错
 - **Codex、Cursor、VS Code、Windsurf 或 Gemini CLI**：运行 `monash connect` 看这个软件接上没有  
-  没接上就运行 `monash connect codex`（换成你的软件名），再重启软件  
+  没接上就运行 `monash connect codex`（换成你的软件名），再[重启软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件)  
   配置文件里有注释的话，它会把要加的内容打印出来让你手动粘贴，见[其他 AI 软件](/zh-cn/study-kit/other-clients/)
 
 ## 提示 “monash: command not found”
@@ -63,7 +85,7 @@ Moodle 按你账号的时区显示时间，Study Kit 默认按 UTC+8，改成你
 monash config timezone Australia/Melbourne
 ```
 
-换成你所在的城市（`Australia/Perth`、`Australia/Brisbane` 等），夏令时会自动处理，改完重启一下 AI 软件
+换成你所在的城市（`Australia/Perth`、`Australia/Brisbane` 等），夏令时会自动处理，改完[重启一下 AI 软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件)
 
 ## Ed 上的作业截止日期在哪？
 
@@ -81,7 +103,7 @@ Windows 上正在运行的程序不能被覆盖，AI 软件开着时会一直开
 
 面板要 Study Kit 1.4.0，并且软件支持 MCP Apps
 
-先 `monash update`，再重启软件
+先 `monash update`，再[重启软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件)
 
 软件不支持面板的话，照样会收到普通的文字回答，内容是一样的
 

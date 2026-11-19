@@ -35,7 +35,7 @@ description: Every monash command, output formats and exit codes.
 | `monash ed read FIT2109 "W3 Pre-Class"` | A whole lesson as Markdown with its quiz questions |
 | `monash ed export FIT2109 [--module "Week 3"] [--to <folder>] [--open]` | 1.7.0 and later: a unit's Ed materials as one zip sorted by week, saved to Downloads ([details](/study-kit/cli/#download-a-units-ed-materials-as-one-zip)) |
 | `monash media` | Transcribe lecture recordings (needs the [media extra](/study-kit/recordings/)) |
-| `monash config [key] [value]` | View or change settings. Restart your AI app afterwards |
+| `monash config [key] [value]` | View or change settings. [Restart your AI app](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app) afterwards |
 | `monash connect [app]` | Connect to Codex, Cursor, VS Code, Windsurf or Gemini CLI ([Other AI apps](/study-kit/other-clients/)) |
 | `monash remote serve` / `pair` / `clients` / `revoke` | Optional: host your own remote MCP server ([Remote mode](/study-kit/remote/)) |
 | `monash gmail login` / `sync` / `todo` / `search` / `thread` | Optional school mail: connect / sync with progress / unread inbox mail / offline search / read a thread ([details](/study-kit/mail-attendance/)) |
