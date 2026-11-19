@@ -1,0 +1,66 @@
+---
+title: Use it with ChatGPT
+description: Use Study Kit in ChatGPT chat on the web, the desktop app and your phone with remote mode. Codex in the ChatGPT desktop app connects with one command.
+---
+
+import { Aside, LinkCard } from '@astrojs/starlight/components';
+
+There are two places in ChatGPT where you can use Study Kit, and they connect differently:
+
+| Where | How to connect | Keep in mind |
+| --- | --- | --- |
+| **ChatGPT chat** (web, desktop app, phone) | Turn on remote mode to get an HTTPS address, then add it as an app in ChatGPT's developer mode. Add it once and it works in all three | Developer mode needs a paid plan (tested on Plus)<br />The computer or server running Study Kit has to stay on |
+| **Codex in the ChatGPT desktop app** | Run `monash connect codex` once | Easiest, but only works in Codex on that computer |
+
+## In ChatGPT chat
+
+ChatGPT chat reaches Study Kit from OpenAI's servers, so it can't see a program running only on your computer. Study Kit needs an HTTPS address on the internet, which is what remote mode gives it.
+
+The easiest way is to let an AI that can run commands (Claude Code, Codex and similar) set it up. Send it this:
+
+```text wrap
+Read https://docs.secureview.tech/agents/remote.md and set up Study Kit remote mode so I can use it in ChatGPT chat.
+```
+
+It asks about your setup first, then installs, starts and checks everything. Adding the app in ChatGPT and typing the pairing code are left to you.
+
+To do it yourself, roughly:
+
+1. Install Study Kit and finish `monash setup` on your computer. You can [let your AI do it](/ai-setup/).
+2. Get an address by following [remote mode](/study-kit/remote/). There are three ways: a free quick tunnel (to try it), a Cloudflare tunnel with a fixed address (a computer at home that stays on is enough), or your own server (the most reliable). That page compares them so you can pick.
+3. In ChatGPT's settings, turn on developer mode and create a new app with your address (ending in `/mcp`) and OAuth as the sign-in method.
+4. Once it's added, type `monash` in a chat to pick it and ask "What's due this week?". It works on the web, in the desktop app and on your phone.
+
+<LinkCard title="Set up remote mode" description="Get an HTTPS address and add the app in ChatGPT." href="/study-kit/remote/" />
+
+<Aside>
+ChatGPT renames its menus now and then. Go by what your own ChatGPT shows.
+</Aside>
+
+## In Codex in the ChatGPT desktop app
+
+**Codex** in the ChatGPT desktop app runs on your own computer, so it can use the local Study Kit without remote mode. It's in both the Mac and Windows apps. It reads the same settings file as the Codex command line tool: `~/.codex/config.toml` on macOS, `C:\Users\YOUR-NAME\.codex\config.toml` on Windows.
+
+1. Install Study Kit and finish `monash setup`. You can also paste this into Codex and let it do the install:
+
+   ```text wrap
+   Read https://docs.secureview.tech/agents/study-kit.md and set up Monash Study Kit on my computer, then connect it to Codex.
+   ```
+
+2. Connect it, if the AI didn't already:
+
+   ```bash
+   monash connect codex
+   ```
+
+3. Fully quit the ChatGPT app and open it again. On macOS press ⌘Q. On Windows close the window, and if ChatGPT is still in the system tray at the bottom right, right-click it and quit.
+
+4. Start a new chat in **Codex** and type `/mcp`. `monash` should be listed as enabled. Then just ask "What's due this week?" in your own words. You don't have to write any code.
+
+Can't find Codex? Update the ChatGPT app first.
+
+This only works inside Codex. For ChatGPT chat you still need remote mode above. If `monash` doesn't show up in `/mcp`, [open an issue](https://github.com/Waldo0926/monash-study-kit/issues).
+
+## Don't want either?
+
+[Claude Desktop](https://claude.ai/download) is the most tested app, and `monash setup` connects it for you. You can also skip AI and use the [`monash` command](/study-kit/cli/), for example `monash todo`.

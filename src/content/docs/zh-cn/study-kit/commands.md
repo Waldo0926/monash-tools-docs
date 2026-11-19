@@ -1,11 +1,11 @@
 ---
 title: 命令速查
-description: 所有 monash 命令、输出格式和退出码。
+description: 所有 monash 命令、输出格式和退出码
 ---
 
 | 命令 | 作用 |
 | --- | --- |
-| `monash setup` | 第一次设置。`monash setup claude` 只重新接进 Claude |
+| `monash setup` | 第一次设置<br>`monash setup claude` 只重新接进 Claude |
 | `monash status` | 登录状态、上次同步时间；接上的话也包括邮箱和考勤 |
 | `monash help` | 能做的所有事，每条附示例问法和对应命令 |
 | `monash doctor` | 体检，告诉你每个问题怎么修 |
@@ -13,18 +13,20 @@ description: 所有 monash 命令、输出格式和退出码。
 | `monash todo` | 本周：截止、可能漏交、Ed 没做完的 lesson、公告、未读回复 |
 | `monash semester [--days 7] [--ics [路径]]` | 1.6.0 起：截止、Ed lesson 和回复、本地考勤缓存放在一页；`--ics` 把截止日期导出成私有日历文件（一次性快照，不会自动更新） |
 | `monash due [FIT2102]` | 截止日期 |
+| `monash changes [--days 7] [--since 时间]` | 课程有什么变化：新上传或改过的文件、作业说明、截止时间、老师的新回复，附链接<br>第一次同步只记下起点 |
 | `monash grep "monad" [FIT2102]` | 全文搜索，带页码或时间戳 |
-| `monash export FIT2109 [--sync] [--refresh-google] [--format pdf\|both\|md] [--to 文件夹] [--no-ask] [--dir] [--open] [--json]` | 1.11.2 整课资料包；[参数和前置条件](/zh-cn/study-kit/materials/) |
+| `monash export FIT2109 [--sync] [--refresh-google] [--format pdf\|both\|md] [--to 文件夹] [--no-ask] [--dir] [--open] [--json]` | 整课资料包；[参数和前置条件](/zh-cn/study-kit/materials/) |
 | `monash google login [--client JSON]` / `status` / `logout` | 课程 Google 文件独立 Drive 只读授权、状态、吊销 |
 | `monash --profile NAME setup` / `sync` / `export FIT2109` | 选择隔离的课程资料账号；命名账号强制 materials-only |
 | `monash profile list` / `remove NAME [--all] [--yes]` | 从默认账号查看或清理 profile；`--all` 包含课件与数据库 |
 | `monash move "D:\MonashStudyKit"` | 移动默认账号的资料、数据库、凭据和设置；命名账号不能独立移动 |
-| `monash sync [FIT2109] [--refresh-google]` | 马上同步。`--dry-run` 只列出 Moodle 会下载什么 |
+| `monash sync [FIT2109] [--refresh-google]` | 马上同步<br>`--dry-run` 只列出 Moodle 会下载什么，`--retry-failed` 只重试上次失败的部分 |
 | `monash login` / `monash login ed` | 登录 Moodle / 换 Ed 令牌 |
 | `monash courses` | 重新选要跟踪的课 |
 | `monash open [ed]` | 打开课件文件夹；`ed`：Ed Lessons 的课件，按 课号/周/lesson 分好（1.7.0 起） |
 | `monash library [--open] [--port 8766]` | 在浏览器里翻和下载已同步的课件（[说明](/zh-cn/study-kit/cli/#在浏览器里翻课件)） |
 | `monash moodle grades [FIT2102]` | 成绩和反馈 |
+| `monash moodle submission <id>` | 某个作业你（或你们组）交了什么，以及完整的评分反馈<br>id 用作业列表里的 activity ID |
 | `monash moodle assignments --missing` | 可能漏交的作业 |
 | `monash moodle news` / `find` / `get` / `messages` / `calendar` | 公告 / 找活动 / 下载单个文件 / 私信 / 日历订阅链接 |
 | `monash moodle ls FIT2109 5` | 某门课或某周已同步的文件 |
@@ -33,20 +35,23 @@ description: 所有 monash 命令、输出格式和退出码。
 | `monash ed read FIT2109 "W3 Pre-Class"` | 整节 lesson 转成 Markdown，附测验题 |
 | `monash ed export FIT2109 [--module "Week 3"] [--to 文件夹] [--open]` | 1.7.0 起：整门课的 Ed 课件按周打包成 zip，默认存到“下载”（[说明](/zh-cn/study-kit/cli/#把整门课的-ed-课件打包)） |
 | `monash media` | 转写录播（要装[录播字幕](/zh-cn/study-kit/recordings/)） |
-| `monash config [key] [value]` | 看或改设置，改完重启 AI 软件 |
+| `monash config [key] [value]` | 看或改设置，改完[重启 AI 软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件) |
 | `monash connect [软件]` | 接进 Codex、Cursor、VS Code、Windsurf 或 Gemini CLI（[其他 AI 软件](/zh-cn/study-kit/other-clients/)） |
-| `monash remote serve` / `pair` / `clients` / `revoke` | 可选：自己托管远程 MCP 服务器（[自己托管](/zh-cn/study-kit/remote/)） |
+| `monash remote serve` / `pair` / `clients` / `revoke` | 可选：远程模式，给 ChatGPT 聊天和手机用（[远程模式](/zh-cn/study-kit/remote/)） |
 | `monash gmail login` / `sync` / `todo` / `search` / `thread` | 可选的学校邮箱：接上 / 同步（显示进度）/ 未读邮件待办 / 离线搜索 / 读对话（[详细](/zh-cn/study-kit/mail-attendance/)） |
 | `monash gmail draft` / `send-draft` / `labels` | 预览邮箱操作；加 `--confirm` 才执行 |
 | `monash attendance login` / `status` / `sync` / `overview` / `codes` / `probe` | 可选的考勤：接上 / 状态和登录时长 / 读门户 / 已保存的班次 / 找签到码 / 对照两种读法 |
+| `monash attendance renew` / `maintain` | 考勤登录过期时，用你电脑上已有的浏览器登录状态试着自动恢复；需要密码或 MFA 时会停下来告诉你 |
 | `monash update` | 更新到最新版，保留你装过的可选部分 |
 | `monash uninstall` | 从 Claude 和其他 AI 软件移除，可选删除所有数据 |
 
-每个命令都有 `--help`。
+每个命令都有 `--help`
 
 ## 输出
 
-对 `--help` 列出这些选项的查询/导出命令，`--json` 输出 JSON，`--text` 强制文本，接管道时自动选择 JSON。这些参数并非所有命令都支持：例如 Google 服务命令本身就输出 JSON，安装和配置命令则有各自的输出。
+对 `--help` 列出这些选项的查询/导出命令，`--json` 输出 JSON，`--text` 强制文本，接管道时自动选择 JSON
+
+这些参数并非所有命令都支持：例如 Google 服务命令本身就输出 JSON，安装和配置命令则有各自的输出
 
 ## 退出码
 

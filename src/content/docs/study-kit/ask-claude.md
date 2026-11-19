@@ -12,6 +12,7 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | "What do I need to do this week?" | Deadlines, work you may have missed, unfinished Ed lessons, latest announcements |
 | "What's due for FIT2102 in the next two weeks?" | Moodle deadlines. Works even when your Moodle login has expired |
 | "Did I forget to submit anything?" | Assignment submission status |
+| "What changed in my units this week?" | New or edited files, assignment instructions, moved deadlines and staff replies since earlier syncs |
 
 ## Course files
 
@@ -39,6 +40,7 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | You can ask | What it checks |
 | --- | --- |
 | "What's my grade in FIT2109 so far?" | Totals, each item's mark and feedback |
+| "Read what I submitted for A1 and go through the marker's comments" | Your submitted files or online text and the full feedback for that assignment |
 | "Any recent announcements for FIT2102?" | Moodle announcements |
 | "Has anyone messaged me on Moodle?" | Moodle messages, read-only |
 
@@ -78,7 +80,7 @@ Apps without panel support still get the same text answer as before. Whether a p
 
 ## Ready-made prompts
 
-In Claude's **+** menu, monash offers seven presets (other apps show MCP prompts in their own place, and some do not show them): a feature overview, this week's to-dos, Ed catch-up, find a topic, quiz review, grades with feedback, and **作业要求** (assignment requirements). Give the last one an assignment name: it reads the brief, rubric and staff answers on Ed, then lists what to submit, marking criteria, deadlines, format and Ed clarifications, each with its source. Their titles are in Chinese. A preset is only sent when you click it, so it costs nothing otherwise.
+In Claude's **+** menu, monash offers seven ready-made prompts. Other apps show them somewhere else, and some don't show them at all. They are: a feature overview, this week's to-dos, Ed catch-up, find a topic, quiz review, grades with feedback, and **作业要求** (assignment requirements). Give the last one an assignment name. It reads the brief, rubric and staff answers on Ed, then lists what to submit, marking criteria, deadlines, format and Ed clarifications, each with its source. Their titles are in Chinese. A preset is only sent when you click it, so it costs nothing otherwise.
 
 In a terminal, `monash help` prints every feature with an example question and the matching command.
 

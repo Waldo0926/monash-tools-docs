@@ -13,18 +13,20 @@ description: Every monash command, output formats and exit codes.
 | `monash todo` | This week: deadlines, possibly missed work, unfinished Ed lessons, announcements, unread replies |
 | `monash semester [--days 7] [--ics [path]]` | 1.6.0 and later: deadlines, Ed lessons and replies and the local attendance cache on one page; `--ics` exports the deadlines as a private calendar file (a one-off snapshot, not a live feed) |
 | `monash due [FIT2102]` | Deadlines |
+| `monash changes [--days 7] [--since TIME]` | What changed in your units: new or edited files, assignment instructions, deadline times and staff replies, with links. The first sync only records a starting point |
 | `monash grep "monad" [FIT2102]` | Full-text search with page numbers or timestamps |
-| `monash export FIT2109 [--sync] [--refresh-google] [--format pdf\|both\|md] [--to folder] [--no-ask] [--dir] [--open] [--json]` | 1.11.2 whole-course package; [options and prerequisites](/study-kit/materials/) |
+| `monash export FIT2109 [--sync] [--refresh-google] [--format pdf\|both\|md] [--to folder] [--no-ask] [--dir] [--open] [--json]` | Whole-course package; [options and prerequisites](/study-kit/materials/) |
 | `monash google login [--client JSON]` / `status` / `logout` | Separate read-only Drive authorization, status and revocation for course files |
 | `monash --profile NAME setup` / `sync` / `export FIT2109` | Select an isolated materials-only account |
 | `monash profile list` / `remove NAME [--all] [--yes]` | Manage profiles from the default account; `--all` also deletes materials/databases |
 | `monash move "D:\MonashStudyKit"` | Move the default home including files, databases, credentials and settings; named profiles cannot move independently |
-| `monash sync [FIT2109] [--refresh-google]` | Sync now. `--dry-run` lists what Moodle would download |
+| `monash sync [FIT2109] [--refresh-google]` | Sync now. `--dry-run` lists what Moodle would download. `--retry-failed` retries only what failed last time |
 | `monash login` / `monash login ed` | Log in to Moodle / replace the Ed token |
 | `monash courses` | Pick tracked units again |
 | `monash open [ed]` | Open the course-files folder; `ed`: the Ed Lessons materials, sorted by unit, week and lesson (1.7.0 and later) |
 | `monash library [--open] [--port 8766]` | Browse and download synced files in your browser ([details](/study-kit/cli/#browse-your-course-files)) |
 | `monash moodle grades [FIT2102]` | Grades and feedback |
+| `monash moodle submission <id>` | What you (or your group) submitted for one assignment and the full marking feedback. Use the activity ID from the assignment list |
 | `monash moodle assignments --missing` | Possibly missed assignments |
 | `monash moodle news` / `find` / `get` / `messages` / `calendar` | Announcements / find an activity / download one file / messages / calendar subscription link |
 | `monash moodle ls FIT2109 5` | Files already synced for a unit or week |
@@ -33,12 +35,13 @@ description: Every monash command, output formats and exit codes.
 | `monash ed read FIT2109 "W3 Pre-Class"` | A whole lesson as Markdown with its quiz questions |
 | `monash ed export FIT2109 [--module "Week 3"] [--to <folder>] [--open]` | 1.7.0 and later: a unit's Ed materials as one zip sorted by week, saved to Downloads ([details](/study-kit/cli/#download-a-units-ed-materials-as-one-zip)) |
 | `monash media` | Transcribe lecture recordings (needs the [media extra](/study-kit/recordings/)) |
-| `monash config [key] [value]` | View or change settings. Restart your AI app afterwards |
+| `monash config [key] [value]` | View or change settings. [Restart your AI app](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app) afterwards |
 | `monash connect [app]` | Connect to Codex, Cursor, VS Code, Windsurf or Gemini CLI ([Other AI apps](/study-kit/other-clients/)) |
-| `monash remote serve` / `pair` / `clients` / `revoke` | Optional: host your own remote MCP server ([Host it yourself](/study-kit/remote/)) |
+| `monash remote serve` / `pair` / `clients` / `revoke` | Optional: host your own remote MCP server ([Remote mode](/study-kit/remote/)) |
 | `monash gmail login` / `sync` / `todo` / `search` / `thread` | Optional school mail: connect / sync with progress / unread inbox mail / offline search / read a thread ([details](/study-kit/mail-attendance/)) |
 | `monash gmail draft` / `send-draft` / `labels` | Preview a mailbox action; add `--confirm` to run it |
 | `monash attendance login` / `status` / `sync` / `overview` / `codes` / `probe` | Optional attendance: connect / status and login lifetime / read the portal / saved classes / find codes / compare both ways of reading |
+| `monash attendance renew` / `maintain` | Try to bring back an expired attendance login using the browser profile already on your computer. It stops and tells you when a password or MFA is needed |
 | `monash update` | Update to the latest version, keeping the optional parts you installed |
 | `monash uninstall` | Remove it from Claude and other AI apps, and optionally delete all data |
 

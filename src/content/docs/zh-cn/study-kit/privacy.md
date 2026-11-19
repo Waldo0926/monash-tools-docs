@@ -1,6 +1,6 @@
 ---
 title: 隐私和安全
-description: Study Kit 把数据存在哪、存了哪些凭据、AI 软件能看到什么，以及怎么彻底删除。
+description: Study Kit 把数据存在哪、存了哪些凭据、AI 软件能看到什么，以及怎么彻底删除
 ---
 
 ## 数据存在哪
@@ -10,7 +10,9 @@ description: Study Kit 把数据存在哪、存了哪些凭据、AI 软件能看
 | macOS | `~/Library/Application Support/monash-study-kit` |
 | Windows | `%LOCALAPPDATA%\monash-study-kit` |
 
-里面有课件（`files`）、数据库（`data`）、登录凭据（`secrets`，只有你自己的账户能读）和登录窗口的配置（`browser-profile`）。运行 `monash open` 可以打开课件文件夹。
+里面有课件（`files`）、数据库（`data`）、登录凭据（`secrets`，只有你自己的账户能读）和登录窗口的配置（`browser-profile`）
+
+运行 `monash open` 可以打开课件文件夹
 
 ## 存了哪些凭据
 
@@ -18,37 +20,69 @@ description: Study Kit 把数据存在哪、存了哪些凭据、AI 软件能看
 - Ed 的 API 令牌
 - Moodle 日历订阅链接
 
-都只在你电脑上，只发给 Moodle 或 Ed 本身。**不要把 `secrets` 文件夹发给任何人。**
+都只在你电脑上，只发给 Moodle 或 Ed 本身
 
-用了可选的[远程模式](/zh-cn/study-kit/remote/)的话，`secrets/remote-mcp.db` 里还会记下配对过的软件。只存令牌的哈希，不存令牌本身。
+**不要把 `secrets` 文件夹发给任何人**：
+
+用了可选的[远程模式](/zh-cn/study-kit/remote/)的话，`secrets/remote-mcp.db` 里还会记下配对过的软件
+
+只存令牌的哈希，不存令牌本身
 
 ## 学校邮箱和考勤
 
-只有[接上](/zh-cn/study-kit/mail-attendance/)以后才有。接上后 `secrets` 里还会有 Google 的授权令牌和考勤门户的登录状态，`data` 里有邮件和考勤记录的副本。不存任何密码。
+只有[接上](/zh-cn/study-kit/mail-attendance/)以后才有
 
-安装包里自带一个 Google 应用，这样你不用自己建 Google Cloud 项目也能登录。它只是告诉 Google 是哪个应用在请求授权，邮件从 Google 直接到你电脑，不经过维护者。随时可以在 [myaccount.google.com/permissions](https://myaccount.google.com/permissions) 收回授权。完整的[隐私政策](https://github.com/Waldo0926/monash-study-kit/blob/main/PRIVACY.md)里写了 Google 用户数据的规定。
+接上后 `secrets` 里还会有 Google 的授权令牌和考勤门户的登录状态，`data` 里有邮件和考勤记录的副本
 
-起草、发送草稿、改标签和签到，每一项都要你确认才执行。不会彻底删除任何邮件。只想让它读邮件，就用 `monash gmail login --read-only` 接，Google 只给读的权限。
+不存任何密码
+
+安装包里自带一个 Google 应用，这样你不用自己建 Google Cloud 项目也能登录
+
+它只是告诉 Google 是哪个应用在请求授权，邮件从 Google 直接到你电脑，不经过维护者
+
+随时可以在 [myaccount.google.com/permissions](https://myaccount.google.com/permissions) 收回授权
+
+完整的[隐私政策](https://github.com/Waldo0926/monash-study-kit/blob/main/PRIVACY.md)里写了 Google 用户数据的规定
+
+起草、发送草稿、改标签和签到，每一项都要你确认才执行
+
+不会彻底删除任何邮件
+
+只想让它读邮件，就用 `monash gmail login --read-only` 接，Google 只给读的权限
 
 ## AI 能看到什么
 
-只有你提问时工具返回的内容：截止日期列表、某个帖子的正文、某份课件的文字，接上邮箱的话还有你问到的邮件。令牌和 cookie 永远不会发给 AI。也不要把 Ed 令牌贴进聊天，只在终端里输入。
+只有你提问时工具返回的内容：截止日期列表、某个帖子的正文、某份课件的文字，接上邮箱的话还有你问到的邮件
 
-用[远程模式](/zh-cn/study-kit/remote/)时，配对的软件只有在你配对时勾选了，才拿得到邮件或考勤的结果。
+令牌和 cookie 永远不会发给 AI
+
+也不要把 Ed 令牌贴进聊天，只在终端里输入
+
+用[远程模式](/zh-cn/study-kit/remote/)时，配对的软件只有在你配对时勾选了，才拿得到邮件或考勤的结果
 
 ## 课件浏览页
 
-`monash library` 只监听 `127.0.0.1`，别的设备连不上。它只提供 `monash sync` 登记过的文件，课件文件夹以外的路径一律拒绝，也不会提供 `secrets` 文件夹或登录窗口的配置。页面没有密码，不要把它转发到公网。页面上的**一键打包 Ed 课件**也一样，只打包本机已经登记过的 Ed 文件，zip 在你电脑上生成。
+`monash library` 只监听 `127.0.0.1`，别的设备连不上
 
-`monash ed export` 和 AI 里的打包只往你自己的“下载”文件夹（或你用 `--to` 指定的地方）写一个 zip，不联网，也不会改 Moodle 和 Ed 上的任何东西。远程模式不提供这个工具，免得 zip 写到服务器上。
+它只提供 `monash sync` 登记过的文件，课件文件夹以外的路径一律拒绝，也不会提供 `secrets` 文件夹或登录窗口的配置
+
+页面没有密码，不要把它转发到公网
+
+页面上的**一键打包 Ed 课件**也一样，只打包本机已经登记过的 Ed 文件，zip 在你电脑上生成
+
+`monash ed export` 和 AI 里的打包只往你自己的“下载”文件夹（或你用 `--to` 指定的地方）写一个 zip，不联网，也不会改 Moodle 和 Ed 上的任何东西
+
+远程模式不提供这个工具，免得 zip 写到服务器上
 
 ## 对 Moodle 和 Ed 做什么
 
-只读。请求之间有间隔，不会像爬虫一样猛打学校系统。
+只读，请求之间有间隔，不会像爬虫一样猛打学校系统
 
 ## 检查更新
 
-每天最多问一次 GitHub 有没有新版本，不带任何个人信息。不想要的话：`monash config update_check false`。
+每天最多问一次 GitHub 有没有新版本，不带任何个人信息
+
+不想要的话：`monash config update_check false`
 
 ## 彻底删除
 
@@ -57,14 +91,34 @@ monash uninstall
 uv tool uninstall monash-study-kit
 ```
 
-`monash uninstall` 会把它从 Claude 和其他 AI 软件里移除，并问你要不要删掉所有数据。删除之前，它会先撤销默认账号和所有命名账号的 Google Drive、Gmail 授权，不会让授权继续留在 Google 那边。撤销失败时什么都不会删。最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌。
+`monash uninstall` 会把它从 Claude 和其他 AI 软件里移除，并问你要不要删掉所有数据
+
+删除之前，它会先撤销默认账号和所有命名账号的 Google Drive、Gmail 授权，不会让授权继续留在 Google 那边
+
+撤销失败时什么都不会删
+
+最后到 Ed 的 [API 令牌页面](https://edstem.org/au/settings/api-tokens)删掉令牌
 
 ## 怎么验证的
 
-项目的[安全说明](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/security.md)写了保护了什么、怎么测试。要私下报告问题，见 [SECURITY.md](https://github.com/Waldo0926/monash-study-kit/blob/main/SECURITY.md)。
+项目的[安全说明](https://github.com/Waldo0926/monash-study-kit/blob/main/docs/security.md)写了保护了什么、怎么测试
+
+要私下报告问题，见 [SECURITY.md](https://github.com/Waldo0926/monash-study-kit/blob/main/SECURITY.md)
 
 ## Google 课程文件和账号隔离
 
-普通 `monash gmail login` 默认申请 `gmail.modify`；只读请加 `--read-only`，申请 `gmail.readonly`。课程文件另用 `monash google login`，只申请 `drive.readonly`，保存在 `secrets/google-drive-token.json`，与 Gmail 令牌分离。该 scope 允许读取账号可访问的全部 Drive 文件，导出器只处理课程链接；不能改文件，也不授予邮箱权限。API 受限时可尝试专用浏览器会话，Cookie 只在内存中。
+普通 `monash gmail login` 默认申请 `gmail.modify`；只读请加 `--read-only`，申请 `gmail.readonly`
 
-`monash google logout` 先吊销授权，失败则保留令牌供重试。命名 profile 把凭据、数据库、课件和浏览器会话隔离在 `profiles/NAME`，强制只导课程资料，跳过 Gmail、考勤和 Ed 讨论区，不可配置远程服务或 `monash connect`。整课包排除个人提交、成绩、反馈、邮件、私信和考勤，但仍是普通本地文件，分享前要检查。[详细说明](/zh-cn/study-kit/materials/)。
+课程文件另用 `monash google login`，只申请 `drive.readonly`，保存在 `secrets/google-drive-token.json`，与 Gmail 令牌分离
+
+该 scope 允许读取账号可访问的全部 Drive 文件，导出器只处理课程链接；不能改文件，也不授予邮箱权限
+
+API 受限时可尝试专用浏览器会话，Cookie 只在内存中
+
+`monash google logout` 先吊销授权，失败则保留令牌供重试
+
+命名 profile 把凭据、数据库、课件和浏览器会话隔离在 `profiles/NAME`，强制只导课程资料，跳过 Gmail、考勤和 Ed 讨论区，不可配置远程服务或 `monash connect`
+
+整课包排除个人提交、成绩、反馈、邮件、私信和考勤，但仍是普通本地文件，分享前要检查
+
+[详细说明](/zh-cn/study-kit/materials/)

@@ -1,6 +1,6 @@
 ---
 title: 安装 Study Kit
-description: 一条命令装好 uv 和 monash 命令并开始设置。不用装 Python，也不用重开终端。
+description: 一条命令装好 uv 和 monash 命令并开始设置，不用装 Python，也不用重开终端
 ---
 
 import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
@@ -28,22 +28,24 @@ import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 
 <Steps>
 
-1. 没有 [uv](https://docs.astral.sh/uv/) 的话先装上。uv 是 Python 工具管理器，自带 Python，你不用自己装。
-2. 用 uv 装好 `monash` 命令。先从 PyPI 装，装不上就从 GitHub 装最新代码。
-3. 把 uv 的工具目录加进 PATH，以后新开的终端都能直接用 `monash`。
-4. 在同一个窗口里开始 [`monash setup`](/zh-cn/study-kit/setup/)。
+1. 没有 [uv](https://docs.astral.sh/uv/) 的话先装上  
+   uv 是 Python 工具管理器，自带 Python，你不用自己装
+2. 用 uv 装好 `monash` 命令  
+   先从 PyPI 装，装不上就从 GitHub 装最新代码
+3. 把 uv 的工具目录加进 PATH，以后新开的终端都能直接用 `monash`
+4. 在同一个窗口里开始 [`monash setup`](/zh-cn/study-kit/setup/)
 
 </Steps>
 
-运行前可以先看看脚本内容：[install.sh](/study-kit/install.sh) 和 [install.ps1](/study-kit/install.ps1)。
+运行前可以先看看脚本内容：[install.sh](/study-kit/install.sh) 和 [install.ps1](/study-kit/install.ps1)
 
 <Aside type="tip">
-只安装、不进入设置（比如让 AI 帮你装的时候）：macOS 上加 `--no-setup`，即 `curl -LsSf https://docs.secureview.tech/study-kit/install.sh | sh -s -- --no-setup`；Windows 上先运行 `$env:MONASH_NO_SETUP = "1"`。
+只安装、不进入设置（比如让 AI 帮你装的时候）：macOS 上加 `--no-setup`，即 `curl -LsSf https://docs.secureview.tech/study-kit/install.sh | sh -s -- --no-setup`；Windows 上先运行 `$env:MONASH_NO_SETUP = "1"`
 </Aside>
 
 ## 或者一步一步来
 
-想看清每一步的话，下面做的是同样的事。
+想看清每一步的话，下面做的是同样的事
 
 <Tabs syncKey="os">
   <TabItem label="macOS" icon="apple">
@@ -78,7 +80,9 @@ import { Tabs, TabItem, Steps, Aside } from '@astrojs/starlight/components';
 uv tool install https://github.com/Waldo0926/monash-study-kit/archive/refs/heads/main.zip
 ```
 
-学校邮箱和考勤是可选的，默认不装。设置完以后在 AI 软件里说一声就能接上，见[学校邮箱和考勤](/zh-cn/study-kit/mail-attendance/)。
+学校邮箱和考勤是可选的，默认不装
+
+设置完以后在 AI 软件里说一声就能接上，见[学校邮箱和考勤](/zh-cn/study-kit/mail-attendance/)
 
 ## 确认装好了
 
@@ -86,12 +90,20 @@ uv tool install https://github.com/Waldo0926/monash-study-kit/archive/refs/heads
 monash --version
 ```
 
-会显示 `monash-study-kit` 和版本号。如果提示找不到 `monash`，新开一个终端窗口再试。
+会显示 `monash-study-kit` 和版本号
+
+如果提示找不到 `monash`，新开一个终端窗口再试
 
 ## Linux
 
-同一个安装脚本也能用。Claude Desktop 没有 Linux 版，请用 [Claude Code](https://claude.com/claude-code) 或[其他 AI 软件](/zh-cn/study-kit/other-clients/)。
+同一个安装脚本也能用
+
+Claude Desktop 没有 Linux 版，请用 [Claude Code](https://claude.com/claude-code) 或[其他 AI 软件](/zh-cn/study-kit/other-clients/)
 
 ## 课程资料导出
 
-当前指南覆盖 1.15.0。安装后执行 `monash export --help`。Google 资料需要可选 `[gmail]` OAuth 依赖与独立 `monash google login`；详见[整课导出](/zh-cn/study-kit/materials/)。
+当前指南覆盖 1.15.0
+
+安装后执行 `monash export --help`
+
+Google 资料需要可选 `[gmail]` OAuth 依赖与独立 `monash google login`；详见[整课导出](/zh-cn/study-kit/materials/)

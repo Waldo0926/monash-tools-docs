@@ -23,6 +23,7 @@ export default defineConfig({
       logo: { src: './src/assets/logo.svg' },
       components: {
         Sidebar: './src/components/docs/Sidebar.astro',
+        Footer: './src/components/docs/Footer.astro',
       },
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/Waldo0926' }],
       favicon: '/favicon.svg',
@@ -33,9 +34,9 @@ export default defineConfig({
         { tag: 'link', attrs: { rel: 'alternate', type: 'text/plain', href: '/llms.txt', title: 'llms.txt' } },
       ],
       sidebar: [
-        group('Start here', '从这里开始', '', ['choose', 'ai-setup']),
+        group('Start here', '从这里开始', '', ['choose', 'ai-setup', 'contact']),
         group('Study Kit', 'Study Kit', 'study-kit', [
-          'index', 'install', 'setup', 'ask-claude', 'mail-attendance', 'materials', 'cli', 'other-clients', 'remote', 'recordings', 'privacy', 'troubleshooting', 'commands', 'update',
+          'index', 'install', 'setup', 'chatgpt', 'ask-claude', 'mail-attendance', 'materials', 'cli', 'other-clients', 'remote', 'recordings', 'privacy', 'troubleshooting', 'commands', 'update',
         ]),
         group('Monash Hub', 'Monash Hub', 'monash-hub', ['index', 'app']),
         group('Ed Web', 'Ed Web', 'ed-web', ['index']),

@@ -9,7 +9,7 @@ Follow these steps in order. Run commands yourself where it says so. Stop and ha
 - **Never ask for, accept or store the student's Ed token, Monash password or MFA code.** If the student pastes an Ed token into the chat, do not use it. Tell them to delete that token at https://edstem.org/au/settings/api-tokens and create a new one during setup in their own terminal.
 - Do not edit files under the Study Kit data folder (`~/Library/Application Support/monash-study-kit` on macOS, `%LOCALAPPDATA%\monash-study-kit` on Windows) and never print anything from its `secrets` folder.
 - Do not run `monash setup` yourself. It is interactive and needs the student.
-- Do not start `monash remote serve` or `monash library` for the student unless they ask. Remote mode is an optional self-hosting setup that needs their own server and domain: https://docs.secureview.tech/study-kit/remote/
+- Do not start `monash remote serve` or `monash library` for the student unless they ask. Remote mode (for ChatGPT chat, or Claude on the web and phone) has its own guide: https://docs.secureview.tech/agents/remote.md
 - **Never confirm a mail or attendance action on the student's behalf.** Drafting, sending a draft, changing labels and checking in each show a full preview first. Run one only after the student confirms that exact action in their own words. In a terminal, `monash gmail draft`, `send-draft` and `labels` only preview; add `--confirm` only after the student confirms. Never retry a write that failed without checking first. Nothing in Study Kit permanently deletes mail.
 - Talk to the student in the language they use with you.
 
@@ -77,8 +77,10 @@ monash todo
 Tell the student:
 
 - In Claude Desktop, the **+** button in the chat box, then **Connectors**, should list **monash**. Restart Claude Desktop if it does not.
+- If they want it in Codex inside the ChatGPT desktop app, run `monash connect codex` for them (it shares `~/.codex/config.toml`, which is `%USERPROFILE%\.codex\config.toml` on Windows). Tell them to fully quit and reopen the app, start a new Codex chat and type /mcp to check monash is enabled.
+- If they want it in normal ChatGPT chat (web, desktop or phone), that needs remote mode with an HTTPS address and a paid plan with developer mode. Don't set that up silently; point them to https://docs.secureview.tech/study-kit/chatgpt/ and ask before going further. ChatGPT on the web needs remote mode, see https://docs.secureview.tech/study-kit/chatgpt/
 - If they use Codex, Cursor, VS Code, Windsurf or Gemini CLI instead, run `monash connect <client>` (see the next section) and tell them to restart that app.
-- They can now ask things like "What's due this week?", "Anything new on Ed?" or "Which slide covers recursion?".
+- They can now ask things like "What's due this week?", "Anything new on Ed?", "Which slide covers recursion?", "What changed in my units this week?" or "Read what I submitted for A1 and go through the marker's comments".
 - `monash login` signs in to Moodle again when the session expires; `monash update` updates.
 - Optional (Study Kit 1.5.0 or later): school mail and attendance. Mention them once. If the student wants them, see the next section.
 
@@ -120,7 +122,7 @@ After login, drafting, sending a draft, changing labels and checking in are on. 
 | monash missing in Codex, Cursor and others | `monash connect` to check, then `monash connect <client>` and restart the app |
 | Anything else | `monash doctor`, then https://docs.secureview.tech/study-kit/troubleshooting/ |
 
-## Optional: whole-course materials and isolated accounts (1.11.1)
+## Optional: whole-course materials and isolated accounts
 
 For a student who asks to export teaching materials, use the current guide:
 https://docs.secureview.tech/study-kit/materials/ (Chinese: /zh-cn/study-kit/materials/).

@@ -1,66 +1,71 @@
 ---
 title: Study Kit
-description: Connect Monash Moodle and Ed, plus optional school mail and attendance, to the AI app on your computer. Ask what is due, what is new on Ed, which slide covers a topic, or which emails need you. Synced data and credentials stay on your device by default; query results go to the AI provider you connect.
+description: Ask your AI app about your own Moodle and Ed. What is due, what is new on Ed, which slide covers a topic, what the marker said. School mail and attendance are optional. Runs on your computer.
 sidebar:
   label: Overview
 ---
 
 import { LinkCard, CardGrid, Aside } from '@astrojs/starlight/components';
 
-Study Kit connects Monash **Moodle** and **Ed** to the AI app on your computer: Claude, Codex (also inside the ChatGPT desktop app), Cursor and others. After setup you just ask:
+Study Kit lets the AI app on your computer (Claude, ChatGPT, Codex, Cursor and others) read your own Monash **Moodle** and **Ed**, so you can ask it instead of going through each site yourself.
 
-- "What's due this week?" Moodle deadlines, work you may have missed, unfinished Ed lessons, the latest announcements.
+## Install it the easy way
+
+If your AI app can run commands (Claude Code, Codex or Codex mode in the ChatGPT app, Cursor's agent, Gemini CLI), paste this and it installs everything for you:
+
+```text wrap
+Read https://docs.secureview.tech/agents/study-kit.md and set up Monash Study Kit on my computer.
+```
+
+You only do two things yourself: paste your Ed token and pass Monash MFA in a login window. The AI tells you when. [More on this](/ai-setup/), or [install it by hand](/study-kit/install/) with one command.
+
+## What you can ask
+
+- "What's due this week?" Deadlines, work you may have missed, unfinished Ed lessons, new announcements.
 - "Anything new on Ed? Has anyone replied to my question?"
-- "Which week of FIT2102 covered monads? Which slide deck, which page?"
-- "What does the A2 spec ask for?" "What's my current grade in FIT2109?"
-- "Quiz me on FIT2109 week 3." In apps that show MCP Apps panels, your to-dos, Ed lesson progress and quiz questions appear as small panels you can click.
-- New in 1.5.0, optional: "Anything in my school email I need to deal with?" and "Which classes haven't I checked in to?" See [School mail and attendance](/study-kit/mail-attendance/).
-- New in 1.7.0: "Zip up my FIT2109 Ed materials." The whole unit, sorted into week folders, with the PDFs, files attached in Ed pages and reading links. See [Download a unit's Ed materials](/study-kit/cli/#download-a-units-ed-materials-as-one-zip).
+- "Which week of FIT2102 covered monads? Which slides, which page?"
+- "What does the A2 spec ask for?" "What's my grade in FIT2109 so far?"
+- "Read what I submitted for A1 and go through the marker's comments with me."
+- "What changed in my units this week?" New files, edited assignment instructions, moved deadlines and staff replies.
+- "Quiz me on FIT2109 week 3."
+- "Zip up all my FIT2109 materials." Moodle files, Ed Lessons and linked Google files in one package, as PDF or Markdown. See [whole-course export](/study-kit/materials/).
+- Optional: "Anything in my school email I need to deal with?" and "Which classes haven't I checked in to?" See [School mail and attendance](/study-kit/mail-attendance/).
 
-Answers come from your real Moodle and Ed data, with sources like "Workshop 5 Slides, page 25". The AI finds the right file and reads only the pages it needs, so you do not download PDFs and upload them again.
+Answers come from your real Moodle and Ed, with a source like "Workshop 5 Slides, page 25". The AI opens the right file and reads only the pages it needs, so you don't download PDFs and upload them again.
 
-## Whole-course materials (1.11.2)
-
-`monash export FIT2109 --sync --format both --to "./exports"` packages Moodle files, Pages, Books, assignment instructions, Ed Lessons and linked Google files together, with local images and a missing-item index. PDF/Markdown, isolated profiles and materials-only mode are supported. See the [complete export guide](/study-kit/materials/) for separate read-only Google authorization, formats and retries.
-
-
-![Actual 1.11.2 offline export and ZIP contents (synthetic course data)](../../../assets/study-kit/course-export.png)
-
-Captured 3 November 2026. The demo deliberately includes a missing attachment and an unauthorized Google link; always check the export index.
-
-
-## Two parts
-
-- **The MCP server is for your AI app.** Moodle and Ed are behind Okta and MFA, so the AI cannot get in by itself. The server lets it look things up in the middle of a conversation.
-- **The `monash` command is for you.** It does what only a person should do (install, pass MFA, paste the Ed token) and works without any AI when you are out of usage. `monash todo` answers in about a second.
+![Whole-course export and the zip it makes, with made-up course data](../../../assets/study-kit/course-export.png)
 
 ## What it never does
 
-Everything it does with Moodle and Ed is **read-only**. Study Kit never submits assignments, attempts quizzes or posts on Ed. The optional [school mail and attendance](/study-kit/mail-attendance/) parts can draft mail, change labels or check you in, and only after you confirm each action. Course files, credentials and the database live on your computer by default and do not pass through this project's maintainer. MCP query results are sent to the AI client you choose, which has its own privacy policy.
+Moodle and Ed are **read-only**. It never submits assignments, attempts quizzes or posts on Ed. The optional mail and attendance parts can draft mail or check you in, and only after you see the full preview and confirm. Your files, logins and database stay on your computer. When you ask your AI app something, the results it looks up go to that AI app, like anything else you type there.
 
 ## You need
 
-An AI app is optional for standalone course export; the client requirements below apply only to MCP integration.
-
-- A computer (macOS, Windows or Linux). Phone apps cannot reach it by default: they only connect to MCP servers on the internet, and Study Kit runs on your computer so your login stays there. To use it from ChatGPT or from Claude on the web and phone, [give it an HTTPS address](/study-kit/remote/) with your own server or a free Cloudflare tunnel.
-- An AI app that supports local MCP. Tested locally with **Claude Desktop** ([download](https://claude.ai/download)) and **Claude Code**. **ChatGPT** and **Codex** have also passed read-only course queries through a private remote integration using the v1.3.0 core. One-command local setup is available for Codex, Cursor, VS Code, Windsurf and Gemini CLI; see [Other AI apps](/study-kit/other-clients/) for connection modes and test coverage. From 1.4.0, ChatGPT and Claude on the web or phone can also use it through the optional remote mode you host yourself; see [Host it yourself](/study-kit/remote/).
-- **Chrome, Edge or Brave**, used for Moodle login and offline PDF generation. The Edge that comes with Windows is fine.
+- A computer with Windows, macOS or Linux. On an iPhone, iPad or Android phone you can use it through the ChatGPT or Claude app once it runs on a computer or server in [remote mode](/study-kit/remote/).
+- An AI app:
+  - **Claude Desktop** ([download](https://claude.ai/download)) and **Claude Code** are the most tested, and `monash setup` connects them for you
+  - **ChatGPT** chat on the web, desktop and phone works through [remote mode](/study-kit/remote/). Codex in the ChatGPT desktop app takes one command. See [Use it with ChatGPT](/study-kit/chatgpt/)
+  - Codex, Cursor, VS Code, Windsurf and Gemini CLI also take one command, see [other AI apps](/study-kit/other-clients/)
+  - Claude on the web or phone also needs [remote mode](/study-kit/remote/)
+  - You don't need an AI app at all to export course files or use the `monash` command
+- **Chrome, Edge or Brave** for the Moodle login window. The Edge that comes with Windows is fine.
 - A Monash account.
 
 <Aside>
-Times are handled as UTC+8 by default. On an Australian campus, run `monash config tz_offset 10` (11 during daylight saving).
+Times follow Malaysia (UTC+8) by default. On an Australian campus run `monash config timezone Australia/Melbourne`, which also handles daylight saving.
 </Aside>
 
-## Get started
+## Next
 
 <CardGrid>
-  <LinkCard title="Install" description="One command on macOS or Windows." href="/study-kit/install/" />
+  <LinkCard title="Install" description="One command on macOS or Windows, or let your AI do it." href="/study-kit/install/" />
   <LinkCard title="First-time setup" description="Ed token, Moodle login, units, your AI app. About five minutes." href="/study-kit/setup/" />
+  <LinkCard title="Use it with ChatGPT" description="Chat on web, desktop and phone, or Codex in the desktop app." href="/study-kit/chatgpt/" />
   <LinkCard title="What to ask your AI" description="Example questions for each kind of task." href="/study-kit/ask-claude/" />
-  <LinkCard title="Use it without AI" description="The same answers in your terminal, no usage needed." href="/study-kit/cli/" />
-  <LinkCard title="School mail and attendance" description="Optional since 1.5.0. Connect them by asking your AI app." href="/study-kit/mail-attendance/" />
+  <LinkCard title="Use it without AI" description="The same answers in your terminal." href="/study-kit/cli/" />
+  <LinkCard title="School mail and attendance" description="Optional. Connect them by asking your AI app." href="/study-kit/mail-attendance/" />
 </CardGrid>
 
-Check the [privacy and security guide](/study-kit/privacy/) before connecting personal mail or attendance data.
+Have a look at [privacy and security](/study-kit/privacy/) before connecting mail or attendance.
 
 Source code: [Waldo0926/monash-study-kit](https://github.com/Waldo0926/monash-study-kit) (MIT).

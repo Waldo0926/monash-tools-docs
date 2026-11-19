@@ -56,7 +56,7 @@ const storyPages = Array.from({ length: 40 }, (_, i) => ({
           {t.hero.cmds.map((cmd, i) => (
             <div class="cmd-panel" data-panel hidden={i !== 0}>
               <div class="cmd">
-                <span class="prompt" aria-hidden="true">{i < 2 ? '$' : '›'}</span>
+                <span class="prompt" aria-hidden="true">{i === 0 ? '›' : '$'}</span>
                 <code>{cmd}</code>
                 <button class="copy" type="button" data-copy={cmd} aria-label={t.copy}>
                   <span class="i-copy"><Copy size={15} /></span><span class="i-done"><Check size={15} /></span>
@@ -186,14 +186,15 @@ const storyPages = Array.from({ length: 40 }, (_, i) => ({
       <span class="accent">{t.agent.h2b}</span>
     </h2>
     <p class="agent-p" data-rise>{t.agent.p}</p>
-    <div class="cmd cmd-wide" data-rise>
-      <span class="prompt" aria-hidden="true">›</span>
-      <code>{t.agent.prompt}</code>
-      <button class="copy" type="button" data-copy={t.agent.prompt} aria-label={t.copy}>
-        <span class="i-copy"><Copy size={15} /></span><span class="i-done"><Check size={15} /></span>
-      </button>
+    <div class="help-grid" data-rise>
+      {t.agent.cards.map(([title, body, href]) => (
+        <a class="help-card" href={link(href)}>
+          <strong>{title}</strong>
+          <span>{body}</span>
+          <ArrowRight size={16} />
+        </a>
+      ))}
     </div>
-    <a class="text-link center" href={link('ai-setup/')} data-rise>{t.agent.more}<ArrowRight size={15} /></a>
   </section>
 </Shell>
 

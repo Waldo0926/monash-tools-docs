@@ -1,0 +1,78 @@
+---
+title: 在 ChatGPT 里用
+description: 在 ChatGPT 聊天里用 Study Kit，网页、电脑客户端和手机都行，要先开远程模式，只用 ChatGPT 桌面版里的 Codex 的话，一条命令就能接上
+---
+
+import { Aside, LinkCard } from '@astrojs/starlight/components';
+
+ChatGPT 里有两个地方能用 Study Kit，接法不一样：
+
+| 在哪用 | 怎么接 | 要注意的 |
+| --- | --- | --- |
+| **ChatGPT 聊天**（网页、电脑客户端、手机） | 开远程模式拿到一个 HTTPS 地址，在 ChatGPT 的开发者模式里加成应用，加一次三个地方都能用 | 要付费会员才有开发者模式（作者用 Plus 测过）<br />Study Kit 那台电脑或服务器要一直开着 |
+| **ChatGPT 桌面版里的 Codex** | 运行一次 `monash connect codex` | 最简单，但只能在这台电脑的 Codex 里用 |
+
+## 在 ChatGPT 聊天里用
+
+ChatGPT 聊天是从 OpenAI 的服务器去连 Study Kit 的，连不到你电脑上的本地程序，所以 Study Kit 需要一个网上能访问的 HTTPS 地址，也就是远程模式
+
+最省事的是让能跑命令的 AI（Claude Code、Codex 等）帮你搭，把这句发给它：
+
+```text wrap
+阅读 https://docs.secureview.tech/agents/remote.md ，帮我搭好 Study Kit 的远程模式，让我能在 ChatGPT 聊天里用。
+```
+
+它会先问清楚你的情况，再帮你装好、启动、检查
+
+最后在 ChatGPT 里加应用、输入配对码这两步要你自己来
+
+自己动手的话，大概的步骤：
+
+1. 先在电脑上装好 Study Kit 并跑完 `monash setup`，可以[让 AI 帮你装](/zh-cn/ai-setup/)
+2. 按[远程模式](/zh-cn/study-kit/remote/)那页拿到地址，有三种办法：免费的临时隧道（先试试）、固定地址的 Cloudflare 隧道（家里有台不关机的电脑就行）、自己的服务器（最稳）  
+   那页有表格对比，按自己情况选
+3. 在 ChatGPT 的设置里打开开发者模式，新建一个应用，填你的地址（以 `/mcp` 结尾），登录方式选 OAuth
+4. 加好以后，在聊天里打 `monash` 就能选它，然后直接问“这周我有什么要交的？”  
+   网页、电脑客户端和手机上都能用
+
+<LinkCard title="设置远程模式" description="拿到 HTTPS 地址，再在 ChatGPT 里加应用" href="/zh-cn/study-kit/remote/" />
+
+<Aside>
+ChatGPT 的菜单名字时不时会变，以你自己 ChatGPT 里显示的为准
+</Aside>
+
+## 在 ChatGPT 桌面版的 Codex 里用
+
+ChatGPT 桌面版里的 **Codex** 是在你自己电脑上跑的，可以直接用本地的 Study Kit，不用远程模式
+
+Mac 和 Windows 版都有。它读的设置文件和 Codex 命令行工具是同一份：macOS 在 `~/.codex/config.toml`，Windows 在 `C:\Users\你的用户名\.codex\config.toml`
+
+1. 装好 Study Kit，跑完 `monash setup`  
+   也可以在 Codex 里发这句话让它帮你装：
+
+   ```text wrap
+   阅读 https://docs.secureview.tech/agents/study-kit.md ，帮我在电脑上装好 Monash Study Kit，然后接进 Codex。
+   ```
+
+2. 如果 AI 还没帮你接上，运行：
+
+   ```bash
+   monash connect codex
+   ```
+
+3. 把 ChatGPT App 完全退出再打开。macOS 按 ⌘Q；Windows 关掉窗口后，如果右下角托盘里还有 ChatGPT 图标，右键选退出
+
+4. 在 **Codex** 里新开一个对话，输入 `/mcp`，列表里应该有 `monash`，显示已启用  
+   然后直接用中文问“这周我有什么要交的？”就行，不用写代码
+
+找不到 Codex 的话，先把 ChatGPT App 更新到最新版
+
+这条路只在 Codex 里有效，ChatGPT 聊天还是要走上面的远程模式
+
+如果 `/mcp` 里看不到 `monash`，可以[提个 issue](https://github.com/Waldo0926/monash-study-kit/issues)
+
+## 两种都不想弄？
+
+[Claude Desktop](https://claude.ai/download) 是测试得最多的，`monash setup` 会自动帮你接上
+
+也可以不用 AI，直接用 [`monash` 命令](/zh-cn/study-kit/cli/)，比如 `monash todo`

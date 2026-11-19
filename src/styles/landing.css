@@ -107,6 +107,8 @@ button { font: inherit; color: inherit; }
 }
 .cmd .prompt { color: var(--ink-3); font-family: var(--mono); }
 .cmd code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; scrollbar-width: none; color: var(--ink); }
+/* Commands and the AI prompt wrap so the whole line is visible; the copy button still copies it as one line. */
+.cmd code { white-space: normal; overflow-wrap: anywhere; line-height: 1.5; }
 .cmd code::-webkit-scrollbar { display: none; }
 .copy {
   flex: none; width: 34px; height: 34px; display: grid; place-items: center;
@@ -535,3 +537,14 @@ button { font: inherit; color: inherit; }
 .bubble a { color: #3a5bd9; word-break: break-all; }
 .wx { background: #ededed; margin: -22px; padding: 22px; min-height: 340px; align-content: start; }
 @media (max-width: 640px) { .wx { margin: -16px; padding: 16px; } .ui-kv { grid-template-columns: 1fr 1fr; } }
+
+/* Help cards at the bottom of the home page */
+.help-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 980px; text-align: left; }
+.help-card { position: relative; display: grid; gap: 8px; padding: 22px 22px 46px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255, 255, 255, 0.02); color: var(--ink-2); text-decoration: none; transition: border-color .2s, background .2s, transform .2s; }
+.help-card strong { color: var(--ink); font-size: 17px; font-weight: 600; }
+.help-card span { font-size: 14.5px; line-height: 1.6; }
+.help-card svg { position: absolute; left: 22px; bottom: 18px; color: var(--ink-2); transition: transform .2s, color .2s; }
+.help-card:hover { border-color: rgba(255, 255, 255, 0.28); background: rgba(255, 255, 255, 0.05); }
+.help-card:hover svg { transform: translateX(4px); color: var(--ink); }
+.help-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+@media (max-width: 760px) { .help-grid { grid-template-columns: minmax(0, 1fr); } }

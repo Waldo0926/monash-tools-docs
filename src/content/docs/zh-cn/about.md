@@ -1,20 +1,29 @@
 ---
 title: 关于
-description: 谁做的这些工具、怎么反馈问题、它们守的规矩。
+description: 谁做的这些工具、怎么反馈问题、它们守的规矩
 ---
 
-我是 Waldo，Monash 计算机科学专业的学生。这些工具先是给自己学习用的，后来整理好让同学也能用。怎么做出来的写在[我的博客](https://blog.secureview.tech)里。
+我是 Waldo，Monash 计算机科学专业的学生
+
+这些工具先是给自己学习用的，后来整理好让同学也能用
+
+怎么做出来的写在[我的博客](https://blog.secureview.tech)里
 
 ## 每个工具都守的规矩
 
-- **没有你点头就不动手。** 不会替你交作业、做测验或在 Ed 上发帖。会动手的只有签到助手，以及 Study Kit 可选的邮箱和考勤操作，每一项都要你确认才执行。
-- **凭据保存在你自己的设备上。** Study Kit或签到助手不会把登录令牌发送给维护者；但你使用联网AI时，AI客户端会收到工具查询的内容。
-- **拿不准就直说。** 问答工具引用来源并附链接，不确定时转给人工，不瞎猜。
-- **免费。** 没有付费版、广告和追踪。
+- **没有你点头就不动手**：不会替你交作业、做测验或在 Ed 上发帖  
+  会动手的只有签到助手，以及 Study Kit 可选的邮箱和考勤操作，每一项都要你确认才执行
+- **凭据保存在你自己的设备上**：Study Kit或签到助手不会把登录令牌发送给维护者；但你使用联网AI时，AI客户端会收到工具查询的内容
+- **拿不准就直说**：问答工具引用来源并附链接，不确定时转给人工，不瞎猜
+- **免费**：没有付费版、广告和追踪
 
 ## 不是官方的
 
-这些工具不是 Monash University、Ed 或 Anthropic 做的，也没有得到它们的认可或支持。Monash、Moodle、Ed 归各自所有者。重要的事情一定以官网为准。
+这些工具不是 Monash University、Ed 或 Anthropic 做的，也没有得到它们的认可或支持
+
+Monash、Moodle、Ed 归各自所有者
+
+重要的事情一定以官网为准
 
 ## 反馈问题或提需求
 
@@ -28,8 +37,14 @@ description: 谁做的这些工具、怎么反馈问题、它们守的规矩。
 | 签到助手 | [Waldo0926/monash-attendance-reminder](https://github.com/Waldo0926/monash-attendance-reminder/issues) |
 | 本站 | [Waldo0926/monash-tools-docs](https://github.com/Waldo0926/monash-tools-docs/issues) |
 
-如果是安全问题，请不要公开细节。仓库里有 `SECURITY.md` 的按它说的做；没有的话，开个 issue 只说发现了问题，我会联系你。
+不用 GitHub 的话，也可以[加 WhatsApp 或微信问我](/zh-cn/contact/)
+
+如果是安全问题，请不要公开细节
+
+仓库里有 `SECURITY.md` 的按它说的做；没有的话，[私下联系我](/zh-cn/contact/)
 
 ## 致谢
 
-用 [Astro Starlight](https://starlight.astro.build) 搭建。图标来自 [Lucide](https://lucide.dev)（ISC）。
+用 [Astro Starlight](https://starlight.astro.build) 搭建
+
+图标来自 [Lucide](https://lucide.dev)（ISC）

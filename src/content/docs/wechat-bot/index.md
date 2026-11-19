@@ -1,17 +1,23 @@
 ---
 title: WeChat Q&A bot
-description: Ask the 马莫百科 WeChat account a question in Chinese. It answers from official pages and links the source, and says so when it does not know.
+description: Ask the 马莫百科 WeChat account a question in Chinese. Units, electives, fees, visas, arriving in Malaysia, and questions from parents. Every answer links the official page, and it says so when it does not know.
 sidebar:
   label: Overview
 ---
 
-The **马莫百科** WeChat official account has a question-answering bot. Follow the account, send a question in Chinese, and it replies with an answer and the official link so you can check the English original. It is written for students at the Malaysia campus.
+The **马莫百科** WeChat official account has a question-answering bot. Follow the account, send a question in Chinese, and it replies with an answer and the official link so you can check the English original. It is written for students at the Malaysia campus and their parents.
+
+Things people ask it: a unit's prerequisites or assessments, which electives have no exam, fees and the service tax, the student pass, what to do after arriving, transferring to Australia, and the entry scores and IELTS a parent wants to know about. For electives it sends you to the [Monash Hub electives page](https://monashhub.secureview.tech/electives) with the filter already set.
 
 ## How to use it
 
 1. In WeChat, search for the official account **马莫百科** and follow it.
 2. Send your question as a normal message, for example "FIT2004 的先修课是什么" or "怎么申请 special consideration".
 3. Read the answer and open the link it gives to confirm.
+
+## Ask in the group chat
+
+In the 马莫百科 group chats, @MonashGuide with your question and it answers there. To join a group, add the WeChat account MonashGuide with the note "进群" and you will be invited.
 
 ## Ask on Monash Hub
 
@@ -31,7 +37,7 @@ When none of these match, a free language model may pick **sentences from the sa
 
 ## When it does not know
 
-It tells you your question has been passed to the account owner. The owner's answer reaches you **the next time you message the account**, because a personal WeChat account cannot send you a message first. The answer is also remembered, so the next person gets it straight away.
+If it is a real question about study or life at Monash, it tells you the question has been passed to the account owner. Small talk, adverts, "anyone there?" and requests to do your homework only get a short reply about what the bot is for, and are not passed on. The owner's answer reaches you **the next time you message the account**, because a personal WeChat account cannot send you a message first. The answer is also remembered, so the next person gets it straight away.
 
 ## Good to know
 
