@@ -45,7 +45,7 @@ ChatGPT 的菜单名字时不时会变，以你自己 ChatGPT 里显示的为准
 
 ChatGPT 桌面版里的 **Codex** 是在你自己电脑上跑的，可以直接用本地的 Study Kit，不用远程模式
 
-它读的是 `~/.codex/config.toml`，和 Codex 命令行工具是同一份
+Mac 和 Windows 版都有。它读的设置文件和 Codex 命令行工具是同一份：macOS 在 `~/.codex/config.toml`，Windows 在 `C:\Users\你的用户名\.codex\config.toml`
 
 1. 装好 Study Kit，跑完 `monash setup`  
    也可以在 Codex 里发这句话让它帮你装：
@@ -60,10 +60,12 @@ ChatGPT 桌面版里的 **Codex** 是在你自己电脑上跑的，可以直接�
    monash connect codex
    ```
 
-3. 把 ChatGPT App 完全退出（⌘Q），再重新打开
+3. 把 ChatGPT App 完全退出再打开。macOS 按 ⌘Q；Windows 关掉窗口后，如果右下角托盘里还有 ChatGPT 图标，右键选退出
 
 4. 在 **Codex** 里新开一个对话，输入 `/mcp`，列表里应该有 `monash`，显示已启用  
    然后直接用中文问“这周我有什么要交的？”就行，不用写代码
+
+找不到 Codex 的话，先把 ChatGPT App 更新到最新版
 
 这条路只在 Codex 里有效，ChatGPT 聊天还是要走上面的远程模式
 

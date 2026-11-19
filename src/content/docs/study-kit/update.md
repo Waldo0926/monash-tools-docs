@@ -36,7 +36,15 @@ uv tool uninstall monash-study-kit
 
 ## After upgrading to 1.11.1
 
-1.8 added whole-course packages and data-home moves; 1.9 added Moodle bodies, images, Google files and missing-item reporting; 1.10 added isolated profiles and materials-only mode, followed by extensionless Ed image fixes; 1.11 made PDF the export default; 1.11.1 fixed closed login windows and Windows temporary-profile cleanup, and added progress, folder selection and `--refresh-google`. Run `monash export --help`, then follow [whole-course export](/study-kit/materials/). Google files need separate authorization: an existing Gmail login does not grant Drive access.
+What changed in export:
+
+- 1.8: whole-course packages, and moving the data folder
+- 1.9: Moodle page text, images, Google files, and a list of anything missing
+- 1.10: separate profiles and a materials-only mode, then a fix for Ed images without a file extension
+- 1.11: PDF became the default
+- 1.11.1: fixes for closed login windows and leftover temporary profiles on Windows, plus progress, a folder picker and `--refresh-google`
+
+Run `monash export --help`, then follow [whole-course export](/study-kit/materials/). Google files need separate authorization: an existing Gmail login does not grant Drive access.
 
 ## 1.11.2 is released
 

@@ -1,9 +1,23 @@
 ---
 title: Which tool do I need?
-description: Compare the tools by what you want to do, what you need to install and where your data goes.
+description: Compare the tools by your device, what you want to do, what you need to install and where your data goes.
 ---
 
-Start from what you want to do. Most people want Study Kit or Monash Hub.
+Most people want Study Kit (your own Moodle and Ed) or Monash Hub (public info about units and degrees).
+
+## By device
+
+| | Windows PC | Mac | Linux | iPhone / iPad | Android |
+| --- | --- | --- | --- | --- | --- |
+| [Study Kit](/study-kit/) | ✓ | ✓ | ✓ | Through the ChatGPT or Claude app, after setting up [remote mode](/study-kit/remote/) | Same as iPhone |
+| [Monash Hub](/monash-hub/) | ✓ browser | ✓ browser | ✓ browser | ✓ Safari, can be [added to the home screen](/monash-hub/app/) | ✓ Chrome and others, can be [installed as an app](/monash-hub/app/) |
+| [Ed Web](/ed-web/) | ✓ browser | ✓ browser | ✓ browser | Not supported | Not supported |
+| [Attendance Helper](/attendance/) | ✓ Chrome | ✓ Chrome | ✓ Chrome | Not supported, Chrome on phones can't install extensions | Not supported, same reason |
+| [WeChat Q&A bot](/wechat-bot/) | ✓ WeChat | ✓ WeChat | ✓ WeChat | ✓ WeChat | ✓ WeChat |
+
+On a phone only? Monash Hub and the WeChat bot work straight away. To ask about your own Moodle and Ed from your phone, Study Kit has to run on a computer or server, then connect it as in [Use it with ChatGPT](/study-kit/chatgpt/).
+
+## By what you want to do
 
 | I want to | Use | Install | Works on |
 | --- | --- | --- | --- |
@@ -19,7 +33,7 @@ Start from what you want to do. Most people want Study Kit or Monash Hub.
 
 ## How they differ
 
-**Study Kit and Ed Web both read Ed.** Study Kit keeps a synced copy of Moodle and Ed on your computer and lets your AI app search it, so you can ask follow-up questions in plain language. Ed Web runs in one browser tab with nothing to install, and gives a quick rule-based summary of each post. If you already use Claude, take Study Kit. If you just want a faster way to read Ed, take Ed Web. Both can zip a unit's Ed materials into week folders: Ed Web fetches and packs them in the browser, while Study Kit uses the copy already synced to your computer, includes files attached inside Ed pages, and can do it when you ask your AI app.
+**Study Kit and Ed Web both read Ed.** Study Kit keeps a synced copy of Moodle and Ed on your computer and lets your AI app search it, so you can ask follow-up questions in plain language. Ed Web runs in one browser tab with nothing to install, and gives a quick rule-based summary of each post. If you already use an AI app, take Study Kit. If you just want a faster way to read Ed, take Ed Web. Both can zip a unit's Ed materials into week folders. Ed Web does it in the browser. Study Kit uses the copy already on your computer, also includes files attached inside Ed pages, and can do it when you ask your AI app.
 
 **Monash Hub is about the university, not your own units.** It answers "what is this unit like" and "what does my degree need" from the Handbook and official pages. Study Kit answers "what do I have to do this week" from your own Moodle and Ed.
 

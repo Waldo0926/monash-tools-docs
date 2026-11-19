@@ -98,7 +98,7 @@ You need a domain of your own that is already added to Cloudflare, with its name
 
    ```yaml
    tunnel: YOUR-TUNNEL-UUID
-   credentials-file: /Users/you/.cloudflared/YOUR-TUNNEL-UUID.json
+   credentials-file: /Users/you/.cloudflared/YOUR-TUNNEL-UUID.json   # on Windows: C:/Users/you/.cloudflared/YOUR-TUNNEL-UUID.json
    ingress:
      - hostname: study.example.org
        service: http://127.0.0.1:8765
@@ -116,7 +116,7 @@ You need a domain of your own that is already added to Cloudflare, with its name
 
 5. [Connect your AI app](#connect-your-ai-app) with `https://study.example.org/mcp`.
 
-The address stays the same. After a restart, run those two commands again and leave ChatGPT as it is. Turn off automatic sleep on that computer. To start it automatically, `cloudflared` can run as a system service; your AI can set that up and will ask before changing system settings.
+The address stays the same. After a restart, run those two commands again and leave ChatGPT as it is. Turn off automatic sleep on that computer: on macOS in System Settings, Battery (Energy on a desktop Mac); on Windows in Settings, System, Power, set sleep to Never. To start it automatically, `cloudflared` can run as a system service; your AI can set that up and will ask before changing system settings.
 
 ## Option C: your own server and domain
 

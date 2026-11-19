@@ -77,7 +77,7 @@ cloudflared tunnel create monash
 cloudflared tunnel route dns monash THEIR-SUBDOMAIN
 ```
 
-Read the tunnel UUID and the credentials file path from the output. Write `~/.cloudflared/config.yml` (`%USERPROFILE%\.cloudflared\config.yml` on Windows). If a `config.yml` already exists, show it and ask before changing it.
+Read the tunnel UUID and the credentials file path from the output. Write `~/.cloudflared/config.yml` (`%USERPROFILE%\.cloudflared\config.yml` on Windows). If a `config.yml` already exists, show it and ask before changing it. On Windows write the credentials path with forward slashes, for example `C:/Users/NAME/.cloudflared/UUID.json`.
 
 ```yaml
 tunnel: TUNNEL-UUID
@@ -95,7 +95,7 @@ cloudflared tunnel run monash
 monash remote serve --public-url https://THEIR-SUBDOMAIN
 ```
 
-Tell them to turn off automatic sleep on that computer. If they want it to start on boot, offer to set up `cloudflared` as a system service and a matching way to start `monash remote serve`, and only do it after they agree. After a restart the address stays the same and the app in ChatGPT or Claude keeps working.
+Tell them to turn off automatic sleep on that computer (macOS: System Settings, Battery or Energy; Windows: Settings, System, Power, sleep set to Never). If they want it to start on boot, offer to set up `cloudflared` as a system service and a matching way to start `monash remote serve`, and only do it after they agree. After a restart the address stays the same and the app in ChatGPT or Claude keeps working.
 
 ## 3c. Their own server and domain
 
@@ -121,9 +121,18 @@ If they use Caddy or something else, forward the same paths and nothing more.
 
 ## 4. Check it works (you run this)
 
+macOS or Linux:
+
 ```bash
 curl -s https://THE-ADDRESS/.well-known/oauth-protected-resource
 curl -s -o /dev/null -w "%{http_code}\n" https://THE-ADDRESS/mcp
+```
+
+Windows PowerShell (use `curl.exe`, not the `curl` alias):
+
+```powershell
+curl.exe -s https://THE-ADDRESS/.well-known/oauth-protected-resource
+curl.exe -s -o NUL -w "%{http_code}" https://THE-ADDRESS/mcp
 ```
 
 The first must return JSON. The second must print `401`. If not, fix the tunnel or proxy before going on.

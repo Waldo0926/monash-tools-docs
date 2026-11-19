@@ -39,7 +39,7 @@ ChatGPT renames its menus now and then. Go by what your own ChatGPT shows.
 
 ## In Codex in the ChatGPT desktop app
 
-**Codex** in the ChatGPT desktop app runs on your own computer, so it can use the local Study Kit without remote mode. It reads `~/.codex/config.toml`, the same file as the Codex command line tool.
+**Codex** in the ChatGPT desktop app runs on your own computer, so it can use the local Study Kit without remote mode. It's in both the Mac and Windows apps. It reads the same settings file as the Codex command line tool: `~/.codex/config.toml` on macOS, `C:\Users\YOUR-NAME\.codex\config.toml` on Windows.
 
 1. Install Study Kit and finish `monash setup`. You can also paste this into Codex and let it do the install:
 
@@ -53,9 +53,11 @@ ChatGPT renames its menus now and then. Go by what your own ChatGPT shows.
    monash connect codex
    ```
 
-3. Fully quit the ChatGPT app (⌘Q) and open it again.
+3. Fully quit the ChatGPT app and open it again. On macOS press ⌘Q. On Windows close the window, and if ChatGPT is still in the system tray at the bottom right, right-click it and quit.
 
 4. Start a new chat in **Codex** and type `/mcp`. `monash` should be listed as enabled. Then just ask "What's due this week?" in your own words. You don't have to write any code.
+
+Can't find Codex? Update the ChatGPT app first.
 
 This only works inside Codex. For ChatGPT chat you still need remote mode above. If `monash` doesn't show up in `/mcp`, [open an issue](https://github.com/Waldo0926/monash-study-kit/issues).
 

@@ -1,11 +1,23 @@
 ---
 title: 我该用哪个工具？
-description: 按你想做的事、要不要安装、数据去哪儿，对比这几个工具
+description: 按你的设备、想做的事、要不要安装、数据去哪儿，对比这几个工具
 ---
 
-先看你想解决什么问题
-
 查学校公开信息用Monash Hub；查自己的Moodle和Ed用Study Kit
+
+## 按你的设备看
+
+| | Windows 电脑 | Mac | Linux | iPhone / iPad | 安卓手机 |
+| --- | --- | --- | --- | --- | --- |
+| [Study Kit](/zh-cn/study-kit/) | ✓ | ✓ | ✓ | 通过 ChatGPT 或 Claude App，要先开[远程模式](/zh-cn/study-kit/remote/) | 同左 |
+| [Monash Hub](/zh-cn/monash-hub/) | ✓ 浏览器 | ✓ 浏览器 | ✓ 浏览器 | ✓ Safari，可以[加到主屏幕](/zh-cn/monash-hub/app/) | ✓ Chrome 等，可以[装成 App](/zh-cn/monash-hub/app/) |
+| [Ed Web](/zh-cn/ed-web/) | ✓ 浏览器 | ✓ 浏览器 | ✓ 浏览器 | 不支持 | 不支持 |
+| [签到助手](/zh-cn/attendance/) | ✓ Chrome | ✓ Chrome | ✓ Chrome | 不支持，手机上的 Chrome 装不了扩展 | 不支持，原因同左 |
+| [公众号问答](/zh-cn/wechat-bot/) | ✓ 微信 | ✓ 微信 | ✓ 微信 | ✓ 微信 | ✓ 微信 |
+
+只用手机的话，Monash Hub 和公众号问答直接就能用。想在手机上问自己的 Moodle 和 Ed，需要一台电脑或服务器跑 Study Kit，再按[在 ChatGPT 里用](/zh-cn/study-kit/chatgpt/)接上
+
+## 按你想做的事看
 
 | 我想 | 用 | 安装 | 能在哪用 |
 | --- | --- | --- | --- |

@@ -116,7 +116,7 @@ description: 给 Study Kit 一个 HTTPS 地址，在 ChatGPT 聊天、网页版�
 
    ```yaml
    tunnel: 你的隧道UUID
-   credentials-file: /Users/你/.cloudflared/你的隧道UUID.json
+   credentials-file: /Users/你/.cloudflared/你的隧道UUID.json   # Windows 写成 C:/Users/你/.cloudflared/你的隧道UUID.json
    ingress:
      - hostname: study.example.org
        service: http://127.0.0.1:8765
@@ -136,7 +136,7 @@ description: 给 Study Kit 一个 HTTPS 地址，在 ChatGPT 聊天、网页版�
 
 地址固定，重启电脑以后把这两条命令再跑一遍就行，ChatGPT 里不用重加
 
-记得把电脑的自动睡眠关掉
+记得把电脑的自动睡眠关掉：macOS 在“系统设置 → 电池”（台式机是“节能”）里设置，Windows 在“设置 → 系统 → 电源”里把睡眠改成“从不”
 
 想开机自动启动的话，`cloudflared` 可以装成系统服务，可以让 AI 帮你弄（它改系统设置前会先问你）
 
