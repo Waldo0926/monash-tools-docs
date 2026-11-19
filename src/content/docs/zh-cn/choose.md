@@ -7,15 +7,23 @@ description: 按你的设备、想做的事、要不要安装、数据去哪儿�
 
 ## 按你的设备看
 
-| | Windows 电脑 | Mac | Linux | iPhone / iPad | 安卓手机 |
-| --- | --- | --- | --- | --- | --- |
-| [Study Kit](/zh-cn/study-kit/) | ✓ | ✓ | ✓ | 通过 ChatGPT 或 Claude App，要先开[远程模式](/zh-cn/study-kit/remote/) | 同左 |
-| [Monash Hub](/zh-cn/monash-hub/) | ✓ 浏览器 | ✓ 浏览器 | ✓ 浏览器 | ✓ Safari，可以[加到主屏幕](/zh-cn/monash-hub/app/) | ✓ Chrome 等，可以[装成 App](/zh-cn/monash-hub/app/) |
-| [Ed Web](/zh-cn/ed-web/) | ✓ 浏览器 | ✓ 浏览器 | ✓ 浏览器 | 不支持 | 不支持 |
-| [签到助手](/zh-cn/attendance/) | ✓ Chrome | ✓ Chrome | ✓ Chrome | 不支持，手机上的 Chrome 装不了扩展 | 不支持，原因同左 |
-| [公众号问答](/zh-cn/wechat-bot/) | ✓ 微信 | ✓ 微信 | ✓ 微信 | ✓ 微信 | ✓ 微信 |
+<div class="device-table">
 
-只用手机的话，Monash Hub 和公众号问答直接就能用。想在手机上问自己的 Moodle 和 Ed，需要一台电脑或服务器跑 Study Kit，再按[在 ChatGPT 里用](/zh-cn/study-kit/chatgpt/)接上
+| | Windows | Mac | Linux | iPhone / iPad | 安卓 |
+| --- | --- | --- | --- | --- | --- |
+| [Study Kit](/zh-cn/study-kit/) | ✓ | ✓ | ✓ | [远程模式](/zh-cn/study-kit/remote/) | [远程模式](/zh-cn/study-kit/remote/) |
+| [Monash Hub](/zh-cn/monash-hub/) | ✓ | ✓ | ✓ | ✓ | ✓ |
+| [Ed Web](/zh-cn/ed-web/) | ✓ | ✓ | ✓ | ✗ | ✗ |
+| [签到助手](/zh-cn/attendance/) | ✓ Chrome | ✓ Chrome | ✓ Chrome | ✗ | ✗ |
+| [公众号问答](/zh-cn/wechat-bot/) | ✓ | ✓ | ✓ | ✓ | ✓ |
+
+</div>
+
+- **Study Kit** 装在电脑上。手机上要通过 ChatGPT 或 Claude App 来问，前提是电脑或服务器上开着[远程模式](/zh-cn/study-kit/remote/)
+- **Monash Hub** 任何浏览器都能打开，手机上可以[加到主屏幕](/zh-cn/monash-hub/app/)，用起来像 App
+- **Ed Web** 是给电脑屏幕设计的
+- **签到助手** 是 Chrome 扩展，手机上的 Chrome 装不了扩展
+- **公众号问答** 有微信就能用
 
 ## 按你想做的事看
 

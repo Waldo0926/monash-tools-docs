@@ -7,15 +7,23 @@ Most people want Study Kit (your own Moodle and Ed) or Monash Hub (public info a
 
 ## By device
 
-| | Windows PC | Mac | Linux | iPhone / iPad | Android |
-| --- | --- | --- | --- | --- | --- |
-| [Study Kit](/study-kit/) | ✓ | ✓ | ✓ | Through the ChatGPT or Claude app, after setting up [remote mode](/study-kit/remote/) | Same as iPhone |
-| [Monash Hub](/monash-hub/) | ✓ browser | ✓ browser | ✓ browser | ✓ Safari, can be [added to the home screen](/monash-hub/app/) | ✓ Chrome and others, can be [installed as an app](/monash-hub/app/) |
-| [Ed Web](/ed-web/) | ✓ browser | ✓ browser | ✓ browser | Not supported | Not supported |
-| [Attendance Helper](/attendance/) | ✓ Chrome | ✓ Chrome | ✓ Chrome | Not supported, Chrome on phones can't install extensions | Not supported, same reason |
-| [WeChat Q&A bot](/wechat-bot/) | ✓ WeChat | ✓ WeChat | ✓ WeChat | ✓ WeChat | ✓ WeChat |
+<div class="device-table">
 
-On a phone only? Monash Hub and the WeChat bot work straight away. To ask about your own Moodle and Ed from your phone, Study Kit has to run on a computer or server, then connect it as in [Use it with ChatGPT](/study-kit/chatgpt/).
+| | Windows | Mac | Linux | iPhone / iPad | Android |
+| --- | --- | --- | --- | --- | --- |
+| [Study Kit](/study-kit/) | ✓ | ✓ | ✓ | [Remote mode](/study-kit/remote/) | [Remote mode](/study-kit/remote/) |
+| [Monash Hub](/monash-hub/) | ✓ | ✓ | ✓ | ✓ | ✓ |
+| [Ed Web](/ed-web/) | ✓ | ✓ | ✓ | ✗ | ✗ |
+| [Attendance Helper](/attendance/) | ✓ Chrome | ✓ Chrome | ✓ Chrome | ✗ | ✗ |
+| [WeChat Q&A bot](/wechat-bot/) | ✓ | ✓ | ✓ | ✓ | ✓ |
+
+</div>
+
+- **Study Kit** installs on a computer. On a phone you ask it through the ChatGPT or Claude app, which needs [remote mode](/study-kit/remote/) running on a computer or server.
+- **Monash Hub** works in any browser. On a phone you can [add it to the home screen](/monash-hub/app/) like an app.
+- **Ed Web** is made for a computer screen.
+- **Attendance Helper** is a Chrome extension, and Chrome on phones can't install extensions.
+- **WeChat Q&A bot** works wherever you have WeChat.
 
 ## By what you want to do
 

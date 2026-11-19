@@ -120,3 +120,7 @@ h1#_top { font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 
 .compare-table table { width: 100%; }
 .compare-table th, .compare-table td { min-width: 8.5rem; }
 .compare-table th:first-child, .compare-table td:first-child { min-width: 0; white-space: nowrap; font-weight: 600; }
+
+/* Device table on the choose page: short cells, tool names on one line */
+.device-table th, .device-table td { white-space: nowrap; }
+.device-table th:not(:first-child), .device-table td:not(:first-child) { text-align: center; }
