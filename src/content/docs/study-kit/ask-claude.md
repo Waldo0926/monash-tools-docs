@@ -34,7 +34,7 @@ Ask in your own words. The AI picks tools by meaning, not keywords, so "anything
 | "Has anyone asked whether A1 can use lodash?" | Searches threads and reads them in full |
 | "Walk me through the FIT2109 week 3 pre-class" | A whole lesson in order: text, readings, PDFs and its quiz questions |
 | "Quiz me on week 3" | Ed lesson quiz questions, one at a time |
-| "Show my FIT2109 lesson progress" | Done and unfinished lessons, grouped by module |
+| "Show my FIT2102 lesson progress" | Done and unfinished lessons, grouped by module |
 
 ## Grades and messages
 
@@ -67,13 +67,31 @@ Once [connected](/study-kit/mail-attendance/):
 | "monash isn't working" | Runs the same checks as `monash doctor` |
 | "Connect my school email" / "Connect my attendance" | Installs what is missing and opens the sign-in window |
 
+## What an answer looks like
+
+![Asked "What does Assignment 2 ask for, and how is it marked?", the AI lists what to submit, the mark split, the moved deadline and a tutor's clarification on Ed, each with its source (made-up course data)](../../../assets/study-kit/ask-assignment-en.png)
+
+![Asked "Which week covered regression, and which page of the slides?", the AI gives the slide pages, the Ed pre-class lesson and a time in the recording (made-up course data)](../../../assets/study-kit/ask-topic-en.png)
+
+![Asked "What have staff added on Ed?", the AI lists three new staff replies this week and who wrote each (made-up course data)](../../../assets/study-kit/ask-ed-en.png)
+
+See [Rules for assignment questions](#rules-for-assignment-questions). Recordings need to be [turned into transcripts](/study-kit/recordings/) before they show up in search.
+
 ## Panels
 
 From Study Kit 1.4.0, three answers can also show up as a small panel in apps that support MCP Apps:
 
 - **To-dos**: "What do I need to do this week?" shows deadline cards and lessons you have not started.
-- **Lesson progress**: "Show my FIT2109 lesson progress" shows each module with how many lessons are done.
-- **Quiz practice**: "Help me practise the FIT2109 week 3 quiz" shows the questions with clickable options. When you finish, **交给 AI 批改** sends your choices back to the chat and the AI explains them from the lesson text.
+
+  ![The to-do panel: an assignment due in two days, a possibly missed exercise and an Ed lesson not started yet, with walk-through and quiz buttons (made-up course data, captured 21 November 2026)](../../../assets/study-kit/panel-todo.png)
+
+- **Lesson progress**: "Show my FIT2102 lesson progress" shows each module with how many lessons are done.
+
+  ![The lesson progress panel: one progress bar per week, with buttons on each unfinished lesson (made-up course data, captured 21 November 2026)](../../../assets/study-kit/panel-progress.png)
+
+- **Quiz practice**: "Help me practise the ETC1000 week 4 quiz" shows the questions with clickable options. When you finish, **交给 AI 批改** sends your choices back to the chat and the AI explains them from the lesson text.
+
+  ![The quiz panel: question 1 with four options and the picked one outlined in blue (made-up course data, captured 21 November 2026)](../../../assets/study-kit/panel-quiz.png)
 
 Your answers stay in the panel until you send them. Nothing is submitted to Ed and no lesson is marked as done. Ed does not show students the answer key, so the AI works the answers out from the lesson and says when it is unsure.
 
