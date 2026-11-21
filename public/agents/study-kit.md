@@ -152,4 +152,4 @@ serving or `monash connect` for them. Use profile-scoped `status`, `sync` and
 preserves materials unless `--all` is requested, and keeps files on revocation
 failure. Ed token deletion remains manual.
 
-Latest published release: 1.15.0. Use `monash update` for an existing installation; its release workflow verified PyPI installs on Windows, macOS and Linux. `monash uninstall` revokes Google Drive and Gmail access for the default account and every named profile before deleting data, and deletes nothing if revoking fails.
+Latest published release: 1.16.0. Use `monash update` for an existing installation; its release workflow verified PyPI installs on Windows, macOS and Linux. `monash uninstall` revokes Google Drive and Gmail access for the default account and every named profile before deleting data, and deletes nothing if revoking fails.

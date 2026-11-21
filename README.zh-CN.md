@@ -10,7 +10,7 @@
 
 给 Monash 学生用的几个免费工具的使用指南，中英双语：
 
-- **Study Kit 1.15.0**：让 AI 读你自己的 Moodle 和 Ed，问截止日期、Ed 新帖、课程这周改了什么、交过的作业和老师评语，还能全文搜索和整课导出，学校邮箱和考勤可选，贴一句话给 AI 就能让它帮你装好
+- **Study Kit 1.16.0**：让 AI 读你自己的 Moodle 和 Ed，问截止日期、Ed 新帖、课程这周改了什么、交过的作业和老师评语，还能全文搜索和整课导出，学校邮箱和考勤可选，贴一句话给 AI 就能让它帮你装好
 - **Monash Hub**：查课、找没考试或不用先修的选修课、学位、选课规划、WAM/GPA、马来西亚学费和官方指南
 - **Ed Web**：在浏览器里读和搜 Ed 论坛
 - **签到助手**：找签到码、只提交你确认过的课的 Chrome 扩展，已上架 [Chrome 应用商店](https://chromewebstore.google.com/detail/monash-attendance-helper/mnbkcmgkjmfngcifndchaidndhdfafcd?hl=zh-CN)
@@ -30,7 +30,7 @@
 
 ## 同步维护示例
 
-Study Kit 指南和工具页覆盖 **1.15.0**，**2026-11-03** 更新了当前线上 Hub 成绩/搜索页、1.11.2 本地资料库、文档首页与合成资料的实际离线导出截图
+Study Kit 指南和工具页覆盖 **1.16.0**，**2026-11-03** 更新了当前线上 Hub 成绩/搜索页、1.11.2 本地资料库、文档首页与合成资料的实际离线导出截图
 
 示例成绩和资料不含个人账号数据；导出截图故意保留缺失附件及未授权 Google 链接，不代表所有课程都能完整导出，合成数据脚本与重现步骤见 [Study Kit 截图说明](https://github.com/Waldo0926/monash-study-kit/tree/main/docs/screenshots)
 
