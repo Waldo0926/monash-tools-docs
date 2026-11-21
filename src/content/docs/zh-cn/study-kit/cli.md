@@ -24,6 +24,7 @@ description: monash 命令在终端里回答同样的问题，完全不耗 AI �
 | 这周的截止、lesson 和考勤放在一页看，或导出成日历文件 | `monash semester --days 7`，加 `--ics` 导出 |
 | 整门课的 Ed 课件打包成一个 zip | `monash ed export FIT2109` |
 | 签到码（接上以后） | `monash attendance codes` |
+| 没下载的文件（太大、排除的类型、录像） | `monash skipped` |
 
 区别是没人帮你总结，只列出原始信息，想要总结的话，可以把输出贴给任何 AI
 
@@ -32,6 +33,61 @@ description: monash 命令在终端里回答同样的问题，完全不耗 AI �
 就算额度用完也照常进行；软件关掉的话，查之前先 `monash sync`，Moodle 过期了先 `monash login`
 
 全部命令见[命令速查](/zh-cn/study-kit/commands/)
+
+## 选择下载哪些文件
+
+需要 Study Kit 1.16.0 或更新的版本
+
+`monash sync` 默认把课程放在 Moodle 上的文件都下下来，只有两类例外：
+
+- **录像**：直接传到 Moodle 的视频只记成链接；想下载：`monash config download_videos true`
+- **超过 300 MB 的文件**：比如很大的数据集，记成链接并写上大小；改上限：`monash config max_file_mb 100`，填 `0` 就是不限
+
+也可以整类不下，比如 `monash config skip_types audio,images`
+
+能填的类别：`pdf`、`slides`、`docs`、`sheets`、`archives`、`images`、`audio`、`code`
+
+想恢复就运行 `monash config skip_types ""`
+
+只想这一次不一样、不改设置的话：
+
+```bash
+monash sync --videos                          # 这次连录像一起下
+monash sync --max-mb 50 --skip-types archives
+```
+
+Moodle 文件夹里的文件也按同样的规则处理
+
+改了这些设置，已经下好的文件也不会被删
+
+### 看看跳过了哪些，想要的再补下
+
+每次 `monash sync` 完会列出这次新跳过的文件
+
+它们也会以链接的形式出现在每周的 `links.md` 里，整门课导出时列在“没导出的内容”里
+
+想看全部、带编号的清单：
+
+```bash
+monash skipped              # 后面加课号只看一门课，加 --videos 连录像一起列
+```
+
+```text
+大小上限：300 MB；排除的类型：无；录像：不下载
+
+FIT2109
+  [3] Week 05/Dataset.csv（太大，512 MB）
+  [7] Week 09/Project data/raw.zip（太大，1200 MB）
+```
+
+然后按需要补下：
+
+- **只要几个**：`monash skipped --get 3 7`；也可以写文件名的一部分（`monash skipped --get dataset`），写 `all` 就是全部；这样补下的不受大小上限和排除类型的限制
+- **要很多个**：调大上限再同步一次，比如 `monash sync --max-mb 2000` 或 `monash config max_file_mb 0`；已经下好的不会重下，只会补上之前跳过的
+
+在 AI 软件里也可以直接问“有哪些文件没下载？”，再告诉它要哪几个，它会在后台补下
+
+下大文件之前会先看硬盘空间够不够
 
 ## 在浏览器里翻课件
 

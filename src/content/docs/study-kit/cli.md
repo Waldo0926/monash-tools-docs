@@ -20,12 +20,46 @@ The `monash` command does not use any AI, so it works when you are out of AI usa
 | This week's deadlines, lessons and attendance on one page, or as a calendar file | `monash semester --days 7`, add `--ics` to export |
 | A whole unit's Ed materials as one zip | `monash ed export FIT2109` |
 | Attendance codes (if connected) | `monash attendance codes` |
+| Files that weren't downloaded (too big, a kind you left out, videos) | `monash skipped` |
 
 You get the raw information without a summary. You can paste the output into any AI if you want one.
 
 Background sync and session refresh run while your AI app is open, because that is when the MCP server runs. They keep going even if your usage runs out. If the app is closed, run `monash sync` before you query, and `monash login` if Moodle has expired.
 
 Every command is listed on [Command reference](/study-kit/commands/).
+
+## Choose what gets downloaded
+
+Needs Study Kit 1.16.0 or later. `monash sync` downloads every file your units put on Moodle, with two exceptions:
+
+- **Videos** uploaded to Moodle are saved as links. To download them: `monash config download_videos true`
+- **Files over 300 MB**, such as a large dataset, are saved as links with their size. Change the limit with `monash config max_file_mb 100`, or set `0` for no limit
+
+You can also leave out whole kinds of files, for example `monash config skip_types audio,images`. Kinds: `pdf`, `slides`, `docs`, `sheets`, `archives`, `images`, `audio`, `code`. Set it back with `monash config skip_types ""`.
+
+For one sync only, without changing your settings:
+
+```bash
+monash sync --videos                          # this time, download videos too
+monash sync --max-mb 50 --skip-types archives
+```
+
+The same rules apply to the files inside a Moodle folder. Files you already have are never deleted when you change these settings.
+
+### See what was skipped and get it
+
+After `monash sync` you get a short list of the files skipped this time. They also show up as links in each week's `links.md`, and a whole-unit export lists them as not exported. To see all of them with a number:
+
+```bash
+monash skipped              # add a unit code for one unit, --videos to list videos too
+```
+
+Each file gets a number, for example `[3] Week 05/Dataset.csv (too big, 512 MB)`. Then:
+
+- **A few files**: `monash skipped --get 3 7`. Part of the file name also works (`monash skipped --get dataset`), and `all` gets every one. These ignore the size limit and the kinds you left out
+- **Many files**: raise the limit and sync again, for example `monash sync --max-mb 2000` or `monash config max_file_mb 0`. Files you already have are not downloaded again, only the skipped ones are
+
+In your AI app you can also ask "which files weren't downloaded?" and then say which ones you want; it downloads them in the background. Before a big download it checks there is enough free disk space.
 
 ## Browse your course files
 

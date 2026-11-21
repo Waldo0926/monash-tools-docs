@@ -97,7 +97,7 @@ export const strings = {
       ],
     },
     footer: {
-      blurb: 'Free tools for Monash students, built by one. Not affiliated with Monash University, Ed, Anthropic or OpenAI.',
+      blurb: 'Free tools for Monash students, made by a Monash student. Not affiliated with Monash University, Ed, Anthropic or OpenAI.',
       cols: [
         { h: 'Start', links: [['Which tool do I need?', 'choose/'], ['Let your AI set it up', 'ai-setup/'], ['Install Study Kit', 'study-kit/install/'], ['Connect mail and attendance', 'study-kit/mail-attendance/']] },
         { h: 'Tools', links: [['Study Kit', 'study-kit/'], ['Monash Hub', 'monash-hub/'], ['Ed Web', 'ed-web/'], ['Attendance Helper', 'attendance/'], ['WeChat Q&A', 'wechat-bot/']] },
