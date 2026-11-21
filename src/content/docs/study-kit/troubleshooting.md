@@ -51,6 +51,10 @@ monash config browser "C:\Program Files\...\chrome.exe"
 
 If an earlier login window is still open, close it first.
 
+## A file I need wasn't downloaded
+
+Since 1.16.0, files over 300 MB, videos and any kinds you left out with `skip_types` are saved as links instead. Run `monash skipped` to see them with a number, then `monash skipped --get 3` for one file, or raise the limit with `monash sync --max-mb 2000` to get them all. See [Choose what gets downloaded](/study-kit/cli/#choose-what-gets-downloaded).
+
 ## "Path too long" when syncing on Windows
 
 Windows limits full paths to 260 characters by default, and unit name, week name and file name together can go over. Keep course files somewhere shorter:

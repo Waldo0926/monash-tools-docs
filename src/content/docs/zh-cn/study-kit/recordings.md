@@ -28,3 +28,5 @@ monash media
 Moodle 上直接挂的视频默认也不下载（动辄几百 MB），只记成链接
 
 想下载：`monash config download_videos true`
+
+只想要其中一两个的话，见[看看跳过了哪些](/zh-cn/study-kit/cli/#看看跳过了哪些想要的再补下)

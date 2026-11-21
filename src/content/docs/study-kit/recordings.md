@@ -22,4 +22,4 @@ monash media
 
 A slow computer can use a smaller model: `monash media --model base.en`. To try only a few videos first: `monash media --limit 2`.
 
-Videos uploaded straight to Moodle are not downloaded by default (they are often hundreds of MB) and are saved as links instead. To download them: `monash config download_videos true`.
+Videos uploaded straight to Moodle are not downloaded by default (they are often hundreds of MB) and are saved as links instead. To download them: `monash config download_videos true`. To get just one or two, see [what was skipped](/study-kit/cli/#see-what-was-skipped-and-get-it).

@@ -95,5 +95,6 @@ Each profile keeps its own logins, files and database. A profile only does cours
 - If the Moodle login window was closed too early, run `monash login` and try again. On macOS Chrome may still be running with no window open.
 - For Google problems, run `monash google status`, sign in with the right account and export again with `--refresh-google`. Files not shared with you still won't come through.
 - The index lists missing files, images it couldn't save and why Google files failed.
+- Files over the size limit or of a kind you left out are not in the package. `monash skipped` lists them and `monash skipped --get` downloads the ones you want ([details](/study-kit/cli/#see-what-was-skipped-and-get-it)).
 - No PDFs? Install Chrome, Edge or Brave, or use `--format md`.
 - Automatic syncing only happens while your AI app is open. If you only use the terminal, add `--sync`.

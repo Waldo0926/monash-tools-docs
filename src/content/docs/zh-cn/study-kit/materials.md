@@ -95,5 +95,6 @@ monash profile remove exchange
 - Moodle 登录窗口还没登完就被关了的话，运行 `monash login` 再试一次。macOS 上 Chrome 关掉窗口后可能还在后台跑
 - Google 出问题就运行 `monash google status`，用对的账号重新登录，再加 `--refresh-google` 导出。没共享给你的文件还是拿不到
 - 缺了哪些文件、哪些图片没存下来、Google 文件为什么失败，索引里都有
+- 超过大小上限或者属于排除类型的文件不会在包里，`monash skipped` 能列出来，`monash skipped --get` 补下想要的（[说明](/zh-cn/study-kit/cli/#看看跳过了哪些想要的再补下)）
 - 没有 PDF？装一个 Chrome、Edge 或 Brave，或者用 `--format md`
 - 只有 AI 软件开着的时候才会自动同步。只用终端的话，导出时加上 `--sync`

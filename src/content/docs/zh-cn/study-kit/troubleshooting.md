@@ -66,6 +66,14 @@ monash config browser "C:\Program Files\...\chrome.exe"
 
 如果之前的登录窗口还开着，先把它关掉
 
+## 想要的文件没下载下来
+
+1.16.0 起，超过 300 MB 的文件、录像和 `skip_types` 里排除的类型都只记成链接
+
+运行 `monash skipped` 看带编号的清单，只要一个就 `monash skipped --get 3`，想全部补齐就调大上限 `monash sync --max-mb 2000`
+
+详细见[选择下载哪些文件](/zh-cn/study-kit/cli/#选择下载哪些文件)
+
 ## Windows 同步时提示路径太长
 
 Windows 默认限制完整路径 260 个字符，课名、周名、文件名加起来可能超

@@ -20,7 +20,8 @@ description: 所有 monash 命令、输出格式和退出码
 | `monash --profile NAME setup` / `sync` / `export FIT2109` | 选择隔离的课程资料账号；命名账号强制 materials-only |
 | `monash profile list` / `remove NAME [--all] [--yes]` | 从默认账号查看或清理 profile；`--all` 包含课件与数据库 |
 | `monash move "D:\MonashStudyKit"` | 移动默认账号的资料、数据库、凭据和设置；命名账号不能独立移动 |
-| `monash sync [FIT2109] [--refresh-google]` | 马上同步<br>`--dry-run` 只列出 Moodle 会下载什么，`--retry-failed` 只重试上次失败的部分 |
+| `monash sync [FIT2109] [--refresh-google]` | 马上同步<br>`--dry-run` 只列出 Moodle 会下载什么，`--retry-failed` 只重试上次失败的部分<br>`--videos` / `--no-videos`、`--max-mb N`、`--skip-types a,b` 只改这一次[下载哪些文件](/zh-cn/study-kit/cli/#选择下载哪些文件)（1.16.0 起） |
+| `monash skipped [FIT2109] [--get 3 7\|all] [--videos]` | 1.16.0 起：因为大小上限、排除的类型或录像设置没下载的文件<br>`--get` 补下挑中的（[说明](/zh-cn/study-kit/cli/#看看跳过了哪些想要的再补下)） |
 | `monash login` / `monash login ed` | 登录 Moodle / 换 Ed 令牌 |
 | `monash courses` | 重新选要跟踪的课 |
 | `monash open [ed]` | 打开课件文件夹；`ed`：Ed Lessons 的课件，按 课号/周/lesson 分好（1.7.0 起） |

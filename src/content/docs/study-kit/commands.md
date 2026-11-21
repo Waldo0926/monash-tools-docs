@@ -20,7 +20,8 @@ description: Every monash command, output formats and exit codes.
 | `monash --profile NAME setup` / `sync` / `export FIT2109` | Select an isolated materials-only account |
 | `monash profile list` / `remove NAME [--all] [--yes]` | Manage profiles from the default account; `--all` also deletes materials/databases |
 | `monash move "D:\MonashStudyKit"` | Move the default home including files, databases, credentials and settings; named profiles cannot move independently |
-| `monash sync [FIT2109] [--refresh-google]` | Sync now. `--dry-run` lists what Moodle would download. `--retry-failed` retries only what failed last time |
+| `monash sync [FIT2109] [--refresh-google]` | Sync now. `--dry-run` lists what Moodle would download. `--retry-failed` retries only what failed last time. `--videos` / `--no-videos`, `--max-mb N` and `--skip-types a,b` change [what gets downloaded](/study-kit/cli/#choose-what-gets-downloaded) for this sync only (1.16.0 and later) |
+| `monash skipped [FIT2109] [--get 3 7\|all] [--videos]` | 1.16.0 and later: files left out by the size limit, the kinds you skip or the video setting; `--get` downloads the ones you pick ([details](/study-kit/cli/#see-what-was-skipped-and-get-it)) |
 | `monash login` / `monash login ed` | Log in to Moodle / replace the Ed token |
 | `monash courses` | Pick tracked units again |
 | `monash open [ed]` | Open the course-files folder; `ed`: the Ed Lessons materials, sorted by unit, week and lesson (1.7.0 and later) |
