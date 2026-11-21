@@ -55,6 +55,10 @@ If an earlier login window is still open, close it first.
 
 Since 1.16.0, files over 300 MB, videos and any kinds you left out with `skip_types` are saved as links instead. Run `monash skipped` to see them with a number, then `monash skipped --get 3` for one file, or raise the limit with `monash sync --max-mb 2000` to get them all. See [Choose what gets downloaded](/study-kit/cli/#choose-what-gets-downloaded).
 
+## "Another sync is running"
+
+`monash sync FIT2109`, `monash export --sync` and `monash skipped --get` wait for the background sync in your AI app so the two never write the same folder (1.16.0 and later). Check progress with `monash status` and try again when it is done.
+
 ## "Path too long" when syncing on Windows
 
 Windows limits full paths to 260 characters by default, and unit name, week name and file name together can go over. Keep course files somewhere shorter:
@@ -63,6 +67,8 @@ Windows limits full paths to 260 characters by default, and unit name, week name
 monash config files_dir C:\Monash
 monash sync
 ```
+
+Files named like `CON`, `NUL` or `AUX.pdf` can't be saved on Windows at all. From 1.16.0 they get a `_` in front, for example `_CON.pdf`.
 
 ## Wrong times on an Australian campus
 

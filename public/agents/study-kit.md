@@ -124,7 +124,7 @@ After login, drafting, sending a draft, changing labels and checking in are on. 
 
 ## If the student says a file is missing
 
-From 1.16.0, `monash sync` saves files over `max_file_mb` (default 300 MB), videos and kinds listed in `skip_types` as links instead of downloading them. Run `monash skipped` (add `--videos` to include videos) and show the student the list. For files they pick, run `monash skipped --get <numbers>`; to get many, `monash sync --max-mb <bigger>` downloads only what was skipped. Change `max_file_mb`, `skip_types` or `download_videos` with `monash config` only when the student asks for a lasting change.
+From 1.16.0, `monash sync` saves files over `max_file_mb` (default 300 MB), videos and kinds listed in `skip_types` as links instead of downloading them. Run `monash skipped` (add `--videos` to include videos) and show the student the list. Tell them the sizes first. For files they pick, run `monash skipped --get <numbers>` (it checks free disk space and waits for a running background sync); to get many, `monash sync --max-mb <bigger>` downloads only what was skipped. Change `max_file_mb`, `skip_types` or `download_videos` with `monash config` only when the student asks for a lasting change.
 
 ## Optional: whole-course materials and isolated accounts
 

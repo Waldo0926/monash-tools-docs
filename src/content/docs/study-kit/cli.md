@@ -59,7 +59,7 @@ Each file gets a number, for example `[3] Week 05/Dataset.csv (too big, 512 MB)`
 - **A few files**: `monash skipped --get 3 7`. Part of the file name also works (`monash skipped --get dataset`), and `all` gets every one. These ignore the size limit and the kinds you left out
 - **Many files**: raise the limit and sync again, for example `monash sync --max-mb 2000` or `monash config max_file_mb 0`. Files you already have are not downloaded again, only the skipped ones are
 
-In your AI app you can also ask "which files weren't downloaded?"
+In your AI app you can also ask "which files weren't downloaded?" and then say which ones you want; it downloads them in the background. Before a big download it checks there is enough free disk space.
 
 ## Browse your course files
 
