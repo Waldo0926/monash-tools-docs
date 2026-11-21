@@ -50,7 +50,7 @@ If `monash` is not on PATH in your shell, use the full path: `"$(uv tool dir --b
 Tell the student, in these words or close to them:
 
 > Study Kit is installed. Now open a new terminal window (Terminal on macOS, PowerShell on Windows) and run `monash setup`. It will:
-> 1. open Ed's token page: click Create Token, copy it, and paste it into that terminal (nothing shows while you paste),
+> 1. ask about Ed. Ed is optional: many business, arts and media units don't use it, and then you skip this step and only Moodle is set up. If your units use Ed, it opens Ed's token page: click Create Token, copy it, and paste it into that terminal (nothing shows while you paste),
 > 2. open a separate browser window: log in to Monash with Okta and MFA, and the window closes by itself,
 > 3. ask which units to track,
 > 4. connect to Claude Desktop and Claude Code. On Windows, fully quit Claude Desktop from the tray first when it asks. If you do not use Claude, ignore the message that it cannot find Claude Desktop.
