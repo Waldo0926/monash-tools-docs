@@ -70,6 +70,16 @@ Gmail/Drive 权限和资料隔离说明同步修正
 
 发布工作流已通过三平台测试、打包和从 PyPI 安装验证
 
+## 1.16.0 已发布
+
+[1.16.0 Release](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.16.0) 可以选择 `monash sync` 下载哪些文件：大小上限（默认 300 MB）、整类不下，`--videos`、`--max-mb`、`--skip-types` 只改这一次，详见[选择下载哪些文件](/zh-cn/study-kit/cli/#选择下载哪些文件)
+
+`monash skipped` 列出没下载的文件，`--get` 补下挑中的，在 AI 软件里也能让它帮你补下
+
+还修了两个问题：AI 软件在后台同步时单独同步一门课，可能删掉下到一半的文件；Windows 上 `CON.pdf` 这类文件名存不了
+
+运行 `monash update`，然后[重启使用 Study Kit 的 AI 软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件)
+
 ## 1.15.0 已发布
 
 [1.15.0 Release](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.15.0) 是 1.11.2 之后第一次发到 PyPI 的版本，所以也带上了 1.12.0 到 1.14.0 的改动（这几个版本合并了但没发布），详见[更新日志](https://github.com/Waldo0926/monash-study-kit/blob/main/CHANGELOG.md)

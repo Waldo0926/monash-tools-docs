@@ -50,6 +50,10 @@ Run `monash export --help`, then follow [whole-course export](/study-kit/materia
 
 [Release 1.11.2](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.11.2) is published on PyPI and GitHub. Run `monash update`, then [restart the AI app using Study Kit](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app). On Windows, a failed PDF browser cold start is reaped and retried once with a fresh temporary profile; partially written port files and transient connections are retried too. The release also corrects Gmail/Drive permission and materials-isolation documentation. The release workflow passed cross-platform tests, packaging and installation from PyPI on all three platforms.
 
+## 1.16.0 is released
+
+[Release 1.16.0](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.16.0) lets you choose what `monash sync` downloads: a size limit (300 MB by default), kinds of files to leave out, and per-sync `--videos`, `--max-mb` and `--skip-types`. `monash skipped` lists what was left out and `--get` downloads the files you pick; your AI app can do the same. See [Choose what gets downloaded](/study-kit/cli/#choose-what-gets-downloaded). It also fixes two bugs: syncing one unit while the AI app was syncing could delete partial downloads, and files named like `CON.pdf` failed on Windows. Run `monash update`, then [restart the AI app using Study Kit](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app).
+
 ## 1.15.0 is released
 
 [Release 1.15.0](https://github.com/Waldo0926/monash-study-kit/releases/tag/v1.15.0) is the first release on PyPI since 1.11.2. It also carries what 1.12.0 to 1.14.0 added, which was merged but never published; the [changelog](https://github.com/Waldo0926/monash-study-kit/blob/main/CHANGELOG.md) lists it. Run `monash update`, then [restart the AI app using Study Kit](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app).
