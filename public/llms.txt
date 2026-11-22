@@ -12,7 +12,7 @@ If you are an AI agent asked to install something for a student, read the agent 
 ## Start here
 
 - [Which tool do I need?](https://docs.secureview.tech/choose/): compare tools by task, install and where data goes
-- [Let your AI set it up](https://docs.secureview.tech/ai-setup/): one line to paste into an AI that can run terminal commands
+- [Set it up with AI](https://docs.secureview.tech/ai-setup/): one line to paste into an AI that can run terminal commands
 
 ## Study Kit
 

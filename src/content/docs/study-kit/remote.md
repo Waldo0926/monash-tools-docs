@@ -11,12 +11,12 @@ It is for one person and **their own** data. Never host it for friends with your
 
 Needs Study Kit 1.4.0 or later. Run `monash update` first.
 
-## Let your AI set it up
+## Set it up with AI
 
 If you use an AI that can run commands on your computer (Claude Code, Codex and similar), send it this and it will walk you through the rest:
 
 ```text wrap
-Read https://docs.secureview.tech/agents/remote.md and set up Study Kit remote mode for me.
+Set up Study Kit remote mode for me. The steps are here: https://docs.secureview.tech/agents/remote.md
 ```
 
 It asks which app you want first, then sets up the tunnel or your server and checks it. You add the app in ChatGPT or Claude and type the pairing code yourself.
@@ -42,7 +42,7 @@ How to pick:
 - Want it on your phone every day and have a computer that never turns off (an old laptop or a mini PC at home)? **Option B**.
 - Already have a server, or want the most reliable setup? **Option C**.
 
-Not sure? Let your AI set it up. It asks about your situation first and suggests one.
+Not sure? Ask your AI to set it up. It asks about your situation first and suggests one.
 
 The author uses ChatGPT Plus with their own domain and server. If something goes wrong, [open an issue](https://github.com/Waldo0926/monash-study-kit/issues) or [message me](/contact/).
 

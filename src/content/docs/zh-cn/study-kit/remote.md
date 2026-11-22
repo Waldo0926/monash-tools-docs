@@ -20,7 +20,7 @@ description: 给 Study Kit 一个 HTTPS 地址，在 ChatGPT 聊天、网页版�
 如果你用的 AI 能在电脑上跑命令（Claude Code、Codex 等），把这句发给它，剩下的它会带你做：
 
 ```text wrap
-阅读 https://docs.secureview.tech/agents/remote.md ，帮我搭好 Study Kit 的远程模式。
+帮我搭好 Study Kit 的远程模式，步骤在这里：https://docs.secureview.tech/agents/remote.md
 ```
 
 它会先问你想在哪个 App 里用，再帮你弄好隧道或者服务器并检查一遍

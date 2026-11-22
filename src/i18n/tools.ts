@@ -3,8 +3,8 @@
 
 import type { Lang } from './landing';
 
-const AI_EN = 'Read https://docs.secureview.tech/agents/study-kit.md and set up Monash Study Kit on my computer.';
-const AI_ZH = '阅读 https://docs.secureview.tech/agents/study-kit.md ，帮我在电脑上装好 Monash Study Kit。';
+const AI_EN = 'Install Monash Study Kit for me. The steps are here: https://docs.secureview.tech/agents/study-kit.md';
+const AI_ZH = '帮我安装 Monash Study Kit，步骤在这里：https://docs.secureview.tech/agents/study-kit.md';
 
 type Tool = {
   id: string;
