@@ -83,19 +83,19 @@ From Study Kit 1.4.0, three answers can also show up as a small panel in apps th
 
 - **To-dos**: "What do I need to do this week?" shows deadline cards and lessons you have not started.
 
-  ![The to-do panel: an assignment due in two days, a possibly missed exercise and an Ed lesson not started yet, with walk-through and quiz buttons (made-up course data, captured 21 November 2026)](../../../assets/study-kit/panel-todo.png)
+  ![The to-do panel: an assignment due in two days, a possibly missed exercise and an Ed lesson not started yet, with walk-through and quiz buttons (made-up course data, captured 21 November 2026)](../../../assets/study-kit/panel-todo-en.png)
 
 - **Lesson progress**: "Show my FIT2102 lesson progress" shows each module with how many lessons are done.
 
-  ![The lesson progress panel: one progress bar per week, with buttons on each unfinished lesson (made-up course data, captured 21 November 2026)](../../../assets/study-kit/panel-progress.png)
+  ![The lesson progress panel: one progress bar per week, with buttons on each unfinished lesson (made-up course data, captured 21 November 2026)](../../../assets/study-kit/panel-progress-en.png)
 
-- **Quiz practice**: "Help me practise the ETC1000 week 4 quiz" shows the questions with clickable options. When you finish, **交给 AI 批改** sends your choices back to the chat and the AI explains them from the lesson text.
+- **Quiz practice**: "Help me practise the ETC1000 week 4 quiz" shows the questions with clickable options. When you finish, **Send to AI to mark** sends your choices back to the chat and the AI explains them from the lesson text.
 
-  ![The quiz panel: question 1 with four options and the picked one outlined in blue (made-up course data, captured 21 November 2026)](../../../assets/study-kit/panel-quiz.png)
+  ![The quiz panel: question 1 with four options and the picked one outlined in blue (made-up course data, captured 21 November 2026)](../../../assets/study-kit/panel-quiz-en.png)
 
 Your answers stay in the panel until you send them. Nothing is submitted to Ed and no lesson is marked as done. Ed does not show students the answer key, so the AI works the answers out from the lesson and says when it is unsure.
 
-Apps without panel support still get the same text answer as before. Whether a panel appears, and whether its buttons can send messages or open links, is up to the app. The panel labels are in Chinese.
+Apps without panel support still get the same text answer as before. Whether a panel appears, and whether its buttons can send messages or open links, is up to the app. From version 1.17.0 the panels show English, or Chinese if your AI app is set to Chinese.
 
 ## Ready-made prompts
 
