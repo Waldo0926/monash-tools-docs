@@ -32,7 +32,7 @@ export const strings = {
         'Study Kit syncs your own Moodle and Ed to your computer, so Claude, ChatGPT, Codex, Cursor and other AI apps can look things up for you. Ask what is due this week, what is new on Ed, which slide covers a topic, or what the marker wrote on your assignment. School mail and attendance can be added later if you want. Your login stays on your computer.',
       tabs: ['Ask your AI', 'macOS', 'Windows'],
       cmds: [
-        'Read https://docs.secureview.tech/agents/study-kit.md and set up Monash Study Kit on my computer.',
+        'Install Monash Study Kit for me. The steps are here: https://docs.secureview.tech/agents/study-kit.md',
         INSTALL_MAC,
         INSTALL_WIN,
       ],
@@ -99,7 +99,7 @@ export const strings = {
     footer: {
       blurb: 'Free tools for Monash students, made by a Monash student. Not affiliated with Monash University, Ed, Anthropic or OpenAI.',
       cols: [
-        { h: 'Start', links: [['Which tool do I need?', 'choose/'], ['Let your AI set it up', 'ai-setup/'], ['Install Study Kit', 'study-kit/install/'], ['Connect mail and attendance', 'study-kit/mail-attendance/']] },
+        { h: 'Start', links: [['Which tool do I need?', 'choose/'], ['Set it up with AI', 'ai-setup/'], ['Install Study Kit', 'study-kit/install/'], ['Connect mail and attendance', 'study-kit/mail-attendance/']] },
         { h: 'Tools', links: [['Study Kit', 'study-kit/'], ['Monash Hub', 'monash-hub/'], ['Ed Web', 'ed-web/'], ['Attendance Helper', 'attendance/'], ['WeChat Q&A', 'wechat-bot/']] },
         { h: 'Project', links: [['About', 'about/'], ['Contact', 'contact/'], ['GitHub', 'https://github.com/Waldo0926'], ['Blog', 'https://blog.secureview.tech'], ['llms.txt', '/llms.txt']] },
       ],
@@ -121,7 +121,7 @@ export const strings = {
         'Study Kit把你自己的Moodle和Ed同步到电脑上，Claude、ChatGPT、Codex、Cursor这些AI就能帮你查，可以问这周要交什么、Ed有什么新帖、哪页讲义讲了某个知识点、老师给你的作业写了什么评语，学校邮箱和考勤想用的话之后再接，登录信息只留在你电脑上',
       tabs: ['让AI装', 'macOS', 'Windows'],
       cmds: [
-        '阅读 https://docs.secureview.tech/agents/study-kit.md ，帮我在电脑上装好 Monash Study Kit。',
+        '帮我安装 Monash Study Kit，步骤在这里：https://docs.secureview.tech/agents/study-kit.md',
         INSTALL_MAC,
         INSTALL_WIN,
       ],
