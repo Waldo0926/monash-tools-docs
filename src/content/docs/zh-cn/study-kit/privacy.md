@@ -50,6 +50,14 @@ description: Study Kit 把数据存在哪、存了哪些凭据、AI 软件能看
 
 只想让它读邮件，就用 `monash gmail login --read-only` 接，Google 只给读的权限
 
+## OnTrack / Doubtfire
+
+只有[登录](/zh-cn/study-kit/ontrack/)以后才有
+
+访问令牌和刷新 Cookie 保存在仅本人可读的 `secrets/ontrack-session.json`，同步的任务快照和任务书缓存在本机 `data/ontrack/`，请求不会跨 HTTP 重定向携带凭据
+
+MCP 默认只读；显式开启 `ontrack_write_enabled` 后增加经预览与确认执行的写操作（读评论历史、发评论、改状态），绝不通过 MCP 提交作业文件
+
 ## AI 能看到什么
 
 只有你提问时工具返回的内容：截止日期列表、某个帖子的正文、某份课件的文字，接上邮箱的话还有你问到的邮件
