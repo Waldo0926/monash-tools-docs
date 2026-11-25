@@ -19,9 +19,9 @@ description: 谁做的这些工具、怎么反馈问题、它们守的规矩
 
 ## 不是官方的
 
-这些工具不是 Monash University、Ed 或 Anthropic 做的，也没有得到它们的认可或支持
+这些工具不是 Monash University、Ed、OnTrack/Doubtfire 或 Anthropic 做的，也没有得到它们的认可或支持
 
-Monash、Moodle、Ed 归各自所有者
+Monash、Moodle、Ed 和 OnTrack/Doubtfire 归各自所有者
 
 重要的事情一定以官网为准
 
@@ -48,3 +48,5 @@ Monash、Moodle、Ed 归各自所有者
 用 [Astro Starlight](https://starlight.astro.build) 搭建
 
 图标来自 [Lucide](https://lucide.dev)（ISC）
+
+Study Kit 的 Moodle 查询命令基于 [bunizao/moodle-cli](https://github.com/bunizao/moodle-cli)（MIT），可选的 OnTrack / Doubtfire 集成基于 [bunizao/ontrack-cli](https://github.com/bunizao/ontrack-cli)（MIT）

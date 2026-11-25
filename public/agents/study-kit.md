@@ -107,6 +107,17 @@ For mail, Google shows "this app isn't verified": tell them to click Advanced, t
 
 After login, drafting, sending a draft, changing labels and checking in are on. Each needs the student's confirmation of a full preview, as in the rules above. A check-in is only prepared when the student says they actually attended. Attendance has only been checked against the Malaysia campus portal. Details: https://docs.secureview.tech/study-kit/mail-attendance/
 
+## Optional: OnTrack / Doubtfire
+
+Since 1.18.0, Study Kit also includes pure-Python OnTrack / Doubtfire support (based on `bunizao/ontrack-cli`, MIT), with no Node.js or extra packages required. Ask the student to run sign-in in their own terminal:
+
+```sh
+monash ontrack login --url https://<their-ontrack-host>
+monash ontrack sync
+```
+
+Remind them to tick "Remember me" on the OnTrack sign-in page so refresh-cookie renewal works. Never ask for or accept OnTrack tokens or cookies in chat. By default MCP tools (`ontrack_units`, `ontrack_tasks`, `ontrack_task_sheet`, `ontrack_chats`) are read-only; write actions (`monash ontrack set`, `submit`, `chat-send`, single-task `chats`, or MCP `ontrack_prepare_action` when `ontrack_write_enabled` is turned on) require showing the preview and explicit confirmation from the student first. Details: https://docs.secureview.tech/study-kit/ontrack/
+
 ## If the student uses another MCP client
 
 `monash setup` only configures Claude Desktop and Claude Code. After setup is done, run `monash connect <client>` with `codex`, `cursor`, `vscode`, `windsurf` or `gemini` (Study Kit 1.2.0 or later; run `monash update` first if the command is missing). It adds only the monash entry and backs up the file. If it prints an entry instead (the config file has comments), add that entry by hand without overwriting other servers. Details: https://docs.secureview.tech/study-kit/other-clients/

@@ -43,6 +43,9 @@ description: 所有 monash 命令、输出格式和退出码
 | `monash gmail draft` / `send-draft` / `labels` | 预览邮箱操作；加 `--confirm` 才执行 |
 | `monash attendance login` / `status` / `sync` / `overview` / `codes` / `probe` | 可选的考勤：接上 / 状态和登录时长 / 读门户 / 已保存的班次 / 找签到码 / 对照两种读法 |
 | `monash attendance renew` / `maintain` | 考勤登录过期时，用你电脑上已有的浏览器登录状态试着自动恢复；需要密码或 MFA 时会停下来告诉你 |
+| `monash ontrack login --url URL` / `status` / `renew` / `logout` / `doctor` | 可选的 OnTrack / Doubtfire：登录（复用专用浏览器或 `--paste`）/ 状态 / 续期 / 退出 / 诊断（[详细](/zh-cn/study-kit/ontrack/)） |
+| `monash ontrack sync [--sheets]` / `courses` / `tasks` / `task` / `read` / `get` / `chats` | 同步本地缓存（并入 `todo` 与 `semester`）/ 课程 / 任务 / 任务书 PDF 转 Markdown / 下载资源 / 未读导师评论数 |
+| `monash ontrack set` / `submit` / `chat-send` | 预览 OnTrack 写操作；确认后加 `--confirm`（或 `--yes`）执行，也可用 `--dry-run` 只看计划 |
 | `monash update` | 更新到最新版，保留你装过的可选部分 |
 | `monash uninstall` | 从 Claude 和其他 AI 软件移除，可选删除所有数据 |
 

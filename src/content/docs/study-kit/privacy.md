@@ -30,6 +30,10 @@ The package includes a Google app so you can sign in without a Google Cloud proj
 
 Drafting, sending a draft, changing labels and checking in run only after you confirm each action. Nothing permanently deletes mail. To give Google read access only, connect with `monash gmail login --read-only`.
 
+## OnTrack / Doubtfire
+
+Only if you [sign in](/study-kit/ontrack/). Access tokens and refresh cookies stay in `secrets/ontrack-session.json` (owner-only), and synced snapshots and cached task sheets stay locally under `data/ontrack/`. Requests never follow HTTP redirects with credentials. By default MCP tools are read-only; enabling `ontrack_write_enabled` adds preview-and-confirm actions (`chat_read`, `chat_send`, `task_state`) and never submits files through MCP.
+
 ## What the AI sees
 
 Only what a tool returns when you ask something: a list of deadlines, the text of a post, the text of a course file. Tokens and cookies are never sent to the AI. Do not paste your Ed token into a chat either; enter it in the terminal only.

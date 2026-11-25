@@ -14,7 +14,7 @@ I am Waldo, a computer science student at Monash. I built these tools for my own
 
 ## Not official
 
-These tools are not made, endorsed or supported by Monash University, Ed or Anthropic. Monash, Moodle and Ed belong to their owners. Always check anything important on the official page.
+These tools are not made, endorsed or supported by Monash University, Ed, OnTrack/Doubtfire or Anthropic. Monash, Moodle, Ed and OnTrack/Doubtfire belong to their owners. Always check anything important on the official page.
 
 ## Report a problem or ask for a feature
 
@@ -35,3 +35,5 @@ For a security problem, do not post details in public. Follow the repository's `
 ## Credits
 
 Built with [Astro Starlight](https://starlight.astro.build). Icons by [Lucide](https://lucide.dev) (ISC).
+
+Study Kit's Moodle query commands are based on [bunizao/moodle-cli](https://github.com/bunizao/moodle-cli) (MIT), and its optional OnTrack / Doubtfire integration is based on [bunizao/ontrack-cli](https://github.com/bunizao/ontrack-cli) (MIT).
