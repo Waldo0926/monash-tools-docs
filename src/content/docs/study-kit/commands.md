@@ -43,7 +43,7 @@ description: Every monash command, output formats and exit codes.
 | `monash gmail draft` / `send-draft` / `labels` | Preview a mailbox action; add `--confirm` to run it |
 | `monash attendance login` / `status` / `sync` / `overview` / `codes` / `probe` | Optional attendance: connect / status and login lifetime / read the portal / saved classes / find codes / compare both ways of reading |
 | `monash attendance renew` / `maintain` | Try to bring back an expired attendance login using the browser profile already on your computer. It stops and tells you when a password or MFA is needed |
-| `monash ontrack login --url URL` / `status` / `renew` / `logout` / `doctor` | Optional OnTrack / Doubtfire: sign in (browser profile or `--paste`) / status / renew / clear session / diagnose ([details](/study-kit/ontrack/)) |
+| `monash ontrack login [--url URL]` / `status` / `renew` / `logout` / `doctor` | Optional OnTrack / Doubtfire: sign in (defaults to `https://ontrack.infotech.monash.edu`, browser profile or `--paste`) / status / renew / clear session / diagnose ([details](/study-kit/ontrack/)) |
 | `monash ontrack sync [--sheets]` / `courses` / `tasks` / `task` / `read` / `get` / `chats` | Sync local cache (included in `todo` and `semester`) / units / tasks / task sheet PDF as Markdown / downloads / unread tutor comment counts |
 | `monash ontrack set` / `submit` / `chat-send` | Preview an OnTrack write action; add `--confirm` (or `--yes`) to run it, or `--dry-run` to inspect first |
 | `monash update` | Update to the latest version, keeping the optional parts you installed |

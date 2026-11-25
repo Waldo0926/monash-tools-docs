@@ -112,11 +112,11 @@ After login, drafting, sending a draft, changing labels and checking in are on. 
 Since 1.18.0, Study Kit also includes pure-Python OnTrack / Doubtfire support (based on `bunizao/ontrack-cli`, MIT), with no Node.js or extra packages required. Ask the student to run sign-in in their own terminal:
 
 ```sh
-monash ontrack login --url https://<their-ontrack-host>
+monash ontrack login
 monash ontrack sync
 ```
 
-Remind them to tick "Remember me" on the OnTrack sign-in page so refresh-cookie renewal works. Never ask for or accept OnTrack tokens or cookies in chat. By default MCP tools (`ontrack_units`, `ontrack_tasks`, `ontrack_task_sheet`, `ontrack_chats`) are read-only; write actions (`monash ontrack set`, `submit`, `chat-send`, single-task `chats`, or MCP `ontrack_prepare_action` when `ontrack_write_enabled` is turned on) require showing the preview and explicit confirmation from the student first. Details: https://docs.secureview.tech/study-kit/ontrack/
+It defaults to Monash's OnTrack site (`https://ontrack.infotech.monash.edu`; pass `--url` only if the student uses another site). Remind them to tick "Remember me" on the OnTrack sign-in page so refresh-cookie renewal works. Never ask for or accept OnTrack tokens or cookies in chat. By default MCP tools (`ontrack_units`, `ontrack_tasks`, `ontrack_task_sheet`, `ontrack_chats`) are read-only; write actions (`monash ontrack set`, `submit`, `chat-send`, single-task `chats`, or MCP `ontrack_prepare_action` when `ontrack_write_enabled` is turned on) require showing the preview and explicit confirmation from the student first. Details: https://docs.secureview.tech/study-kit/ontrack/
 
 ## If the student uses another MCP client
 

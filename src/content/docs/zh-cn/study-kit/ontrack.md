@@ -14,9 +14,11 @@ description: 1.18.0 起可选，纯 Python 实现 OnTrack / Doubtfire 课程、�
 ## 登录
 
 ```bash
-monash ontrack login --url https://<你的OnTrack域名>
+monash ontrack login
 monash ontrack sync
 ```
+
+默认连接 Monash 的 OnTrack 站点（`https://ontrack.infotech.monash.edu`），如需连接其他 OnTrack / Doubtfire 站点可加 `--url https://<域名>`
 
 Study Kit 会直接复用专用登录窗口的浏览器配置（`browser-profile`），如果之前登录 Moodle 时 Okta 已经记住你，登录和静默续期都不需要再次输入密码，也不会保存密码
 
@@ -25,7 +27,7 @@ Study Kit 会直接复用专用登录窗口的浏览器配置（`browser-profile
 如果不方便弹浏览器窗口，也可以用 `--paste` 粘贴 Cookie 头、cURL 命令、`/api/auth/access-token` 的 JSON 返回或裸 `refresh_token`：
 
 ```bash
-monash ontrack login --url https://<你的OnTrack域名> --paste
+monash ontrack login --paste
 ```
 
 登录完[重启 AI 软件](/zh-cn/study-kit/troubleshooting/#完全退出再重开-ai-软件)，OnTrack 的 MCP 工具就会出现
@@ -58,7 +60,7 @@ monash ontrack sync --sheets             # 刷新本地缓存并缓存任务书 
 | 设置项 | 默认值 | 作用 |
 | --- | --- | --- |
 | `ontrack_enabled` | `false` | `monash ontrack login` 成功后自动打开；控制 MCP 工具和 `todo`/`semester` 整合 |
-| `ontrack_url` | `""` | 学校的 OnTrack HTTPS 地址（也可通过 `MONASH_KIT_ONTRACK_URL` 或 `ONTRACK_BASE_URL` 覆盖） |
+| `ontrack_url` | `https://ontrack.infotech.monash.edu` | 默认连接 Monash 的 OnTrack 站点（可用 `--url`、`MONASH_KIT_ONTRACK_URL` 或 `ONTRACK_BASE_URL` 覆盖） |
 | `ontrack_write_enabled` | `false` | 是否开启 MCP 预览确认写操作（`chat_read`、`chat_send`、`task_state`） |
 
 ## 已知限制

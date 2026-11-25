@@ -14,9 +14,11 @@ Optional and off until you sign in. Built in pure Python using the existing `pyp
 ## Sign in
 
 ```bash
-monash ontrack login --url https://<your-ontrack-host>
+monash ontrack login
 monash ontrack sync
 ```
+
+By default this connects to Monash's OnTrack site (`https://ontrack.infotech.monash.edu`). Pass `--url https://<host>` if you use a different OnTrack / Doubtfire instance.
 
 Study Kit reuses its dedicated login browser profile (`browser-profile`). If Okta already remembers you from Moodle, signing in and silent renewal work without storing your password.
 
@@ -25,7 +27,7 @@ Tick **Remember me** when signing in so OnTrack issues a refresh cookie: Study K
 If a browser window is not available, paste a Cookie header, cURL command, `/api/auth/access-token` JSON response or bare `refresh_token`:
 
 ```bash
-monash ontrack login --url https://<your-ontrack-host> --paste
+monash ontrack login --paste
 ```
 
 [Restart your AI app](/study-kit/troubleshooting/#fully-quit-and-reopen-your-ai-app) after signing in so the OnTrack MCP tools appear.
@@ -58,7 +60,7 @@ Add `--json` for JSON output.
 | Setting | Default | What it does |
 | --- | --- | --- |
 | `ontrack_enabled` | `false` | Turned on automatically by `monash ontrack login`; controls MCP tools and `todo`/`semester` integration |
-| `ontrack_url` | `""` | Your institution's OnTrack HTTPS URL (can also be overridden by `MONASH_KIT_ONTRACK_URL` or `ONTRACK_BASE_URL`) |
+| `ontrack_url` | `https://ontrack.infotech.monash.edu` | Monash's OnTrack HTTPS URL by default (override with `--url`, `MONASH_KIT_ONTRACK_URL` or `ONTRACK_BASE_URL`) |
 | `ontrack_write_enabled` | `false` | Opt-in switch for preview-and-confirm MCP write actions (`chat_read`, `chat_send`, `task_state`) |
 
 ## Limits
